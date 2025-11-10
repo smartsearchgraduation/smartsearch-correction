@@ -1,0 +1,5 @@
+pandas
+symspellpy
+textdistance
+python-Levenshtein
+neuspell

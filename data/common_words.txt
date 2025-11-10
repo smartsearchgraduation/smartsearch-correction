@@ -1,0 +1,1538 @@
+﻿60 [12dicts] 70 [3of6] [moby]: 3-D <n/upper>
+
+60 [12dicts]: 4-H </upper?>
+
+60 [12dicts]: 4WD <n/upper>
+
+35 [] [12dicts] [ukfreq] 40 [3esl] 70 [3of6] [5desk] [moby] 85 [ukacd]: a <n>
+
+40 [3esl] 50 [12dicts] 70 [3of6] [5desk] [moby]: A <n/upper>
+
+60 [12dicts] 70 [moby]: a. <abbr>
+
+60 [12dicts] 70 [moby]: A. <abbr>
+
+70 [moby] 85 [ukacd]: !a <pre>
+
+80 85 [ukacd]: a <x>
+
+80: A <x>
+
+60 [12dicts] 70 [3of6] [moby]: A1 </upper?>
+
+60 [12dicts] 70 [moby]: A-1 </upper?>
+
+50 [12dicts] 70 [3of6] [moby]: AA <n/upper>: AA's
+
+60 [12dicts]: A.A. <abbr>
+
+70 [moby] 80 [enable] 85 [ukacd]: aa <n>
+
+50 [12dicts] 70 [3of6]: AAA <n/upper>
+50 [12dicts]: - <n/upper>: AAA's
+
+80 [moby]: A.A.A. <abbr>
+
+50 [name] 70 [5desk] [moby] 85 [ukacd]: Aachen <n/upper>
+50 [name] 70 [5desk] [moby]: - <n/upper>: Aachen's
+
+60 [brif] 70 [3of6] 80 [enable]: aah <v>
+80 [enable]: - <v>: aahed-, aahing-, aahs-
+
+85 [stale]: aal <n>: aals
+
+70 [5desk] [moby]: Aalborg <n/upper>
+
+70 [moby] 85 [stale]: aalii <n>: aaliis
+
+50 [name]: Aaliyah <n/name?>: Aaliyah's
+
+70 [moby]: Aalst <n/upper>
+
+70 [moby]: Aalto <n/upper>: Aalto's
+
+35 [ukfreq] 50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: aardvark <n>
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby]: - <n>: aardvark's
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: aardvarks
+
+70 [moby] 80 [enable] 85 [ukacd]: aardwolf <n>: aardwolves
+70 [moby]: - <n>: aardwolf's
+
+80 [enable]: aargh
+
+70 [5desk] [moby] 85 [ukacd]: Aarhus <n/upper>
+
+50 [name] [names] 70 [5desk] [moby] 85 [ukacd]: Aaron <n/person>
+50 [name] [names] 70 [5desk] [moby]: - <n/person>: Aaron's
+
+50 [name] 60 [12dicts] 70 [5desk] [moby] 85 [ukacd]: Aaron <n/upper>
+50 [name] 60 [12dicts] 70 [5desk] [moby]: - <n/upper>: Aaron's
+
+70 [moby] 80 [upper] 85 [ukacd]: Aaronic </upper?>
+
+80 [upper] 85 [ukacd]: Aaronical </upper?>
+
+80 [moby]: Aaronsburg <n/place>
+
+70 [moby] 85 [ukacd]: Aaron's rod <n/upper>
+
+80 [enable]: aarrgh
+
+80 [enable]: aarrghh
+
+80 [enable]: aas
+
+85 [ukacd]: A'asia </upper?>
+
+85 [stale] [ukacd]: aasvogel <n>: aasvogels
+
+50 [12dicts] 70 [3of6] [5desk] [moby]: AB <n/upper>
+
+60 [12dicts]: -ab <abbr>
+
+60 [12dicts] 70 [moby]: A.B. <abbr>
+
+70 [5desk] [moby] 80 [upper] 85 [ukacd]: Ab <n/upper>
+
+80 [enable]: ab <n>
+
+80 [moby]: ab <pre>
+
+60 [12dicts]: ABA </abbr?>
+
+70 [moby] 80 [enable] 85 [ukacd]: aba <n>: abas
+
+70 [moby]: A.B.A. <abbr>
+
+85 [ukacd]: abac <n>: abacs
+
+70 [moby] 80 [enable] 85 [ukacd]: abaca <n>: abacas
+
+35 [12dicts] [ukfreq] 40 [3esl] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: aback <av>
+
+80 [enable]: abacterial
+
+85 [ukacd]: abactinal <aj>
+
+85 [ukacd]: abactinally
+
+85 [ukacd]: abactor <n>: abactors
+
+35 [12dicts] 40 [3esl] 50 [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abacus <n>
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: (abacuses | ~: abaci)
+
+70 [5desk] [moby] 85 [ukacd]: Abadan <n/upper>
+
+70 [moby] 85 [ukacd]: Abaddon </upper?>
+
+50 [12dicts] 70 [5desk] [moby] 80 [enable] 85 [ukacd]: abaft <av>
+
+80 [enable]: abaka <n>: abakas
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abalone <n>: abalones
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby]: - <n>: abalone's
+
+70 [moby] 85 [stale]: abamp <n>: abamps
+
+70 [moby] 80 [enable] 85 [ukacd]: abampere <n>: abamperes
+
+85 [ukacd]: aband
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abandon <v>: -, abandoning, abandons
+35 [12dicts] [ukfreq] 40 [3esl] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: abandoned, -, -
+
+85 [ukacd]: !abandon <n>
+
+35 [12dicts] [ukfreq] 40 [3esl] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abandoned <aj>
+
+70 [5desk] 85 [ukacd]: abandonedly
+
+85 [ukacd]: abandonee <n>: abandonees
+
+80 [enable]: abandoner <n>: abandoners
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] 80 [enable] 85 [ukacd]: abandonment <n>
+80 [12dicts] [3esl] [5desk] [enable] 85 [ukacd]: - <n>: abandonments~
+
+80 [enable]: abapical
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abase <v>: abased, abasing, abases
+
+85 [stale]: abasedly
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] 80 [enable] 85 [ukacd]: abasement <n>
+80 [12dicts] [5desk] [enable] 85 [ukacd]: - <n>: abasements~
+
+80 [enable]: abaser <n>: abasers
+
+50 [12dicts] 70 [5desk] [moby] 80 [enable] 85 [ukacd]: abash <v>: abashed, abashing, abashes
+
+40 [3esl] 50 [12dicts] 70 [3of6] [5desk] 80 [enable] 85 [ukacd]: abashed <aj>
+
+60 [12dicts] 70 [5desk] 80 [2dicts] 85 [ukacd]: abashedly <a>
+
+85 [ukacd]: abashless
+
+60 [12dicts] 70 [5desk] 80 [enable] 85 [ukacd]: abashment <n>
+80 [12dicts] [5desk] [enable] 85 [ukacd]: - <n>: abashments~
+
+80 [enable]: abasia <n>: abasias
+
+85 [ukacd]: abask
+
+80 [enable] 85 [ukacd]: abatable <aj>
+
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abate <v>: abated, abating, abates
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abatement <n>
+80 [12dicts] [5desk] [enable] [moby] 85 [ukacd]: - <n>: abatements~
+
+80 [enable]: abater <n>: abaters
+
+70 [moby] 80 [enable] 85 [ukacd]: abatis <n>
+70 [moby] 80 [enable]: - <n>: abatises
+
+85 [ukacd]: abat-jour <n>: abat-jours
+
+80 [enable] 85 [ukacd]: abator <n>: abators
+
+70 [moby]: A battery <n/upper>
+
+80 [enable] 85 [ukacd]: abattis <n>: abattises
+
+50 [12dicts] [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abattoir <n>
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: abattoirs
+
+85 [ukacd]: abattu
+
+85 [ukacd]: abature <n>: abatures
+
+70 [moby] 80 [enable] 85 [ukacd]: abaxial <aj>
+
+85 [stale]: abaxile
+
+80 [ospdadd] 85 [ukacd]: abaya <n>: abayas
+
+70 [moby] 85 [ukacd]: abb <n>: abbs
+
+70 [moby] 80 [enable] 85 [ukacd]: abba <n>: abbas
+
+70 [5desk] [moby] 80 [enable] 85 [ukacd]: abbacy <n>: abbacies
+
+85 [ukacd]: Abbado </upper?>
+
+50 [name]: Abbas <n/name?>: Abbas's
+
+50 [name] 70 [moby] 80 [upper] 85 [ukacd]: Abbasid <n/upper>
+50 [name] 70 [moby]: - <n/upper>: Abbasid's
+70 [moby] 80 [upper] 85 [ukacd]: - <n/upper>: Abbasids-
+
+70 [moby] 80 [enable] 85 [ukacd]: abbatial <aj>
+
+50 [12dicts] 70 [5desk] 80 [enable]: abbé <n>: abbés # accented
+50 [12dicts] 70 [5desk] 80 [enable]: _~: abbe <n>: abbes # need-accent
+50 [12dicts] 70 [5desk]: - <n>: abbé's
+50 [12dicts] 70 [5desk]: _~: - <n>: abbe's
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abbess <n>: abbesses
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby]: - <n>: abbess's
+
+80 [moby]: Abbeville <n/place>
+
+80 [upper]: Abbevillean </upper?>
+
+70 [moby] 80 [upper]: Abbevillian </upper?>
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abbey <n>
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby]: - <n>: abbey's
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: abbeys
+
+35 [12dicts] 50 [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abbot <n>
+35 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby]: - <n>: abbot's
+35 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: abbots
+
+80 [enable]: abbotcy <n>: abbotcies
+
+80 [moby] 85 [ukacd]: Abbotsford <n/place>
+
+80 [2dicts] 85 [ukacd]: abbotship <n>: abbotships
+
+50 [name] [names] 70 [5desk] 85 [ukacd]: Abbott <n/person>
+50 [name] [names] 70 [5desk]: - <n/person>: Abbott's
+
+80 [moby]: Abbottstown <n/place>
+
+40 [3esl] 50 [12dicts]: _: abbr. <abbr>
+40 [3esl] 50 [12dicts]: _~: abbr <abbr>
+
+60 [12dicts]: abbrev. <abbr>
+
+50 hacker: abbrev <n>: abbrevs
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abbreviate <v>
+35 [12dicts] 40 [3esl] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: abbreviated, -, -
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: -, abbreviating, abbreviates
+
+35 [ukfreq] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abbreviated <aj>
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abbreviation <n>: abbreviations
+
+70 [5desk] 80 [enable] 85 [ukacd]: abbreviator <n>: abbreviators
+70 [5desk]: - <n>: abbreviator's
+
+85 [ukacd]: abbreviatory
+
+85 [ukacd]: abbreviature
+
+50 [name] [names] 70 [5desk]: Abby <n/person>: Abby's
+
+80 [moby]: Abbyville <n/place>
+
+40 [3esl] 50 [12dicts] [name] 70 [3of6] [5desk] [moby] 80 [ucacr] 85 [ukacd]: ABC <n/upper>
+40 [3esl] 50 [12dicts] [name] 70 [3of6] [5desk] [moby]: - <n/upper>: ABC's
+40 [3esl] 50 [12dicts] 70 [3of6] [5desk] [moby] 80 [ucacr]: - <n/upper>: ABCs
+
+85 [ukacd]: -ABC <abbr>
+
+70 [moby] 80 [2dicts]: abcoulomb <n>: abcoulombs
+
+40 [3esl] 60 [12dicts] 70 [3of6]: ABC's <n/upper>
+
+60 [12dicts] 70 [3of6] [5desk] 80 [ucacr]: ABCs </upper?>
+
+70 [5desk] 80 [ucacr]: ABD <n/abbr?>: ABDs-
+
+85 [ukacd]: abdabs
+
+85 [ukacd]: Abderian </upper?>
+
+85 [ukacd]: Abderite </upper?>
+
+70 [5desk] [moby]: Abdias <n/upper>: Abdias's
+
+80 [enable] 85 [ukacd]: abdicable <aj>
+
+85 [ukacd]: abdicant
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abdicate <v>
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: abdicated, abdicating, abdicates
+
+35 [12dicts] 40 [3esl] 50 [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abdication <n>
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: abdications
+
+70 [5desk] 80 [enable] 85 [ukacd]: abdicator <n>: abdicators
+70 [5desk]: - <n>: abdicator's
+
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abdomen <n>: abdomens
+
+80 [enable]: abdomina
+
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abdominal <aj>
+
+70 [3of6] 85 [ukacd]: -abdominal <n>
+70 [3of6] 80 [2dicts] 85 [ukacd]: - <n>: abdominals
+
+70 [5desk] 80 [enable] 85 [ukacd]: abdominally
+
+80 [2dicts]: abdominoplasty <n>: abdominoplasties
+
+70 [moby] 85 [ukacd]: abdominous <aj>
+
+70 [moby] 85 [stale] [ukacd]: abduce <v>: abduced, abducing, abduces
+
+80 [enable]: abducens <n>
+
+70 [moby]: abducens nerve <n>
+
+70 [moby] 80 [enable] 85 [ukacd]: abducent <n>
+
+70 [moby] 80 [enable] 85 [ukacd]: abducent <aj>
+
+80 [enable]: abducentes
+
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abduct <v>: abducted, -, abducts
+35 [12dicts] 40 [3esl] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: -, abducting, -
+
+50 [+] 80 [3of6] [enable] [ospdadd] 85 [ukacd]: abductee <n>: abductees
+
+70 [3of6] 80 [enable] 85 [ukacd]: abducting <aj>
+
+40 [3esl] 50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abduction <n>: abductions
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abductor <n>: abductors
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby]: - <n>: abductor's
+
+80 [enable]: abductores
+
+50 [name] [names]: Abdul <n/person>: Abdul's
+
+50 [name]: Abdul-Jabbar <n/name?>: Abdul-Jabbar's
+
+85 [ukacd]: Abdullah </upper?>
+
+50 [name] [names] 85 [ukacd]: Abe <n/person>
+50 [name] [names]: - <n/person>: Abe's
+
+50 [12dicts] 70 [5desk] [moby] 80 [enable] 85 [ukacd]: abeam <av>
+
+85 [ukacd]: abear <n>: abears
+
+85 [ukacd]: abearing
+
+70 [5desk] [moby] 80 [enable] 85 [ukacd]: abecedarian <n>: abecedarians
+70 [5desk] [moby]: - <n>: abecedarian's
+
+70 [5desk] [moby] 80 [enable] 85 [ukacd]: abecedarian <aj>
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abed <av>
+
+70 [moby] 85 [ukacd]: Abednego </upper?>
+
+80 [ospdadd]: abegging
+
+85 [ukacd]: abeigh
+
+50 [name] [names] 70 [5desk] [moby] 85 [ukacd]: Abel <n/person>
+50 [name] [names] 70 [5desk] [moby]: - <n/person>: Abel's
+
+50 [12dicts] [name] 70 [5desk] [moby] 85 [ukacd]: Abel <n/upper>
+50 [12dicts] [name] 70 [5desk] [moby]: - <n/upper>: Abel's
+
+50 [name] 60 [12dicts] 70 [5desk] [moby] 85 [ukacd]: Abelard <n/upper>
+50 [name] 60 [12dicts] 70 [5desk] [moby]: - <n/upper>: Abelard's
+
+70 [moby] 80 [enable] 85 [ukacd]: abele <n>: abeles
+
+80 [enable] 85 [ukacd]: abelia <n>
+80 [enable]: - <n>: abelias
+
+80 [enable]: abelian
+
+80 [upper]: Abelian </upper?>
+
+80 [moby]: Abell <n/place>
+
+70 [moby] 80 [enable]: abelmosk <n>: abelmosks
+
+50 [name]: Abelson <n/name?>: Abelson's
+
+70 [5desk] 80 [upper]: Abenaki <n/upper>: Abenakis-
+70 [5desk]: - <n/upper>: Abenaki's
+
+80 [moby]: Abercrombie <n/place>
+
+70 [moby] 85 [ukacd]: Aberdare <n/upper>
+
+50 [name] 60 [12dicts] 60 US [town] 70 [5desk] [moby] 85 [ukacd]: Aberdeen <n/place>
+50 [name] 60 [12dicts] 60 US [town] 70 [5desk] [moby]: - <n/place>: Aberdeen's
+
+70 [moby] 85 [ukacd]: Aberdeen Angus <n/upper>
+70 [moby]: - <n/upper>: Aberdeen Angus's
+
+85 [ukacd]: Aberdeenshire </upper?>
+
+85 [ukacd]: aberdevine <n>: aberdevines
+
+70 [5desk] 80 [upper] 85 [ukacd]: Aberdonian <aj/upper>
+
+80 [upper] 85 [ukacd]: -Aberdonian <n/upper?>: Aberdonians
+
+80 [moby]: Abernant <n/place>
+
+50 [name] 70 [5desk]: Abernathy <n/name?>: Abernathy's
+
+85 [ukacd]: Abernethy biscuit </upper?>
+
+70 [5desk] 80 [enable] 85 [ukacd]: aberrance <n>
+70 [5desk] 80 [enable]: - <n>: aberrances
+
+70 [5desk] 80 [enable] 85 [ukacd]: aberrancy <n>: aberrancies
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: aberrant <aj>
+
+80 [enable] 85 [ukacd]: -aberrant <n>
+80 [enable]: - <n>: aberrants
+
+70 [5desk] 80 [enable]: aberrantly
+
+80 [enable] 85 [ukacd]: - <v>: aberrated, -, -
+85 [ukacd]: aberrate <v>: -, aberrating, aberrates
+
+35 [12dicts] 40 [3esl] 50 [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: aberration <n>
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: aberrations
+
+60 [12dicts] 70 [5desk] 80 [enable] 85 [ukacd]: aberrational <a>
+
+85 [ukacd]: Aberystwyth </upper?>
+
+70 [moby] 80 [ospdadd] 85 [ukacd]: abessive <n>
+70 [moby] 80 [ospdadd]: - <n>: abessives
+
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abet <v>: -, abetting, abets
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: abetted, -, -
+
+70 [5desk] 80 [enable] 85 [ukacd]: abetment <n>: abetments
+
+80 [enable] 85 [ukacd]: abettal <n>: abettals
+
+50 [12dicts] 70 [5desk] [moby] 80 [enable] 85 [ukacd]: A Bv C: abettor <n>: abettors
+50 [12dicts] 70 [5desk] [moby] 80 [enable] 85 [ukacd]: Av B: abetter <n>: abetters
+50 [12dicts] 70 [5desk] [moby]: A Bv C: - <n>: abettor's
+50 [12dicts] 70 [5desk] [moby]: Av B: - <n>: abetter's
+
+50 [12dicts] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abeyance <n>
+80 [12dicts] [5desk] [enable] [moby] 85 [ukacd]: - <n>: abeyances~
+
+85 [stale] [ukacd]: abeyancy <n>: abeyancies
+
+70 [5desk] [moby] 80 [enable] 85 [ukacd]: abeyant <aj>
+
+70 [moby] 80 [enable]: abfarad <n>: abfarads
+
+70 [moby] 80 [enable]: abhenry <n>: abhenries
+
+80 [enable]: abhenrys
+
+85 [ukacd]: abhominable
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abhor <v>
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: abhorred, abhorring, abhors
+
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abhorrence <n>
+80 [12dicts] [3esl] [5desk] [enable] [moby] 85 [ukacd]: - <n>: abhorrences~
+
+85 [ukacd]: abhorrency
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abhorrent <aj>
+
+60 [12dicts] 70 [5desk] 80 [enable] 85 [ukacd]: abhorrently <a>
+
+70 [5desk] 80 [enable] 85 [ukacd]: abhorrer <n>: abhorrers
+70 [5desk]: - <n>: abhorrer's
+
+70 [5desk] [moby] 80 [upper] 85 [ukacd]: Abib <n/upper?>
+70 [5desk] [moby] 80 [upper]: - <n/upper?>: Abibs
+
+60 [12dicts] 70 [5desk] 80 [enable] 85 [ukacd]: abidance <n>
+80 [12dicts] [5desk] [enable] 85 [ukacd]: - <n>: abidances~
+
+85 [ukacd]: abidden
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abide <v>
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: (abode | ~: abided), -, abides
+35 [12dicts] 40 [3esl] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: -, abiding, -
+
+70 [5desk] 80 [enable]: abider <n>: abiders
+
+40 [3esl] 50 [12dicts] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abiding <aj>
+
+85 [ukacd]: !abiding <n>: abidings
+
+60 [12dicts] 70 [5desk] 80 [enable] 85 [ukacd]: abidingly <a>
+
+50 [name] 60 [12dicts] 70 [5desk] [moby] 85 [ukacd]: Abidjan <n/upper>
+50 [name] 60 [12dicts] 70 [5desk] [moby]: - <n/upper>: Abidjan's
+
+85 [ukacd]: abies <n>: abieses
+
+50 [name] [names] 70 [5desk] [moby]: Abigail <n/person>: Abigail's
+
+70 [moby] 80 [enable] 85 [ukacd]: abigail <n>: abigails
+
+50 [name] 60 [12dicts] 60 US [town] 70 [5desk] [moby]: Abilene <n/place>: Abilene's
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: ability <n>: abilities
+
+85 [ukacd]: !ability <suf>
+
+70 [moby] 85 [ukacd]: Abingdon <n/place>
+
+80 [moby]: Abington <n/place>
+
+70 [moby] 85 [ukacd]: ab initio <av>
+
+70 [moby] 80 [enable] 85 [ukacd]: abiogenesis <n>
+70 [moby] 80 [enable]: - <n>: abiogeneses
+
+70 [moby] 80 [2dicts] 85 [ukacd]: abiogenetic <aj>
+
+80 [2dicts]: abiogenetical
+
+80 [2dicts] 85 [ukacd]: abiogenetically
+
+80 [enable]: abiogenic
+
+80 [enable]: abiogenically
+
+80 [enable] 85 [ukacd]: abiogenist <n>: abiogenists
+
+80 [enable]: abiological
+
+70 [moby] 80 [enable] 85 [ukacd]: abiosis <n>: abioses
+
+70 [5desk] [moby] 80 [enable] 85 [ukacd]: abiotic
+
+80 [enable]: abiotically
+
+80 [moby]: Abiquiu <n/place>
+
+70 [3of6]: a bit <av>
+
+85 [ukacd]: abiturient <n>: abiturients
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abject <aj>
+
+85 [ukacd]: !abject <m>: abjected, abjecting, abjects
+
+60 [12dicts] 70 [5desk] 80 [enable] 85 [ukacd]: abjection <n>
+80 [12dicts] [5desk] [enable] 85 [ukacd]: - <n>: abjections~
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] 80 [enable] 85 [ukacd]: abjectly <av>
+
+60 [12dicts] 70 [5desk] 80 [enable] 85 [ukacd]: abjectness <n>
+80 [12dicts] [5desk] [enable]: - <n>: abjectnesses~
+
+85 [ukacd]: abjoint <m>: abjointed, abjointing, abjoints
+
+85 [ukacd]: abjunction <n>: abjunctions
+
+50 [12dicts] 70 [5desk] [moby] 80 [enable] 85 [ukacd]: abjuration <n>: abjurations
+
+60 [12dicts] 70 [5desk] 80 [2dicts]: abjuratory <a>
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abjure <v>: abjured, abjuring, abjures
+
+60 [12dicts] 70 [5desk] 80 [enable] 85 [ukacd]: abjurer <n>: abjurers
+60 [12dicts] 70 [5desk]: - <n>: abjurer's
+
+80 [upper]: Abkhas <n/upper>: Abkhases-
+
+80 [upper]: Abkhasian <n/upper>: Abkhasians-
+
+80 [upper]: Abkhaz <n/upper>: Abkhazes-
+
+80 [upper]: Abkhaz <aj/upper>
+
+70 [5desk]: Abkhazia <n/place>
+
+70 [5desk] 80 [upper]: Abkhazian <n/upper>: Abkhazians
+70 [5desk]: - <n/upper>: Abkhazian's
+
+70 [5desk] 80 [upper]: Abkhazian <aj/upper>
+
+80 [moby]: abl. <abbr>
+
+85 [ukacd]: ablactation <n>
+
+60 [12dicts] 70 [5desk] [moby] 80 [enable] 85 [ukacd]: ablate <v>: ablated, ablating, ablates
+
+80 [enable] 85 [ukacd]: ablated <aj>
+
+60 [12dicts] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: ablation <n>
+60 [12dicts] 70 [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: ablations
+
+85 [ukacd]: ablatitious
+
+85 [ukacd]: ablatival
+
+50 [12dicts] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: ablative <n>: ablatives
+
+50 [12dicts] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: ablative <aj>
+
+70 [moby] 85 [ukacd]: ablative absolute <n>
+
+80 [enable]: ablatively
+
+80 [ospdadd] 85 [ukacd]: ablator <n>: ablators
+
+70 [5desk] [moby] 80 [enable] 85 [ukacd]: ablaut <n>: ablauts
+
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: ablaze <aj>
+
+35 [] [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: able <aj>
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <aj>: abler, ablest
+
+70 [moby] 85 [ukacd]: !able <suf>
+
+85 [stale] [ukacd]: !able <n>
+85 [stale]: - <n>: ables
+
+40 [3esl] 50 [12dicts] 70 [3of6] [moby] 85 [ukacd]: able-bodied <aj>
+
+60 [12dicts] 70 [moby] 85 [ukacd]: able-bodied seaman <n>
+60 [12dicts] 70 [moby]: - <n>: able-bodied seaman's
+
+85 [ukacd]: able-bodied seawoman
+
+85 [ukacd]: able-bodied seawomen
+
+80 [ospdadd] 85 [ukacd]: abled
+
+85 [stale]: ablegate <n>: ablegates
+
+70 [5desk] 80 [ospdadd]: ableism <n>: ableisms
+
+70 [5desk] 80 [ospdadd]: ableist <n>: ableists
+
+60 [12dicts] 70 [moby] 85 [ukacd]: able seaman <n>
+60 [12dicts] 70 [moby]: - <n>: able seaman's
+
+85 [ukacd]: able seawoman
+
+85 [ukacd]: able seawomen
+
+85 [ukacd]: ablet <n>: ablets
+
+85 [stale]: ablings
+
+85 [stale] [ukacd]: ablins
+
+50 [12dicts] 70 [5desk] [moby] 80 [enable] 85 [ukacd]: abloom <aj>
+
+85 [ukacd]: ablow
+
+80 [enable]: abluent <n>: abluents
+
+85 [stale] [ukacd]: ablush
+
+80 [enable]: abluted
+
+50 [12dicts] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: ablution <n>: ablutions
+
+80 [enable] 85 [ukacd]: ablutionary <aj>
+
+70 [3of6] [5desk] 80 [enable] 85 [ukacd]: ablutions
+
+85 [ukacd]: ablutomane <n>: ablutomanes
+
+35 [12dicts] 40 [3esl] 50 [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: ably <av>
+
+50 [12dicts] 70 [5desk] [moby] 80 [ucacr]: ABM <n/upper>
+50 [12dicts] 70 [5desk] [moby]: - <n/upper>: ABM's
+65 [12dicts] 70 [5desk] [moby] 80 [ucacr]: - <n/upper>: ABMs-
+
+70 [moby] 85 [stale]: abmho <n>: abmhos
+
+70 [5desk] [moby] 80 [upper]: Abnaki <n/upper>: Abnakis-
+70 [5desk] [moby]: - <n/upper>: Abnaki's
+
+70 [5desk] [moby] 80 [upper]: Abnaki <aj/upper>
+
+50 [12dicts] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abnegate <v>: abnegated, abnegating, abnegates
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] 80 [enable] 85 [ukacd]: abnegation <n>
+80 [12dicts] [5desk] [enable] 85 [ukacd]: - <n>: abnegations~
+
+70 [5desk] 80 [enable] 85 [ukacd]: abnegator <n>: abnegators
+70 [5desk]: - <n>: abnegator's
+
+50 [name] 70 [5desk]: Abner <n/name?>: Abner's
+
+70 [moby]: Abney level <n/upper>
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abnormal <aj>
+
+80 [enable] 85 [ukacd]: -abnormal <n>
+80 [enable]: - <n>: abnormals
+
+85 [ukacd]: abnormalism
+
+35 [12dicts] 40 [3esl] 50 [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abnormality <n>
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: abnormalities
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] 80 [enable] 85 [ukacd]: abnormally <av>
+
+70 [moby]: abnormal psychology <n>
+
+70 [moby] 80 [2dicts] 85 [ukacd]: abnormity <n>: abnormities
+
+85 [ukacd]: abnormous
+
+70 [3of6] 80 [upper] 85 [ukacd]: Abo <n/upper> (offensive-2): Abos
+
+80 [enable]: abo <n>: abos
+
+35 [12dicts] 40 [3esl] 50 [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: aboard <av>
+
+35 [12dicts] 40 [3esl] 50 [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: aboard <pp>
+
+35 [12dicts] 50 [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abode <n>
+35 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: abodes
+
+85 [stale] [ukacd]: !abode <v>: -, -, abodes
+85 [stale]: - <v>: aboded, aboding, -
+
+85 [ukacd]: abodement
+
+85 [ukacd]: a'body
+
+70 [moby] 80 [enable]: abohm <n>: abohms
+
+85 [stale] [ukacd]: aboideau <n>: aboideaus
+
+85 [stale] [ukacd]: aboideaux
+
+80 [enable] 85 [ukacd]: aboil
+
+80 [enable] 85 [ukacd]: aboiteau <n>: aboiteaus
+
+80 [enable] 85 [ukacd]: aboiteaux
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abolish <v>: abolished, abolishing, -
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: -, -, abolishes
+
+80 [enable] 85 [ukacd]: abolishable <aj>
+
+70 [5desk] 80 [enable] 85 [ukacd]: abolisher <n>: abolishers
+
+70 [5desk] 80 [enable] 85 [ukacd]: abolishment <n>: abolishments
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abolition <n>
+80 [12dicts] [3esl] [5desk] [enable] [moby] 85 [ukacd]: - <n>: abolitions~
+
+85 [ukacd]: abolitional
+
+80 [enable] 85 [ukacd]: abolitionary <aj>
+
+60 [12dicts] 70 [5desk] 80 [enable] 85 [ukacd]: abolitionism <n>
+80 [12dicts] [5desk] [enable]: - <n>: abolitionisms~
+
+40 [3esl] 50 [12dicts] 60 [brif] 70 [3of6] [5desk] 80 [enable] 85 [ukacd]: abolitionist <n>: abolitionists
+40 [3esl] 50 [12dicts] 60 [brif] 70 [3of6] [5desk]: - <n>: abolitionist's
+
+70 [5desk] 80 [upper]: Abolitionist <n/upper?>: Abolitionists-
+
+85 [stale] [ukacd]: abolla <n>: (abollae | -: abollas) # fixme: abollas: check if variant
+
+85 [stale]: aboma <n>: abomas
+
+80 [enable] 85 [ukacd]: abomasal <aj>
+
+70 [moby] 80 [enable] 85 [ukacd]: abomasum <n>: abomasa
+70 [moby]: - <n>: -, abomasum's, abomasa's
+
+80 [enable] 85 [ukacd]: abomasus <n>: (abomasi | -: abomasuses!) # fixme: abomasuses: check if variant
+
+50 [12dicts] 70 [3of6] [moby] 85 [ukacd]: A-bomb <n/upper>: A-bombs
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abominable <aj>
+
+85 [ukacd]: abominableness
+
+60 [12dicts] 85 [ukacd]: abominable snowman <n>
+60 [12dicts]: - <n>: abominable snowman's
+
+70 [3of6]: Abominable Snowman </upper?>
+
+70 [3of6]: Abominable Snowmen </upper?>
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] 80 [enable] 85 [ukacd]: abominably <av>
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abominate <v>: abominated, abominating, abominates
+
+35 [ukfreq] 50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abomination <n>
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby]: - <n>: abomination's
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: abominations
+
+70 [5desk] 80 [enable] 85 [ukacd]: abominator <n>: abominators
+70 [5desk]: - <n>: abominator's
+
+85 [ukacd]: abondance <n>: abondances
+
+85 [ukacd]: abonnement <n>: abonnements
+
+85 [stale]: aboon
+
+70 [moby] 80 [enable] 85 [ukacd]: aboral <aj>
+
+80 [enable]: aborally
+
+85 [ukacd]: abord <m>: aborded, abording, abords
+
+85 [ukacd]: abore
+
+35 [ukfreq] 40 [3esl] 50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: aboriginal <n>
+40 [3esl] 50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby]: - <n>: aboriginal's
+40 [3esl] 50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <n>: aboriginals
+
+35 [ukfreq] 40 [3esl] 50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: aboriginal <aj>
+
+70 [3of6] [5desk] 80 [upper]: Aboriginal <n/upper>: Aboriginals
+
+85 [ukacd]: aboriginalism
+
+80 [2dicts] 85 [ukacd]: aboriginality <n>
+80 [2dicts]: - <n>: aboriginalities
+
+70 [5desk] 80 [enable] 85 [ukacd]: aboriginally
+
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: aborigine <n>: aborigines
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby]: - <n>: aborigine's
+
+60 [12dicts] 70 [3of6] [5desk] 80 [upper]: Aborigine <n/upper>: Aborigines
+60 [12dicts] 70 [3of6] [5desk]: - <n/upper>: Aborigine's
+
+85 [ukacd]: aborne
+
+60 [12dicts] 70 [5desk] [moby] 80 [enable] 85 [ukacd]: aborning <a>
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abort <v>: aborted, aborting, aborts
+
+85 [ukacd]: !abort <n>
+
+80 [enable]: aborter <n>: aborters
+
+70 [moby] 80 [2dicts] 85 [ukacd]: aborticide <n>: aborticides
+
+70 [5desk] [moby] 80 [enable] 85 [ukacd]: abortifacient <n>: abortifacients
+
+70 [5desk] [moby] 80 [enable] 85 [ukacd]: abortifacient <aj>
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abortion <n>: abortions
+
+85 [ukacd]: abortional
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abortionist <n>: abortionists
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby]: - <n>: abortionist's
+
+35 [12dicts] 40 [3esl] 50 [ukfreq] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abortive <aj>
+
+60 [12dicts] 70 [5desk] 80 [enable] 85 [ukacd]: abortively <av>
+
+80 [enable] 85 [ukacd]: abortiveness <n>
+80 [enable]: - <n>: abortivenesses
+
+80 [ospdadd]: abortus <n>: abortuses
+
+80 [enable] 85 [ukacd]: abought
+
+70 [5desk] [moby] 80 [enable] 85 [ukacd]: aboulia <n>
+70 [5desk] [moby] 80 [enable]: - <n>: aboulias
+
+80 [enable]: aboulic <aj>
+
+35 [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abound <v>
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: abounded, -, abounds
+35 [12dicts] 40 [3esl] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: - <v>: -, abounding, -
+
+70 [3of6] 80 [enable] 85 [ukacd]: abounding <aj>
+
+80 [2dicts]: aboundingly
+
+35 [] [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: about <aj>
+
+35 [] [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: about <av>
+
+35 [] [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: about <pp>
+
+85 [ukacd]: !about <n>: abouts
+
+40 [3esl] 50 [12dicts] 70 [3of6] [moby] 85 [ukacd]: about-face <n>: about-faces
+
+40 [3esl] 50 [12dicts] 70 [moby] 85 [ukacd]: about-face <v>: about-faced, about-facing, -
+
+70 [moby] 85 [ukacd]: about-ship
+
+70 [3of6]: about time
+
+70 [3of6]: about to
+
+70 [3of6] 85 [ukacd]: about-turn <n>: about-turns
+
+35 [] [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: above <n>
+80 [12dicts] [3esl] [5desk] [enable] [moby]: - <n>: aboves~
+
+35 [] [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: above <aj>
+
+35 [] [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: above <av>
+
+35 [] [12dicts] [ukfreq] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: above <pp>
+
+70 [3of6] 85 [ukacd]: above all <av>
+
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable]: aboveboard <aj>
+
+35 [12dicts] 40 [3esl] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable]: aboveboard <av>
+
+85 [ukacd]: above-board
+
+70 [moby] 80 [enable]: aboveground <aj>
+
+85 [ukacd]: above-ground
+
+60 [12dicts] 70 [3of6] 85 [ukacd]: above-mentioned <aj>
+
+80 [2dicts]: abovementioned
+
+70 [moby] 85 [ukacd]: ab ovo
+
+80 [moby]: abr. <abbr>
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abracadabra <n>
+80 [12dicts] [5desk] [enable] [moby] 85 [ukacd]: - <n>: abracadabras~
+
+80 [enable]: abrachia <n>: abrachias
+
+80 [enable]: abradable
+
+70 [moby] 80 [enable] 85 [ukacd]: abradant <n>: abradants
+
+50 [12dicts] 60 [brif] 70 [3of6] [5desk] [moby] 80 [enable] 85 [ukacd]: abrade <v>: abraded, abrading, abrades
+
+70 [5desk] 80 [enable] 85 [ukacd]: abrader <n>: abraders
+
+50 [name] [names] 70 [5desk] [moby] 85 [ukacd]: Abraham <n/person>
+50 [name] [names] 70 [5desk] [moby]: - <n/person>: Abraham's
+
+50 [12dicts] [name] 70 [5desk] [moby] 85 [ukacd]: Abraham <n/upper>
+50 [12dicts] [name] 70 [5desk] [moby]: - <n/upper>: Abraham's
+
+85 [ukacd]: abraid <m>: abraided, abraiding, abraids
+
+50 [name]: Abram <n/name?>: Abram's
+
+85 [ukacd]: abram
+
+50 [name]: Abrams <n/name?>: Abrams's
+
+80 [moby]: Abrams <n/place>
+
+80 [2dicts] 85 [ukacd]: abranchial <aj>
+computer
+receiver
+separated
+writing
+speaking
+listening
+friend
+family
+working
+school
+home
+cared
+booked
+food
+watered
+time
+daily
+nightly
+morning
+evening
+year
+monthly
+week
+today
+yesterday
+tomorrow
+life
+story
+tell
+written
+reading
+speaking
+listened
+headphone
+monitor
+keyboard
+mouse
+charger
+battery
+display
+wireless
+bluetooth
+charge
+adapter
+cable
+portable
+storage
+memory
+processor
+graphics
+software
+hardware
+network
+connection
+download
+upload
+browser
+website
+search
+result
+product
+customer
+order
+shipping
+delivery
+payment
+checkout
+cart
+wishlist
+review
+rating
+available
+stock
+discount
+coupon
+price
+cost
+value
+quality
+brand
+model
+feature
+specifications
+compatible
+warranty
+support
+service
+help
+contact
+information
+detail
+description
+image
+picture
+video
+tutorial
+guide
+manual
+install
+setup
+configuration
+update
+version
+release
+bug
+fix
+error
+issue
+solve
+troubleshoot
+frequently asked questions
+knowledge
+based
+advanced
+beginner
+expert
+usage
+tip
+trick
+hack
+tool
+utility
+application
+program
+software
+gaming
+entertainment
+music
+movie
+series
+show
+sport
+news
+weather
+travel
+food
+health
+fitness
+beauty
+fashion
+shopping
+deal
+sale
+offer
+promotion
+event
+celebration
+holiday
+season
+weekend
+vacation
+trip
+destination
+hotel
+flight
+booking
+reservation
+confirmation
+cancellation
+refund
+exchange
+complaint
+feedback
+suggestion
+recommendation
+favorite
+like
+dislike
+share
+follow
+subscribe
+notification
+alert
+message
+chat
+conversation
+communication
+social
+media
+platform
+account
+profile
+setting
+privacy
+security
+password
+login
+logout
+sign
+register
+verify
+authentication
+access
+permission
+authorize
+block
+report
+spam
+virus
+malware
+firewall
+antivirus
+backup
+restore
+sync
+cloud
+store
+file
+folder
+document
+spreadsheet
+presentation
+database
+server
+host
+domain
+website
+url
+link
+click
+visit
+browse
+navigate
+scroll
+zoom
+fullscreen
+screenshot
+print
+save
+export
+import
+copy
+paste
+cut
+delete
+edit
+modify
+change
+update
+refresh
+reload
+restart
+shutdown
+power
+battery
+charge
+plug
+wire
+cable
+connect
+disconnect
+pair
+unpair
+sync
+transfer
+send
+receive
+download
+upload
+stream
+play
+pause
+stop
+rewind
+fast forward
+volume
+mute
+sound
+audio
+video
+picture
+image
+photo
+camera
+record
+capture
+edit
+filter
+effect
+sharpen
+blur
+brightness
+contrast
+color
+hue
+saturation
+white balance
+exposure
+focus
+zoom
+flash
+timer
+selfie
+portrait
+landscape
+panorama
+hdr
+night mode
+slow motion
+time lapse
+stabilization
+gyroscope
+accelerometer
+compass
+gps
+location
+map
+navigation
+route
+direction
+traffic
+parking
+gas station
+restaurant
+hotel
+museum
+park
+beach
+mountain
+forest
+lake
+river
+ocean
+sky
+cloud
+rain
+snow
+wind
+storm
+sun
+moon
+star
+planet
+universe
+galaxy
+space
+astronaut
+rocket
+satellite
+telescope
+microscope
+laboratory
+scientist
+inventor
+discovery
+experiment
+theory
+hypothesis
+evidence
+data
+analysis
+research
+study
+learn
+teach
+school
+university
+college
+student
+teacher
+professor
+class
+lesson
+exam
+test
+grade
+diploma
+certificate
+degree
+major
+minor
+course
+subject
+math
+science
+history
+geography
+language
+literature
+art
+music
+sport
+physics
+chemistry
+biology
+economics
+psychology
+sociology
+philosophy
+religion
+politics
+law
+medicine
+engineering
+architecture
+design
+fashion
+cuisine
+cook
+bake
+recipe
+ingredient
+nutrition
+diet
+exercise
+yoga
+meditation
+relaxation
+stress
+anxiety
+depression
+therapy
+counseling
+doctor
+nurse
+hospital
+clinic
+pharmacy
+medicine
+prescribe
+diagnose
+treatment
+surgery
+vaccine
+immunity
+virus
+bacteria
+infection
+disease
+illness
+symptom
+fever
+cough
+headache
+pain
+injury
+fracture
+burn
+cut
+bleeding
+bandage
+first aid
+emergency
+ambulance
+firefighter
+policeman
+crime
+theft
+accident
+disaster
+earthquake
+flood
+hurricane
+tornado
+volcano
+wildfire
+tsunami
+drought
+famine
+poverty
+homeless
+refugee
+migration
+immigrant
+citizen
+government
+president
+prime minister
+parliament
+election
+vote
+democracy
+dictatorship
+freedom
+right
+duty
+responsibility
+justice
+equality
+peace
+war
+conflict
+negotiation
+treaty
+alliance
+enemies
+victory
+defeat
+battle
+soldier
+weapon
+bomb
+gun
+knife
+sword
+shield
+armor
+castle
+fortress
+palace
+church
+temple
+mosque
+synagogue
+cemetery
+grave
+funeral
+wedding
+birthday
+christmas
+easter
+halloween
+thanksgiving
+new year
+valentine
+mother day
+father day
+independence day
+labor day
+memorial day
+veterans day
+martin luther king day
+presidents day
+columbus day
+thanksgiving
+black friday
+cyber monday
+boxing day
+april fools day
+earth day
+world health day
+international womens day
+world environment day
+world water day
+world food day
+world teachers day
+world peace day
+human rights day
