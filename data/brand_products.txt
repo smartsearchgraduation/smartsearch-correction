@@ -1,0 +1,754 @@
+# Brand-Specific Product Lines and Model Numbers
+# High-priority vocabulary for electronics e-commerce
+# Format: one term per line
+
+# ===========================================
+# ASUS PRODUCT LINES
+# ===========================================
+asus
+rog
+republic
+gamers
+strix
+zephyrus
+tuf
+zenbook
+vivobook
+proart
+expertbook
+chromebook
+rog strix
+rog zephyrus
+rog flow
+rog ally
+tuf gaming
+tuf dash
+zenbook pro
+zenbook duo
+vivobook pro
+vivobook go
+# ASUS ROG Gaming Products
+rog headset
+rog mouse
+rog keyboard
+rog monitor
+rog laptop
+rog desktop
+rog phone
+rog router
+rog earbuds
+rog controller
+# ASUS Model Numbers
+g14
+g15
+g16
+g17
+g501
+g502
+g531
+g532
+g533
+g551
+g552
+g553
+g713
+g731
+g733
+g771
+ga401
+ga402
+ga503
+gu502
+gx501
+gx502
+gx531
+gx701
+gx703
+fx504
+fx505
+fx506
+fx507
+fx516
+fx517
+fx705
+fx706
+fx707
+pg279
+pg32
+vg27
+vg32
+xg27
+xg32
+
+# ===========================================
+# DELL PRODUCT LINES
+# ===========================================
+dell
+xps
+inspiron
+latitude
+precision
+alienware
+vostro
+optiplex
+poweredge
+g series
+g15
+g16
+# Dell XPS Series
+xps 13
+xps 14
+xps 15
+xps 16
+xps 17
+# Dell Alienware
+alienware m15
+alienware m16
+alienware m17
+alienware m18
+alienware x14
+alienware x15
+alienware x16
+alienware x17
+alienware aurora
+alienware area 51
+# Dell Model Numbers
+9310
+9315
+9320
+9325
+9360
+9500
+9510
+9520
+9530
+7500
+7510
+7520
+7530
+5500
+5510
+5520
+5530
+3500
+3510
+3520
+3530
+
+# ===========================================
+# HP PRODUCT LINES
+# ===========================================
+hp
+hewlett
+packard
+omen
+pavilion
+spectre
+envy
+elitebook
+probook
+zbook
+victus
+dragonfly
+# HP Gaming
+omen gaming
+omen laptop
+omen desktop
+omen monitor
+omen headset
+omen mouse
+omen keyboard
+victus gaming
+victus laptop
+# HP Model Numbers
+15-dk
+15-ec
+15-en
+16-c
+16-d
+16-e
+16-n
+16-s
+17-ck
+17-cm
+
+# ===========================================
+# LENOVO PRODUCT LINES
+# ===========================================
+lenovo
+thinkpad
+thinkbook
+thinkcentre
+thinkstation
+ideapad
+ideacentre
+legion
+yoga
+loq
+# Lenovo Legion Gaming
+legion 5
+legion 5i
+legion 5 pro
+legion 5i pro
+legion 7
+legion 7i
+legion slim
+legion tower
+legion go
+# Lenovo ThinkPad
+thinkpad x1
+thinkpad x1 carbon
+thinkpad x1 yoga
+thinkpad t14
+thinkpad t16
+thinkpad p14
+thinkpad p16
+thinkpad e14
+thinkpad e16
+thinkpad l14
+thinkpad l16
+# Lenovo Model Numbers
+82jh
+82jk
+82rc
+82re
+82rp
+
+# ===========================================
+# RAZER PRODUCT LINES
+# ===========================================
+razer
+blade
+stealth
+book
+basilisk
+deathadder
+viper
+naga
+huntsman
+blackwidow
+ornata
+cynosa
+kraken
+barracuda
+opus
+hammerhead
+kiyo
+seiren
+# Razer Blade
+razer blade 14
+razer blade 15
+razer blade 16
+razer blade 17
+razer blade 18
+razer blade stealth
+# Razer Peripherals
+razer headset
+razer mouse
+razer keyboard
+razer monitor
+razer webcam
+razer microphone
+razer controller
+razer dock
+razer stand
+
+# ===========================================
+# MSI PRODUCT LINES  
+# ===========================================
+msi
+katana
+titan
+raider
+stealth
+vector
+pulse
+cyborg
+crosshair
+sword
+bravo
+alpha
+delta
+creator
+prestige
+modern
+summit
+# MSI Gaming Laptops
+katana gf66
+katana gf76
+titan gt77
+raider ge66
+raider ge76
+stealth gs66
+stealth gs77
+vector gp66
+vector gp76
+pulse gl66
+pulse gl76
+crosshair 15
+crosshair 17
+sword 15
+sword 17
+# MSI Model Numbers
+gf63
+gf65
+gf66
+gf75
+gf76
+gp66
+gp76
+gs63
+gs65
+gs66
+gs75
+gs76
+gs77
+gt63
+gt75
+gt76
+gt77
+ge63
+ge66
+ge75
+ge76
+
+# ===========================================
+# APPLE PRODUCT LINES
+# ===========================================
+apple
+macbook
+macbook air
+macbook pro
+imac
+mac mini
+mac studio
+mac pro
+ipad
+ipad pro
+ipad air
+ipad mini
+iphone
+iphone pro
+iphone pro max
+iphone plus
+airpods
+airpods pro
+airpods max
+apple watch
+apple watch ultra
+apple watch se
+homepod
+homepod mini
+airtag
+apple tv
+# Apple Chips
+m1
+m1 pro
+m1 max
+m1 ultra
+m2
+m2 pro
+m2 max
+m2 ultra
+m3
+m3 pro
+m3 max
+m4
+m4 pro
+m4 max
+a14
+a15
+a16
+a17
+a17 pro
+
+# ===========================================
+# SAMSUNG PRODUCT LINES
+# ===========================================
+samsung
+galaxy
+galaxy s
+galaxy s24
+galaxy s24 plus
+galaxy s24 ultra
+galaxy s23
+galaxy s23 plus
+galaxy s23 ultra
+galaxy z
+galaxy z fold
+galaxy z flip
+galaxy a
+galaxy a54
+galaxy a34
+galaxy a24
+galaxy a14
+galaxy tab
+galaxy tab s9
+galaxy tab s8
+galaxy tab a
+galaxy book
+galaxy book pro
+galaxy book 360
+galaxy buds
+galaxy buds pro
+galaxy buds live
+galaxy buds fe
+galaxy watch
+galaxy watch ultra
+galaxy watch classic
+galaxy fit
+# Samsung Model Numbers
+sm-s911
+sm-s916
+sm-s918
+sm-s921
+sm-s926
+sm-s928
+sm-f946
+sm-f731
+sm-a546
+sm-a346
+sm-t870
+sm-x710
+
+# ===========================================
+# LOGITECH PRODUCT LINES
+# ===========================================
+logitech
+logi
+g pro
+g pro x
+g502
+g402
+g305
+g203
+g703
+g903
+g915
+g815
+g713
+g715
+g435
+g535
+g733
+g933
+g935
+gpro wireless
+gpro x superlight
+mx master
+mx anywhere
+mx keys
+mx mechanical
+mx ergo
+mx vertical
+brio
+streamcam
+c920
+c922
+c930
+c1000
+zone vibe
+zone wired
+zone wireless
+# Logitech Gaming
+logitech headset
+logitech mouse
+logitech keyboard
+logitech webcam
+logitech speaker
+logitech controller
+
+# ===========================================
+# CORSAIR PRODUCT LINES
+# ===========================================
+corsair
+vengeance
+dominator
+k70
+k100
+k65
+k55
+k60
+dark core
+harpoon
+ironclaw
+nightsword
+scimitar
+sabre
+m65
+katar
+void
+hs50
+hs60
+hs70
+hs80
+virtuoso
+# Corsair Products
+corsair headset
+corsair mouse
+corsair keyboard
+corsair mousepad
+corsair ram
+corsair ssd
+corsair psu
+corsair case
+corsair cooler
+corsair fan
+
+# ===========================================
+# STEELSERIES PRODUCT LINES
+# ===========================================
+steelseries
+arctis
+arctis nova
+arctis pro
+arctis 7
+arctis 9
+arctis 1
+apex
+apex pro
+apex 3
+apex 5
+apex 7
+aerox
+prime
+rival
+sensei
+qck
+# Steelseries Products
+steelseries headset
+steelseries mouse
+steelseries keyboard
+steelseries mousepad
+
+# ===========================================
+# HYPERX PRODUCT LINES
+# ===========================================
+hyperx
+cloud
+cloud alpha
+cloud ii
+cloud iii
+cloud core
+cloud stinger
+cloud flight
+cloud orbit
+cloud mix
+alloy
+alloy origins
+alloy elite
+alloy fps
+alloy core
+pulsefire
+pulsefire haste
+pulsefire surge
+pulsefire core
+pulsefire fps
+fury
+predator
+# HyperX Products
+hyperx headset
+hyperx mouse
+hyperx keyboard
+hyperx mousepad
+hyperx ram
+hyperx ssd
+
+# ===========================================
+# NVIDIA PRODUCT LINES
+# ===========================================
+nvidia
+geforce
+geforce rtx
+geforce gtx
+quadro
+tesla
+shield
+# RTX 40 Series
+rtx 4090
+rtx 4080
+rtx 4080 super
+rtx 4070
+rtx 4070 super
+rtx 4070 ti
+rtx 4070 ti super
+rtx 4060
+rtx 4060 ti
+# RTX 30 Series
+rtx 3090
+rtx 3090 ti
+rtx 3080
+rtx 3080 ti
+rtx 3070
+rtx 3070 ti
+rtx 3060
+rtx 3060 ti
+rtx 3050
+# GTX Series
+gtx 1660
+gtx 1660 super
+gtx 1660 ti
+gtx 1650
+gtx 1650 super
+gtx 1080
+gtx 1080 ti
+gtx 1070
+gtx 1070 ti
+gtx 1060
+
+# ===========================================
+# AMD PRODUCT LINES
+# ===========================================
+amd
+radeon
+radeon rx
+ryzen
+ryzen 5
+ryzen 7
+ryzen 9
+ryzen 3
+threadripper
+epyc
+athlon
+# Radeon RX 7000 Series
+rx 7900 xtx
+rx 7900 xt
+rx 7900 gre
+rx 7800 xt
+rx 7700 xt
+rx 7600
+rx 7600 xt
+# Radeon RX 6000 Series
+rx 6950 xt
+rx 6900 xt
+rx 6800 xt
+rx 6800
+rx 6750 xt
+rx 6700 xt
+rx 6650 xt
+rx 6600 xt
+rx 6600
+rx 6500 xt
+# Ryzen Desktop CPUs
+ryzen 9 7950x
+ryzen 9 7950x3d
+ryzen 9 7900x
+ryzen 9 7900x3d
+ryzen 9 7900
+ryzen 7 7800x3d
+ryzen 7 7700x
+ryzen 7 7700
+ryzen 5 7600x
+ryzen 5 7600
+# Ryzen Mobile APUs
+ryzen 9 7945hx
+ryzen 9 7940hs
+ryzen 7 7840hs
+ryzen 7 7840u
+ryzen 5 7640hs
+ryzen 5 7640u
+
+# ===========================================
+# INTEL PRODUCT LINES
+# ===========================================
+intel
+core
+core i3
+core i5
+core i7
+core i9
+core ultra
+pentium
+celeron
+xeon
+arc
+# Intel 14th Gen (Raptor Lake Refresh)
+i9-14900k
+i9-14900kf
+i9-14900
+i7-14700k
+i7-14700kf
+i7-14700
+i5-14600k
+i5-14600kf
+i5-14600
+i5-14500
+i5-14400
+i3-14100
+# Intel 13th Gen (Raptor Lake)
+i9-13900k
+i9-13900kf
+i9-13900
+i7-13700k
+i7-13700kf
+i7-13700
+i5-13600k
+i5-13600kf
+i5-13600
+i5-13500
+i5-13400
+i3-13100
+# Intel Mobile
+i9-13980hx
+i9-13950hx
+i9-13900hx
+i7-13800h
+i7-13700h
+i7-13650hx
+i5-13600h
+i5-13500h
+i5-13450hx
+# Intel Arc GPUs
+arc a770
+arc a750
+arc a580
+arc a380
+arc a310
+
+# ===========================================
+# COMMON PRODUCT TYPES
+# ===========================================
+laptop
+notebook
+ultrabook
+gaming laptop
+workstation
+desktop
+gaming desktop
+pc
+gaming pc
+all in one
+aio
+monitor
+gaming monitor
+curved monitor
+ultrawide
+headset
+gaming headset
+wireless headset
+headphones
+earbuds
+wireless earbuds
+tws
+mouse
+gaming mouse
+wireless mouse
+ergonomic mouse
+keyboard
+gaming keyboard
+mechanical keyboard
+wireless keyboard
+mousepad
+gaming mousepad
+webcam
+streaming webcam
+microphone
+streaming microphone
+usb microphone
+controller
+gamepad
+gaming controller
+chair
+gaming chair
+desk
+gaming desk
