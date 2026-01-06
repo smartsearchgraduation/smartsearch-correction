@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartSearch Correction - Test UI</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        min-height: 100vh;
+        color: #e4e4e4;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        background: linear-gradient(90deg, #00d9ff, #00ff88);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        color: #888;
+        font-size: 1rem;
+      }
+
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        margin-top: 15px;
+        font-size: 0.9rem;
+      }
+
+      .status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ff4444;
+        animation: pulse 2s infinite;
+      }
+
+      .status-dot.connected {
+        background: #00ff88;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .main-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .input-section {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
+
+      .query-input {
+        flex: 1;
+        padding: 15px 20px;
+        font-size: 1.1rem;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.3);
+        color: #fff;
+        transition: all 0.3s ease;
+      }
+
+      .query-input:focus {
+        outline: none;
+        border-color: #00d9ff;
+        box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+      }
+
+      .query-input::placeholder {
+        color: #666;
+      }
+
+      .btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #00d9ff, #00a8cc);
+        color: #000;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+      }
+
+      .btn-primary:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .model-section {
+        margin-bottom: 25px;
+      }
+
+      .model-section label {
+        display: block;
+        margin-bottom: 12px;
+        font-weight: 500;
+        color: #aaa;
+      }
+
+      .model-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+      }
+
+      .model-option {
+        position: relative;
+      }
+
+      .model-option input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .model-option label {
+        display: block;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .model-option input:checked + label {
+        border-color: #00d9ff;
+        background: rgba(0, 217, 255, 0.1);
+      }
+
+      .model-option label:hover {
+        border-color: rgba(0, 217, 255, 0.5);
+      }
+
+      .model-name {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #fff;
+      }
+
+      .model-info {
+        font-size: 0.8rem;
+        color: #888;
+      }
+
+      .model-latency {
+        color: #00ff88;
+      }
+
+      .model-accuracy {
+        color: #ffaa00;
+      }
+
+      .model-desc {
+        font-size: 0.7rem;
+        color: #666;
+        margin-top: 4px;
+        font-style: italic;
+      }
+
+      .result-section {
+        display: none;
+      }
+
+      .result-section.show {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .result-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .result-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .latency-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        background: rgba(0, 255, 136, 0.1);
+        border: 1px solid rgba(0, 255, 136, 0.3);
+        border-radius: 20px;
+        color: #00ff88;
+        font-weight: 600;
+      }
+
+      .latency-badge.slow {
+        background: rgba(255, 170, 0, 0.1);
+        border-color: rgba(255, 170, 0, 0.3);
+        color: #ffaa00;
+      }
+
+      .latency-badge.very-slow {
+        background: rgba(255, 68, 68, 0.1);
+        border-color: rgba(255, 68, 68, 0.3);
+        color: #ff4444;
+      }
+
+      .result-comparison {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .result-box {
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .result-label {
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .result-text {
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
+      .result-text.original {
+        color: #ff6b6b;
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+
+      .result-text.corrected {
+        color: #00ff88;
+      }
+
+      .result-text.unchanged {
+        color: #00d9ff;
+      }
+
+      .arrow {
+        font-size: 2rem;
+        color: #00d9ff;
+      }
+
+      .no-change {
+        text-align: center;
+        padding: 20px;
+        color: #00d9ff;
+      }
+
+      .history-section {
+        margin-top: 30px;
+      }
+
+      .history-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .history-title h3 {
+        font-size: 1rem;
+        color: #888;
+      }
+
+      .btn-clear {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        background: rgba(255, 68, 68, 0.1);
+        border: 1px solid rgba(255, 68, 68, 0.3);
+        color: #ff6b6b;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .btn-clear:hover {
+        background: rgba(255, 68, 68, 0.2);
+      }
+
+      .history-list {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      .history-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+      }
+
+      .history-query {
+        flex: 1;
+      }
+
+      .history-original {
+        color: #888;
+      }
+
+      .history-arrow {
+        color: #00d9ff;
+        margin: 0 10px;
+      }
+
+      .history-corrected {
+        color: #00ff88;
+      }
+
+      .history-meta {
+        display: flex;
+        gap: 15px;
+        font-size: 0.8rem;
+      }
+
+      .history-model {
+        color: #888;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 3px 8px;
+        border-radius: 4px;
+      }
+
+      .history-latency {
+        color: #00ff88;
+      }
+
+      .examples-section {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .examples-title {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 12px;
+      }
+
+      .example-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .example-chip {
+        padding: 8px 15px;
+        background: rgba(0, 217, 255, 0.1);
+        border: 1px solid rgba(0, 217, 255, 0.2);
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: #00d9ff;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .example-chip:hover {
+        background: rgba(0, 217, 255, 0.2);
+        border-color: #00d9ff;
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        padding: 30px;
+      }
+
+      .loading.show {
+        display: block;
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(0, 217, 255, 0.2);
+        border-top-color: #00d9ff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 15px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .error-message {
+        display: none;
+        padding: 15px 20px;
+        background: rgba(255, 68, 68, 0.1);
+        border: 1px solid rgba(255, 68, 68, 0.3);
+        border-radius: 12px;
+        color: #ff6b6b;
+        margin-bottom: 20px;
+      }
+
+      .error-message.show {
+        display: block;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        color: #555;
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: #00d9ff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔍 SmartSearch Correction</h1>
+        <p class="subtitle">E-commerce Search Query Spell Correction Test UI</p>
+        <div class="status-badge">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Checking API...</span>
+        </div>
+      </header>
+
+      <div class="main-card">
+        <div class="error-message" id="errorMessage"></div>
+
+        <div class="model-section">
+          <label>Select Correction Model</label>
+          <div class="model-grid">
+            <div class="model-option">
+              <input
+                type="radio"
+                name="model"
+                id="symspell_keyboard"
+                value="symspell_keyboard"
+                checked
+              />
+              <label for="symspell_keyboard">
+                <div class="model-name">⚡ SymSpell + Keyboard</div>
+                <div class="model-info">
+                  <span class="model-latency">~0.1ms</span> ·
+                  <span class="model-accuracy">98% acc</span>
+                </div>
+                <div class="model-desc">Hybrid (Production)</div>
+              </label>
+            </div>
+            <div class="model-option">
+              <input type="radio" name="model" id="byt5" value="byt5" />
+              <label for="byt5">
+                <div class="model-name">🧠 ByT5 Fine-tuned</div>
+                <div class="model-info">
+                  <span class="model-latency">~300ms</span> ·
+                  <span class="model-accuracy">100% acc</span>
+                </div>
+                <div class="model-desc">Our Custom Model</div>
+              </label>
+            </div>
+            <div class="model-option">
+              <input type="radio" name="model" id="e5_onnx" value="e5_onnx" />
+              <label for="e5_onnx">
+                <div class="model-name">🔮 E5 ONNX</div>
+                <div class="model-info">
+                  <span class="model-latency">~10ms</span> ·
+                  <span class="model-accuracy">90% acc</span>
+                </div>
+                <div class="model-desc">Semantic Similarity</div>
+              </label>
+            </div>
+            <div class="model-option">
+              <input
+                type="radio"
+                name="model"
+                id="smart_hybrid"
+                value="smart_hybrid"
+              />
+              <label for="smart_hybrid">
+                <div class="model-name">🤖 Smart Hybrid</div>
+                <div class="model-info">
+                  <span class="model-latency">~300ms</span> ·
+                  <span class="model-accuracy">95% acc</span>
+                </div>
+                <div class="model-desc">SymSpell + LLM Fallback</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-section">
+          <input
+            type="text"
+            class="query-input"
+            id="queryInput"
+            placeholder="Enter a typo query... (e.g., iphnoe 15 pro, samsnug tv, rg hedseet)"
+            autocomplete="off"
+          />
+          <button
+            class="btn btn-primary"
+            id="correctBtn"
+            onclick="correctQuery()"
+          >
+            Correct
+          </button>
+        </div>
+
+        <div class="loading" id="loading">
+          <div class="spinner"></div>
+          <p>Processing query...</p>
+        </div>
+
+        <div class="result-section" id="resultSection">
+          <div class="result-header">
+            <span class="result-title">Correction Result</span>
+            <div class="latency-badge" id="latencyBadge">
+              <span>⏱️</span>
+              <span id="latencyValue">0.00ms</span>
+            </div>
+          </div>
+          <div id="resultContent"></div>
+        </div>
+
+        <div class="examples-section">
+          <div class="examples-title">💡 Try these examples:</div>
+          <div class="example-chips">
+            <span class="example-chip" onclick="tryExample('iphnoe 15 pro')"
+              >iphnoe 15 pro</span
+            >
+            <span class="example-chip" onclick="tryExample('samsnug galaxy')"
+              >samsnug galaxy</span
+            >
+            <span class="example-chip" onclick="tryExample('rg hedseet')"
+              >rg hedseet</span
+            >
+            <span class="example-chip" onclick="tryExample('appel watch')"
+              >appel watch</span
+            >
+            <span class="example-chip" onclick="tryExample('sonny headphoens')"
+              >sonny headphoens</span
+            >
+            <span class="example-chip" onclick="tryExample('lgoitehc mouse')"
+              >lgoitehc mouse</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="main-card history-section"
+        id="historySection"
+        style="display: none"
+      >
+        <div class="history-title">
+          <h3>📜 Query History</h3>
+          <button class="btn-clear" onclick="clearHistory()">Clear</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+      <footer>
+        <p>
+          SmartSearch Correction API · Port 5001 ·
+          <a href="http://localhost:5001/docs" target="_blank">API Docs</a>
+        </p>
+        <p style="margin-top: 8px; font-size: 0.8rem">
+          Run:
+          <code
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              padding: 2px 6px;
+              border-radius: 4px;
+            "
+            >cd sym_keyboard_byt5_typo && python api.py</code
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      const API_URL = "http://localhost:5001";
+      let history = [];
+
+      // Check API status on load
+      document.addEventListener("DOMContentLoaded", checkAPIStatus);
+
+      // Enter key to submit
+      document
+        .getElementById("queryInput")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            correctQuery();
+          }
+        });
+
+      async function checkAPIStatus() {
+        const statusDot = document.getElementById("statusDot");
+        const statusText = document.getElementById("statusText");
+
+        try {
+          const response = await fetch(`${API_URL}/health`);
+          if (response.ok) {
+            statusDot.classList.add("connected");
+            statusText.textContent = "API Connected (Port 5001)";
+          } else {
+            throw new Error("API not healthy");
+          }
+        } catch (error) {
+          statusDot.classList.remove("connected");
+          statusText.textContent =
+            "API Offline - Run: cd sym_keyboard_byt5_typo && python api.py";
+        }
+      }
+
+      function getSelectedModel() {
+        return document.querySelector('input[name="model"]:checked').value;
+      }
+
+      function tryExample(text) {
+        document.getElementById("queryInput").value = text;
+        correctQuery();
+      }
+
+      async function correctQuery() {
+        const query = document.getElementById("queryInput").value.trim();
+        if (!query) return;
+
+        const model = getSelectedModel();
+        const btn = document.getElementById("correctBtn");
+        const loading = document.getElementById("loading");
+        const resultSection = document.getElementById("resultSection");
+        const errorMessage = document.getElementById("errorMessage");
+
+        // Reset states
+        btn.disabled = true;
+        loading.classList.add("show");
+        resultSection.classList.remove("show");
+        errorMessage.classList.remove("show");
+
+        try {
+          const startTime = performance.now();
+
+          const response = await fetch(`${API_URL}/correct`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ query, model }),
+          });
+
+          const clientTime = performance.now() - startTime;
+
+          if (!response.ok) {
+            throw new Error(`API Error: ${response.status}`);
+          }
+
+          const data = await response.json();
+          displayResult(data, clientTime);
+          addToHistory(data);
+        } catch (error) {
+          errorMessage.textContent = `❌ ${error.message}. Make sure API is running: python api.py`;
+          errorMessage.classList.add("show");
+          checkAPIStatus();
+        } finally {
+          btn.disabled = false;
+          loading.classList.remove("show");
+        }
+      }
+
+      function displayResult(data, clientTime) {
+        const resultSection = document.getElementById("resultSection");
+        const resultContent = document.getElementById("resultContent");
+        const latencyBadge = document.getElementById("latencyBadge");
+        const latencyValue = document.getElementById("latencyValue");
+
+        // Update latency badge
+        const serverLatency = data.latency_ms;
+        latencyValue.textContent = `${serverLatency.toFixed(
+          2
+        )}ms (server) / ${clientTime.toFixed(0)}ms (total)`;
+
+        // Color based on latency
+        latencyBadge.classList.remove("slow", "very-slow");
+        if (serverLatency > 100) {
+          latencyBadge.classList.add("very-slow");
+        } else if (serverLatency > 10) {
+          latencyBadge.classList.add("slow");
+        }
+
+        // Display result
+        if (data.changed) {
+          resultContent.innerHTML = `
+                    <div class="result-comparison">
+                        <div class="result-box">
+                            <div class="result-label">Original (Typo)</div>
+                            <div class="result-text original">${escapeHtml(
+                              data.original_query
+                            )}</div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="result-box">
+                            <div class="result-label">Corrected</div>
+                            <div class="result-text corrected">${escapeHtml(
+                              data.corrected_query
+                            )}</div>
+                        </div>
+                    </div>
+                `;
+        } else {
+          resultContent.innerHTML = `
+                    <div class="no-change">
+                        <div class="result-text unchanged">✓ "${escapeHtml(
+                          data.original_query
+                        )}"</div>
+                        <p style="margin-top: 10px; color: #888;">No correction needed - query looks correct!</p>
+                    </div>
+                `;
+        }
+
+        resultSection.classList.add("show");
+      }
+
+      function addToHistory(data) {
+        history.unshift({
+          original: data.original_query,
+          corrected: data.corrected_query,
+          changed: data.changed,
+          model: data.model_used,
+          latency: data.latency_ms,
+          timestamp: new Date(),
+        });
+
+        // Keep only last 20
+        if (history.length > 20) history.pop();
+
+        updateHistoryDisplay();
+      }
+
+      function updateHistoryDisplay() {
+        const historySection = document.getElementById("historySection");
+        const historyList = document.getElementById("historyList");
+
+        if (history.length === 0) {
+          historySection.style.display = "none";
+          return;
+        }
+
+        historySection.style.display = "block";
+        historyList.innerHTML = history
+          .map(
+            (item) => `
+                <div class="history-item">
+                    <div class="history-query">
+                        <span class="history-original">${escapeHtml(
+                          item.original
+                        )}</span>
+                        ${
+                          item.changed
+                            ? `
+                            <span class="history-arrow">→</span>
+                            <span class="history-corrected">${escapeHtml(
+                              item.corrected
+                            )}</span>
+                        `
+                            : '<span style="color: #00d9ff; margin-left: 10px;">✓</span>'
+                        }
+                    </div>
+                    <div class="history-meta">
+                        <span class="history-model">${item.model}</span>
+                        <span class="history-latency">${item.latency.toFixed(
+                          2
+                        )}ms</span>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+      }
+
+      function clearHistory() {
+        history = [];
+        updateHistoryDisplay();
+      }
+
+      function escapeHtml(text) {
+        const div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      // Periodic status check
+      setInterval(checkAPIStatus, 30000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,790 @@
+# Common Typo Mappings for Electronics E-Commerce
+# Format: typo,correct
+# These are explicit mappings that override SymSpell suggestions
+
+# ===========================================
+# BRAND NAME TYPOS
+# ===========================================
+
+# Apple Products
+iphnoe,iphone
+iphoen,iphone
+iphne,iphone
+ipone,iphone
+iphonee,iphone
+ihpone,iphone
+iphobe,iphone
+iohone,iphone
+ipgone,iphone
+ophine,iphone
+macbok,macbook
+mackbook,macbook
+macboo,macbook
+macboook,macbook
+mcbook,macbook
+macbok,macbook
+airpod,airpods
+airpds,airpods
+airpodss,airpods
+aripods,airpods
+ipda,ipad
+iapd,ipad
+ippad,ipad
+
+# Samsung
+samsng,samsung
+samsnug,samsung
+samsug,samsung
+samsumg,samsung
+samusng,samsung
+sumsung,samsung
+smasung,samsung
+samung,samsung
+samsungg,samsung
+samxung,samsung
+samgsung,samsung
+galxy,galaxy
+galaxxy,galaxy
+glaxy,galaxy
+gallaxy,galaxy
+
+# Nvidia
+nvidai,nvidia
+nvidea,nvidia
+nividia,nvidia
+nvida,nvidia
+nvidida,nvidia
+nvidi,nvidia
+nviida,nvidia
+geforc,geforce
+gefroce,geforce
+gerforce,geforce
+gefore,geforce
+
+# Intel
+intle,intel
+intell,intel
+intl,intel
+intal,intel
+inetl,intel
+
+# AMD
+adn,amd
+ryze,ryzen
+ryzn,ryzen
+ryzan,ryzen
+ryzem,ryzen
+
+# Lenovo
+lenvo,lenovo
+lenvoo,lenovo
+lennovo,lenovo
+lonovo,lenovo
+lenova,lenovo
+thinkpd,thinkpad
+thnikpad,thinkpad
+thinpad,thinkpad
+thinkpadd,thinkpad
+legon,legion
+legeon,legion
+
+# Asus
+assu,asus
+asus,asus
+asuss,asus
+ausus,asus
+
+# Dell
+del,dell
+delll,dell
+dellll,dell
+
+# HP
+hpe,hp
+hpp,hp
+
+# Acer
+aecr,acer
+acerrr,acer
+acrr,acer
+
+# Microsoft
+microsft,microsoft
+mircosoft,microsoft
+micorsoft,microsoft
+microsof,microsoft
+surfce,surface
+surfacee,surface
+
+# Sony
+sny,sony
+sonny,sony
+sonyy,sony
+
+# LG
+elg,lg
+
+# Logitech
+logitec,logitech
+logitek,logitech
+logietch,logitech
+
+# Razer
+razr,razer
+rzer,razer
+razzer,razer
+
+# Corsair
+corsar,corsair
+corsir,corsair
+crosair,corsair
+corsiar,corsair
+corsare,corsair
+corasir,corsair
+
+# ===========================================
+# PRODUCT CATEGORY TYPOS
+# ===========================================
+
+# Laptop
+laptpp,laptop
+laptp,laptop
+lapto,laptop
+latop,laptop
+loptop,laptop
+laptob,laptop
+lapotop,laptop
+labtop,laptop
+laptoop,laptop
+
+# Desktop
+destkop,desktop
+dekstop,desktop
+destop,desktop
+desktopp,desktop
+
+# Tablet
+tablt,tablet
+tablte,tablet
+tabet,tablet
+tablett,tablet
+
+# Phone/Smartphone
+smartphon,smartphone
+smatphone,smartphone
+smartfone,smartphone
+phon,phone
+phonee,phone
+telephn,telephone
+
+# Monitor
+moniter,monitor
+monitr,monitor
+montor,monitor
+mointor,monitor
+monitoor,monitor
+
+# Keyboard
+keybord,keyboard
+keybaord,keyboard
+keyboad,keyboard
+kayboard,keyboard
+keybrd,keyboard
+keyborad,keyboard
+
+# Mouse
+mose,mouse
+mousse,mouse
+mosue,mouse
+moue,mouse
+
+# Headphones
+headphons,headphones
+headhones,headphones
+hedphones,headphones
+headfones,headphones
+headpones,headphones
+heaphones,headphones
+
+# Earbuds
+earbds,earbuds
+earbus,earbuds
+earbusd,earbuds
+erbuds,earbuds
+
+# Speaker
+speakr,speaker
+speeker,speaker
+speakre,speaker
+speker,speaker
+speaekr,speaker
+
+# Camera
+camara,camera
+camra,camera
+cammera,camera
+cemara,camera
+camerea,camera
+
+# Charger
+chargr,charger
+chargar,charger
+chargeer,charger
+chrger,charger
+chager,charger
+
+# ===========================================
+# TECHNICAL TERM TYPOS
+# ===========================================
+
+# Wireless
+wireles,wireless
+wirelss,wireless
+wirless,wireless
+wirelees,wireless
+wirelless,wireless
+
+# Bluetooth
+bluethooth,bluetooth
+bluetooh,bluetooth
+blutooth,bluetooth
+bluetoth,bluetooth
+blueetooth,bluetooth
+bluetotoh,bluetooth
+
+# Battery
+baterry,battery
+battry,battery
+batery,battery
+batary,battery
+battrey,battery
+
+# Storage
+stoarge,storage
+storge,storage
+storgae,storage
+stroage,storage
+
+# Memory
+memry,memory
+memeory,memory
+memery,memory
+momory,memory
+meomry,memory
+
+# Graphics
+graphcs,graphics
+grafics,graphics
+graphcis,graphics
+grahpics,graphics
+grpahics,graphics
+
+# Processor
+processer,processor
+procesor,processor
+proccesor,processor
+processeor,processor
+prossecor,processor
+
+# Display
+dispaly,display
+displya,display
+disply,display
+dysplay,display
+dipslay,display
+
+# Screen
+scren,screen
+screan,screen
+sceen,screen
+sreen,screen
+screeen,screen
+
+# Resolution
+resoluton,resolution
+resoltion,resolution
+resoution,resolution
+resoluion,resolution
+
+# Gaming
+gameing,gaming
+gamin,gaming
+gamng,gaming
+gaiming,gaming
+gamimg,gaming
+
+# Portable
+portble,portable
+portalbe,portable
+portabel,portable
+portabl,portable
+
+# Performance
+performace,performance
+performnce,performance
+perfomance,performance
+preformance,performance
+
+# ===========================================
+# COMMON WORD TYPOS IN QUERIES
+# ===========================================
+
+# Price/Money Related
+dolar,dollar
+dolars,dollars
+dolalr,dollar
+dollras,dollars
+pric,price
+pirce,price
+rpice,price
+prcie,price
+cheep,cheap
+chep,cheap
+cheaap,cheap
+expensiv,expensive
+expnsive,expensive
+budgt,budget
+buget,budget
+
+# Comparison Words
+beter,better
+bettr,better
+beetter,better
+compre,compare
+compar,compare
+comparee,compare
+
+# Search Intent
+loking,looking
+lokking,looking
+luking,looking
+lookng,looking
+serching,searching
+searchng,searching
+seaching,searching
+serach,search
+searh,search
+searhc,search
+fnd,find
+findd,find
+fidn,find
+
+# Want/Need
+wnat,want
+wan,want
+wannt,want
+ned,need
+nedd,need
+neeed,need
+
+# Buy/Get
+byu,buy
+byy,buy
+buuy,buy
+geting,getting
+gettin,getting
+gett,get
+
+# Quality Words
+qualiy,quality
+qualtiy,quality
+qualitiy,quality
+
+# Size/Specs
+inche,inch
+inchs,inches
+incch,inch
+
+# Colors
+blck,black
+balck,black
+blak,black
+whte,white
+whtie,white
+whitee,white
+silvr,silver
+silvre,silver
+sliver,silver
+
+# Action Words
+installl,install
+instal,install
+instll,install
+downlod,download
+donwload,download
+dowload,download
+
+# Common Filler Words
+teh,the
+adn,and
+nad,and
+wiht,with
+wtih,with
+fro,for
+foor,for
+abov,above
+abouve,above
+abve,above
+undr,under
+uner,under
+undre,under
+betwen,between
+betwee,between
+bteween,between
+blow,below
+bellow,below
+belwo,below
+
+# ===========================================
+# UNIT AND SPEC TYPOS
+# ===========================================
+
+# GB variations (protect these)
+8g,8gb
+16g,16gb
+32g,32gb
+64g,64gb
+128g,128gb
+256g,256gb
+512g,512gb
+
+# TB variations
+1t,1tb
+2t,2tb
+4t,4tb
+
+# Hz variations
+60h,60hz
+120h,120hz
+144h,144hz
+240h,240hz
+
+# Common Spec Typos
+ssd,ssd
+ssdd,ssd
+hdd,hdd
+hddd,hdd
+raam,ram
+ramm,ram
+gpuu,gpu
+cpuu,cpu
+# Additional typo mappings
+tat,that
+gud,good
+bye,buy
+
+
+# ===========================================
+# BRAND ABBREVIATION TYPOS
+# ===========================================
+
+# ASUS/ROG typos
+rg,rog
+assu,asus
+asuss,asus
+ausus,asus
+assus,asus
+asusu,asus
+rgo,rog
+rogg,rog
+
+# Dell typos
+dl,dell
+del,dell
+dell,dell
+delll,dell
+
+# HP typos
+omn,omen
+onem,omen
+oemn,omen
+
+# Lenovo typos
+lnvo,lenovo
+lenvoo,lenovo
+lennovo,lenovo
+lenvo,lenovo
+lenova,lenovo
+legon,legion
+legeon,legion
+lgion,legion
+
+# Razer typos
+razr,razer
+razee,razer
+razzer,razer
+rzer,razer
+blde,blade
+bladee,blade
+
+# MSI typos
+msi,msi
+katna,katana
+katan,katana
+
+# Apple typos
+aple,apple
+appel,apple
+applw,apple
+airpds,airpods
+airpod,airpods
+aripods,airpods
+macbk,macbook
+mackbook,macbook
+
+# Samsung typos
+samsun,samsung
+glxy,galaxy
+galaxay,galaxy
+galxy,galaxy
+glaxy,galaxy
+
+# Logitech typos
+logitec,logitech
+logitek,logitech
+logtech,logitech
+
+# Corsair typos
+crosair,corsair
+corsar,corsair
+corsir,corsair
+
+# Steelseries typos
+steelseris,steelseries
+steelseres,steelseries
+stelseries,steelseries
+
+# HyperX typos
+hyperex,hyperx
+hyprx,hyperx
+hypex,hyperx
+
+# Nvidia typos
+nvidea,nvidia
+nvida,nvidia
+nvidai,nvidia
+nividia,nvidia
+gefore,geforce
+geforc,geforce
+gefroce,geforce
+grfcs,graphics
+grphcs,graphics
+grafics,graphics
+
+# AMD typos
+ryze,ryzen
+ryzn,ryzen
+ryzan,ryzen
+radoen,radeon
+radoen,radeon
+
+# Intel typos
+intle,intel
+intell,intel
+inetl,intel
+
+# ===========================================
+# HEAVY TYPO CORRECTIONS
+# ===========================================
+
+# Common word shortenings/typos
+chp,cheap
+chep,cheap
+cheep,cheap
+bt,best
+bst,best
+gud,good
+gd,good
+fr,for
+frr,for
+wnt,want
+wnna,wanna
+wana,wanna
+lkng,looking
+lukng,looking
+lookng,looking
+srch,search
+srching,searching
+serchng,searching
+mntr,monitor
+monitr,monitor
+moniter,monitor
+hedfns,headphones
+hedphns,headphones
+hedfones,headphones
+kybrd,keyboard
+keybrd,keyboard
+keybod,keyboard
+grphc,graphic
+grfic,graphic
+grphcs,graphics
+crd,card
+crds,cards
+
+# Product type typos
+laptp,laptop
+lapto,laptop
+latop,laptop
+laptob,laptop
+lptop,laptop
+destkop,desktop
+dekstop,desktop
+destop,desktop
+desktp,desktop
+hedseet,headset
+heatset,headset
+headst,headset
+hedset,headset
+
+# Spec typos
+ultr,ultra
+ulta,ultra
+utlra,ultra
+pls,plus
+pluss,plus
+
+# Color typos
+blk,black
+blak,black
+wht,white
+whte,white
+slvr,silver
+silvr,silver
+gld,gold
+goldd,gold
+xp,xps
+
+# ===========================================
+# PHONE/ELECTRONICS SPEC TYPOS
+# ===========================================
+
+# Samsung short typos
+smnug,samsung
+smng,samsung
+smsng,samsung
+smsung,samsung
+
+# Storage typos
+stoge,storage
+stoage,storage
+storge,storage
+strage,storage
+
+# Inch typos
+inv,inch
+inc,inch
+inche,inch
+inchs,inches
+
+# SSD typos
+sdd,ssd
+sssd,ssd
+sd,ssd
+
+# Milliamp typos
+miliampr,milliamp
+miliamp,milliamp
+milamp,milliamp
+mah,mah
+
+# Megapixel typos
+mo,mp
+megapxl,megapixel
+megapixl,megapixel
+mpx,mp
+
+# ===========================================
+# EVERYDAY ENGLISH TYPOS (HEAVY)
+# ===========================================
+
+# What typos
+wat,what
+wht,what
+waht,what
+
+# How typos
+hw,how
+hwo,how
+hoe,how
+
+# Does typos
+dos,does
+dose,does
+deos,does
+
+# Buy typos
+by,buy
+biy,buy
+byu,buy
+
+# Please/Show typos
+pls,please
+plz,please
+plse,please
+sho,show
+shw,show
+
+# Something typos
+smth,something
+smthing,something
+somthing,something
+sth,something
+
+# Single letter abbreviations
+r,are
+u,you
+b,be
+c,see
+y,why
+
+# Want typos (wanna is slang, keep as-is or convert)
+wanna,want to
+wnt,want
+wan,want
+
+# Looking typos
+lukin,looking
+lookin,looking
+lking,looking
+
+# For typos (number 4 used as for)
+4,for
+
+# Phone typos
+fone,phone
+fon,phone
+phon,phone
+
+# Laptops plural
+laptps,laptops
+laptp,laptop
+
+# Core typos
+cor,core
+coer,core
+
+# ===========================================
+# BRAND SPECIFIC FIXES
+# ===========================================
+
+# Corsair typos
+corsare,corsair
+corsar,corsair
+corsage,corsair
+
+# RGB should be preserved
+
+# XTX should be preserved (AMD GPU)
+xtx,xtx
+rtx,rtx
+
+# Zone/Phone fix
+
+# Likin fix
+likin,looking
+lpgitech,logitech
+mbifia,nvidia
+mvisia,nvidia
+corsait,corsair
+bset,best
+laptpp,laptop

@@ -1,0 +1,69 @@
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# Ollama files (large, not needed in repo)
+ollama.zip
+ollama/
+
+# Deprecated/Old files
+neuspell_env/
+v0.1
+
+# Fine-tune outputs (large model files, GB+)
+fine_tune/outputs/
+outputs/
+
+# Fine-tune training data (can be regenerated)
+fine_tune/data/*.jsonl
+fine_tune/data/*.json
+!fine_tune/data/.gitkeep
+
+# Benchmark results (temporary)
+fine_tune/benchmark_results_*.json
+benchmark_results_*.json
+
+# HuggingFace cache
+.cache/
+huggingface/
+
+# Model checkpoints (large)
+*.bin
+*.safetensors
+*.gguf
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+neuspell_local/
+subwordbert-probwordnoise/
+scripts/
+test_corrector.py
+test_script.py
+
+# Large model files
+models/
+
+# Test files (local only)
+test_*.py

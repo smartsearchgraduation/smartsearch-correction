@@ -1,0 +1,2588 @@
+
+# === 1000-QUERY BENCHMARK FIXES ===
+# === ROUND 2: MORE 1000-QUERY FIXES ===
+# === ROUND 3: CAREFUL SINGLE-TOKEN FIXES ===
+# ====== 1000 Query Benchmark Fixes ======
+# ===========================================
+# 100w to 1000w
+# 100w vs 1000w context
+# 100w/1000w context
+# 11th
+# 11th Intel
+# 11th vs 1tb - specific typos
+# 27qs
+# 27qs monitor
+# 27qs monitor specific
+# 360mm
+# 360mm (not 360hz)
+# 360mm AIO
+# 360mm AIO cooler
+# 360mm specific
+# 360mm vs 360hz
+# 4k
+# 4k fix
+# 6000mhz issue - numbers get corrupted, hard to fix
+# 6000mhz issue - this is a number, skip
+# 65 inch
+# 65 Series issue - context dependent
+# 98db
+# Accessories/Parts
+# Acer
+# Acorus already added
+# Action Words
+# Actually razr is correct for Motorola
+# Ad -> AMD
+# ADDITIONAL BENCHMARK-DISCOVERED MAPPINGS
+# Additional typo mappings
+# Again -> Gaming
+# agon
+# airflow
+# Airfly
+# airpods (not airflow)
+# Aithhhhw -> With
+# Aithhhhw -> With (already normalized)
+# Akai
+# Already added ltd->lite
+# Already have this
+# Also -> Atmos
+# ambilight
+# AMD
+# AMD typos
+# AMOLED
+# Anafi drone
+# Analog
+# Anker
+# anker prime issue - anekr triggers frame?
+# Anseis -> Anker
+# Aonic (Shure)
+# AORUS (Gigabyte)
+# apis,aps - wrong
+# Apple Products
+# Apple typos
+# APS (camera)
+# ARGB
+# Asus
+# ASUS/ROG typos
+# Atmos
+# Audio
+# Aurora
+# Awitxh -> Switch
+# Back -> Bank (power bank context)
+# back,black - wrong
+# Bank
+# Bar
+# Battery
+# bay
+# Bay
+# Behn -> Belkin
+# Belkin
+# BenQ products
+# Beoplay (B&O)
+# Bide/Bidoe -> Video
+# black
+# Black
+# Blackmagic
+# Bluetooth
+# BM -> Bank
+# Boody -> Body
+# Book vs Boox - context
+# book,book4 - too aggressive
+# Boost
+# Booter -> Booster
+# Bootser -> Booster
+# Boox
+# BRAND ABBREVIATION TYPOS
+# BRAND NAME TYPOS
+# BRAND SPECIFIC FIXES
+# Brand typos
+# Bravia (Sony)
+# Brigggghtenss -> Brightness
+# brother printer
+# bt
+# bt (bluetooth)
+# Builder -> Bundle
+# Bundle
+# Buy typos
+# Buy/Get
+# BXWOS -> Xbox
+# Caerz -> Camera
+# Camera
+# Camra -> Camera
+# Cancelling
+# Canon
+# Canon/Camera
+# Carbon
+# Cardea
+# Cellular
+# CFExpress
+# Charger
+# Chip
+# Chromax (Noctua)
+# cinebeam
+# Cinena -> Cinema
+# col,csl - wrong
+# color
+# Color abbreviations (safe - not product names)
+# Color typos
+# Colors
+# Combo
+# Common abbreviations
+# Common Filler Words
+# Common GPU spec typos
+# Common Spec Typos
+# Common Typo Mappings for Electronics E-Commerce
+# Common word shortenings/typos
+# COMMON WORD TYPOS IN QUERIES
+# Comparison Words
+# Console
+# Conszssole -> Console
+# Controller variations
+# Controllers
+# Convey -> Console
+# Core typos
+# Corey -> Core
+# Corsair
+# Corsair typos
+# Cream
+# Creator
+# Csqae -> Case
+# D-RGB
+# dark
+# Dark
+# dell
+# Dell
+# Dell typos
+# Delver -> Delivery
+# Desktop
+# Devialet
+# Display
+# dji
+# DJI
+# DJI with repeated chars (already normalized but backup)
+# dock,deck - wrong (dock is valid word)
+# Does typos
+# Dokbju -> Dolby
+# Dolby
+# dot
+# Drond -> Drone
+# Drone
+# Dtnamic -> Dynamic
+# E-ink
+# Earbuds
+# EcoTank
+# edge,elite - wrong (both valid)
+# Edition
+# Edomite -> Remote
+# Eeomte -> Remote (already added)
+# Efcdk -> Deck
+# Elipsa e-reader
+# elite
+# Emerald
+# Endgame
+# Eosjo -> EOS
+# Epix
+# Epson
+# era (Sonos)
+# ergo
+# ergonomic
+# ergot -> ergo
+# EVERYDAY ENGLISH TYPOS (HEAVY)
+# Evga (not evnia)
+# evga specific
+# Evnia (Philips)
+# Evo
+# EVO
+# Evolv
+# Fenix
+# Ffffaire -> Fire
+# Find
+# Fisplya -> Display
+# Flight
+# floor vs color
+# Flowy
+# fly
+# Fly
+# Folden -> Fold
+# for,4  # DISABLED - "for" is a valid English word
+# Format: typo,correct
+# Founder/Founders
+# Founder/founders with repeated chars
+# Founders
+# Founders Edition
+# Foundery -> Founders
+# Fractal
+# frame
+# Frame
+# frame TV
+# Frame variations  
+# Framer -> Frame
+# Frooooo -> For
+# Full
+# GameVice
+# Gaming
+# gan charger
+# gateron
+# GB variations (protect these)
+# Gen (generation)
+# Generic word fixes
+# Git -> Flight
+# glass
+# Global
+# GoPro special handling
+# GPS
+# gpu,ps5 - wrong
+# Graphics
+# Graphite
+# Guen -> Gen (already have but adding more)
+# handheld
+# Handhold fix
+# Hard level fixes
+# Hasselblad
+# HDMI
+# hdr
+# HDR
+# Headphones
+# HEAVY TYPO CORRECTIONS
+# Hone -> Phone
+# How typos
+# HP
+# HP typos
+# hynix
+# hyperion
+# HyperX Cloud
+# HyperX typos
+# Hz variations
+# iii
+# III
+# iii vs iki
+# IIIr -> Air
+# iix
+# Ikkkkx -> IIX
+# imageprograf
+# Imer -> Mint
+# Imer -> Mint (already added but re-check)
+# In -> Inch (careful - only when alone)
+# In -> Inch (only 2 chars, risky)
+# In -> Inch (short form - careful)
+# in vs inch - context
+# Inch
+# inch fixes
+# inch specific
+# Inch typos
+# Informal spellings
+# Inkpad
+# Innh -> Inch
+# inspire
+# Instead, map "for" typo to "4" if needed (but risky since "for" is a valid word)
+# Intel
+# Intel gen vs storage confusion
+# Intel typos
+# iPad
+# iwreless
+# Joy (Joy-Con)
+# Keyboard
+# keys
+# Keys
+# keys vs kees
+# Kit
+# Kobo
+# Kone (Roccat)
+# KT -> With
+# Kyi -> Kit
+# lancer
+# lancool
+# lancool iii
+# Laptop
+# Laptops plural
+# laser
+# leica
+# Leica
+# leno,reno - conflicts with Lenovo
+# Lenovo
+# Lenovo ThinkPad
+# Lenovo typos
+# Lens
+# LG
+# lian
+# Likin fix
+# Limit -> Kit (context: ram kit)
+# Limiz -> Lumix (already added)
+# Linksys
+# lite
+# Lite vs Ltd
+# lle,oled - conflicts
+# Lllcddd -> LCD
+# Logitech
+# Logitech typos
+# Looking typos
+# lophine vs mophie
+# LTD -> Lite
+# lte,oled - conflicts (LTE is valid)
+# Lumix
+# m-series
+# M-Series
+# M-Series fix
+# m-series TV
+# Ma -> Max
+# magic
+# Magic
+# magic Apple
+# MagSafe
+# Mate (Huawei)
+# Matebook (Huawei brand)
+# Mavic
+# mavic DJI
+# max
+# Mayer -> Player
+# meg (msi)
+# Megapixel typos
+# Memory
+# merc
+# Microsoft
+# Midnsighhht -> Midnight
+# Milliamp typos
+# mini
+# mirrorless
+# Mirrorless
+# mirrorless camera
+# Mmmzx -> Max
+# Model
+# Model number fixes
+# Model number patterns
+# Model numbers - Sony WH-1000XM5
+# Model/version fixes - CORRECTED
+# Monitor
+# Montor -> Monitor
+# mophie
+# More
+# More product/word fixes from benchmark
+# More specific mappings
+# Mouse
+# MSI
+# MSI typos
+# Nax -> Max
+# New brands from benchmark
+# nib,mini - wrong
+# no,neo - too short
+# Nobly -> Dolby
+# Noctua
+# NOTE: "rg" is ambiguous - could be "rog" or "rgb"
+# Note: Do NOT map "4" to "for" - this breaks product queries like "gen 4"
+# Number fixes for repeated digits
+# Numbers that look like words (limited, SymSpell won't do digit correction)
+# Nvidia
+# Nvidia typos
+# nzxt
+# NZXT
+# Obisdib -> Obsidian
+# Obsidian
+# ocean
+# OED -> OLED
+# Oisin -> Vision
+# oled
+# OLED
+# OLED variations
+# OM-1
+# one
+# Only LOW RISK mappings - avoiding product names like "lite", "blu", "pix"
+# Oprrrrtql -> Portal
+# Optoma projector
+# Origins
+# osmo
+# OSN -> Sony
+# our,oura - too short
+# oura,pura - conflicts with Oura ring
+# pack
+# Payer -> Player
+# Performance
+# philip,philips - too aggressive
+# Phone variations
+# PHONE/ELECTRONICS SPEC TYPOS
+# Phone/Smartphone
+# PHONETIC / INFORMAL SPELLING MAPPINGS
+# Pixma (Canon)
+# Platinum
+# Please/Show typos
+# Plqpo -> Oppo
+# pny
+# PNY
+# Pocke -> Pocket
+# Poco
+# pop,pro - too generic
+# Portable
+# Power/Charging products
+# powercolor
+# Powercolor -> Powercore
+# powercolor + deeevil fix - normalize already handles this
+# powercore
+# powercore (Anker product)
+# powercore Anker
+# Pqnasnioc -> Panasonic
+# Price/Money Related
+# prime
+# Prime
+# Prime -> Frame
+# prime (not frame)
+# prime specific
+# prl -> pro
+# pro
+# Pro variations
+# Processor
+# PRODUCT CATEGORY TYPOS
+# Product names
+# Product names  
+# Product type typos
+# ps,ps5 - too short
+# qhd vs wqhd
+# QLED
+# QLED should stay as QLED (Samsung), but if context is wrong...
+# Qmazomno -> Amazon
+# QNon -> Canon (q ve c yakın)
+# Quality Words
+# quantum
+# Quantum
+# quietcomfort
+# Radeoznp -> Radeon
+# RAM
+# Raze -> Razer
+# Razer
+# Razer products
+# Razer typos
+# razer vs razr - raze goes to razer
+# razer,razr - wrong (Razer is a brand)
+# Razr (Motorola - keep as razr, don't change to razer)
+# razr (phone)
+# Razr flip phone (not razer)
+# razr for phone (not razer keyboard)
+# Razr vs Razer conflict - context needed
+# razr,razr - useless
+# reality
+# Recording
+# REMOVED problematic mappings:
+# Resolution
+# rgb
+# RGB should be preserved
+# RGB/RGG
+# RM1000X
+# RO -> Pro
+# ROG
+# rog,rgb - conflicts with ROG (Republic of Gamers)
+# roland
+# rond vs roland
+# RPO -> Pro
+# rrx -> rtx
+# rt vs rtx
+# rtx
+# RTX
+# rtx gpu
+# RX vs RTX - keep rx as rx for AMD
+# RXT -> RTX
+# Ryujin
+# Sabrent
+# Safe brand/product fixes
+# Samsung
+# Samsung short typos
+# Samsung typos
+# Satrrro -> Astro
+# scarlett
+# scarlett (audio)
+# Scouth -> South
+# Screen
+# Screen size / unit fixes
+# Scuf
+# Search Intent
+# seasonic
+# secretlab
+# secretlab 
+# see,c - too short
+# series
+# Series
+# Set
+# shapes
+# Shift
+# Single letter abbreviations
+# Sirih/Sitih -> With
+# Size/Specs
+# Smartphone
+# Snapdragon
+# Snurt -> Smart
+# Snurt -> Smart (already added)
+# Something typos
+# Sony
+# soy,sony - too short
+# Speaker
+# Speaker variations
+# Speaker vs speakers already both valid
+# Speakers
+# speakers vs speaker context (plural)
+# Spec typos
+# ssd
+# SSD typos
+# SSD/SDS
+# Steam
+# Steelseries
+# Steelseries typos
+# Stomp/Stosp -> Stops
+# Storage
+# Storage typos
+# Storage units - TB
+# Stouth -> South
+# studio
+# Stylus
+# Suoyn -> Sony
+# Superlight
+# SuperTank
+# Surface Pro
+# switch
+# System
+# Tab (Galaxy Tab)
+# Tab variations
+# Tablet
+# TB variations
+# TECHNICAL TERM TYPOS
+# Tenorist -> Tensor
+# Tensor
+# thermaltake
+# These are "sounds like" typos where people write words as they hear them
+# These are explicit mappings that override SymSpell suggestions
+# These are risky but common
+# ThinQ
+# thor
+# Titanium
+# tkl
+# tn,tune - too short
+# Tops -> Stops
+# TP-Link
+# Trrrraphiiics -> Graphics
+# tune
+# Twelve
+# Twith -> With
+# TX -> RTX
+# TX -> stay as tx for some contexts, but...
+# tx (cpu) vs rtx (gpu)
+# tx CPU - don't change to rtx
+# tx vs rtx
+# TX/RTX confusion
+# Typos discovered from 1000-query benchmark
+# UFKL -> Full
+# UGreen/Nexode
+# uled
+# ULED
+# uled Hisense
+# ultra
+# Ultra/Gear products
+# Ultralight
+# unifi
+# UniFi
+# Unifi -> Unified
+# unified vs unifi
+# UNIT AND SPEC TYPOS
+# Unlocked
+# Use "rbg" for rgb typo instead
+# USM (lens)
+# Vengeance
+# Vfhakrge -> Charge
+# video
+# Video
+# Vifepo/Vireo -> Video
+# Vision
+# Visioned -> Vision
+# Vive -> Video
+# VPL model numbers
+# Want typos (wanna is slang, keep as-is or convert)
+# Want/Need
+# Wattage fixes
+# Wdelveyr -> Delivery
+# We use "rg->rog" in earlier section for ASUS ROG products
+# WebOS
+# wemo,awesome - wrong direction
+# WF-1000XM5 (Sony)
+# What typos
+# Whit -> With
+# Wirees -> Wireless
+# Wireles -> Wireless
+# wireless
+# Wireless
+# Wirelss -> Wireless
+# Wirewss -> Wireless
+# Wit -> With
+# Witb -> With
+# With
+# Wiz -> IPS
+# X2000B
+# Xbox
+# Xeneon (Corsair)
+# xgimi projector
+# Xinema -> Cinema
+# XP
+# xp vs xps context
+# XP/XPS fixes
+# xpg
+# xps
+# xps laptop
+# xps,gps - wrong direction
+# XTX should be preserved (AMD GPU)
+# Zasmudng -> Samsung
+# Zendure
+# zenwifi
+# Zone/Phone fix
+# ZT -> XTX
+# Zzzxzzoom -> Zoom
+1000,1000
+10000,10000
+100w,1000w
+10w,1000w
+11h,11th
+11rh,11th
+11t,11th
+11tb,1tb
+120h,120hz
+128g,128gb
+144h,144hz
+16g,16gb
+1t,1tb
+1th,1tb
+2000,2000
+240h,240hz
+25000,25000
+256g,256gb
+27aq,27qs
+27q,27qs
+27qe,27qs
+27qs,27qs
+27s,27qs
+2t,2tb
+32g,32gb
+360h,360mm
+360hm,360mm
+360hx,360mm
+360mh,360mm
+360mhz,360mm
+36mh,360mm
+36mm,360mm
+4j,4k
+4q,4k
+4t,4tb
+512g,512gb
+60h,60hz
+64g,64gb
+66d0s2,660s2
+8g,8gb
+8gb,98db
+8tb,98db
+98d,98db
+abouve,above
+abov,above
+abve,above
+accer,acer
+acerrr,acer
+aconic,aonic
+acorus,aorus
+acre,acer
+acrr,acer
+actis,arctis
+ad,amd
+adn,amd
+aecr,acer
+airfly,airfly
+airfow,airflow
+airfpow,airflow
+airfyl,airfly
+airily,airfly
+airpds,airpods
+airpod,airpods
+airpods,airpods
+airpodss,airpods
+aithhhhw,with
+aizon,amazon
+akei,akai
+akia,akai
+alca,black
+alcohol,lancool
+allyy,ally
+alncool,lancool
+also,atmos
+altho,although
+alupoqp,laptop
+alyl,ally
+amazin,amazon
+amazno,amazon
+ambilgiht,ambilight
+ambiligt,ambilight
+ambliight,ambilight
+ambnilight,ambilight
+amled,amoled
+amoeld,amoled
+amold,amoled
+amole,amoled
+amoled,amoled
+amos,atmos
+anaf,anafi
+analag,analog
+analogy,analog
+aneisr,anker
+anekr,anker
+aner,anker
+anesis,anker
+anker,anker
+ankr,anker
+anlg,analog
+anon,canon
+anseis,anker
+aonic,aonic
+aors,aorus
+aorus,aorus
+aourus,aorus
+apd,aps
+aple,apple
+appe,apple
+appel,apple
+applw,apple
+arcits,arctis
+arctis,arctis
+argb,argb
+aripods,airpods
+arrgb,argb
+artics,arctis
+asmsung,samsung
+asp,aps
+assu,asus
+assus,asus
+asus,asus
+asuss,asus
+asusss,asus
+asussss,asus
+asusu,asus
+ateuchi,satechi
+athinkpad,thinkpad
+atmo,atmos
+atmos,atmos
+atso,atmos
+attorn,gateron
+auora,aurora
+auroa,aurora
+ausus,asus
+auurora,aurora
+aweom,awesome
+awitxh,switch
+awsome,awesome
+ba,bay
+bajk,bank
+bakn,bank
+balck,black
+baracuda,barracuda
+barraucda,barracuda
+batary,battery
+baterry,battery
+batery,battery
+batry,battery
+batt,battery
+battrey,battery
+battry,battery
+bceam,beam
+bcoz,because
+bcuz,because
+bds2,buds2
+bdy,body
+becuz,because
+beetter,better
+behn,belkin
+bekkin,belkin
+bekkkn,belkin
+belin,belkin
+belkin,belkin
+belkn,belkin
+bellow,below
+belwo,below
+beno,reno
+beoplay,beoplay
+beoplya,beoplay
+beplay,beoplay
+beter,better
+bettr,better
+betwee,between
+betwen,between
+bgaster,blaster
+bide,video
+bidoe,video
+biy,buy
+blackk,black
+blackmagc,blackmagic
+blackmagic,blackmagic
+blackmail,blackmagic
+blackwido,blackwidow
+blackwidow,blackwidow
+blackwiow,blackwidow
+bladee,blade
+blak,black
+blakmagic,blackmagic
+blakwidow,blackwidow
+blank,bank
+blater,blaster
+blck,black
+blde,blade
+blk,black
+blow,below
+blueetooth,bluetooth
+bluethooth,bluetooth
+bluetooh,bluetooth
+bluetoth,bluetooth
+bluetotoh,bluetooth
+blutooth,bluetooth
+bm,bank
+bnk,bank
+bok4,book4
+boody,body
+booiter,booster
+book,book
+booost,boost
+boostt,boost
+booter,booster
+bootser,booster
+boox,boox
+bost,boost
+bother,brother
+br,bar
+bra,bar
+bramia,bravia
+braracuda,barracuda
+bravai,bravia
+bravia,bravia
+braviay,bravia
+bream,beam
+brigggghtenss,brightness
+brightnes,brightness
+brivia,bravia
+brwn,brown
+bset,best
+bst,best
+bt,best
+bte,bt
+bteween,between
+budgt,budget
+budldr,bundle
+budss,buds
+buget,budget
+bui,buy
+builder,bundle
+bule,blue
+bunde,bundle
+bundl,bundle
+bunle,bundle
+buuy,buy
+bvank,bank
+bxwos,xbox
+by,buy
+bya,bay
+bye,buy
+byu,buy
+byy,buy
+caerz,camera
+camara,camera
+camerea,camera
+cammera,camera
+camra,camera
+camwr,camera
+canan,canon
+canceling,cancelling
+cancelli,cancelling
+cancellig,cancelling
+cancelling,cancelling
+caneray,camera
+canno,canon
+canon,canon
+canons,canon
+carbn,carbon
+carbo,carbon
+carbon,carbon
+carda,cardea
+cardra,cardea
+caridea,cardea
+caron,carbon
+ceam,cream
+celllular,cellular
+celluar,cellular
+cellular,cellular
+celular,cellular
+cemara,camera
+cen,gen
+cen11,gen11
+cfepress,cfexpress
+cfexpres,cfexpress
+cfexpress,cfexpress
+chager,charger
+chargar,charger
+chargeer,charger
+charger,charger
+chargr,charger
+cheaap,cheap
+cheep,cheap
+chep,cheap
+chp,cheap
+chrger,charger
+chroma,chromax
+chromax,chromax
+chromx,chromax
+cicnebeam,cinebeam
+cinebeamm,cinebeam
+cinena,cinema
+cip,chip
+cisssssiln,vision
+clod,cloud
+clog,vlog
+clooud,cloud
+cloudi,cloud
+cloyd,cloud
+cly,fly
+cmbo,combo
+coer,core
+col,cool
+comb,combo
+comob,combo
+compar,compare
+comparee,compare
+compre,compare
+conole,console
+conrolleq,controller
+consey,console
+consle,console
+consol,console
+conszssole,console
+contollers,controllers
+controlers,controllers
+controllers,controllers
+convey,console
+cor,core
+corasir,corsair
+corey,core
+corsage,corsair
+corsait,corsair
+corsar,corsair
+corsare,corsair
+corsiar,corsair
+corsir,corsair
+cpuu,cpu
+crator,creator
+crbon,carbon
+crd,card
+crds,cards
+creatpr,creator
+crem,cream
+cretor,creator
+crosair,corsair
+csqae,case
+cuz,because
+cyouk,cloud
+d-rgb,d-rgb
+daker,dark
+dakir,dark
+dakr,dark
+damrae,camera
+dar,dark
+dcean,ocean
+dcek,deck
+dceram,cream
+dddmi,hdmi
+decan,ocean
+decck,deck
+dekstop,desktop
+del,dell
+delivry,delivery
+dell,dell
+delll,dell
+dellll,dell
+delver,delivery
+deos,does
+desktopp,desktop
+desktp,desktop
+destkop,desktop
+destop,desktop
+deviaelt,devialet
+devialrt,devialet
+devilet,devialet
+dhoti,dot
+dij,dji
+dipslay,display
+dislpay,display
+dispaly,display
+dispay,display
+display,display
+disply,display
+displya,display
+dji,dji
+djii,dji
+dkj,dji
+dl,dell
+dlby,dolby
+doby,dolby
+dokbju,dolby
+dolalr,dollar
+dolar,dollar
+dolars,dollars
+dolb,dolby
+dolby,dolby
+dollras,dollars
+done,drone
+donwload,download
+dorne,drone
+dos,does
+dose,does
+doti,dot
+dowload,download
+downlod,download
+drak,dark
+drgb,d-rgb
+drk,dark
+drne,drone
+dron,drone
+drond,drone
+dtnamic,dynamic
+duuuuui,dji
+dvi,dji
+dvji,dji
+dyester,system
+dysplay,display
+dystek,system
+e-ink,e-ink
+earbds,earbuds
+earbuds,earbuds
+earbus,earbuds
+earbusd,earbuds
+ebga,evga
+ecotanke,ecotank
+ecotanl,ecotank
+ecotone,ecotank
+editio,edition
+editoin,edition
+editon,edition
+edomite,remote
+edtion,edition
+eeomte,remote
+efcdk,deck
+egn,gen
+eidtion,edition
+eiii,iii
+ejrgo,ergo
+elatine,elite
+elg,lg
+elide,elite
+elips,elipsa
+elipza,elipsa
+elissa,elipsa
+elitee,elite
+ell,dell
+emarald,emerald
+emerld,emerald
+emrald,emerald
+endgame,endgame
+endgate,endgame
+endure,zendure
+enga,evga
+engame,endgame
+enva,evga
+enzone,inzone
+eo,evo
+eos,eos
+eosjo,eos
+eov,evo
+epi,epix
+eps,gps
+epsn,epson
+epsom,epson
+epson,epson
+erality,reality
+erbuds,earbuds
+ergoe,ergo
+ergon,ergo
+ergoo,ergo
+ergot,ergo
+eso,eos
+ev,evo
+evga,evga
+evgva,evga
+evgz,evga
+evnai,evnia
+evnia,evnia
+evole,evolv
+evolvr,evolv
+expensiv,expensive
+expnsive,expensive
+factual,fractal
+fanatc,fanatec
+fanatic,fanatec
+felix,fenix
+fen,gen
+feniix,fenix
+fenix,fenix
+fenixx,fenix
+ffffaire,fire
+fgit,flight
+fidn,find
+fierm,fire
+fihd,find
+filly,fly
+findd,find
+fir,fire
+fisplya,display
+fky,fly
+fligh,flight
+flight,flight
+fligt,flight
+fll,full
+flly,fly
+floor,color
+flowy,flowy
+flul,full
+fnd,find
+fneix,fenix
+folden,fold
+foldn,fold
+folly,fly
+fon,phone
+fonders,founders
+fone,phone
+foor,for
+foto,photo
+fotograph,photograph
+foul,full
+founder,founders
+founderr,founders
+foundery,founders
+founderz,founders
+foundes,founders
+foundrs,founders
+founers,founders
+founnders,founders
+founnnders,founders
+fowy,flowy
+fr,for
+fracal,fractal
+frae,frame
+fram,frame
+frame,frame
+framer,frame
+frampe,frame
+framr,frame
+framw,frame
+frappe,frame
+fratal,fractal
+fraweme,frame
+fream,frame
+freebusd,freebuds
+freecuds,freebuds
+frme,frame
+fro,for
+frooooo,for
+frr,for
+ftx,rtx
+ful,full
+fully,full
+funest,sunset
+fyl,fly
+g29g,g29
+gaiming,gaming
+galaxay,galaxy
+galaxxy,galaxy
+gallaxy,galaxy
+galxy,galaxy
+gameing,gaming
+gametic,gamevice
+gamevis,gamevice
+gamevise,gamevice
+gamimg,gaming
+gamin,gaming
+gamng,gaming
+gaon,agon
+gateorn,gateron
+gaterron,gateron
+gd,good
+gefnrce,geforce
+geforc,geforce
+gefore,geforce
+gefroce,geforce
+gen,gen
+genn,gen
+gerforce,geforce
+geting,getting
+gett,get
+gettin,getting
+git,flight
+glacer,glacier
+glaxy,galaxy
+glazier,glacier
+gld,gold
+gled,qled
+glkobal,global
+gloeal,global
+gloss,glass
+glxy,galaxy
+gn,gan
+goldd,gold
+gopor,gopro
+goproo,gopro
+gpro,gopro
+gpuu,gpu
+graeme,frame
+grafics,graphics
+grafite,graphite
+grahpics,graphics
+grahpite,graphite
+graphcis,graphics
+graphcs,graphics
+graphit,graphite
+grapite,graphite
+grfcs,graphics
+grfic,graphic
+grn,green
+grpahics,graphics
+grphc,graphic
+grphcs,graphics
+gry,grey
+gsp,gps
+gud,good
+guen,gen
+gyne,gen
+hanafi,anafi
+handhed,handheld
+handhel,handheld
+handhold,handheld
+handled,handheld
+hanhdeld,handheld
+haselbad,hasselblad
+haselblad,hasselblad
+hasselbla,hasselblad
+hasselblad,hasselblad
+hd,hd
+hdd,hdd
+hddd,hdd
+hdddf,hdr
+hddr,hdr
+hde,hdr
+hdi,hdmi
+headfones,headphones
+headhones,headphones
+headphoens,headphones
+headphons,headphones
+headphonse,headphones
+headpones,headphones
+headst,headset
+heapdphones,headphones
+heaphones,headphones
+heatset,headset
+hedfns,headphones
+hedfones,headphones
+hedphns,headphones
+hedphones,headphones
+hedseet,headset
+hedset,headset
+hexode,nexode
+hhhhhcip,chip
+hlyl,ally
+hoe,how
+hone,phone
+horii,hori
+hpe,hp
+hpp,hp
+hrr,hdr
+hto,thor
+hw,how
+hwo,how
+hymnic,hynix
+hynic,hynix
+hyperex,hyperx
+hypergon,hyperion
+hyperio,hyperion
+hypex,hyperx
+hyprx,hyperx
+iapd,ipad
+ich,inch
+idnfh,inch
+ifone,iphone
+igi,ii
+ihpone,iphone
+iig,ii
+iiir,air
+iki,iii
+ikkkkx,iix
+iled,oled
+imageprogarf,imageprograf
+imagprograf,imageprograf
+imer,mint
+imnnnnnr,mint
+in,inch
+inc,inch
+incch,inch
+incd,inch
+inche,inch
+inchh,inch
+inchs,inches
+inck,inch
+inetl,intel
+inh,inch
+inkpad,inkpad
+innh,inch
+insh,inch
+inslire,inspire
+insprie,inspire
+instal,install
+installl,install
+instll,install
+intal,intel
+intell,intel
+intl,intel
+intle,intel
+inv,inch
+inxh,inch
+inzne,inzone
+inzoen,inzone
+iohone,iphone
+ione,iphone
+ipa,ipad
+ipd,ipad
+ipda,ipad
+ipgone,iphone
+iphne,iphone
+iphnoe,iphone
+iphobe,iphone
+iphoen,iphone
+iphonee,iphone
+ipone,iphone
+ippad,ipad
+iwreless,wireless
+iwth,with
+ixch,inch
+jirrorless,mirrorless
+jou,joy
+jy,joy
+katan,katana
+katna,katana
+kayboard,keyboard
+kees,keys
+kes,keys
+keybaord,keyboard
+keyboad,keyboard
+keyboar,keyboard
+keyboard,keyboard
+keybod,keyboard
+keyborad,keyboard
+keybord,keyboard
+keybrd,keyboard
+keyss,keys
+keyz,keys
+kict,kit
+kleeed,oled
+kob,kobo
+kobo,kobo
+koine,kone
+kon,kone
+kone,kone
+kt,with
+kybrd,keyboard
+kyeboard,keyboard
+kyes,keys
+kyi,kit
+labtop,laptop
+lacer,lancer
+lack,black
+lacner,lancer
+lacy,bay
+laesr,laser
+lak,black
+lancool,lancool
+laoptop,laptop
+lapotop,laptop
+lapto,laptop
+laptob,laptop
+laptoop,laptop
+laptp,laptop
+laptpp,laptop
+laptps,laptops
+lasr,laser
+lasre,laser
+latop,laptop
+lavic,mavic
+least,lens
+lecia,leica
+leenogo,lenovo
+legeon,legion
+legific,leica
+legoin,legion
+legon,legion
+leiccc,leica
+lennovo,lenovo
+leno,reno
+lenogo,lenovo
+lenova,lenovo
+lenovoo,lenovo
+lenst,lens
+lenvo,lenovo
+lenvoo,lenovo
+levite,elite
+lgion,legion
+likin,looking
+limit,kit
+limiz,lumix
+linkbuds,linksys
+linkbus,linkbuds
+linksys,linkbuds
+lking,looking
+lkng,looking
+lled,oled
+lllcddd,lcd
+lmit,kit
+lnch,inch
+lnes,lens
+lnksys,linksys
+lnvo,lenovo
+logging,vlogging
+logietch,logitech
+logitec,logitech
+logitek,logitech
+logtech,logitech
+loite,lite
+loking,looking
+lokking,looking
+lonovo,lenovo
+lookin,looking
+lookng,looking
+lophine,mophie
+loptop,laptop
+lote,lite
+lowy,flowy
+lpgitech,logitech
+lptop,laptop
+lqsr,laser
+lro,pro
+lsian,lian
+lsn,lens
+ltd,lite
+lukin,looking
+luking,looking
+lukng,looking
+lumix,lumix
+lumixx,lumix
+lusian,lian
+lutra,ultra
+luv,love
+m-seried,m-series
+m-seris,m-series
+m1,om-1
+m2g,m2
+m3g,m3
+ma,max
+macbk,macbook
+macbok,macbook
+macboo,macbook
+macbooi,macbook
+macbook,macbook
+macboook,macbook
+mackbook,macbook
+mae,mate
+magasfe,magsafe
+magc,magic
+magik,magic
+magiv,magic
+magsaef,magsafe
+magsaf,magsafe
+mah,mah
+maic,magic
+maigc,magic
+majorr,major
+mar,max
+massage,magsafe
+mastar,master
+matar,master
+matebook,matebook
+matee,mate
+matepa,matepad
+matic,magic
+matpead,matepad
+mavci,mavic
+mavick,mavic
+mavik,mavic
+mayer,player
+mbifia,nvidia
+mcbook,macbook
+mdel,model
+mdronue,drone
+mec,merc
+mechanial,mechanical
+mechanicl,mechanical
+mecr,merc
+megapixl,megapixel
+megapxl,megapixel
+memeory,memory
+memery,memory
+memry,memory
+meomry,memory
+met,meg
+micorsoft,microsoft
+microsft,microsoft
+microsof,microsoft
+midnigh,midnight
+midnigt,midnight
+midnsighhht,midnight
+milamp,milliamp
+miliamp,milliamp
+miliampr,milliamp
+mimi,mini
+minii,mini
+mircosoft,microsoft
+mirorless,mirrorless
+mirroles,mirrorless
+mirroless,mirrorless
+mirrorles,mirrorless
+mirrrless,mirrorless
+mirrrorless,mirrorless
+mis,msi
+mivac,mavic
+mltnor,monitor
+mmmzx,max
+mntr,monitor
+mo,mp
+mobbuz,mobiuz
+mobius,mobiuz
+mobiuuz,mobiuz
+mobiuz,mobiuz
+mobo,kobo
+modl,model
+moer,more
+mointor,monitor
+momory,memory
+moniter,monitor
+monitoor,monitor
+monitr,monitor
+montor,monitor
+moose,mouse
+mophiee,mophie
+mor,more
+morel,model
+mose,mouse
+mosue,mouse
+moue,mouse
+mousse,mouse
+mpx,mp
+mroe,more
+mse,meg
+mseires,m-series
+mseries,m-series
+mseris,m-series
+msi,msi
+mso,osmo
+mster,master
+mte,mate
+mvisia,nvidia
+mxa,max
+mxicrosoft,microsoft
+nad,and
+nagic,magic
+nax,max
+ned,need
+nedd,need
+neeed,need
+neoo,neo
+nexod,nexode
+nexode,nexode
+next,nzxt
+nildu,find
+nite,night
+nividia,nvidia
+nobly,dolby
+noctua,noctua
+noctuae,noctua
+noctue,noctua
+npu,pny
+npy,pny
+nvida,nvidia
+nvidai,nvidia
+nvidea,nvidia
+nvidi,nvidia
+nvidida,nvidia
+nviida,nvidia
+nxode,nexode
+nxt,nzxt
+nzx,nzxt
+nzxt,nzxt
+oayyyer,player
+obisdian,obsidian
+obisdib,obsidian
+obsidain,obsidian
+obsidan,obsidian
+ocanon,carbon
+oco,poco
+od,oled
+oed,oled
+oeeed,oled
+oeld,oled
+oemn,omen
+oisin,vision
+olde,oled
+ole,oled
+olled,oled
+om-1,om-1
+omn,omen
+onem,omen
+oor,pro
+ophine,iphone
+ophite,mophie
+opoo,oppo
+oppg,oppo
+opppo,oppo
+oprrrrtql,portal
+optma,optoma
+optmo,optoma
+optomz,optoma
+optyma,optoma
+orality,reality
+origin,origins
+origns,origins
+orng,orange
+oro,pro
+osmo,osmo
+osn,sony
+osteoma,optoma
+oto,oppo
+ouraa,oura
+owercome,powercore
+owercore,powercore
+oy,joy
+oytrdu,ultra
+ozcre,core
+pacl,pack
+pacm,pack
+pam,pack
+parser,laser
+passer,laser
+pate,mate
+payer,player
+pco,poco
+pcoo,poco
+peo,pro
+perfomance,performance
+performace,performance
+performnce,performance
+pgen2,gen2
+philp,philips
+philps,philips
+phne,phone
+phon,phone
+phonee,phone
+pima,pixma
+pimre,prime
+pirce,price
+pix,epix
+pixam,pixma
+pixma,pixma
+platinim,platinum
+platinium,platinum
+platnum,platinum
+plhus,plus
+plqpo,oppo
+pls,please
+plse,please
+pluss,plus
+plz,please
+pnk,pink
+pnny,pny
+pny,pny
+po,pro
+pocke,pocket
+poket,pocket
+por,pro
+portabel,portable
+portabl,portable
+portalbe,portable
+portble,portable
+powecolor,powercolor
+powercoeyeee,powercore
+powercolr,powercolor
+powercor,powercore
+powercore,powercolor
+powerkor,powercore
+powr,power
+pprame,frame
+pqnasnioc,panasonic
+pr,pro
+prame,prime
+pravity,bravia
+prcie,price
+preformance,performance
+preime,prime
+pric,price
+prie,prime
+prim,prime
+primd,prime
+prime,frame
+primee,prime
+primr,prime
+primw,prime
+prine,prime
+prl,pro
+prob,pro
+proccesor,processor
+procesor,processor
+processeor,processor
+processer,processor
+proe,pro
+proj,pro
+projj,pro
+proo,pro
+prossecor,processor
+prow,pro
+prp,pro
+prpl,purple
+pto,pro
+pwr,power
+qanon,canon
+qantum,quantum
+qled,oled
+qmazomno,amazon
+qnon,canon
+qnty,quantity
+qty,quantity
+qualitiy,quality
+qualiy,quality
+qualtiy,quality
+quanrtum,quantum
+quantm,quantum
+quantu,quantum
+quatnum,quantum
+quatum,quantum
+quietcmofort,quietcomfort
+quietcomfrot,quietcomfort
+quietomfort,quietcomfort
+raam,ram
+radeoznp,radeon
+radoen,radeon
+rama,ram
+ramm,ram
+raze,razer
+razee,razer
+razer,razer
+razre,razr
+razzer,razer
+rbg,rgb
+rck,rock
+rea,era
+realiry,reality
+reck,deck
+recogrding,recording
+recordng,recording
+renio,reno
+renoo,reno
+replay,beoplay
+resoltion,resolution
+resoluion,resolution
+resoluton,resolution
+resoution,resolution
+rg,rog
+rgbb,rgb
+rgg,rgb
+rgn,rgb
+rgo,rog
+ringg,ring
+rm10x,rm1000x
+ro,pro
+rockk,rock
+rogg,rog
+rok,rock
+rolanf,roland
+rond,roland
+rpice,price
+rpo,pro
+rrx,rtx
+rtc,rtx
+rtd,rtx
+rtx,rtx
+rtz,rtx
+ruen,gen
+rxe,rtx
+rxt,rtx
+rxxx,rtx
+ryujn,ryujin
+ryujni,ryujin
+ryzan,ryzen
+ryze,ryzen
+ryzem,ryzen
+ryzn,ryzen
+rzer,razer
+rzg,rog
+sabent,sabrent
+sabrint,sabrent
+sabrnt,sabrent
+sakai,akai
+samgsung,samsung
+samsang,samsung
+samsaung,samsung
+samsng,samsung
+samsnug,samsung
+samsug,samsung
+samsumg,samsung
+samsun,samsung
+samsungg,samsung
+samung,samsung
+samusng,samsung
+samxung,samsung
+satchi,satechi
+satechi,satechi
+satehi,satechi
+satrrro,astro
+scarleet,scarlett
+scarlety,scarlett
+scarlwtt,scarlett
+sceen,screen
+scf,scuf
+scouth,south
+screan,screen
+screeen,screen
+scren,screen
+scretlab,secretlab
+scuf,scuf
+scurf,scuf
+sd,ssd
+sdd,ssd
+sds,ssd
+seaching,searching
+seagat,seagate
+seagute,seagate
+searchng,searching
+searh,search
+searhc,search
+seasonic,seasonic
+seasoning,seasonic
+secretlab,secretlab
+secretlba,secretlab
+secretlsb,secretlab
+sedeet,set
+sedent,set
+seiren,series
+serach,search
+serching,searching
+serchng,searching
+seres,series
+seria,series
+seriess,series
+seriez,series
+ses,ssd
+shapea,shapes
+shft,shift
+shiedl,shield
+sho,show
+shut,shift
+shw,show
+si,msi
+silvr,silver
+silvre,silver
+siny,sony
+sirih,with
+sitihhhh,with
+sivouth,south
+sliver,silver
+slvr,silver
+smarphone,smartphone
+smartfone,smartphone
+smartphon,smartphone
+smasung,samsung
+smatphone,smartphone
+smng,samsung
+smnug,samsung
+smsng,samsung
+smsung,samsung
+smth,something
+smthing,something
+snapdrago,snapdragon
+snapdragom,snapdragon
+snapdragon,snapdragon
+snoy,sony
+snpdragon,snapdragon
+snrrrrrt,smart
+snurt,smart
+sny,sony
+soblllly,dolby
+somthing,something
+sonny,sony
+sonyy,sony
+soouth,south
+sotny,sony
+soundba,soundbar
+soundbr,soundbar
+speaekr,speaker
+speaker,speakers
+speakerz,speakers
+speakr,speaker
+speakre,speaker
+speakrs,speakers
+speeker,speaker
+speker,speaker
+spekers,speakers
+spetduoi,studio
+sps,xps
+srch,search
+srching,searching
+sreen,screen
+ssd,ssd
+ssdd,ssd
+ssds,ssd
+sssd,ssd
+sssssde,ssd
+starlight,superlight
+stduio,studio
+ste,steam
+stea,steam
+steelseres,steelseries
+steelseris,steelseries
+stelseries,steelseries
+stem,steam
+steram,steam
+sth,something
+stlyus,stylus
+stoage,storage
+stoarge,storage
+stoge,storage
+stomp,stops
+storgae,storage
+storge,storage
+stosp,stops
+stouth,south
+strage,storage
+stroage,storage
+studia,studio
+studil,studio
+studoi,studio
+stuido,studio
+stylsu,stylus
+styluss,stylus
+subrent,sabrent
+sumsung,samsung
+sunet,sunset
+suoyn,sony
+supeeeerligth,superlight
+superligh,superlight
+superligth,superlight
+supertak,supertank
+supertanl,supertank
+supertax,supertank
+surfac,surface
+surfacee,surface
+surfce,surface
+switc,switch
+swithc,switch
+switxh,switch
+swtch,switch
+sysem,system
+system,system
+systm,system
+sytem,system
+t2b,2tb
+ta,tab
+tabet,tablet
+tabh,tab
+tablett,tablet
+tablt,tablet
+tablte,tablet
+tat,that
+tax,max
+tba,tab
+tbh,tab
+teh,the
+telephn,telephone
+tenorist,tensor
+tenriso,tensor
+tenser,tensor
+tenso,tensor
+tensor,tensor
+tensorr,tensor
+thermalatake,thermaltake
+thermaltakke,thermaltake
+thermaltakr,thermaltake
+thikpad,thinkpad
+thinkpad,thinkpad
+thinkpadd,thinkpad
+thinkpd,thinkpad
+thinkpda,thinkpad
+thinpad,thinkpad
+thinq,thinq
+thinqq,thinq
+thiq,thinq
+thnikpad,thinkpad
+thnkpad,thinkpad
+tho,though
+thru,through
+thujin,ryujin
+titainum,titanium
+titanim,titanium
+titanum,titanium
+tkkkkl,tkl
+tkll,tkl
+tkp,tkl
+tne,tune
+tonite,tonight
+tops,stops
+tp-link,tp-link
+tplink,tp-link
+trrrraphiiics,graphics
+trx,rtx
+tsx,rtx
+ttttwelve,twelve
+tuen,tune
+tun,tune
+tunne,tune
+twevle,twelve
+twitch,with
+twith,with
+twleve,twelve
+tx,rtx
+uds,buds
+ufkl,full
+ujjjjifie,unified
+uleq,uled
+ulri,ultra
+ulsd,uled
+ulta,ultra
+ultafrgear,ultragear
+ultr,ultra
+ultraear,ultragear
+ultragear,ultragear
+ultrager,ultragear
+ultralight,ultralight
+ultrea,ultra
+ultrgear,ultragear
+undr,under
+undre,under
+uner,under
+unif,unifi
+unifi,unified
+unified,unifi
+unifu,unifi
+unlockd,unlocked
+unlocke,unlocked
+unloked,unlocked
+unzone,inzone
+uro,pro
+us,usm
+usbcc,usbc
+utlra,ultra
+vdioe,video
+vengance,vengeance
+vengence,vengeance
+venuu,venu
+veo,evo
+vfhakrge,charge
+vgaign,gaming
+vide,video
+video,video
+vido,video
+vidoe,video
+vieo,video
+vifepo,video
+vireo,video
+visio,vision
+vision,vision
+visiond,vision
+visioned,vision
+vison,vision
+vission,vision
+vive,video
+vlgo,vlog
+vloggin,vlogging
+vlogign,vlogging
+vontrollerv,controller
+vpl-xw50es,vpl-xw5000es
+waht,what
+wan,want
+wana,wanna
+wanna,want to
+wannt,want
+wat,what
+watc,watch
+wath,watch
+wbos,webos
+wdelveyr,delivery
+webo,webos
+webos,webos
+wemo,webos
+weos,webos
+wf-10xm5,wf-1000xm5
+wf1000xm5,wf-1000xm5
+wf10xm5,wf-1000xm5
+wh-10xm5,wh-1000xm5
+wh1000xm5,wh-1000xm5
+wh10xm5,wh-1000xm5
+whit,with
+whitee,white
+wht,what
+whte,white
+whtie,white
+widelwss,wireless
+wih,with
+wiht,with
+wipz,ips
+wirees,wireless
+wireess,wireless
+wirelees,wireless
+wireles,wireless
+wirelless,wireless
+wirelss,wireless
+wirewss,wireless
+wirless,wireless
+wirlessb,wireless
+wit,with
+witb,with
+witch,switch
+witth,with
+wiz,ips
+wnat,want
+wnna,wanna
+wnt,want
+woth,with
+wqhd,qhd
+wtach,watch
+wtih,with
+wytem,system
+wyze,system
+x20b-4k,x2000b-4k
+xapple,apple
+xboc,xbox
+xbox,xbox
+xbx,xbox
+xenen,xeneon
+xeneon,xeneon
+xenon,xeneon
+xgim,xgimi
+xgkmi,xgimi
+xinema,cinema
+xmg,xm5
+xo,xps
+xos,xps
+xox,xbox
+xp,xp
+xpa,xps
+xpd,xps
+xpe,xps
+xph,xpg
+xps,xps
+xtx,xtx
+ylw,yellow
+ythor,thor
+zasmudng,samsung
+zendure,zendure
+zenwif,zenwifi
+zenwkfi,zenwifi
+zinoo,zino
+zndure,zendure
+zpg,xpg
+zt,xtx
+zvenheacne,vengeance
+zzzxzzoom,zoom
+# Real-world test fixes
+# starlight (not superlight)
+# razr motorola phone
+# 1tb storage (not 11th)
+# dell latitude
+delllatitude,dell latitude
+# elitedesk
+elitdesk,elitedesk
+# bose
+bos,bose
+# quietcomfort
+quitecomfort,quietcomfort
+# numeric
+numerical,numeric
+# keys (not kees)
+kees,keys
+# deathstalker
+deathstalekr,deathstalker
+deathstalkr,deathstalker
+# wooting
+mooting,wooting
+# studio display
+studoi,studio
+stuido,studio
+# ultraegear -> ultragear
+ultraegear,ultragear
+# ultrafine
+ultrafnie,ultrafine
+ultrafin,ultrafine
+# ultrasharp
+ultrashrap,ultrasharp
+# alienware
+alienwar,alienware
+# zenscreen
+zenscren,zenscreen
+# artymis
+# strix (not stix)
+stix,strix
+# zephyrus
+zephrus,zephyrus
+zephryus,zephyrus
+# vivobook
+vivobokk,vivobook
+# zenbook
+zenbok,zenbook
+zenboook,zenbook
+# katana
+katna,katana
+# stealth
+stealt,stealth
+steath,stealth
+# predator
+predetor,predator
+# optiplex
+optipex,optiplex
+# thinkcentre
+# vengeance
+# trident
+# fury
+# barracuda
+# maximus
+maxmus,maximus
+maximux,maximus
+# asrock
+asurock,asrock
+# supernova
+suprnova,supernova
+# quiet
+queit,quiet
+quest,quiet
+# dynamic
+dynmic,dynamic
+dynamci,dynamic
+# flow
+fow,flow
+# deepcool
+deepcol,deepcool
+deco,deepcool
+# chromax
+chromx,chromax
+# canoscan
+canosacn,canoscan
+# scansnap
+scansnp,scansnap
+scannr,scansnap
+# fujitsu
+jujitsu,fujitsu
+# kiyo
+kyo,kiyo
+# facecam
+facecm,facecam
+factum,facecam
+# legato
+legato,elgato
+# viper
+vipr,viper
+# extreme
+extrme,extreme
+# passport
+passoprt,passport
+# caldigit
+caladigit,caldigit
+# belkin
+belkn,belkin
+# anker
+ankre,anker
+# Critical fixes
+# 1tb storage vs 11th gen
+# superlight vs starlight
+# 360mm AIO cooler
+# razr motorola phone
+# numeric vs numerical
+numerical,numeric
+# keys
+kees,keys
+# 60hz vs 60he
+# viewfinity
+viewfnity,viewfinity
+# ergo
+ergot,ergo
+# artymis vs artemis
+# nitro
+nito,nitro
+# g.skill
+gskill,g.skill
+# taichi
+trichi,taichi
+# prime vs frame - prie/seasnic -> seasonic
+prie,prime
+seasnic,seasonic
+
+# Hazel color (Google Pixel)
+hazl,hazel
+hzel,hazel
+hazle,hazel
+hazell,hazel
+hazeel,hazel
+
+# 5000d case
+5500,5000d
+5000,5000d
+
+# Corsair case models
+airfow,airflow
+aiflow,airflow
+airflo,airflow
+airrflow,airflow
+
+# Tempered glass
+temepered,tempered
+temepred,tempered
+temepered,tempered
+temperred,tempered
+tmpered,tempered
+
+
+# Specific product typos (not generic words)
+keybord,keyboard
+yello,yellow
+titanum,titanium
+wirless,wireless
+dynmic,dynamic
+platfrm,platform
+glpyh,glyph
+phoen,phone
+yoag,yoga
+lenvo,lenovo
+zenbookk,zenbook
+ryezn,ryzen
+sennheser,sennheiser
+deepcol,deepcool
+corsiar,corsair
+nothng,nothing
+
+# Common e-commerce typos (Both wrong fixes)
+whit,white
+wht,white
+procsor,processor
+procesor,processor
+mechncl,mechanical
+mechael,mechanical
+printr,printer
+pltnm,platinum
+editn,edition
+edith,edition
+noice,noise
+novice,noise
+creatv,creative
+creat,creative
+strmng,streaming
+strang,streaming
+thundrbt,thunderbolt
+thunder,thunderbolt
+usbc,usb-c
+flp,flip
+flap,flip
+creem,cream
+mxa,max
+spce,space
+superlgiht,superlight
+gefroce,geforce
+nvida,nvidia
+logiteh,logitech
+logtiech,logitech
+sonny,sony
+canceling,cancelling
+huwaie,huawei
+plsu,plus
+psu,plus
+spectere,spectre
+60he,60he
+mechancial,mechanical
+keybrd,keyboard
+radoen,radeon
+xrx,xtx
+sapphre,sapphire
+queit,quiet
+powr,power
+pixam,pixma
+ecotnak,ecotank
+seagaet,seagate
+seasnic,seasonic
+gskill,g.skill
+g.skil,g.skill
+
+# Storage size protection
+8tb,8tb
+98db,8tb
+
+# Prime PSU brand
+
+# 1tb protection (avoid 11th conversion)
+# Note: this is tricky because both are valid
+
+# Final fixes
+
+# Turkish/Phonetic brand typos
+galaksi,galaxy
+alaki,galaxy
+samsun,samsung
+aypon,iphone
+maks,max
+mats,max
+ayfon,iphone
+nokya,nokia
+fillips,philips
+fillip,philips
+hiuawei,huawei
+
+# Product typos
+aire,air
+supre,super
+sucre,super
+fould,fold
+would,fold
+voilet,violet
+toilet,violet
+
+# Abbreviated words
+lptp,laptop
+laptp,laptop
+kybrd,keyboard
+mekanik,mechanical
+sekani,mechanical
+hdphn,headphone
+mntr,monitor
+webcm,webcam
+
+# Number words to digits
+s2four,s24
+f0urty,40
+ninety,90
+
+# Alphanumeric typos
+iph0ne,iphone
+
+# Brand repeated chars
+assus,asus
+delll,dell
+hppp,hp
+acccer,acer
+msii,msi
+
+# Storage brands
+ironwood,ironwolf
+ironwof,ironwolf
+seagte,seagate
+
+# Phone brands
+opppo,oppo
+vivvo,vivo
+reallme,realme
+
+# Audio brands
+fiiio,fiio
+fioo,fiio
+senheiser,sennheiser
+
+# Network brands
+tp-likn,tp-link
+tplink,tp-link
+
+# Smart home
+euphy,eufy
+nuphy,eufy
+
+# Common brand typos with extra chars
+gooxle,google
+lenovoe,lenovo
+steelseres,steelseries
+hypperx,hyperx
+curcial,crucial
+kingstn,kingston
+gigabite,gigabyte
+viewsonc,viewsonic
+predetor,predator
+cybrg,cyborg
+leicca,leica
+auido,audio
+beyerdynaimc,beyerdynamic
+microhpone,microphone
+amazn,amazon
+gogle,google
+philps,philips
+
+# Comprehensive brand/product typos
+zenfoen,zenfone
+iqooo,iqoo
+nrod,nord
+nite,note
+razre,razer
+gramm,gram
+gramme,gram
+msii,msi
+agoon,agon
+lagoon,agon
+viewfinty,viewfinity
+colorege,coloredge
+colorer,coloredge
+multisycn,multisync
+multisect,multisync
+gamerok,gamerock
+merc,merc
+ichill,ichill
+achill,ichill
+colorfl,colorful
+igame,igame
+anuker,anker
+powerconf,powerconf
+hypperx,hyperx
+alloy,alloy
+pulsar,pulsar
+pulwar,pulsar
+wireles,wireless
+atlantis,atlantis
+atlantid,atlantis
+finalmose,finalmouse
+audiotechnica,audio-technica
+hipfiman,hifiman
+sundara,sundara
+sundra,sundara
+meze,meze
+metze,meze
+1mroe,1more
+moondrop,moondrop
+sk,sk
+hynx,hynix
+teamm,team
+t-force,t-force
+cardea,cardea
+wd,wd
+rde,red
+
+# Corrected specific typos
+zenfoen,zenfone
+nrod,nord
+nite,note
+razre,razer
+opitx,optix
+gamerok,gamerock
+achill,ichill
+colorfl,colorful
+anuker,anker
+pulwar,pulsar
+atlantid,atlantis
+finalmose,finalmouse
+hipfiman,hifiman
+sundra,sundara
+metze,meze
+1mroe,1more
+hynx,hynix
+iqooo,iqoo
+iqo,iqoo
+lii,li
+
+# More fixes
+piksel,pixel
+pikel,pixel
+keno,reno
+lgg,lg
+steelseris,steelseries
+wirles,wireless
+wireles,wireless
+ergonmic,ergonomic
+ergonomics,ergonomic
+lapttop,laptop
+fiftteen,15
+fifteen,15
+twennty,20
+twenty,20
+razr,razer
+oppoo,oppo

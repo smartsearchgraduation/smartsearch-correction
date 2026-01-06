@@ -1,0 +1,6 @@
+pandas
+symspellpy
+textdistance
+python-Levenshtein
+sentence-transformers
+torch

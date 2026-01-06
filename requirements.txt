@@ -1,0 +1,16 @@
+# API
+fastapi
+uvicorn[standard]
+pydantic
+
+# Spell Correction
+symspellpy
+numpy
+
+# ByT5 Model
+torch
+transformers
+
+# Utilities
+python-Levenshtein
+textdistance
