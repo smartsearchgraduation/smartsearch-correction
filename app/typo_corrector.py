@@ -322,9 +322,8 @@ class TypoCorrector:
                 self.sym_spell.create_dictionary_entry(word, 1)  # NLTK words
         
         # Fine-tuned model paths (lazy loaded)
-        fine_tune_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'fine_tune', 'outputs')
         self.finetuned_model_paths = {
-            "byt5": os.path.join(fine_tune_dir, 'byt5-typo', 'byt5-small-typo-20251208_2235-final'),
+            "byt5": r"C:\Users\Semih\Documents\grad\smartsearch-correction\byt5-typo-final",
         }
         
         # Lazy-loaded fine-tuned models (will be loaded on first use)
