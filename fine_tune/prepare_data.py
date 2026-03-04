@@ -42,8 +42,47 @@ from ecommerce_vocab import ECommerceVocab, ELECTRONICS_MODEL_PATTERNS
 
 # Paths
 BASE_DIR = Path(__file__).parent.parent
-DATA_DIR = BASE_DIR / "ss-correction-model" / "data"
+DATA_DIR = BASE_DIR / "data"
 OUTPUT_DIR = Path(__file__).parent / "data"
+
+# Turkish character normalization map (Turkish → ASCII equivalents)
+TURKISH_NORMALIZE = str.maketrans({
+    '\u0131': 'i',   # ı → i (dotless i)
+    '\u015f': 's',   # ş → s
+    '\u00f6': 'o',   # ö → o
+    '\u00fc': 'u',   # ü → u
+    '\u00e7': 'c',   # ç → c
+    '\u011f': 'g',   # ğ → g
+    '\u0130': 'I',   # İ → I
+    '\u015e': 'S',   # Ş → S
+    '\u00d6': 'O',   # Ö → O
+    '\u00dc': 'U',   # Ü → U
+    '\u00c7': 'C',   # Ç → C
+    '\u011e': 'G',   # Ğ → G
+})
+
+
+def normalize_turkish(text: str) -> str:
+    """Normalize Turkish-specific characters to ASCII equivalents."""
+    return text.translate(TURKISH_NORMALIZE)
+
+
+def generate_turkish_variants(word: str) -> List[Tuple[str, str]]:
+    """Generate Turkish char → ASCII typo pairs.
+
+    E.g., "kılıf" (with Turkish chars) → "kilif" (ASCII).
+    Users often type without Turkish characters, so the model must
+    learn both directions.
+    """
+    pairs = []
+    ascii_word = normalize_turkish(word)
+    if ascii_word != word:
+        # Turkish → ASCII (most common user pattern)
+        pairs.append((word, ascii_word))
+        # ASCII → Turkish (reverse normalization, less common but useful)
+        pairs.append((ascii_word, ascii_word))
+    return pairs
+
 
 # QWERTY keyboard layout for synthetic typos
 QWERTY_NEIGHBORS = {
@@ -576,7 +615,7 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
     print("=" * 60)
-    print("🛒 E-Commerce Typo Correction Data Preparation")
+    print("  E-Commerce Typo Correction Data Preparation")
     print("=" * 60)
     
     # Initialize e-commerce vocabulary
@@ -586,7 +625,7 @@ def main():
     
     # Print category stats
     stats = ecom_vocab.get_category_stats()
-    print("\n📊 Category Statistics:")
+    print("\n  Category Statistics:")
     for cat_name, cat_stats in stats.items():
         print(f"  {cat_name}: {sum(cat_stats.values())} total items")
     
@@ -599,13 +638,28 @@ def main():
     typo_file = DATA_DIR / "typo_mappings.txt"
     if typo_file.exists():
         typo_mappings = load_typo_mappings(typo_file)
-        print(f"✓ Loaded {len(typo_mappings)} mappings from typo_mappings.txt")
+        print(f"  Loaded {len(typo_mappings)} mappings from typo_mappings.txt")
     
+    # Load typo_dataset.csv if available
+    csv_file = DATA_DIR / "typo_dataset.csv"
+    if csv_file.exists():
+        import csv
+        csv_count = 0
+        with open(csv_file, 'r', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                if len(row) == 2:
+                    noisy, clean = row[0].strip(), row[1].strip()
+                    if noisy and clean and noisy.lower() != "noisy":
+                        typo_mappings.append((noisy, clean))
+                        csv_count += 1
+        print(f"  Loaded {csv_count} pairs from typo_dataset.csv")
+
     # Add mappings from e-commerce vocab
     ecom_mappings = ecom_vocab.get_all_typo_mappings()
     for typo, correct in ecom_mappings.items():
         typo_mappings.append((typo, correct))
-    print(f"✓ Added {len(ecom_mappings)} mappings from e-commerce vocab")
+    print(f"  Added {len(ecom_mappings)} mappings from e-commerce vocab")
     
     # Load vocabularies from files
     vocab_files = [
@@ -615,19 +669,19 @@ def main():
     ]
     
     vocabulary = list(ecom_vocab.get_all_vocabulary())
-    print(f"✓ E-commerce vocabulary: {len(vocabulary)} terms")
+    print(f"  E-commerce vocabulary: {len(vocabulary)} terms")
     
     for vf in vocab_files:
         filepath = DATA_DIR / vf
         if filepath.exists():
             words = load_vocabulary(filepath)
             vocabulary.extend(words)
-            print(f"✓ Added {len(words)} words from {vf}")
+            print(f"  Added {len(words)} words from {vf}")
     
     # Remove duplicates
     vocabulary = list(set(vocabulary))
-    print(f"\n📝 Total unique vocabulary: {len(vocabulary)}")
-    print(f"🔤 Total typo mappings: {len(typo_mappings)}")
+    print(f"\n  Total unique vocabulary: {len(vocabulary)}")
+    print(f"  Total typo mappings: {len(typo_mappings)}")
     
     print("\n" + "=" * 60)
     print("Creating training examples...")
@@ -680,6 +734,27 @@ def main():
                 "source": "sentence"
             })
         print(f"    Added {len(sentence_queries)} sentence examples")
+
+    # ------------------------------------------------------------------
+    # 3b) Turkish character normalization examples
+    # ------------------------------------------------------------------
+    print("\n[5] Adding Turkish character normalization examples...")
+    turkish_words = [
+        "kılıf", "şarj", "şarjör", "güç", "gömlek", "çanta", "özellik",
+        "işlemci", "güncelleme", "görüntü", "çözünürlük", "büyüklük",
+        "küçük", "ürün", "değerlendirme", "ödeme", "fiyat", "sipariş",
+        "indirim", "ölçü", "renk", "gönderim", "iade", "garanti",
+    ]
+    turkish_count = 0
+    for word in turkish_words:
+        for typo, correct in generate_turkish_variants(word):
+            examples.append({
+                "typo": typo,
+                "correct": correct,
+                "source": "turkish_normalization"
+            })
+            turkish_count += 1
+    print(f"    Added {turkish_count} Turkish normalization examples")
 
     # ------------------------------------------------------------------
     # 4) Spacing & symbol variants for critical phrases/models
@@ -774,7 +849,7 @@ def main():
     train_examples = examples[:split_idx]
     eval_examples = examples[split_idx:]
     
-    print(f"\n📊 Dataset Split:")
+    print(f"\n  Dataset Split:")
     print(f"  Train examples: {len(train_examples)}")
     print(f"  Eval examples: {len(eval_examples)}")
     
@@ -782,7 +857,7 @@ def main():
     source_counts = defaultdict(int)
     for ex in examples:
         source_counts[ex.get("source", "unknown")] += 1
-    print(f"\n📈 Examples by source:")
+    print(f"\n  Examples by source:")
     for source, count in sorted(source_counts.items(), key=lambda x: -x[1]):
         print(f"  {source}: {count}")
     
@@ -813,13 +888,13 @@ def main():
     print(f"Saved statistics to {stats_file}")
     
     print("\n" + "=" * 60)
-    print("✅ Data preparation complete!")
+    print("  Data preparation complete!")
     print("=" * 60)
     print(f"\nFiles saved to: {OUTPUT_DIR}")
     print("\nNext steps:")
-    print("  1. python models/byt5_finetune.py   # Fastest inference (~20-50ms)")
-    print("  2. python models/qwen_finetune.py   # Good balance (~100-200ms)")
-    print("  3. python models/llama_finetune.py  # Alternative (~200-400ms)")
+    print("  1. python train.py --model_name google/byt5-base --epochs 10 --fp16")
+    print("  2. python benchmark.py --models byt5")
+    print("  3. python export_onnx.py --model_path outputs/byt5-typo/best")
 
 
 if __name__ == "__main__":

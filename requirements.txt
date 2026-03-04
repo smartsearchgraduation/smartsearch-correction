@@ -3,14 +3,10 @@ fastapi
 uvicorn[standard]
 pydantic
 
-# Spell Correction
-symspellpy
-numpy
-
-# ByT5 Model
+# ML Models
 torch
 transformers
+sentencepiece
 
-# Utilities
-python-Levenshtein
+# Evaluation
 textdistance

@@ -507,58 +507,25 @@
           <label>Select Correction Model</label>
           <div class="model-grid">
             <div class="model-option">
-              <input
-                type="radio"
-                name="model"
-                id="symspell_keyboard"
-                value="symspell_keyboard"
-                checked
-              />
-              <label for="symspell_keyboard">
-                <div class="model-name">⚡ SymSpell + Keyboard</div>
-                <div class="model-info">
-                  <span class="model-latency">~0.1ms</span> ·
-                  <span class="model-accuracy">98% acc</span>
-                </div>
-                <div class="model-desc">Hybrid (Production)</div>
-              </label>
-            </div>
-            <div class="model-option">
-              <input type="radio" name="model" id="byt5" value="byt5" />
+              <input type="radio" name="model" id="byt5" value="byt5" checked />
               <label for="byt5">
-                <div class="model-name">🧠 ByT5 Fine-tuned</div>
+                <div class="model-name">ByT5 Fine-tuned</div>
                 <div class="model-info">
-                  <span class="model-latency">~300ms</span> ·
-                  <span class="model-accuracy">100% acc</span>
+                  <span class="model-latency">byte-level</span> ·
+                  <span class="model-accuracy">typo correction</span>
                 </div>
-                <div class="model-desc">Our Custom Model</div>
+                <div class="model-desc">Primary Model (ByT5 encoder-decoder)</div>
               </label>
             </div>
             <div class="model-option">
-              <input type="radio" name="model" id="e5_onnx" value="e5_onnx" />
-              <label for="e5_onnx">
-                <div class="model-name">🔮 E5 ONNX</div>
+              <input type="radio" name="model" id="t5_spell" value="t5_spell" />
+              <label for="t5_spell">
+                <div class="model-name">T5-large-spell</div>
                 <div class="model-info">
-                  <span class="model-latency">~10ms</span> ·
-                  <span class="model-accuracy">90% acc</span>
+                  <span class="model-latency">subword</span> ·
+                  <span class="model-accuracy">spell+grammar</span>
                 </div>
-                <div class="model-desc">Semantic Similarity</div>
-              </label>
-            </div>
-            <div class="model-option">
-              <input
-                type="radio"
-                name="model"
-                id="smart_hybrid"
-                value="smart_hybrid"
-              />
-              <label for="smart_hybrid">
-                <div class="model-name">🤖 Smart Hybrid</div>
-                <div class="model-info">
-                  <span class="model-latency">~300ms</span> ·
-                  <span class="model-accuracy">95% acc</span>
-                </div>
-                <div class="model-desc">SymSpell + LLM Fallback</div>
+                <div class="model-desc">Comparison Model (ai-forever)</div>
               </label>
             </div>
           </div>
@@ -647,7 +614,7 @@
               padding: 2px 6px;
               border-radius: 4px;
             "
-            >cd sym_keyboard_byt5_typo && python api.py</code
+            >cd Correction && python api.py</code
           >
         </p>
       </footer>
@@ -684,7 +651,7 @@
         } catch (error) {
           statusDot.classList.remove("connected");
           statusText.textContent =
-            "API Offline - Run: cd sym_keyboard_byt5_typo && python api.py";
+            "API Offline - Run: cd Correction && python api.py";
         }
       }
 
