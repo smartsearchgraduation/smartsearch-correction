@@ -136,8 +136,17 @@ def build_compute_metrics(tokenizer):
     def compute_metrics(eval_preds):
         predictions, label_ids = eval_preds
 
-        # Replace -100 with pad token
+        # If predictions are logits (3D), take argmax to get token IDs
+        if predictions.ndim == 3:
+            predictions = np.argmax(predictions, axis=-1)
+
+        # Replace -100 and out-of-range IDs with pad token
         label_ids = np.where(label_ids != -100, label_ids, tokenizer.pad_token_id)
+        predictions = np.where(
+            (predictions >= 0) & (predictions < tokenizer.vocab_size),
+            predictions,
+            tokenizer.pad_token_id,
+        )
 
         decoded_preds = tokenizer.batch_decode(predictions, skip_special_tokens=True)
         decoded_labels = tokenizer.batch_decode(label_ids, skip_special_tokens=True)
@@ -275,7 +284,16 @@ def train(args):
     # Load datasets
     print("\n  Loading datasets ...")
     train_ds = TypoCorrectionDataset(train_file, tokenizer, args.max_length, args.max_length)
-    eval_ds = TypoCorrectionDataset(eval_file, tokenizer, args.max_length, args.max_length)
+    eval_ds_full = TypoCorrectionDataset(eval_file, tokenizer, args.max_length, args.max_length)
+
+    # Subsample eval set for faster evaluation during training
+    # (ByT5 generate is slow; full eval on 2900 examples takes too long)
+    eval_size = min(args.eval_subset, len(eval_ds_full))
+    if eval_size < len(eval_ds_full):
+        eval_ds = torch.utils.data.Subset(eval_ds_full, list(range(eval_size)))
+        print(f"  Using {eval_size}/{len(eval_ds_full)} eval examples for speed")
+    else:
+        eval_ds = eval_ds_full
 
     # Data collator with dynamic padding
     data_collator = DataCollatorForSeq2Seq(
@@ -321,10 +339,10 @@ def train(args):
         greater_is_better=True,
         logging_steps=args.logging_steps,
         predict_with_generate=True,
-        generation_max_length=args.max_length,
-        generation_num_beams=2,
+        generation_max_length=64,
+        generation_num_beams=1,
         report_to=["tensorboard"],
-        dataloader_num_workers=2,
+        dataloader_num_workers=0,
         dataloader_pin_memory=True,
         remove_unused_columns=False,
     )
@@ -403,7 +421,9 @@ def parse_args():
                     help="Label smoothing factor (0.0 = off, 0.1 = recommended)")
 
     # Evaluation
-    p.add_argument("--eval_steps", type=int, default=200)
+    p.add_argument("--eval_steps", type=int, default=500)
+    p.add_argument("--eval_subset", type=int, default=500,
+                    help="Max eval examples per evaluation (speeds up ByT5 generate)")
     p.add_argument("--logging_steps", type=int, default=50)
     p.add_argument("--patience", type=int, default=5,
                     help="Early stopping patience (number of eval steps without improvement)")
