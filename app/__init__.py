@@ -1,2 +1,2 @@
 # App module
-from .corrector import TypoCorrector, CorrectionModel
+from .corrector import TypoCorrector

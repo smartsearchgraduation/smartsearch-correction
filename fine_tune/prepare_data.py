@@ -175,6 +175,49 @@ def generate_double_typo(word: str) -> str:
     return word[:pos] + word[pos] + word[pos:]
 
 
+def generate_compound_typo(word: str) -> str:
+    """Generate a typo with 2 errors applied (more realistic for fast typing)."""
+    if len(word) < 4:
+        return word
+    single_generators = [
+        generate_keyboard_typo,
+        generate_deletion_typo,
+        generate_swap_typo,
+        generate_insertion_typo,
+    ]
+    g1, g2 = random.sample(single_generators, 2)
+    result = g1(word)
+    if result != word:
+        result2 = g2(result)
+        if result2 != result:
+            return result2
+    return result
+
+
+def generate_case_variant(word: str) -> str:
+    """Generate case variation (common in search queries)."""
+    choice = random.randint(0, 3)
+    if choice == 0:
+        return word.upper()
+    elif choice == 1:
+        return word.capitalize()
+    elif choice == 2:
+        # Random mixed case: "iPHone", "sAmsung"
+        return "".join(
+            c.upper() if random.random() < 0.3 else c.lower()
+            for c in word
+        )
+    return word
+
+
+def generate_truncation_typo(word: str) -> str:
+    """Generate a truncation (user stops typing early)."""
+    if len(word) < 5:
+        return word
+    cut = random.randint(3, len(word) - 2)
+    return word[:cut]
+
+
 def generate_synthetic_typos(word: str, n: int = 3) -> List[str]:
     """Generate multiple synthetic typos for a word."""
     generators = [
@@ -183,8 +226,10 @@ def generate_synthetic_typos(word: str, n: int = 3) -> List[str]:
         generate_swap_typo,
         generate_insertion_typo,
         generate_double_typo,
+        generate_compound_typo,
+        generate_truncation_typo,
     ]
-    
+
     typos = set()
     attempts = 0
     while len(typos) < n and attempts < n * 3:
@@ -193,7 +238,7 @@ def generate_synthetic_typos(word: str, n: int = 3) -> List[str]:
         if typo != word and typo not in typos:
             typos.add(typo)
         attempts += 1
-    
+
     return list(typos)
 
 
@@ -282,31 +327,40 @@ def create_training_examples(
     
     # 2. Add identity mappings (correct -> correct) for vocabulary
     # Bu, modelin doğru kelimeleri değiştirmemesini öğretir
-    vocab_sample = random.sample(vocabulary, min(len(vocabulary), 2000))
+    identity_count = min(len(vocabulary), 4000)
+    vocab_sample = random.sample(vocabulary, identity_count)
     for word in vocab_sample:
         examples.append({
             "typo": word,
             "correct": word,
             "source": "identity"
         })
-    
+        # Also add case variants as identity (model shouldn't break casing)
+        if random.random() < 0.3:
+            case_var = generate_case_variant(word)
+            examples.append({
+                "typo": case_var,
+                "correct": case_var.lower(),
+                "source": "identity_case"
+            })
+
     print(f"[2] After identity mappings: {len(examples)}")
-    
+
     # 3. Generate synthetic typos if augmentation is enabled
     if augment:
         augment_count = 0
-        target = min(augment_samples, len(vocabulary) * 3)
-        
+        target = min(augment_samples, len(vocabulary) * 5)
+
         for word in vocabulary:
             if augment_count >= target:
                 break
-            
+
             # Skip very short words
             if len(word) < 3:
                 continue
-            
-            # Generate 1-3 synthetic typos per word
-            typos = generate_synthetic_typos(word, n=random.randint(1, 3))
+
+            # Generate 2-5 synthetic typos per word (more diverse)
+            typos = generate_synthetic_typos(word, n=random.randint(2, 5))
             for typo in typos:
                 examples.append({
                     "typo": typo,
@@ -316,7 +370,7 @@ def create_training_examples(
                 augment_count += 1
                 if augment_count >= target:
                     break
-        
+
         print(f"[3] After augmentation: {len(examples)}")
     
     return examples

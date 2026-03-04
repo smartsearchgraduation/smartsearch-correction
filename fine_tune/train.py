@@ -187,14 +187,15 @@ CONFIGS = {
         "gradient_accumulation_steps": 1,
     },
     "byt5-base": {
-        "batch_size": 8,
-        "lr": 1e-4,
+        "batch_size": 12,
+        "lr": 5e-5,
         "gradient_checkpointing": False,
         "gradient_accumulation_steps": 2,
+        # effective batch = 12 * 2 = 24 → daha stabil gradients
     },
     "byt5-large": {
         "batch_size": 4,
-        "lr": 5e-5,
+        "lr": 3e-5,
         "gradient_checkpointing": True,
         "gradient_accumulation_steps": 4,
     },
@@ -288,6 +289,14 @@ def train(args):
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Calculate warmup steps (10% of total)
+    steps_per_epoch = len(train_ds) // (batch_size * grad_accum)
+    total_steps = steps_per_epoch * args.epochs
+    warmup_steps = int(total_steps * 0.1)
+
+    import os
+    os.environ["TENSORBOARD_LOGGING_DIR"] = str(output_dir / "logs")
+
     training_args = Seq2SeqTrainingArguments(
         output_dir=str(output_dir),
         num_train_epochs=args.epochs,
@@ -295,7 +304,7 @@ def train(args):
         per_device_eval_batch_size=batch_size * 2,
         learning_rate=lr,
         lr_scheduler_type="cosine",
-        warmup_ratio=0.1,
+        warmup_steps=warmup_steps,
         weight_decay=0.01,
         label_smoothing_factor=args.label_smoothing,
         max_grad_norm=1.0,
@@ -310,7 +319,6 @@ def train(args):
         load_best_model_at_end=True,
         metric_for_best_model="sentence_accuracy",
         greater_is_better=True,
-        logging_dir=str(output_dir / "logs"),
         logging_steps=args.logging_steps,
         predict_with_generate=True,
         generation_max_length=args.max_length,
@@ -328,7 +336,7 @@ def train(args):
         train_dataset=train_ds,
         eval_dataset=eval_ds,
         data_collator=data_collator,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         compute_metrics=build_compute_metrics(tokenizer),
         callbacks=[EarlyStoppingCallback(early_stopping_patience=args.patience)],
     )
@@ -368,7 +376,7 @@ def parse_args():
     p = argparse.ArgumentParser(description="Fine-tune ByT5 for typo correction")
 
     # Model
-    p.add_argument("--model_name", type=str, default="google/byt5-small",
+    p.add_argument("--model_name", type=str, default="google/byt5-base",
                     help="HuggingFace model ID or local path (google/byt5-small, google/byt5-base, google/byt5-large)")
     p.add_argument("--max_length", type=int, default=128,
                     help="Max sequence length for source and target")
@@ -378,7 +386,7 @@ def parse_args():
                     help="Directory with train_t5.jsonl and eval_t5.jsonl")
 
     # Training
-    p.add_argument("--epochs", type=int, default=10)
+    p.add_argument("--epochs", type=int, default=15)
     p.add_argument("--batch_size", type=int, default=None,
                     help="Override batch size (auto-selected per model if not set)")
     p.add_argument("--lr", type=float, default=None,
@@ -397,7 +405,7 @@ def parse_args():
     # Evaluation
     p.add_argument("--eval_steps", type=int, default=200)
     p.add_argument("--logging_steps", type=int, default=50)
-    p.add_argument("--patience", type=int, default=3,
+    p.add_argument("--patience", type=int, default=5,
                     help="Early stopping patience (number of eval steps without improvement)")
 
     # Output
