@@ -24,27 +24,47 @@ from .models.byt5 import ByT5Corrector
 
 logger = logging.getLogger(__name__)
 
+# Model registry: name -> (path_suffix, description)
+_MODEL_REGISTRY = {
+    "byt5-base": ("byt5-typo-best", "ByT5-base fine-tuned (H100)"),
+    "byt5-small": ("byt5-typo-final", "ByT5-small fine-tuned"),
+}
+
+_DEFAULT_MODEL = "byt5-base"
+
 
 class TypoCorrector:
     """
     Central orchestrator for spell correction.
 
-    Uses ByT5 byte-level model for character-aware typo correction.
+    Supports multiple ByT5 variants (small / base) with lazy loading.
     """
 
     def __init__(self):
-        self._model = ByT5Corrector()
-        logger.info("TypoCorrector initialised (model=byt5)")
+        import os
+        self._base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self._models: dict[str, ByT5Corrector] = {}
+        logger.info("TypoCorrector initialised (available models: %s)", list(_MODEL_REGISTRY.keys()))
+
+    def _get_model(self, model_name: str | None) -> ByT5Corrector:
+        """Get or lazily create a model instance."""
+        name = model_name if model_name in _MODEL_REGISTRY else _DEFAULT_MODEL
+        if name not in self._models:
+            import os
+            path = os.path.join(self._base_dir, _MODEL_REGISTRY[name][0])
+            self._models[name] = ByT5Corrector(model_path=path)
+            self._models[name].name = name
+        return self._models[name]
 
     # ------------------------------------------------------------------
     # Public API
     # ------------------------------------------------------------------
 
-    def correct_query(self, query: str) -> str:
+    def correct_query(self, query: str, model: Optional[str] = None) -> str:
         """Return only the corrected string."""
         if not query or not query.strip():
             return query
-        result = self.correct(query)
+        result = self.correct(query, model=model)
         return result["corrected_query"]
 
     def correct(self, query: str, model: Optional[str] = None) -> dict:
@@ -53,23 +73,15 @@ class TypoCorrector:
 
         Args:
             query: User's search query.
-            model: Ignored (kept for API compatibility).
-
-        Returns:
-            {
-                "original_query": str,
-                "corrected_query": str,
-                "changed": bool,
-                "model_used": str,
-                "latency_ms": float,
-            }
+            model: Model name ("byt5-base" or "byt5-small"). None = default.
         """
-        return self._model.correct(query)
+        m = self._get_model(model)
+        return m.correct(query)
 
     def correct_batch(self, queries: list[str], model: Optional[str] = None) -> dict:
         """Correct a batch and return aggregated stats."""
         start = time.perf_counter()
-        results = [self.correct(q) for q in queries]
+        results = [self.correct(q, model=model) for q in queries]
         total_ms = (time.perf_counter() - start) * 1000
 
         return {
@@ -85,9 +97,10 @@ class TypoCorrector:
         """Describe available models (for /models endpoint)."""
         return [
             {
-                "name": "byt5",
-                "description": "ByT5 fine-tuned – byte-level typo correction",
+                "name": name,
+                "description": desc,
                 "architecture": "ByT5 (encoder-decoder, byte-level)",
-                "loaded": self._model.is_loaded(),
+                "loaded": name in self._models and self._models[name].is_loaded(),
             }
+            for name, (_, desc) in _MODEL_REGISTRY.items()
         ]

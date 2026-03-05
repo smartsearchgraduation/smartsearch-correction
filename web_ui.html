@@ -507,25 +507,25 @@
           <label>Select Correction Model</label>
           <div class="model-grid">
             <div class="model-option">
-              <input type="radio" name="model" id="byt5" value="byt5" checked />
-              <label for="byt5">
-                <div class="model-name">ByT5 Fine-tuned</div>
+              <input type="radio" name="model" id="byt5-base" value="byt5-base" checked />
+              <label for="byt5-base">
+                <div class="model-name">ByT5-Base</div>
                 <div class="model-info">
-                  <span class="model-latency">byte-level</span> ·
-                  <span class="model-accuracy">typo correction</span>
+                  <span class="model-latency">583M params</span> ·
+                  <span class="model-accuracy">byte-level</span>
                 </div>
-                <div class="model-desc">Primary Model (ByT5 encoder-decoder)</div>
+                <div class="model-desc">Fine-tuned on H100 (best quality)</div>
               </label>
             </div>
             <div class="model-option">
-              <input type="radio" name="model" id="t5_spell" value="t5_spell" />
-              <label for="t5_spell">
-                <div class="model-name">T5-large-spell</div>
+              <input type="radio" name="model" id="byt5-small" value="byt5-small" />
+              <label for="byt5-small">
+                <div class="model-name">ByT5-Small</div>
                 <div class="model-info">
-                  <span class="model-latency">subword</span> ·
-                  <span class="model-accuracy">spell+grammar</span>
+                  <span class="model-latency">300M params</span> ·
+                  <span class="model-accuracy">byte-level</span>
                 </div>
-                <div class="model-desc">Comparison Model (ai-forever)</div>
+                <div class="model-desc">Fine-tuned (faster, lighter)</div>
               </label>
             </div>
           </div>
