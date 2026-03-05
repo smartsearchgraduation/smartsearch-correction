@@ -21,6 +21,8 @@ import time
 from typing import Optional
 
 from .models.byt5 import ByT5Corrector
+from .models.base import BaseCorrector
+from .models.qwen import QwenCorrector
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +30,7 @@ logger = logging.getLogger(__name__)
 _MODEL_REGISTRY = {
     "byt5-base": ("byt5-typo-best", "ByT5-base fine-tuned (H100)"),
     "byt5-small": ("byt5-typo-final", "ByT5-small fine-tuned"),
+    "qwen-3.5-2b": ("models/qwen3.5-2b", "Qwen 3.5 2B (guarded typo-corrector)"),
 }
 
 _DEFAULT_MODEL = "byt5-base"
@@ -43,16 +46,26 @@ class TypoCorrector:
     def __init__(self):
         import os
         self._base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        self._models: dict[str, ByT5Corrector] = {}
+        self._models: dict[str, BaseCorrector] = {}
         logger.info("TypoCorrector initialised (available models: %s)", list(_MODEL_REGISTRY.keys()))
 
-    def _get_model(self, model_name: str | None) -> ByT5Corrector:
+    def _get_model(self, model_name: str | None) -> BaseCorrector:
         """Get or lazily create a model instance."""
         name = model_name if model_name in _MODEL_REGISTRY else _DEFAULT_MODEL
         if name not in self._models:
             import os
-            path = os.path.join(self._base_dir, _MODEL_REGISTRY[name][0])
-            self._models[name] = ByT5Corrector(model_path=path)
+            model_ref = _MODEL_REGISTRY[name][0]
+
+            if name.startswith("qwen"):
+                qwen_path = os.path.join(self._base_dir, model_ref)
+                if os.path.exists(qwen_path):
+                    self._models[name] = QwenCorrector(model_name_or_path=qwen_path)
+                else:
+                    self._models[name] = QwenCorrector(model_name_or_path="Qwen/Qwen3.5-2B")
+            else:
+                path = os.path.join(self._base_dir, model_ref)
+                self._models[name] = ByT5Corrector(model_path=path)
+
             self._models[name].name = name
         return self._models[name]
 

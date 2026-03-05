@@ -6,6 +6,8 @@ pydantic
 # ML Models
 torch
 transformers
+accelerate
+huggingface_hub
 sentencepiece
 
 # Evaluation

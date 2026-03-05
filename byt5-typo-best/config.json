@@ -27,7 +27,7 @@
   "relative_attention_max_distance": 128,
   "relative_attention_num_buckets": 32,
   "scale_decoder_outputs": true,
-  "tie_word_embeddings": true,
+  "tie_word_embeddings": false,
   "tokenizer_class": "ByT5Tokenizer",
   "transformers_version": "5.0.0",
   "use_cache": false,

@@ -142,7 +142,7 @@ def list_models():
     """List available correction models."""
     return {
         "models": corrector.list_models(),
-        "default": "byt5",
+        "default": "byt5-base",
     }
 
 
