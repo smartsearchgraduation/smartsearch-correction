@@ -30,6 +30,7 @@ logger = logging.getLogger(__name__)
 _MODEL_REGISTRY = {
     "byt5-base": ("byt5-typo-best", "ByT5-base fine-tuned (H100)"),
     "byt5-small": ("byt5-typo-final", "ByT5-small fine-tuned"),
+    "byt5-large": ("byt5-large/best", "ByT5-large fine-tuned"),
     "qwen-3.5-2b": ("models/qwen3.5-2b", "Qwen 3.5 2B (guarded typo-corrector)"),
 }
 
