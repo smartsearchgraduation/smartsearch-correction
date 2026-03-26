@@ -139,10 +139,21 @@ def correct_query(request: CorrectionRequest):
 
 @app.get("/models")
 def list_models():
-    """List available correction models."""
+    """List available correction models.
+
+    Response format aligned with the Retrieval service template so
+    the Backend / Frontend can consume both endpoints consistently.
+    """
+    models = corrector.list_models()
+
     return {
-        "models": corrector.list_models(),
-        "default": "byt5-base",
+        "status": "success",
+        "data": {
+            "correction_models": models,
+            "defaults": {
+                "correction": corrector.get_default_model(),
+            },
+        },
     }
 
 

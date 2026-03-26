@@ -28,13 +28,13 @@ logger = logging.getLogger(__name__)
 
 # Model registry: name -> (path_suffix, description)
 _MODEL_REGISTRY = {
-    "byt5-base": ("byt5-typo-best", "ByT5-base fine-tuned (H100)"),
+    "byt5-base": ("byt5-typo-best", "ByT5-base fine-tuned"),
     "byt5-small": ("byt5-typo-final", "ByT5-small fine-tuned"),
     "byt5-large": ("byt5-large/best", "ByT5-large fine-tuned"),
     "qwen-3.5-2b": ("models/qwen3.5-2b", "Qwen 3.5 2B (guarded typo-corrector)"),
 }
 
-_DEFAULT_MODEL = "byt5-base"
+_DEFAULT_MODEL = "byt5-small"
 
 
 class TypoCorrector:
@@ -109,12 +109,24 @@ class TypoCorrector:
 
     def list_models(self) -> list[dict]:
         """Describe available models (for /models endpoint)."""
-        return [
-            {
+        models = []
+        for name, (_, desc) in _MODEL_REGISTRY.items():
+            if name.startswith("qwen"):
+                arch = "Qwen (causal LM, instruction-tuned)"
+                model_type = "llm"
+            else:
+                arch = "ByT5 (encoder-decoder, byte-level)"
+                model_type = "seq2seq"
+
+            models.append({
                 "name": name,
                 "description": desc,
-                "architecture": "ByT5 (encoder-decoder, byte-level)",
+                "architecture": arch,
+                "type": model_type,
                 "loaded": name in self._models and self._models[name].is_loaded(),
-            }
-            for name, (_, desc) in _MODEL_REGISTRY.items()
-        ]
+            })
+        return models
+
+    def get_default_model(self) -> str:
+        """Return the default model name."""
+        return _DEFAULT_MODEL
