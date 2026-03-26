@@ -23,18 +23,20 @@ from typing import Optional
 from .models.byt5 import ByT5Corrector
 from .models.base import BaseCorrector
 from .models.qwen import QwenCorrector
+from .models.t5_large import T5LargeCorrector
 
 logger = logging.getLogger(__name__)
 
 # Model registry: name -> (path_suffix, description)
 _MODEL_REGISTRY = {
-    "byt5-base": ("byt5-typo-best", "ByT5-base fine-tuned"),
-    "byt5-small": ("byt5-typo-final", "ByT5-small fine-tuned"),
-    "byt5-large": ("byt5-large/best", "ByT5-large fine-tuned"),
+    "t5-large": ("models/t5-large-typo", "T5-large fine-tuned (universal e-commerce)"),
+    "byt5-base": ("models/byt5-typo-best", "ByT5-base fine-tuned"),
+    "byt5-small": ("models/byt5-typo-final", "ByT5-small fine-tuned"),
+    "byt5-large": ("models/byt5-large/best", "ByT5-large fine-tuned"),
     "qwen-3.5-2b": ("models/qwen3.5-2b", "Qwen 3.5 2B (guarded typo-corrector)"),
 }
 
-_DEFAULT_MODEL = "byt5-small"
+_DEFAULT_MODEL = "t5-large"
 
 
 class TypoCorrector:
@@ -63,6 +65,9 @@ class TypoCorrector:
                     self._models[name] = QwenCorrector(model_name_or_path=qwen_path)
                 else:
                     self._models[name] = QwenCorrector(model_name_or_path="Qwen/Qwen3.5-2B")
+            elif name == "t5-large":
+                path = os.path.join(self._base_dir, model_ref)
+                self._models[name] = T5LargeCorrector(model_path=path)
             else:
                 path = os.path.join(self._base_dir, model_ref)
                 self._models[name] = ByT5Corrector(model_path=path)
@@ -114,6 +119,9 @@ class TypoCorrector:
             if name.startswith("qwen"):
                 arch = "Qwen (causal LM, instruction-tuned)"
                 model_type = "llm"
+            elif name == "t5-large":
+                arch = "T5-large (encoder-decoder, token-level)"
+                model_type = "seq2seq"
             else:
                 arch = "ByT5 (encoder-decoder, byte-level)"
                 model_type = "seq2seq"
