@@ -29,14 +29,18 @@ logger = logging.getLogger(__name__)
 
 # Model registry: name -> (path_suffix, description)
 _MODEL_REGISTRY = {
-    "t5-large": ("models/t5-large-typo", "T5-large fine-tuned (universal e-commerce)"),
-    "byt5-base": ("models/byt5-typo-best", "ByT5-base fine-tuned"),
-    "byt5-small": ("models/byt5-typo-final", "ByT5-small fine-tuned"),
-    "byt5-large": ("models/byt5-large/best", "ByT5-large fine-tuned"),
-    "qwen-3.5-2b": ("models/qwen3.5-2b", "Qwen 3.5 2B (guarded typo-corrector)"),
+    # ByT5 variants
+    "byt5-base":      ("models/byt5-typo-best",                          "ByT5-base fine-tuned"),
+    "byt5-small":     ("models/byt5-typo-final",                         "ByT5-small fine-tuned"),
+    "byt5-large":     ("models/byt5-large/best",                         "ByT5-large fine-tuned"),
+    # T5-Large variants
+    "T5-Large-V2":    ("models/t5-large-typo/v2/t5_correction_v2-1",     "T5-Large v2.1 fine-tuned"),
+    "T5-Large-V2.1":  ("models/t5-large-typo/v2/t5_correction_v2-1",     "T5-Large v2.1 + FastText/FAISS pipeline"),
+    # LLM
+    "qwen-3.5-2b":   ("models/qwen3.5-2b",                              "Qwen 3.5 2B (guarded typo-corrector)"),
 }
 
-_DEFAULT_MODEL = "t5-large"
+_DEFAULT_MODEL = "byt5-base"
 
 
 class TypoCorrector:
@@ -65,9 +69,18 @@ class TypoCorrector:
                     self._models[name] = QwenCorrector(model_name_or_path=qwen_path)
                 else:
                     self._models[name] = QwenCorrector(model_name_or_path="Qwen/Qwen3.5-2B")
-            elif name == "t5-large":
+            elif name == "T5-Large-V2.1":
+                # Full pipeline: T5-Large + FastText/FAISS fallback
+                from .models.t5_pipeline import T5LargePipelineCorrector
+                path = os.path.join(self._base_dir, model_ref)
+                self._models[name] = T5LargePipelineCorrector(model_path=path)
+            elif name == "T5-Large-V2":
+                # Standalone T5-Large v2.1 (no fallback)
                 path = os.path.join(self._base_dir, model_ref)
                 self._models[name] = T5LargeCorrector(model_path=path)
+            elif name.startswith("byt5"):
+                path = os.path.join(self._base_dir, model_ref)
+                self._models[name] = ByT5Corrector(model_path=path)
             else:
                 path = os.path.join(self._base_dir, model_ref)
                 self._models[name] = ByT5Corrector(model_path=path)
@@ -119,8 +132,14 @@ class TypoCorrector:
             if name.startswith("qwen"):
                 arch = "Qwen (causal LM, instruction-tuned)"
                 model_type = "llm"
-            elif name == "t5-large":
-                arch = "T5-large (encoder-decoder, token-level)"
+            elif name == "T5-Large-V2.1":
+                arch = "T5-large v2.1 + FastText/FAISS pipeline"
+                model_type = "pipeline"
+            elif name == "T5-Large-V2":
+                arch = "T5-large v2.1 (encoder-decoder, token-level)"
+                model_type = "seq2seq"
+            elif name.startswith("byt5"):
+                arch = "ByT5 (encoder-decoder, byte-level)"
                 model_type = "seq2seq"
             else:
                 arch = "ByT5 (encoder-decoder, byte-level)"
@@ -132,6 +151,7 @@ class TypoCorrector:
                 "architecture": arch,
                 "type": model_type,
                 "loaded": name in self._models and self._models[name].is_loaded(),
+                "default": name == _DEFAULT_MODEL,
             })
         return models
 

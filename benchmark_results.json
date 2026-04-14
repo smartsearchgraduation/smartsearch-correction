@@ -1,0 +1,1011 @@
+[
+  {
+    "model": "ByT5-Base",
+    "total_cases": 60,
+    "exact_match_count": 33,
+    "exact_match_pct": 55.0,
+    "no_harm_count": 41,
+    "no_harm_pct": 68.3,
+    "avg_token_accuracy": 79.8,
+    "avg_cer": 0.0715,
+    "avg_latency_ms": 215.7,
+    "p50_latency_ms": 211.8,
+    "p95_latency_ms": 277.5,
+    "categories": {
+      "electronics_brand": {
+        "total": 15,
+        "exact_match": 9,
+        "exact_match_pct": 60.0,
+        "no_harm_pct": 80.0,
+        "avg_token_accuracy": 81.7
+      },
+      "fashion_brand": {
+        "total": 10,
+        "exact_match": 3,
+        "exact_match_pct": 30.0,
+        "no_harm_pct": 50.0,
+        "avg_token_accuracy": 64.2
+      },
+      "ecommerce_product": {
+        "total": 10,
+        "exact_match": 5,
+        "exact_match_pct": 50.0,
+        "no_harm_pct": 60.0,
+        "avg_token_accuracy": 78.3
+      },
+      "everyday_english": {
+        "total": 10,
+        "exact_match": 6,
+        "exact_match_pct": 60.0,
+        "no_harm_pct": 70.0,
+        "avg_token_accuracy": 83.0
+      },
+      "identity": {
+        "total": 10,
+        "exact_match": 8,
+        "exact_match_pct": 80.0,
+        "no_harm_pct": 80.0,
+        "avg_token_accuracy": 87.5
+      },
+      "mixed_hard": {
+        "total": 5,
+        "exact_match": 2,
+        "exact_match_pct": 40.0,
+        "no_harm_pct": 60.0,
+        "avg_token_accuracy": 87.0
+      }
+    },
+    "failures": [
+      {
+        "input": "corsiar k70 rgb keyboard",
+        "expected": "corsair k70 rgb keyboard",
+        "predicted": "corsair k70 regb keyboard",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "rezer deathadder mouse",
+        "expected": "razer deathadder mouse",
+        "predicted": "red deathadder mouse",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "hpye x cloud headset",
+        "expected": "hyperx cloud headset",
+        "predicted": "hp x cloud headset",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "kingston furi ram 32gb",
+        "expected": "kingston fury ram 32gb",
+        "predicted": "kingston for ram 32gb",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "amd ryzen 7 processer",
+        "expected": "amd ryzen 7 processor",
+        "predicted": "amd ryzen 7 processer",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "sonny wh1000xm5 headphones",
+        "expected": "sony wh1000xm5 headphones",
+        "predicted": "sony wh 1000xm 5 headphones",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "addidas ultraboost shoes",
+        "expected": "adidas ultraboost shoes",
+        "predicted": "adidas ultraboost should",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "pume running shoes",
+        "expected": "puma running shoes",
+        "predicted": "pulse runing should",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "new balace 574 sneakers",
+        "expected": "new balance 574 sneakers",
+        "predicted": "new balace 574 sneakers",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "rebok classic shoes",
+        "expected": "reebok classic shoes",
+        "predicted": "redmi classic should",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "levis 501 jens",
+        "expected": "levis 501 jeans",
+        "predicted": "levis 512gb ssd",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "uniqloo heattech jacket",
+        "expected": "uniqlo heattech jacket",
+        "predicted": "uniqlo heatech jacket",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "zarra women dress",
+        "expected": "zara women dress",
+        "predicted": "arc women dress",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "stainles steel water bottel",
+        "expected": "stainless steel water bottle",
+        "predicted": "stainless steel water bottel",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "waterprof phone case",
+        "expected": "waterproof phone case",
+        "predicted": "waterpro phone case",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "rechargable batteries aa",
+        "expected": "rechargeable batteries aa",
+        "predicted": "rechargable batteries a",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "noise canceling earbuds",
+        "expected": "noise cancelling earbuds",
+        "predicted": "mouse canceling earbuds",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "anti glare moniter screen",
+        "expected": "anti glare monitor screen",
+        "predicted": "anti galaxy monitor screen",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "best laptop for collage students",
+        "expected": "best laptop for college students",
+        "predicted": "best laptop for cover students",
+        "category": "everyday_english"
+      },
+      {
+        "input": "profesional camera for beginers",
+        "expected": "professional camera for beginners",
+        "predicted": "profesional camera for beginners",
+        "category": "everyday_english"
+      },
+      {
+        "input": "light wieght travel bag",
+        "expected": "lightweight travel bag",
+        "predicted": "light with travel bag",
+        "category": "everyday_english"
+      },
+      {
+        "input": "buget friendly smart watch",
+        "expected": "budget friendly smart watch",
+        "predicted": "best friendly smart watch",
+        "category": "everyday_english"
+      },
+      {
+        "input": "corsair vengeance rgb ram",
+        "expected": "corsair vengeance rgb ram",
+        "predicted": "corsair vengeance review ram",
+        "category": "identity"
+      },
+      {
+        "input": "ddr5 6000mhz 32gb kit",
+        "expected": "ddr5 6000mhz 32gb kit",
+        "predicted": "der 512gb ssd 32 gb ram kit",
+        "category": "identity"
+      },
+      {
+        "input": "nvdia geforse rtx 4060 grafics",
+        "expected": "nvidia geforce rtx 4060 graphics",
+        "predicted": "nvidia geforce rtx 4060 gram",
+        "category": "mixed_hard"
+      },
+      {
+        "input": "blutooth speeker for outdor",
+        "expected": "bluetooth speaker for outdoor",
+        "predicted": "bluetooth speaker for outdor",
+        "category": "mixed_hard"
+      },
+      {
+        "input": "best buget mecanical keybord 2024",
+        "expected": "best budget mechanical keyboard 2024",
+        "predicted": "best bose mechanical keyboard 2024",
+        "category": "mixed_hard"
+      }
+    ]
+  },
+  {
+    "model": "ByT5-Small",
+    "total_cases": 60,
+    "exact_match_count": 39,
+    "exact_match_pct": 65.0,
+    "no_harm_count": 44,
+    "no_harm_pct": 73.3,
+    "avg_token_accuracy": 84.3,
+    "avg_cer": 0.0565,
+    "avg_latency_ms": 158.8,
+    "p50_latency_ms": 157.7,
+    "p95_latency_ms": 211.4,
+    "categories": {
+      "electronics_brand": {
+        "total": 15,
+        "exact_match": 13,
+        "exact_match_pct": 86.7,
+        "no_harm_pct": 93.3,
+        "avg_token_accuracy": 91.1
+      },
+      "fashion_brand": {
+        "total": 10,
+        "exact_match": 3,
+        "exact_match_pct": 30.0,
+        "no_harm_pct": 30.0,
+        "avg_token_accuracy": 68.3
+      },
+      "ecommerce_product": {
+        "total": 10,
+        "exact_match": 6,
+        "exact_match_pct": 60.0,
+        "no_harm_pct": 70.0,
+        "avg_token_accuracy": 80.0
+      },
+      "everyday_english": {
+        "total": 10,
+        "exact_match": 6,
+        "exact_match_pct": 60.0,
+        "no_harm_pct": 80.0,
+        "avg_token_accuracy": 81.7
+      },
+      "identity": {
+        "total": 10,
+        "exact_match": 9,
+        "exact_match_pct": 90.0,
+        "no_harm_pct": 90.0,
+        "avg_token_accuracy": 95.0
+      },
+      "mixed_hard": {
+        "total": 5,
+        "exact_match": 2,
+        "exact_match_pct": 40.0,
+        "no_harm_pct": 60.0,
+        "avg_token_accuracy": 88.0
+      }
+    },
+    "failures": [
+      {
+        "input": "hpye x cloud headset",
+        "expected": "hyperx cloud headset",
+        "predicted": "hue x cloud headset",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "dell inspiron laptp",
+        "expected": "dell inspiron laptop",
+        "predicted": "dell inspiron tapo",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "nikee air max 90",
+        "expected": "nike air max 90",
+        "predicted": "nikon air max 90",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "pume running shoes",
+        "expected": "puma running shoes",
+        "predicted": "pure running shoes",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "new balace 574 sneakers",
+        "expected": "new balance 574 sneakers",
+        "predicted": "new baseus 574 sneakers",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "rebok classic shoes",
+        "expected": "reebok classic shoes",
+        "predicted": "rebook classic shoes",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "levis 501 jens",
+        "expected": "levis 501 jeans",
+        "predicted": "lenovo t15 evo",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "uniqloo heattech jacket",
+        "expected": "uniqlo heattech jacket",
+        "predicted": "unifi logitech jacket",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "zarra women dress",
+        "expected": "zara women dress",
+        "predicted": "razer women dress",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "mecanical gaming keybord",
+        "expected": "mechanical gaming keyboard",
+        "predicted": "mecanical gaming keyboard",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "waterprof phone case",
+        "expected": "waterproof phone case",
+        "predicted": "waterpod phone case",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "rechargable batteries aa",
+        "expected": "rechargeable batteries aa",
+        "predicted": "rechargable batteries a",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "noise canceling earbuds",
+        "expected": "noise cancelling earbuds",
+        "predicted": "nice canceling earbuds",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "light wieght travel bag",
+        "expected": "lightweight travel bag",
+        "predicted": "light light travel bag",
+        "category": "everyday_english"
+      },
+      {
+        "input": "populer gifts for kids",
+        "expected": "popular gifts for kids",
+        "predicted": "populer gifts for kids",
+        "category": "everyday_english"
+      },
+      {
+        "input": "buget friendly smart watch",
+        "expected": "budget friendly smart watch",
+        "predicted": "best friendly smart watch",
+        "category": "everyday_english"
+      },
+      {
+        "input": "reccommended gaming laptop",
+        "expected": "recommended gaming laptop",
+        "predicted": "recommend gaming laptop",
+        "category": "everyday_english"
+      },
+      {
+        "input": "nike dunk low panda",
+        "expected": "nike dunk low panda",
+        "predicted": "nike ducky flow panda",
+        "category": "identity"
+      },
+      {
+        "input": "aple watch se cheep price",
+        "expected": "apple watch se cheap price",
+        "predicted": "apple watch se echo price",
+        "category": "mixed_hard"
+      },
+      {
+        "input": "nvdia geforse rtx 4060 grafics",
+        "expected": "nvidia geforce rtx 4060 graphics",
+        "predicted": "nvidia geforce rtx 4060 grafics",
+        "category": "mixed_hard"
+      },
+      {
+        "input": "best buget mecanical keybord 2024",
+        "expected": "best budget mechanical keyboard 2024",
+        "predicted": "best best mechanical keyboard 2024",
+        "category": "mixed_hard"
+      }
+    ]
+  },
+  {
+    "model": "ByT5-Large",
+    "total_cases": 60,
+    "exact_match_count": 26,
+    "exact_match_pct": 43.3,
+    "no_harm_count": 34,
+    "no_harm_pct": 56.7,
+    "avg_token_accuracy": 73.1,
+    "avg_cer": 0.1425,
+    "avg_latency_ms": 407.1,
+    "p50_latency_ms": 405.6,
+    "p95_latency_ms": 537.2,
+    "categories": {
+      "electronics_brand": {
+        "total": 15,
+        "exact_match": 7,
+        "exact_match_pct": 46.7,
+        "no_harm_pct": 60.0,
+        "avg_token_accuracy": 69.4
+      },
+      "fashion_brand": {
+        "total": 10,
+        "exact_match": 7,
+        "exact_match_pct": 70.0,
+        "no_harm_pct": 80.0,
+        "avg_token_accuracy": 90.0
+      },
+      "ecommerce_product": {
+        "total": 10,
+        "exact_match": 5,
+        "exact_match_pct": 50.0,
+        "no_harm_pct": 50.0,
+        "avg_token_accuracy": 69.2
+      },
+      "everyday_english": {
+        "total": 10,
+        "exact_match": 2,
+        "exact_match_pct": 20.0,
+        "no_harm_pct": 50.0,
+        "avg_token_accuracy": 58.8
+      },
+      "identity": {
+        "total": 10,
+        "exact_match": 4,
+        "exact_match_pct": 40.0,
+        "no_harm_pct": 40.0,
+        "avg_token_accuracy": 75.0
+      },
+      "mixed_hard": {
+        "total": 5,
+        "exact_match": 1,
+        "exact_match_pct": 20.0,
+        "no_harm_pct": 60.0,
+        "avg_token_accuracy": 83.0
+      }
+    },
+    "failures": [
+      {
+        "input": "corsiar k70 rgb keyboard",
+        "expected": "corsair k70 rgb keyboard",
+        "predicted": "corsair k100 rgb keyboard",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "logitec g502 mouse",
+        "expected": "logitech g502 mouse",
+        "predicted": "logitech 512 mouse",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "steelsires arctis 7 headset",
+        "expected": "steelseries arctis 7 headset",
+        "predicted": "stainless steel airwrap 7 headphones",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "aple macbook pro m3",
+        "expected": "apple macbook pro m3",
+        "predicted": "apple macbook pro 3s",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "rezer deathadder mouse",
+        "expected": "razer deathadder mouse",
+        "predicted": "reebok drone mouse",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "hpye x cloud headset",
+        "expected": "hyperx cloud headset",
+        "predicted": "oneplus xps 15 headphones",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "kingston furi ram 32gb",
+        "expected": "kingston fury ram 32gb",
+        "predicted": "kingston ram 32 gb ram",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "sonny wh1000xm5 headphones",
+        "expected": "sony wh1000xm5 headphones",
+        "predicted": "sony wh-1000xm5 headphones",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "addidas ultraboost shoes",
+        "expected": "adidas ultraboost shoes",
+        "predicted": "addidas ultraboost shoes",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "levis 501 jens",
+        "expected": "levis 501 jeans",
+        "predicted": "levis 574 jeans",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "uniqloo heattech jacket",
+        "expected": "uniqlo heattech jacket",
+        "predicted": "uniqlo helmet jacket",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "portalbe charger power bank",
+        "expected": "portable charger power bank",
+        "predicted": "polar charger power bank",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "adjustabel standing desk",
+        "expected": "adjustable standing desk",
+        "predicted": "acer acer stainless steel",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "rechargable batteries aa",
+        "expected": "rechargeable batteries aa",
+        "predicted": "rechargeble battery airpods max",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "ergonomc office chair",
+        "expected": "ergonomic office chair",
+        "predicted": "ergonomic office charger",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "anti glare moniter screen",
+        "expected": "anti glare monitor screen",
+        "predicted": "anti glossy monitor sunscreen",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "best laptop for collage students",
+        "expected": "best laptop for college students",
+        "predicted": "best laptop for college student",
+        "category": "everyday_english"
+      },
+      {
+        "input": "profesional camera for beginers",
+        "expected": "professional camera for beginners",
+        "predicted": "profesional camera for budget",
+        "category": "everyday_english"
+      },
+      {
+        "input": "comfartable office chair",
+        "expected": "comfortable office chair",
+        "predicted": "compare office charger",
+        "category": "everyday_english"
+      },
+      {
+        "input": "durabel phone protector",
+        "expected": "durable phone protector",
+        "predicted": "cordless phone protector",
+        "category": "everyday_english"
+      },
+      {
+        "input": "high qualtiy usb cable",
+        "expected": "high quality usb cable",
+        "predicted": "high quality usb-cable",
+        "category": "everyday_english"
+      },
+      {
+        "input": "populer gifts for kids",
+        "expected": "popular gifts for kids",
+        "predicted": "popular gift for kids",
+        "category": "everyday_english"
+      },
+      {
+        "input": "buget friendly smart watch",
+        "expected": "budget friendly smart watch",
+        "predicted": "buy for fit smart watch",
+        "category": "everyday_english"
+      },
+      {
+        "input": "reccommended gaming laptop",
+        "expected": "recommended gaming laptop",
+        "predicted": "recommend gaming lap",
+        "category": "everyday_english"
+      },
+      {
+        "input": "razer viper mini mouse",
+        "expected": "razer viper mini mouse",
+        "predicted": "razer wiper blade mini mouse",
+        "category": "identity"
+      },
+      {
+        "input": "corsair vengeance rgb ram",
+        "expected": "corsair vengeance rgb ram",
+        "predicted": "corsair breathable rgb ram",
+        "category": "identity"
+      },
+      {
+        "input": "samsung 990 pro ssd",
+        "expected": "samsung 990 pro ssd",
+        "predicted": "samsung 990v5 pro ssd",
+        "category": "identity"
+      },
+      {
+        "input": "rtx 4070 ti super",
+        "expected": "rtx 4070 ti super",
+        "predicted": "rtx 4070 ti superlight",
+        "category": "identity"
+      },
+      {
+        "input": "nike dunk low panda",
+        "expected": "nike dunk low panda",
+        "predicted": "nike dunk low pants",
+        "category": "identity"
+      },
+      {
+        "input": "ddr5 6000mhz 32gb kit",
+        "expected": "ddr5 6000mhz 32gb kit",
+        "predicted": "ddr5 6000 mah 32 gb kit",
+        "category": "identity"
+      },
+      {
+        "input": "buy samung galxy buts pro",
+        "expected": "buy samsung galaxy buds pro",
+        "predicted": "buy samsung galaxy boots pro",
+        "category": "mixed_hard"
+      },
+      {
+        "input": "aple watch se cheep price",
+        "expected": "apple watch se cheap price",
+        "predicted": "apple watch ultra cheap price",
+        "category": "mixed_hard"
+      },
+      {
+        "input": "blutooth speeker for outdor",
+        "expected": "bluetooth speaker for outdoor",
+        "predicted": "bluetooth speaker for office",
+        "category": "mixed_hard"
+      },
+      {
+        "input": "best buget mecanical keybord 2024",
+        "expected": "best budget mechanical keyboard 2024",
+        "predicted": "best budget mechanical keyboard 240hz",
+        "category": "mixed_hard"
+      }
+    ]
+  },
+  {
+    "model": "T5-Large-V2",
+    "total_cases": 60,
+    "exact_match_count": 38,
+    "exact_match_pct": 63.3,
+    "no_harm_count": 58,
+    "no_harm_pct": 96.7,
+    "avg_token_accuracy": 86.4,
+    "avg_cer": 0.0216,
+    "avg_latency_ms": 154.2,
+    "p50_latency_ms": 153.2,
+    "p95_latency_ms": 268.1,
+    "categories": {
+      "electronics_brand": {
+        "total": 15,
+        "exact_match": 12,
+        "exact_match_pct": 80.0,
+        "no_harm_pct": 100.0,
+        "avg_token_accuracy": 89.4
+      },
+      "fashion_brand": {
+        "total": 10,
+        "exact_match": 2,
+        "exact_match_pct": 20.0,
+        "no_harm_pct": 80.0,
+        "avg_token_accuracy": 74.2
+      },
+      "ecommerce_product": {
+        "total": 10,
+        "exact_match": 5,
+        "exact_match_pct": 50.0,
+        "no_harm_pct": 100.0,
+        "avg_token_accuracy": 84.2
+      },
+      "everyday_english": {
+        "total": 10,
+        "exact_match": 6,
+        "exact_match_pct": 60.0,
+        "no_harm_pct": 100.0,
+        "avg_token_accuracy": 80.5
+      },
+      "identity": {
+        "total": 10,
+        "exact_match": 10,
+        "exact_match_pct": 100.0,
+        "no_harm_pct": 100.0,
+        "avg_token_accuracy": 100.0
+      },
+      "mixed_hard": {
+        "total": 5,
+        "exact_match": 3,
+        "exact_match_pct": 60.0,
+        "no_harm_pct": 100.0,
+        "avg_token_accuracy": 91.0
+      }
+    },
+    "failures": [
+      {
+        "input": "hpye x cloud headset",
+        "expected": "hyperx cloud headset",
+        "predicted": "hp x cloud headset",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "kingston furi ram 32gb",
+        "expected": "kingston fury ram 32gb",
+        "predicted": "kingston furi ram 32gb",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "sonny wh1000xm5 headphones",
+        "expected": "sony wh1000xm5 headphones",
+        "predicted": "sonny wh1000xm5 headphones",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "nikee air max 90",
+        "expected": "nike air max 90",
+        "predicted": "nikee air max 90",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "addidas ultraboost shoes",
+        "expected": "adidas ultraboost shoes",
+        "predicted": "addidas ultraboost shoes",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "guccci leather bag",
+        "expected": "gucci leather bag",
+        "predicted": "guccci leather bag",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "pume running shoes",
+        "expected": "puma running shoes",
+        "predicted": "pume running shoes",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "rebok classic shoes",
+        "expected": "reebok classic shoes",
+        "predicted": "rebook classic shoes",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "levis 501 jens",
+        "expected": "levis 501 jeans",
+        "predicted": "levis 501 mens",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "uniqloo heattech jacket",
+        "expected": "uniqlo heattech jacket",
+        "predicted": "uniqloo heattech jacket",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "zarra women dress",
+        "expected": "zara women dress",
+        "predicted": "zarra women dress",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "waterprof phone case",
+        "expected": "waterproof phone case",
+        "predicted": "waterprof phone case",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "rechargable batteries aa",
+        "expected": "rechargeable batteries aa",
+        "predicted": "rechargable batteries aa",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "noise canceling earbuds",
+        "expected": "noise cancelling earbuds",
+        "predicted": "noise canceling earbuds",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "ergonomc office chair",
+        "expected": "ergonomic office chair",
+        "predicted": "ergonomc office chair",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "anti glare moniter screen",
+        "expected": "anti glare monitor screen",
+        "predicted": "anti glare moniter screen",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "best laptop for collage students",
+        "expected": "best laptop for college students",
+        "predicted": "best laptop for collage students",
+        "category": "everyday_english"
+      },
+      {
+        "input": "profesional camera for beginers",
+        "expected": "professional camera for beginners",
+        "predicted": "profesional camera for beginers",
+        "category": "everyday_english"
+      },
+      {
+        "input": "light wieght travel bag",
+        "expected": "lightweight travel bag",
+        "predicted": "light weight travel bag",
+        "category": "everyday_english"
+      },
+      {
+        "input": "populer gifts for kids",
+        "expected": "popular gifts for kids",
+        "predicted": "populer gifts for kids",
+        "category": "everyday_english"
+      },
+      {
+        "input": "nvdia geforse rtx 4060 grafics",
+        "expected": "nvidia geforce rtx 4060 graphics",
+        "predicted": "nvidia geforce rtx 4060 grafics",
+        "category": "mixed_hard"
+      },
+      {
+        "input": "blutooth speeker for outdor",
+        "expected": "bluetooth speaker for outdoor",
+        "predicted": "blutooth speaker for outdoor",
+        "category": "mixed_hard"
+      }
+    ]
+  },
+  {
+    "model": "Qwen-3.5-2B",
+    "total_cases": 60,
+    "exact_match_count": 45,
+    "exact_match_pct": 75.0,
+    "no_harm_count": 59,
+    "no_harm_pct": 98.3,
+    "avg_token_accuracy": 87.9,
+    "avg_cer": 0.0144,
+    "avg_latency_ms": 428.6,
+    "p50_latency_ms": 409.3,
+    "p95_latency_ms": 561.0,
+    "categories": {
+      "electronics_brand": {
+        "total": 15,
+        "exact_match": 11,
+        "exact_match_pct": 73.3,
+        "no_harm_pct": 93.3,
+        "avg_token_accuracy": 87.2
+      },
+      "fashion_brand": {
+        "total": 10,
+        "exact_match": 6,
+        "exact_match_pct": 60.0,
+        "no_harm_pct": 100.0,
+        "avg_token_accuracy": 86.7
+      },
+      "ecommerce_product": {
+        "total": 10,
+        "exact_match": 7,
+        "exact_match_pct": 70.0,
+        "no_harm_pct": 100.0,
+        "avg_token_accuracy": 84.2
+      },
+      "everyday_english": {
+        "total": 10,
+        "exact_match": 7,
+        "exact_match_pct": 70.0,
+        "no_harm_pct": 100.0,
+        "avg_token_accuracy": 77.5
+      },
+      "identity": {
+        "total": 10,
+        "exact_match": 10,
+        "exact_match_pct": 100.0,
+        "no_harm_pct": 100.0,
+        "avg_token_accuracy": 100.0
+      },
+      "mixed_hard": {
+        "total": 5,
+        "exact_match": 4,
+        "exact_match_pct": 80.0,
+        "no_harm_pct": 100.0,
+        "avg_token_accuracy": 96.0
+      }
+    },
+    "failures": [
+      {
+        "input": "assu rog strix motherboard",
+        "expected": "asus rog strix motherboard",
+        "predicted": "Assure ROG Strix motherboard",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "rezer deathadder mouse",
+        "expected": "razer deathadder mouse",
+        "predicted": "rezer deathadder mouse",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "hpye x cloud headset",
+        "expected": "hyperx cloud headset",
+        "predicted": "HPYE X Cloud Headset",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "sonny wh1000xm5 headphones",
+        "expected": "sony wh1000xm5 headphones",
+        "predicted": "sonny wh1000xm5 headphones",
+        "category": "electronics_brand"
+      },
+      {
+        "input": "addidas ultraboost shoes",
+        "expected": "adidas ultraboost shoes",
+        "predicted": "addidas ultraboost shoes",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "pume running shoes",
+        "expected": "puma running shoes",
+        "predicted": "pume running shoes",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "rebok classic shoes",
+        "expected": "reebok classic shoes",
+        "predicted": "Rebok Classic Shoes",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "uniqloo heattech jacket",
+        "expected": "uniqlo heattech jacket",
+        "predicted": "uniqloo heattech jacket",
+        "category": "fashion_brand"
+      },
+      {
+        "input": "portalbe charger power bank",
+        "expected": "portable charger power bank",
+        "predicted": "portalbe charger power bank",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "noise canceling earbuds",
+        "expected": "noise cancelling earbuds",
+        "predicted": "noise canceling earbuds",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "anti glare moniter screen",
+        "expected": "anti glare monitor screen",
+        "predicted": "anti-glare monitor screen",
+        "category": "ecommerce_product"
+      },
+      {
+        "input": "light wieght travel bag",
+        "expected": "lightweight travel bag",
+        "predicted": "light weight travel bag",
+        "category": "everyday_english"
+      },
+      {
+        "input": "populer gifts for kids",
+        "expected": "popular gifts for kids",
+        "predicted": "populer gifts for kids",
+        "category": "everyday_english"
+      },
+      {
+        "input": "buget friendly smart watch",
+        "expected": "budget friendly smart watch",
+        "predicted": "budget-friendly smart watch",
+        "category": "everyday_english"
+      },
+      {
+        "input": "buy samung galxy buts pro",
+        "expected": "buy samsung galaxy buds pro",
+        "predicted": "buy samsung galaxy buts pro",
+        "category": "mixed_hard"
+      }
+    ]
+  }
+]

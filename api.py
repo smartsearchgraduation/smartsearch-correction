@@ -51,7 +51,7 @@ logger.addHandler(console_handler)
 app = FastAPI(
     title="SmartSearch Correction API",
     description="E-commerce search query spell correction (ML-based)",
-    version="3.0",
+    version="4.0",
 )
 
 app.add_middleware(
@@ -82,6 +82,9 @@ class CorrectionResponse(BaseModel):
     changed: bool
     model_used: str
     latency_ms: float
+    # New fields (populated for T5-Large-V2.1 pipeline):
+    correction_source: str = ""         # "t5" | "fasttext" | "t5+fasttext"
+    suggestions: list[str] = []         # "did you mean?" candidates
 
 
 # ---------------------------------------------------------------------------
@@ -113,19 +116,24 @@ def correct_query(request: CorrectionRequest):
             changed=result["changed"],
             model_used=result["model_used"],
             latency_ms=result["latency_ms"],
+            correction_source=result.get("correction_source", ""),
+            suggestions=result.get("suggestions", []),
         )
 
         if response.changed:
             logger.info(
-                "'%s' -> '%s'  (%.1fms)",
+                "'%s' -> '%s'  (model=%s source=%s %.1fms)",
                 response.original_query,
                 response.corrected_query,
+                response.model_used,
+                response.correction_source or response.model_used,
                 response.latency_ms,
             )
         else:
             logger.info(
-                "No change: '%s'  (%.1fms)",
+                "No change: '%s'  (model=%s %.1fms)",
                 response.original_query,
+                response.model_used,
                 response.latency_ms,
             )
 

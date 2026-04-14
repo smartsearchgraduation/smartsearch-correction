@@ -254,7 +254,7 @@
 
       .models {
         display: grid;
-        grid-template-columns: repeat(2, minmax(160px, 1fr));
+        grid-template-columns: repeat(3, minmax(140px, 1fr));
         gap: 10px;
       }
 
@@ -435,6 +435,59 @@
         font-weight: 700;
       }
 
+      .model-card-highlight {
+        border-color: rgba(247, 198, 0, 0.35);
+        background: rgba(247, 198, 0, 0.04);
+      }
+
+      .default-badge, .pipeline-badge {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 2px 6px;
+        border-radius: 4px;
+        vertical-align: middle;
+        margin-left: 4px;
+      }
+
+      .default-badge {
+        color: var(--ok);
+        border: 1px solid rgba(76, 199, 137, 0.4);
+        background: rgba(76, 199, 137, 0.1);
+      }
+
+      .pipeline-badge {
+        color: var(--yellow-soft);
+        border: 1px solid rgba(247, 198, 0, 0.35);
+        background: rgba(247, 198, 0, 0.1);
+      }
+
+      .pill-source {
+        color: #7eb8f7;
+        border-color: rgba(126, 184, 247, 0.4);
+        background: rgba(126, 184, 247, 0.09);
+      }
+
+      .suggestions {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .suggestion-chip {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: #ffb347;
+        border: 1px solid rgba(255, 179, 71, 0.4);
+        background: rgba(255, 179, 71, 0.08);
+      }
+
       .msg {
         display: none;
         margin-top: 10px;
@@ -493,7 +546,7 @@
         }
 
         .models {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
         }
 
         .summary-grid {
@@ -537,7 +590,7 @@
                 id="queryInput"
                 class="query-input"
                 type="text"
-                placeholder="Try: iphnoe 15 pro, samsnug galaxy, lgoitehc mouse"
+                placeholder="Try: corsiar k70 rgb, nikee air max, samung galxy s24 ulra"
                 autocomplete="off"
               />
               <button id="runBtn" class="btn btn-main" type="button">Run</button>
@@ -549,10 +602,14 @@
             </p>
 
             <div class="chips">
-              <button class="chip" type="button" data-example="iphnoe 15 pro">iphnoe 15 pro</button>
-              <button class="chip" type="button" data-example="samsnug galaxy s24">samsnug galaxy s24</button>
-              <button class="chip" type="button" data-example="sonny headphoens">sonny headphoens</button>
-              <button class="chip" type="button" data-example="lgoitehc mouse">lgoitehc mouse</button>
+              <button class="chip" type="button" data-example="corsiar k70 rgb">corsiar k70 rgb</button>
+              <button class="chip" type="button" data-example="nikee air max">nikee air max</button>
+              <button class="chip" type="button" data-example="samung galxy s24 ulra">samung galxy s24 ulra</button>
+              <button class="chip" type="button" data-example="logitec g502 mouse">logitec g502 mouse</button>
+              <button class="chip" type="button" data-example="wireles mouse for gamng">wireles mouse for gamng</button>
+              <button class="chip" type="button" data-example="blutooth headphons">blutooth headphons</button>
+              <button class="chip" type="button" data-example="addidas ultraboost">addidas ultraboost</button>
+              <button class="chip" type="button" data-example="aple macbok pro m3">aple macbok pro m3</button>
             </div>
 
             <div class="models mode-single" id="modelsGrid"></div>
@@ -589,22 +646,36 @@
       const API_URL = "http://localhost:5001";
       const MODEL_CATALOG = [
         {
-          id: "byt5-small",
-          name: "ByT5 Small",
-          meta: "300M · byte-level",
-          desc: "Fast baseline",
-        },
-        {
           id: "byt5-base",
           name: "ByT5 Base",
           meta: "583M · byte-level",
-          desc: "Primary quality model",
+          desc: "Default — fast, general purpose",
+          isDefault: true,
+        },
+        {
+          id: "byt5-small",
+          name: "ByT5 Small",
+          meta: "300M · byte-level",
+          desc: "Lighter, faster baseline",
         },
         {
           id: "byt5-large",
           name: "ByT5 Large",
           meta: "1.2B · byte-level",
           desc: "High quality / higher latency",
+        },
+        {
+          id: "T5-Large-V2",
+          name: "T5-Large V2",
+          meta: "770M · token-level",
+          desc: "v2.1 fine-tuned, standalone",
+        },
+        {
+          id: "T5-Large-V2.1",
+          name: "T5-Large V2.1",
+          meta: "770M + FastText/FAISS",
+          desc: "Full pipeline with fallback",
+          highlight: true,
         },
         {
           id: "qwen-3.5-2b",
@@ -680,16 +751,19 @@
           if (checked) checked.checked = true;
         } else {
           checks.forEach((c) => {
-            if (["byt5-base", "byt5-large"].includes(c.value)) c.checked = true;
+            if (["byt5-base", "T5-Large-V2", "T5-Large-V2.1"].includes(c.value)) c.checked = true;
           });
         }
       }
 
       function renderModelCards() {
-        modelsGrid.innerHTML = MODEL_CATALOG.map((m, idx) => {
-          const checked = idx === 1 ? "checked" : "";
+        modelsGrid.innerHTML = MODEL_CATALOG.map((m) => {
+          const checked = m.isDefault ? "checked" : "";
+          const highlightClass = m.highlight ? " model-card-highlight" : "";
+          const defaultBadge = m.isDefault ? `<span class="default-badge">default</span>` : "";
+          const pipelineBadge = m.highlight ? `<span class="pipeline-badge">pipeline</span>` : "";
           return `
-            <label class="model-card" for="model-${m.id}">
+            <label class="model-card${highlightClass}" for="model-${m.id}">
               <div class="model-head">
                 <input
                   id="model-${m.id}"
@@ -698,7 +772,7 @@
                   value="${m.id}"
                   ${checked}
                 />
-                <div class="model-name">${m.name}</div>
+                <div class="model-name">${m.name} ${defaultBadge}${pipelineBadge}</div>
               </div>
               <div class="model-meta">${m.meta}</div>
               <div class="model-desc">${m.desc}</div>
@@ -790,6 +864,8 @@
           changed: !!data.changed,
           serverLatency: Number(data.latency_ms || 0),
           totalLatency: performance.now() - clientStart,
+          correctionSource: data.correction_source || "",
+          suggestions: data.suggestions || [],
         };
       }
 
@@ -811,18 +887,31 @@
         rows.forEach((row) => {
           const box = document.createElement("div");
           box.className = "result-box";
+
+          const sourceBadge = row.correctionSource
+            ? `<span class="pill pill-source">${escapeHtml(row.correctionSource)}</span>`
+            : "";
+
+          const suggestionsHtml = row.suggestions && row.suggestions.length
+            ? `<div class="suggestions">${row.suggestions.map(s => `<span class="suggestion-chip">${escapeHtml(s)}</span>`).join("")}</div>`
+            : "";
+
           box.innerHTML = `
             <div class="result-top">
               <strong>${escapeHtml(row.model)}</strong>
-              <span class="pill ${row.changed ? "pill-ok" : "pill-no"}">
-                ${row.changed ? "changed" : "unchanged"}
-              </span>
+              <div style="display:flex; gap:6px; align-items:center">
+                ${sourceBadge}
+                <span class="pill ${row.changed ? "pill-ok" : "pill-no"}">
+                  ${row.changed ? "changed" : "unchanged"}
+                </span>
+              </div>
             </div>
             <div class="lat">server ${row.serverLatency.toFixed(2)}ms · total ${row.totalLatency.toFixed(0)}ms</div>
             <div class="text-lines" style="margin-top: 8px">
               <div class="line"><span>input</span> ${escapeHtml(row.original)}</div>
               <div class="line corrected"><span>output</span> ${escapeHtml(row.corrected)}</div>
             </div>
+            ${suggestionsHtml}
           `;
           results.appendChild(box);
         });

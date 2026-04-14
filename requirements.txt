@@ -10,5 +10,10 @@ accelerate
 huggingface_hub
 sentencepiece
 
+# FastText + FAISS fallback (Stage 2 pipeline)
+fasttext-wheel       # pip-friendly build of fasttext (no C++ compiler required on Windows)
+faiss-cpu            # FAISS vector index (CPU build; swap for faiss-gpu on GPU servers)
+numpy
+
 # Evaluation
 textdistance
