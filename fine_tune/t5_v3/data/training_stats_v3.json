@@ -1,0 +1,25 @@
+{
+  "total_train": 4750,
+  "total_eval": 250,
+  "identity_count": 45,
+  "identity_ratio": 0.0095,
+  "correction_count": 4705,
+  "categories": {
+    "ecom_query_typo": 2466,
+    "phonetic_typo": 844,
+    "generic_product_typo": 777,
+    "vocab_typo": 532,
+    "space_error": 54,
+    "identity_query": 31,
+    "curated_in_context": 14,
+    "existing_csv": 9,
+    "curated_standalone": 9,
+    "identity_generic": 6,
+    "identity_brand": 5,
+    "identity_tricky": 2,
+    "identity_tech": 1
+  },
+  "brand_count": 105,
+  "product_terms_count": 121,
+  "typo_mappings_count": 541
+}

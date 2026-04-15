@@ -1,0 +1,42 @@
+{
+  "total_train": 902153,
+  "total_eval": 47624,
+  "identity_count": 158376,
+  "identity_ratio": 0.1756,
+  "correction_count": 743777,
+  "categories": {
+    "ecom_query_typo": 142476,
+    "identity_query": 99133,
+    "aug_keyboard": 70443,
+    "aug_double": 65077,
+    "aug_swap": 58854,
+    "aug_phonetic": 51464,
+    "identity_external": 49540,
+    "aug_delete": 49388,
+    "phonetic_typo": 47491,
+    "generic_product_typo": 46881,
+    "aug_insert": 42737,
+    "external_codespell": 31639,
+    "vocab_typo": 27711,
+    "external_torinriley": 24554,
+    "external_word_codespell": 19847,
+    "external_birkbeck": 19227,
+    "aug_compound": 16402,
+    "external_word_torinriley": 15157,
+    "identity_generic": 9580,
+    "external_word_birkbeck": 9359,
+    "space_error": 3224,
+    "space_split_context": 1178,
+    "aug_omit_repeat": 607,
+    "identity_brand": 76,
+    "space_split": 61,
+    "identity_tech": 33,
+    "identity_tricky": 14
+  },
+  "quality_checks": {
+    "conflicting_targets": 0,
+    "non_ascii": 0,
+    "train_eval_overlap": 0,
+    "duplicates": 0
+  }
+}

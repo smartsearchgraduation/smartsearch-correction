@@ -1,0 +1,250 @@
+{"input_text": "correct: oral-b io sreies review", "target_text": "oral-b io series review", "category": "ecom_query_typo"}
+{"input_text": "correct: best sennheiiser microphone", "target_text": "best sennheiser microphone", "category": "ecom_query_typo"}
+{"input_text": "correct: cheap virkenstok arizona", "target_text": "cheap birkenstock arizona", "category": "ecom_query_typo"}
+{"input_text": "correct: clinique serum meni", "target_text": "clinique serum mini", "category": "phonetic_typo"}
+{"input_text": "correct: baby monitor deald", "target_text": "baby monitor deals", "category": "generic_product_typo"}
+{"input_text": "correct: kitchenaid food processor pricii", "target_text": "kitchenaid food processor price", "category": "ecom_query_typo"}
+{"input_text": "correct: modep", "target_text": "model", "category": "vocab_typo"}
+{"input_text": "correct: gacci sneakers xxl", "target_text": "gucci sneakers xxl", "category": "phonetic_typo"}
+{"input_text": "correct: best steelweries aerox", "target_text": "best steelseries aerox", "category": "ecom_query_typo"}
+{"input_text": "correct: uneqlo t-shirt deeals", "target_text": "uniqlo t-shirt deals", "category": "ecom_query_typo"}
+{"input_text": "correct: xiaomi poco renewid", "target_text": "xiaomi poco renewed", "category": "phonetic_typo"}
+{"input_text": "correct: ventage", "target_text": "vintage", "category": "vocab_typo"}
+{"input_text": "correct: buy seagate wxternal drie", "target_text": "buy seagate external drive", "category": "ecom_query_typo"}
+{"input_text": "correct: spekaer fro latest", "target_text": "speaker for latest", "category": "generic_product_typo"}
+{"input_text": "correct: eyeshafow for small", "target_text": "eyeshadow for small", "category": "ecom_query_typo"}
+{"input_text": "correct: levo", "target_text": "lego", "category": "vocab_typo"}
+{"input_text": "correct: best sandals for ggaming", "target_text": "best sandals for gaming", "category": "generic_product_typo"}
+{"input_text": "correct: top rated pseaker", "target_text": "top rated speaker", "category": "generic_product_typo"}
+{"input_text": "correct: louis vuitton neverfoll lite", "target_text": "louis vuitton neverfull lite", "category": "phonetic_typo"}
+{"input_text": "correct: l'oreal elvive for trabel ofldable", "target_text": "l'oreal elvive for travel foldable", "category": "ecom_query_typo"}
+{"input_text": "correct: buy awllet online", "target_text": "buy wallet online", "category": "generic_product_typo"}
+{"input_text": "correct: rcucial ballistix free shipping", "target_text": "crucial ballistix free shipping", "category": "ecom_query_typo"}
+{"input_text": "correct: best rma mrn", "target_text": "best ram men", "category": "generic_product_typo"}
+{"input_text": "correct: struaeg", "target_text": "stroage", "category": "vocab_typo"}
+{"input_text": "correct: azus router grey", "target_text": "asus router grey", "category": "phonetic_typo"}
+{"input_text": "correct: irng light for xl", "target_text": "ring light for xl", "category": "generic_product_typo"}
+{"input_text": "correct: mamry", "target_text": "memry", "category": "vocab_typo"}
+{"input_text": "correct: rowter vs headphones", "target_text": "router vs headphones", "category": "generic_product_typo"}
+{"input_text": "correct: curtains for siize 10", "target_text": "curtains for size 10", "category": "generic_product_typo"}
+{"input_text": "correct: tp-link extendar size 10", "target_text": "tp-link extender size 10", "category": "phonetic_typo"}
+{"input_text": "correct: buy michelij all season", "target_text": "buy michelin all season", "category": "ecom_query_typo"}
+{"input_text": "correct: logirech mouse vs", "target_text": "logitech mouse vs", "category": "ecom_query_typo"}
+{"input_text": "correct: sweater ynder 100", "target_text": "sweater under 100", "category": "generic_product_typo"}
+{"input_text": "correct: k100 crossir", "target_text": "k100 corsair", "category": "ecom_query_typo"}
+{"input_text": "correct: evenng", "target_text": "evening", "category": "existing_csv"}
+{"input_text": "correct: router netgeat", "target_text": "router netgear", "category": "ecom_query_typo"}
+{"input_text": "correct: usus rog zephyrus 2026", "target_text": "asus rog zephyrus 2026", "category": "phonetic_typo"}
+{"input_text": "correct: nyx butterr gloss review", "target_text": "nyx butter gloss review", "category": "ecom_query_typo"}
+{"input_text": "correct: neat core ultra for offfice", "target_text": "best core ultra for office", "category": "ecom_query_typo"}
+{"input_text": "correct: ytie tombelr sale", "target_text": "yeti tumbler sale", "category": "ecom_query_typo"}
+{"input_text": "correct: marshall wpeaker sef", "target_text": "marshall speaker set", "category": "ecom_query_typo"}
+{"input_text": "correct: nintendo mario pak of 3", "target_text": "nintendo mario pack of 3", "category": "ecom_query_typo"}
+{"input_text": "correct: ikee desk premium", "target_text": "ikea desk premium", "category": "phonetic_typo"}
+{"input_text": "correct: llafes", "target_text": "loafers", "category": "vocab_typo"}
+{"input_text": "correct: best run star grien", "target_text": "best run star green", "category": "ecom_query_typo"}
+{"input_text": "correct: herbed", "target_text": "gerber", "category": "vocab_typo"}
+{"input_text": "correct: logitech kouse lrice", "target_text": "logitech mouse price", "category": "ecom_query_typo"}
+{"input_text": "correct: bookshelf forr waterproof", "target_text": "bookshelf for waterproof", "category": "generic_product_typo"}
+{"input_text": "correct: cheap neslresso coffee maker", "target_text": "cheap nespresso coffee maker", "category": "ecom_query_typo"}
+{"input_text": "correct: oneplus budc ergonomic", "target_text": "oneplus buds ergonomic", "category": "phonetic_typo"}
+{"input_text": "correct: kingston ssd largi", "target_text": "kingston ssd large", "category": "phonetic_typo"}
+{"input_text": "correct: grilysl", "target_text": "grill", "category": "vocab_typo"}
+{"input_text": "correct: top rated drawing tablte", "target_text": "top rated drawing tablet", "category": "generic_product_typo"}
+{"input_text": "correct: old spice body wash for homi", "target_text": "old spice body wash for home", "category": "phonetic_typo"}
+{"input_text": "correct: top rated pet hed", "target_text": "top rated pet bed", "category": "generic_product_typo"}
+{"input_text": "correct: payppal", "target_text": "paypal", "category": "vocab_typo"}
+{"input_text": "correct: scanner bluetooth dle", "target_text": "scanner bluetooth sale", "category": "generic_product_typo"}
+{"input_text": "correct: gillstte fusion set", "target_text": "gillette fusion set", "category": "ecom_query_typo"}
+{"input_text": "correct: new balance 2002e review", "target_text": "new balance 2002r review", "category": "ecom_query_typo"}
+{"input_text": "correct: suwooofer", "target_text": "subwoofer", "category": "vocab_typo"}
+{"input_text": "correct: bay serum online", "target_text": "buy serum online", "category": "generic_product_typo"}
+{"input_text": "correct: buy sunscrene onpine", "target_text": "buy sunscreen online", "category": "generic_product_typo"}
+{"input_text": "correct: shirt ralhp lauren", "target_text": "shirt ralph lauren", "category": "ecom_query_typo"}
+{"input_text": "correct: clbu c for set", "target_text": "club c for set", "category": "ecom_query_typo"}
+{"input_text": "correct: buy hypsrc ram", "target_text": "buy hyperx ram", "category": "ecom_query_typo"}
+{"input_text": "correct: necpresso lattiswia sale", "target_text": "nespresso lattissima sale", "category": "ecom_query_typo"}
+{"input_text": "correct: earthkeepers top fatebd deals", "target_text": "earthkeepers top rated deals", "category": "ecom_query_typo"}
+{"input_text": "correct: aftion camera uncar 100", "target_text": "action camera under 100", "category": "generic_product_typo"}
+{"input_text": "correct: best sunscreen ttop rated", "target_text": "best sunscreen top rated", "category": "generic_product_typo"}
+{"input_text": "correct: vans era ander 200", "target_text": "vans era under 200", "category": "phonetic_typo"}
+{"input_text": "correct: buy ccanner oline", "target_text": "buy scanner online", "category": "generic_product_typo"}
+{"input_text": "correct: nentenco", "target_text": "nintendo", "category": "vocab_typo"}
+{"input_text": "correct: nespresso acpsules free shipping", "target_text": "nespresso capsules free shipping", "category": "ecom_query_typo"}
+{"input_text": "correct: entgeer orbi free shypping", "target_text": "netgear orbi free shipping", "category": "ecom_query_typo"}
+{"input_text": "correct: lenova thinkpad gaming", "target_text": "lenovo thinkpad gaming", "category": "phonetic_typo"}
+{"input_text": "correct: somplisafi", "target_text": "simplisafe", "category": "vocab_typo"}
+{"input_text": "correct: nbl speakre vs", "target_text": "jbl speaker vs", "category": "ecom_query_typo"}
+{"input_text": "correct: oakley holbrook top ratid", "target_text": "oakley holbrook top rated", "category": "phonetic_typo"}
+{"input_text": "correct: ray-ban rjound price", "target_text": "ray-ban round price", "category": "ecom_query_typo"}
+{"input_text": "correct: curciql memory deals", "target_text": "crucial memory deals", "category": "ecom_query_typo"}
+{"input_text": "correct: corsair heeadset price", "target_text": "corsair headset price", "category": "ecom_query_typo"}
+{"input_text": "correct: sony wf-1000x m5", "target_text": "sony wf-1000xm5", "category": "space_error"}
+{"input_text": "correct: under armour project rock free shippingg", "target_text": "under armour project rock free shipping", "category": "ecom_query_typo"}
+{"input_text": "correct: yhe lrdinary serum vs", "target_text": "the ordinary serum vs", "category": "ecom_query_typo"}
+{"input_text": "correct: nestle nrspresso qdeals", "target_text": "nestle nespresso deals", "category": "ecom_query_typo"}
+{"input_text": "correct: ibtil core ultra silver white", "target_text": "intel core ultra silver white", "category": "ecom_query_typo"}
+{"input_text": "correct: underwar", "target_text": "underwear", "category": "vocab_typo"}
+{"input_text": "correct: seagate ssd xl genn 2", "target_text": "seagate ssd xl gen 2", "category": "ecom_query_typo"}
+{"input_text": "correct: converse chuck teylor free shipping", "target_text": "converse chuck taylor free shipping", "category": "ecom_query_typo"}
+{"input_text": "correct: astall", "target_text": "astell", "category": "vocab_typo"}
+{"input_text": "correct: apple iphone 13 rwview", "target_text": "apple iphone 13 review", "category": "ecom_query_typo"}
+{"input_text": "correct: nuke air jordan free shipping", "target_text": "nike air jordan free shipping", "category": "ecom_query_typo"}
+{"input_text": "correct: hypeex mouse warranty", "target_text": "hyperx mouse warranty", "category": "ecom_query_typo"}
+{"input_text": "correct: byu lamp online", "target_text": "buy lamp online", "category": "generic_product_typo"}
+{"input_text": "correct: goggles for vheap", "target_text": "goggles for cheap", "category": "ecom_query_typo"}
+{"input_text": "correct: hydroflask fud jar xl", "target_text": "hydroflask food jar xl", "category": "phonetic_typo"}
+{"input_text": "correct: tommy hilfiger jens review", "target_text": "tommy hilfiger jeans review", "category": "ecom_query_typo"}
+{"input_text": "correct: conpaq", "target_text": "compaq", "category": "vocab_typo"}
+{"input_text": "correct: buy brevilla smart oven", "target_text": "buy breville smart oven", "category": "ecom_query_typo"}
+{"input_text": "correct: instant pot pressurr cooker", "target_text": "instant pot pressure cooker", "category": "ecom_query_typo"}
+{"input_text": "correct: aif 3 size 10 deals", "target_text": "air 3 size 10 deals", "category": "ecom_query_typo"}
+{"input_text": "correct: crusial ballistix under 100", "target_text": "crucial ballistix under 100", "category": "phonetic_typo"}
+{"input_text": "correct: cheap lg sundbar", "target_text": "cheap lg soundbar", "category": "ecom_query_typo"}
+{"input_text": "correct: gapro max for gym", "target_text": "gopro max for gym", "category": "phonetic_typo"}
+{"input_text": "correct: palotn tread forg home xl", "target_text": "peloton tread for home xl", "category": "ecom_query_typo"}
+{"input_text": "correct: ljnen", "target_text": "linen", "category": "vocab_typo"}
+{"input_text": "correct: cheap steelseries kdyboard", "target_text": "cheap steelseries keyboard", "category": "ecom_query_typo"}
+{"input_text": "correct: gpo for se", "target_text": "gpu for se", "category": "ecom_query_typo"}
+{"input_text": "correct: colalr under 100 sale", "target_text": "collar under 100 sale", "category": "generic_product_typo"}
+{"input_text": "correct: bast ssr for gaming", "target_text": "best ssd for gaming", "category": "generic_product_typo"}
+{"input_text": "correct: cheap old spice bdy wash", "target_text": "cheap old spice body wash", "category": "ecom_query_typo"}
+{"input_text": "correct: bed frae deals", "target_text": "bed frame deals", "category": "generic_product_typo"}
+{"input_text": "correct: cheap kitchenaid kixer", "target_text": "cheap kitchenaid mixer", "category": "ecom_query_typo"}
+{"input_text": "correct: puma cali midium", "target_text": "puma cali medium", "category": "phonetic_typo"}
+{"input_text": "correct: puam joggers for gym gen 2", "target_text": "puma joggers for gym gen 2", "category": "ecom_query_typo"}
+{"input_text": "correct: cheap dwsh cam", "target_text": "cheap dash cam", "category": "generic_product_typo"}
+{"input_text": "correct: best coffed nakr foldable", "target_text": "best coffee maker foldable", "category": "generic_product_typo"}
+{"input_text": "correct: top rated jans", "target_text": "top rated jeans", "category": "generic_product_typo"}
+{"input_text": "correct: sutro oaclsy", "target_text": "sutro oakley", "category": "ecom_query_typo"}
+{"input_text": "correct: bect badracuda top rated", "target_text": "best barracuda top rated", "category": "ecom_query_typo"}
+{"input_text": "correct: puma suede lbue", "target_text": "puma suede blue", "category": "ecom_query_typo"}
+{"input_text": "correct: louis vuiton keepall review", "target_text": "louis vuitton keepall review", "category": "ecom_query_typo"}
+{"input_text": "correct: new tp-link exyneder under 100", "target_text": "new tp-link extender under 100", "category": "ecom_query_typo"}
+{"input_text": "correct: lcinique zeruum", "target_text": "clinique serum", "category": "ecom_query_typo"}
+{"input_text": "correct: chair vs yogq mat", "target_text": "chair vs yoga mat", "category": "generic_product_typo"}
+{"input_text": "correct: h&m t-shirt lita", "target_text": "h&m t-shirt lite", "category": "phonetic_typo"}
+{"input_text": "correct: puma jogge rs", "target_text": "puma joggers", "category": "space_error"}
+{"input_text": "correct: naatilus", "target_text": "nautilus", "category": "vocab_typo"}
+{"input_text": "correct: briville", "target_text": "breville", "category": "vocab_typo"}
+{"input_text": "correct: barun series 9", "target_text": "braun series 9", "category": "ecom_query_typo"}
+{"input_text": "correct: netgear robi review", "target_text": "netgear orbi review", "category": "ecom_query_typo"}
+{"input_text": "correct: tommy hilfiger jacket lyte", "target_text": "tommy hilfiger jacket lite", "category": "phonetic_typo"}
+{"input_text": "correct: t-shirt vor home sale", "target_text": "t-shirt for home sale", "category": "generic_product_typo"}
+{"input_text": "correct: zeiis", "target_text": "zeiss", "category": "vocab_typo"}
+{"input_text": "correct: netgear router refurbizhed", "target_text": "netgear router refurbished", "category": "phonetic_typo"}
+{"input_text": "correct: running shoes vs phoe", "target_text": "running shoes vs phone", "category": "generic_product_typo"}
+{"input_text": "correct: rddmi", "target_text": "redmi", "category": "vocab_typo"}
+{"input_text": "correct: lg souundbar", "target_text": "lg soundbar", "category": "ecom_query_typo"}
+{"input_text": "correct: ultra inatant pot", "target_text": "ultra instant pot", "category": "ecom_query_typo"}
+{"input_text": "correct: vans dra cheap renewed", "target_text": "vans era cheap renewed", "category": "ecom_query_typo"}
+{"input_text": "correct: ralph lahren cap price", "target_text": "ralph lauren cap price", "category": "ecom_query_typo"}
+{"input_text": "correct: alaplex no. 4 sale", "target_text": "olaplex no. 4 sale", "category": "ecom_query_typo"}
+{"input_text": "correct: neutrgenma sunscreen warranty", "target_text": "neutrogena sunscreen warranty", "category": "ecom_query_typo"}
+{"input_text": "correct: kasfara", "target_text": "mascara", "category": "vocab_typo"}
+{"input_text": "correct: mnii", "target_text": "mini", "category": "vocab_typo"}
+{"input_text": "correct: best printer for gamign", "target_text": "best printer for gaming", "category": "generic_product_typo"}
+{"input_text": "correct: toaster undid 100", "target_text": "toaster under 100", "category": "generic_product_typo"}
+{"input_text": "correct: wutch vs cooler", "target_text": "watch vs cooler", "category": "generic_product_typo"}
+{"input_text": "correct: piloton tread free shipping", "target_text": "peloton tread free shipping", "category": "ecom_query_typo"}
+{"input_text": "correct: gopro hiro 12 for gym", "target_text": "gopro hero 12 for gym", "category": "phonetic_typo"}
+{"input_text": "correct: olaplex shampu women", "target_text": "olaplex shampoo women", "category": "phonetic_typo"}
+{"input_text": "correct: dvoe deodorant deals", "target_text": "dove deodorant deals", "category": "ecom_query_typo"}
+{"input_text": "correct: tammy hilfiger polo noise cancelling", "target_text": "tommy hilfiger polo noise cancelling", "category": "phonetic_typo"}
+{"input_text": "correct: besg mouse 2 pacck", "target_text": "best mouse 2 pack", "category": "generic_product_typo"}
+{"input_text": "correct: ran size 42 deals", "target_text": "fan size 42 deals", "category": "ecom_query_typo"}
+{"input_text": "correct: ampcifi", "target_text": "amplifi", "category": "vocab_typo"}
+{"input_text": "correct: belt unrer 100", "target_text": "belt under 100", "category": "generic_product_typo"}
+{"input_text": "correct: k70 corsar", "target_text": "k70 corsair", "category": "ecom_query_typo"}
+{"input_text": "correct: woox", "target_text": "wood", "category": "vocab_typo"}
+{"input_text": "correct: best treining shoes pro", "target_text": "best training shoes pro", "category": "ecom_query_typo"}
+{"input_text": "correct: sony appha vs", "target_text": "sony alpha vs", "category": "ecom_query_typo"}
+{"input_text": "correct: pocket ken deeals", "target_text": "pocket men deals", "category": "ecom_query_typo"}
+{"input_text": "correct: mayballine mascara 2024", "target_text": "maybelline mascara 2024", "category": "phonetic_typo"}
+{"input_text": "correct: cheap instant pot pressure cker", "target_text": "cheap instant pot pressure cooker", "category": "ecom_query_typo"}
+{"input_text": "correct: connectr", "target_text": "connector", "category": "vocab_typo"}
+{"input_text": "correct: best steeleries arctis", "target_text": "best steelseries arctis", "category": "ecom_query_typo"}
+{"input_text": "correct: earbuds waterproof dale", "target_text": "earbuds waterproof sale", "category": "generic_product_typo"}
+{"input_text": "correct: adidas guzelle slim", "target_text": "adidas gazelle slim", "category": "phonetic_typo"}
+{"input_text": "correct: h&m jeans foor gym clim", "target_text": "h&m jeans for gym slim", "category": "ecom_query_typo"}
+{"input_text": "correct: seagate ironwalf review", "target_text": "seagate ironwolf review", "category": "ecom_query_typo"}
+{"input_text": "correct: garmyn fenix for office", "target_text": "garmin fenix for office", "category": "phonetic_typo"}
+{"input_text": "correct: crocs slides deels", "target_text": "crocs slides deals", "category": "ecom_query_typo"}
+{"input_text": "correct: nespreszo vertuo warranty", "target_text": "nespresso vertuo warranty", "category": "ecom_query_typo"}
+{"input_text": "correct: wirelsz", "target_text": "wirelss", "category": "vocab_typo"}
+{"input_text": "correct: dr. martens shoec", "target_text": "dr. martens shoes", "category": "ecom_query_typo"}
+{"input_text": "correct: chair foldable selr", "target_text": "chair foldable sale", "category": "generic_product_typo"}
+{"input_text": "correct: msi ketana kids", "target_text": "msi katana kids", "category": "phonetic_typo"}
+{"input_text": "correct: best calvink lin t-shirt", "target_text": "best calvin klein t-shirt", "category": "ecom_query_typo"}
+{"input_text": "correct: usus rog max", "target_text": "asus rog max", "category": "phonetic_typo"}
+{"input_text": "correct: clinique dramatecally difverent", "target_text": "clinique dramatically different", "category": "ecom_query_typo"}
+{"input_text": "correct: new gucci marmojt budget", "target_text": "new gucci marmont budget", "category": "ecom_query_typo"}
+{"input_text": "correct: cheap samsung glaxy s24", "target_text": "cheap samsung galaxy s24", "category": "ecom_query_typo"}
+{"input_text": "correct: cheap saus vivobook", "target_text": "cheap asus vivobook", "category": "ecom_query_typo"}
+{"input_text": "correct: marshall mjor set", "target_text": "marshall major set", "category": "ecom_query_typo"}
+{"input_text": "correct: oakley rarar price", "target_text": "oakley radar price", "category": "ecom_query_typo"}
+{"input_text": "correct: castrol angine oil", "target_text": "castrol engine oil", "category": "ecom_query_typo"}
+{"input_text": "correct: oral-b io series foldabli", "target_text": "oral-b io series foldable", "category": "phonetic_typo"}
+{"input_text": "correct: dheap drsk", "target_text": "cheap desk", "category": "generic_product_typo"}
+{"input_text": "correct: horsenit fur medium", "target_text": "horsebit for medium", "category": "ecom_query_typo"}
+{"input_text": "correct: lg gram waratny", "target_text": "lg gram warranty", "category": "ecom_query_typo"}
+{"input_text": "correct: buy exercise bike onlie", "target_text": "buy exercise bike online", "category": "generic_product_typo"}
+{"input_text": "correct: new netgear routed pink", "target_text": "new netgear router pink", "category": "ecom_query_typo"}
+{"input_text": "correct: sony camera silvir", "target_text": "sony camera silver", "category": "phonetic_typo"}
+{"input_text": "correct: monitor for wmoen", "target_text": "monitor for women", "category": "generic_product_typo"}
+{"input_text": "correct: raxer viper silver", "target_text": "razer viper silver", "category": "ecom_query_typo"}
+{"input_text": "correct: crucs literide unisex", "target_text": "crocs literide unisex", "category": "phonetic_typo"}
+{"input_text": "correct: ikee bookshelf pink", "target_text": "ikea bookshelf pink", "category": "phonetic_typo"}
+{"input_text": "correct: xiaumi mi band ergonomic", "target_text": "xiaomi mi band ergonomic", "category": "phonetic_typo"}
+{"input_text": "correct: razer kebyoard vs", "target_text": "razer keyboard vs", "category": "ecom_query_typo"}
+{"input_text": "correct: bssg bose soundbsr", "target_text": "best bose soundbar", "category": "ecom_query_typo"}
+{"input_text": "correct: best joystick minfe", "target_text": "best joystick mini", "category": "generic_product_typo"}
+{"input_text": "correct: vacaum daels", "target_text": "vacuum deals", "category": "generic_product_typo"}
+{"input_text": "correct: tablet vs mtour oil", "target_text": "tablet vs motor oil", "category": "generic_product_typo"}
+{"input_text": "correct: gurmin venu men", "target_text": "garmin venu men", "category": "phonetic_typo"}
+{"input_text": "correct: budgef", "target_text": "budget", "category": "vocab_typo"}
+{"input_text": "correct: kdurig k-supreme sle", "target_text": "keurig k-supreme sale", "category": "ecom_query_typo"}
+{"input_text": "correct: clogs birkenstok", "target_text": "clogs birkenstock", "category": "ecom_query_typo"}
+{"input_text": "correct: the north facee nuptse deals", "target_text": "the north face nuptse deals", "category": "ecom_query_typo"}
+{"input_text": "correct: nesprezso original for home", "target_text": "nespresso original for home", "category": "phonetic_typo"}
+{"input_text": "correct: columbiz javket free shipping", "target_text": "columbia jacket free shipping", "category": "ecom_query_typo"}
+{"input_text": "correct: cardgizn", "target_text": "cardigan", "category": "vocab_typo"}
+{"input_text": "correct: jbl speaker griy", "target_text": "jbl speaker grey", "category": "phonetic_typo"}
+{"input_text": "correct: cheap soa", "target_text": "cheap sofa", "category": "generic_product_typo"}
+{"input_text": "correct: buy converse sneakrs", "target_text": "buy converse sneakers", "category": "ecom_query_typo"}
+{"input_text": "correct: untel core i7 warranty", "target_text": "intel core i7 warranty", "category": "ecom_query_typo"}
+{"input_text": "correct: sharipe", "target_text": "sharpie", "category": "vocab_typo"}
+{"input_text": "correct: asus zenbok price", "target_text": "asus zenbook price", "category": "ecom_query_typo"}
+{"input_text": "correct: zaar coat vs", "target_text": "zara coat vs", "category": "ecom_query_typo"}
+{"input_text": "correct: curtans uxnder 100", "target_text": "curtains under 100", "category": "generic_product_typo"}
+{"input_text": "correct: onepluc nord for office", "target_text": "oneplus nord for office", "category": "phonetic_typo"}
+{"input_text": "correct: procezsor for wiriless", "target_text": "processor for wireless", "category": "ecom_query_typo"}
+{"input_text": "correct: best puma cwali", "target_text": "best puma cali", "category": "ecom_query_typo"}
+{"input_text": "correct: buy kifchinaid mixer", "target_text": "buy kitchenaid mixer", "category": "ecom_query_typo"}
+{"input_text": "correct: sennheiser microphone wqrarnty", "target_text": "sennheiser microphone warranty", "category": "ecom_query_typo"}
+{"input_text": "correct: finudation vs tablet", "target_text": "foundation vs tablet", "category": "generic_product_typo"}
+{"input_text": "correct: best chargir for gaming", "target_text": "best charger for gaming", "category": "generic_product_typo"}
+{"input_text": "correct: lip lienr for pink", "target_text": "lip liner for pink", "category": "ecom_query_typo"}
+{"input_text": "correct: wiper bladse for szie 42", "target_text": "wiper blades for size 42", "category": "generic_product_typo"}
+{"input_text": "correct: under armour chargid refurbished", "target_text": "under armour charged refurbished", "category": "phonetic_typo"}
+{"input_text": "correct: gopru camera new", "target_text": "gopro camera new", "category": "phonetic_typo"}
+{"input_text": "correct: new apple apple watch wireles", "target_text": "new apple apple watch wireless", "category": "ecom_query_typo"}
+{"input_text": "correct: foundstion for pink", "target_text": "foundation for pink", "category": "ecom_query_typo"}
+{"input_text": "correct: kaesta", "target_text": "caseta", "category": "vocab_typo"}
+{"input_text": "correct: marchall kilburn ergonomic", "target_text": "marshall kilburn ergonomic", "category": "phonetic_typo"}
+{"input_text": "correct: dji drone wamen", "target_text": "dji drone women", "category": "phonetic_typo"}
+{"input_text": "correct: ngidia rtx 3080 vs", "target_text": "nvidia rtx 3080 vs", "category": "ecom_query_typo"}
+{"input_text": "correct: cheep keynoard", "target_text": "cheap keyboard", "category": "generic_product_typo"}
+{"input_text": "correct: dell monitor blak", "target_text": "dell monitor black", "category": "phonetic_typo"}
+{"input_text": "correct: dell alienware bundles v2", "target_text": "dell alienware bundle v2", "category": "ecom_query_typo"}
+{"input_text": "correct: netgear nightawk 2 pack", "target_text": "netgear nighthawk 2 pack", "category": "phonetic_typo"}
+{"input_text": "correct: canon powershat sale", "target_text": "canon powershot sale", "category": "ecom_query_typo"}
+{"input_text": "correct: rug forr for gym", "target_text": "rug for for gym", "category": "generic_product_typo"}
+{"input_text": "correct: chepa dysow v12", "target_text": "cheap dyson v12", "category": "ecom_query_typo"}
+{"input_text": "correct: kingston flach drive v2", "target_text": "kingston flash drive v2", "category": "phonetic_typo"}
+{"input_text": "correct: buy muose onliine", "target_text": "buy mouse online", "category": "generic_product_typo"}
+{"input_text": "correct: wanteng", "target_text": "wanting", "category": "vocab_typo"}
+{"input_text": "correct: top rated car chrger", "target_text": "top rated car charger", "category": "generic_product_typo"}
+{"input_text": "correct: samsung galexy buds wareenty", "target_text": "samsung galaxy buds warranty", "category": "ecom_query_typo"}
+{"input_text": "correct: pepai gatorade free shipping", "target_text": "pepsi gatorade free shipping", "category": "ecom_query_typo"}
+{"input_text": "correct: canon lens asle", "target_text": "canon lens sale", "category": "ecom_query_typo"}
