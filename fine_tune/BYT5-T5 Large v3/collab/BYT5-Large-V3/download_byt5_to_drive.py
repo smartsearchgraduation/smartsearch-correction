@@ -23,7 +23,7 @@ drive.mount('/content/drive', force_remount=False)
 
 from pathlib import Path
 
-MODEL_CACHE = Path('/content/drive/MyDrive/Grad/Correction/fine_tune/BYT5-T5 Large v3/hf_model_cache')
+MODEL_CACHE = Path('/content/drive/MyDrive/Grad/Correction/fine_tune/BYT5-T5 Large v3/model_cache')
 LOCAL_MODEL = MODEL_CACHE / "byt5-large"
 MODEL_CACHE.mkdir(parents=True, exist_ok=True)
 

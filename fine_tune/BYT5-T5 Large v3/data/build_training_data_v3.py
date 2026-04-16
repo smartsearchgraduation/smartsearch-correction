@@ -1,24 +1,33 @@
 #!/usr/bin/env python3
 """
-T5-Large v3 Training Data Builder
-==================================
+T5-Large / ByT5-Large v3.1 Training Data Builder
+=================================================
 Builds high-quality English e-commerce spelling correction training data.
 
-Key improvements over v2.1:
-  - Realistic phonetic typo patterns (vowel shifts, consonant confusion)
-  - Compound typos (2-3 errors per word) at higher rates
-  - Broad e-commerce coverage (fashion, beauty, grocery, auto, not just electronics)
-  - Lower identity ratio (20-25% vs 40%)
-  - Real-world query structures (long queries, with numbers/sizes/colors)
-  - Weighted category balancing for even coverage
-  - Deduplication + quality filters
+v3.1 improvements over v3.0:
+  - NEW: gen_price_examples (teaches price formats: $99, $1,299.99, under $500, 299 USD)
+  - NEW: gen_measurement_unit_examples (GB/TB/MB, mm/cm/inch, W/V/mAh, Hz/dpi/fps, 1080p/4K)
+  - NEW: gen_brand_category_mismatch_examples (e.g. "nvidia tuf chair" -> context correction)
+  - NEW: gen_everyday_english_typos (realistic misspellings of frequent English words)
+  - NEW: gen_aug_* generators (aug_keyboard/double/swap/phonetic/delete/insert/compound/omit_repeat)
+  - NEW: gen_external_word_typos + gen_external_context_typos (Birkbeck / codespell / torinriley)
+          -> with DOMAIN FILTER so out-of-domain words like "tuatera" are dropped
+  - NEW: gen_identity_external (preserve correct words that LOOK like typos)
+  - FIX: Levenshtein-based quality filter (replaces broken positional diff)
+  - FIX: Removed trailing "{brand} {product} vs" template (generated dangling "vs" queries)
+  - FIX: Removed reflexive aug_compound pairing that duplicated word pairs
+  - BRAND_CATEGORIES: each brand tagged with category so mismatch generator is possible
+  - Boosted identity_brand / identity_tech / identity_tricky (5-10x) to reduce
+    over-correction of real brand names
+  - English only (no Turkish artifacts)
 
-Output: train_v3.jsonl, eval_v3.jsonl (same directory as this script)
+Output: train_v3.jsonl, eval_v3.jsonl, training_stats_v3.json (in same data/ folder)
 Format: {"input_text": "correct: corsiar keybord", "target_text": "corsair keyboard", "category": "..."}
 
 Usage:
   python build_training_data_v3.py
-  python build_training_data_v3.py --target 400000
+  python build_training_data_v3.py --target 950000
+  python build_training_data_v3.py --target 400000 --identity-ratio 0.22
 """
 
 import argparse
@@ -40,6 +49,28 @@ DATA_DIR = CORRECTION_DIR / "data"                     # .../Correction/data/ (s
 OUT_DIR  = SCRIPT_DIR                                  # output JSONL to same data/ folder
 
 # ═══════════════════════════════════════════════════════════════
+# LEVENSHTEIN (small helper used by the quality filter)
+# ═══════════════════════════════════════════════════════════════
+
+def levenshtein(a: str, b: str) -> int:
+    """Compute true Levenshtein edit distance between two strings."""
+    if a == b:
+        return 0
+    if len(a) < len(b):
+        a, b = b, a
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, start=1):
+        cur = [i] + [0] * len(b)
+        for j, cb in enumerate(b, start=1):
+            ins = cur[j - 1] + 1
+            dlt = prev[j] + 1
+            sub = prev[j - 1] + (0 if ca == cb else 1)
+            cur[j] = min(ins, dlt, sub)
+        prev = cur
+    return prev[-1]
+
+
+# ═══════════════════════════════════════════════════════════════
 # KEYBOARD LAYOUTS + PHONETIC CONFUSION MAPS
 # ═══════════════════════════════════════════════════════════════
 
@@ -55,35 +86,19 @@ QWERTY = {
     '6': '5y7', '7': '6u8', '8': '7i9', '9': '8o0', '0': '9p',
 }
 
-# Phonetically confused letter pairs (English)
-# These cause real human typos, not just keyboard proximity
 PHONETIC_CONFUSIONS = {
-    'a': ['e', 'u'],        # "samsung" -> "sumsung", "sandal" -> "sendal"
-    'e': ['a', 'i'],        # "leather" -> "lather", "headset" -> "hidset"
-    'i': ['e', 'y'],        # "wireless" -> "wereless", "mini" -> "miny"
-    'o': ['u', 'a'],        # "monitor" -> "munitor", "logitech" -> "lagitech"
-    'u': ['o', 'a'],        # "bluetooth" -> "bloetooth"
-    'c': ['k', 's'],        # "corsair" -> "korsair"
-    'k': ['c'],             # "keyboard" -> "ceyboard"
-    's': ['z', 'c'],        # "samsung" -> "zamsung"
-    'z': ['s'],             # "razer" -> "raser"
-    'f': ['ph', 'v'],       # "phone" -> "fone" (reverse)
-    'ph': ['f'],            # "earphones" -> "earfones"
-    'th': ['t'],            # "bluetooth" -> "blutoot"
-    'ck': ['k', 'c'],       # "black" -> "blak"
-    'ee': ['ea', 'ie'],     # "steel" -> "steal"
-    'ea': ['ee'],           # "headphones" -> "heedphones"
-    'ou': ['ow', 'u'],      # "mouse" -> "mowse"
-    'oo': ['u'],            # "bluetooth" -> "blututh"
-    'ie': ['ei'],           # "series" -> "sereis"
-    'ei': ['ie'],           # "receive" -> "recieve"
+    'a': ['e', 'u'], 'e': ['a', 'i'], 'i': ['e', 'y'],
+    'o': ['u', 'a'], 'u': ['o', 'a'],
+    'c': ['k', 's'], 'k': ['c'], 's': ['z', 'c'], 'z': ['s'],
+    'f': ['ph', 'v'], 'ph': ['f'], 'th': ['t'], 'ck': ['k', 'c'],
+    'ee': ['ea', 'ie'], 'ea': ['ee'], 'ou': ['ow', 'u'],
+    'oo': ['u'], 'ie': ['ei'], 'ei': ['ie'],
 }
 
-# Common letter omission patterns (people skip these)
 OMISSION_PATTERNS = {
     'tion': ['tion', 'toin', 'tin', 'shon'],
     'ing': ['ing', 'in', 'ig'],
-    'ment': ['ment', 'mnt', 'ment'],
+    'ment': ['ment', 'mnt'],
     'ness': ['ness', 'nss', 'nes'],
     'able': ['able', 'abl', 'ble'],
     'ible': ['ible', 'ibl', 'ble'],
@@ -93,9 +108,10 @@ OMISSION_PATTERNS = {
 
 
 # ═══════════════════════════════════════════════════════════════
-# COMPREHENSIVE E-COMMERCE VOCABULARY
+# E-COMMERCE VOCABULARY & CATEGORY MAPPING
 # ═══════════════════════════════════════════════════════════════
 
+# brand -> list of products it actually sells (used to generate in-context queries).
 BRAND_CATALOG = {
     # ── Electronics ──
     "apple":       ["iphone", "macbook", "airpods", "ipad", "apple watch", "imac", "mac mini", "macbook air", "macbook pro", "iphone 15", "iphone 14", "iphone 13"],
@@ -211,6 +227,60 @@ BRAND_CATALOG = {
     "meguiar's":   ["car wash", "wax", "polish", "detailing", "ceramic coating"],
 }
 
+# Brand category tags (used by the brand-category mismatch generator).
+BRAND_CATEGORIES = {
+    # Electronics
+    **{b: "electronics" for b in [
+        "apple", "samsung", "sony", "nvidia", "amd", "intel", "asus", "dell", "hp",
+        "lenovo", "acer", "msi", "razer", "logitech", "corsair", "steelseries",
+        "hyperx", "kingston", "seagate", "sandisk", "crucial", "western digital",
+        "anker", "bose", "sennheiser", "jbl", "lg", "microsoft", "google",
+        "oneplus", "xiaomi", "marshall", "canon", "nikon", "gopro", "dji",
+        "nintendo", "tp-link", "netgear",
+    ]},
+    # Appliances
+    "dyson": "appliances",
+    # Fashion
+    **{b: "fashion" for b in [
+        "nike", "adidas", "puma", "new balance", "converse", "vans", "reebok",
+        "under armour", "gucci", "louis vuitton", "zara", "h&m", "uniqlo",
+        "levi's", "ralph lauren", "tommy hilfiger", "calvin klein",
+        "the north face", "patagonia", "columbia", "timberland", "dr. martens",
+        "birkenstock", "crocs", "ray-ban", "oakley",
+    ]},
+    # Beauty & Personal Care
+    **{b: "beauty" for b in [
+        "maybelline", "l'oreal", "mac", "nyx", "clinique", "the ordinary",
+        "cerave", "neutrogena", "olaplex", "dove", "old spice", "gillette",
+        "oral-b", "philips", "braun",
+    ]},
+    # Home & Kitchen
+    **{b: "home_kitchen" for b in [
+        "ikea", "kitchenaid", "instant pot", "ninja", "keurig", "nespresso",
+        "roomba", "cuisinart", "breville",
+    ]},
+    # Sports & Outdoors
+    **{b: "sports" for b in [
+        "yeti", "hydroflask", "garmin", "fitbit", "peloton", "theragun", "wilson",
+    ]},
+    # Grocery
+    **{b: "grocery" for b in [
+        "nestle", "coca-cola", "pepsi", "kellogg's",
+    ]},
+    # Automotive
+    **{b: "automotive" for b in [
+        "bosch", "michelin", "castrol", "meguiar's",
+    ]},
+}
+
+# Products grouped by category (helps build "plausibly intended" corrections).
+CATEGORY_PRODUCTS = defaultdict(set)
+for brand, products in BRAND_CATALOG.items():
+    cat = BRAND_CATEGORIES.get(brand, "other")
+    for p in products:
+        CATEGORY_PRODUCTS[cat].add(p)
+CATEGORY_PRODUCTS = {k: sorted(v) for k, v in CATEGORY_PRODUCTS.items()}
+
 # Common English product terms (not brand-specific)
 PRODUCT_TERMS = [
     "laptop", "phone", "tablet", "headphones", "earbuds", "speaker", "monitor",
@@ -251,6 +321,8 @@ MODIFIERS = [
     "under 50", "under 100", "under 200", "under 500",
 ]
 
+# NOTE v3.1: removed the dangling "{brand} {product} vs" template — it produced
+# trailing "vs" queries with no RHS. Swapped for a concrete "vs" template.
 QUERY_TEMPLATES = [
     "{brand} {product}",
     "{brand} {product} {mod}",
@@ -261,7 +333,6 @@ QUERY_TEMPLATES = [
     "{brand} {product} review",
     "{brand} {product} sale",
     "{brand} {product} deals",
-    "{brand} {product} vs",
     "{product} {brand}",
     "{brand} {product} {mod} {mod2}",
     "{brand} {product} free shipping",
@@ -272,7 +343,6 @@ QUERY_TEMPLATES = [
     "{product} {mod} deals",
 ]
 
-# Generic queries (no brand)
 GENERIC_TEMPLATES = [
     "best {product} {mod}",
     "{product} for {mod}",
@@ -289,11 +359,157 @@ GENERIC_TEMPLATES = [
 
 
 # ═══════════════════════════════════════════════════════════════
+# v3.1 NEW: PRICE / CURRENCY TEMPLATES
+# ═══════════════════════════════════════════════════════════════
+
+CURRENCY_SYMBOLS = ["$", "£", "€"]
+CURRENCY_CODES = ["USD", "GBP", "EUR", "CAD", "AUD"]
+
+PRICE_TEMPLATES_CLEAN = [
+    "{product} under ${p}",
+    "{product} less than ${p}",
+    "{product} below ${p}",
+    "{product} for ${p}",
+    "{brand} {product} under ${p}",
+    "{brand} {product} for ${p}",
+    "{brand} {product} around ${p}",
+    "best {product} under ${p}",
+    "cheap {product} under ${p}",
+    "{product} between ${p} and ${p2}",
+    "{brand} {product} between ${p} and ${p2}",
+    "{product} ${p} to ${p2}",
+    "{product} {price_code}",
+    "{brand} {product} {price_code}",
+    "{product} ${p}.{cents}",
+    "{brand} {product} ${p}.{cents}",
+    "{product} ${p_big}",
+    "{brand} {product} ${p_big}",
+    "{product} on sale {price_code}",
+    "{product} deal ${p}",
+]
+
+# Price typo rules: $ -> "dollar"/"dollars"/"dolar" typo, spacing errors,
+# comma/decimal confusion. These are generated programmatically.
+
+
+# ═══════════════════════════════════════════════════════════════
+# v3.1 NEW: MEASUREMENT UNITS / SPEC TEMPLATES
+# ═══════════════════════════════════════════════════════════════
+
+STORAGE_UNITS = ["mb", "gb", "tb"]
+FREQUENCY_UNITS = ["hz", "ghz", "mhz"]
+POWER_UNITS = ["w", "kw", "v", "mah", "wh"]
+LENGTH_UNITS = ["mm", "cm", "m", "inch", '"', "ft"]
+WEIGHT_UNITS = ["g", "kg", "lb", "lbs", "oz"]
+CAMERA_UNITS = ["mp", "fps", "dpi"]
+RESOLUTIONS = ["720p", "1080p", "1440p", "2k", "4k", "5k", "8k"]
+
+UNIT_TEMPLATES_CLEAN = [
+    "{product} {n} {unit}",
+    "{brand} {product} {n} {unit}",
+    "{product} {n}{unit}",
+    "{brand} {product} {n}{unit}",
+    "{n} {unit} {product}",
+    "{n}{unit} {product}",
+    "{brand} {product} with {n} {unit}",
+    "{product} {res}",
+    "{brand} {product} {res}",
+    "{product} {n} {unit} {res}",
+    "{brand} {product} {n} {unit} {mod}",
+    "{product} {n} {unit} for {mod}",
+]
+
+
+# ═══════════════════════════════════════════════════════════════
+# v3.1 NEW: BRAND-CATEGORY MISMATCH EXAMPLES
+# Target: "nvidia tuf chair" -> "asus tuf chair" OR "nvidia gpu" via context.
+# ═══════════════════════════════════════════════════════════════
+
+# explicit "confusion" pairs between brand sub-lines that look alike
+# Only used to generate realistic in-context mismatches.
+CROSS_BRAND_MODEL_CONFUSIONS = [
+    # nvidia is GPUs, TUF is asus gaming line
+    ("nvidia", "asus", "tuf gaming"),
+    ("nvidia", "asus", "rog"),
+    # ryzen is amd, intel shouldn't have it
+    ("intel", "amd", "ryzen 7"),
+    ("intel", "amd", "radeon"),
+    # geforce is nvidia
+    ("amd", "nvidia", "geforce"),
+    ("amd", "nvidia", "rtx"),
+    # airpods is apple
+    ("samsung", "apple", "airpods"),
+    # galaxy is samsung
+    ("apple", "samsung", "galaxy"),
+    # xbox is microsoft; playstation is sony
+    ("sony", "microsoft", "xbox"),
+    ("microsoft", "sony", "playstation"),
+    # alienware is dell; predator is acer
+    ("hp", "dell", "alienware"),
+    ("dell", "acer", "predator"),
+    # thinkpad is lenovo
+    ("hp", "lenovo", "thinkpad"),
+    ("dell", "lenovo", "thinkpad"),
+    # surface is microsoft
+    ("apple", "microsoft", "surface"),
+    # yeezy is adidas; jordan is nike
+    ("nike", "adidas", "yeezy"),
+    ("adidas", "nike", "jordan"),
+    # kindle is amazon but we don't have amazon in brands; skip
+    # nespresso is nespresso brand
+    ("keurig", "nespresso", "vertuo"),
+]
+
+
+# ═══════════════════════════════════════════════════════════════
+# v3.1 NEW: DOMAIN FILTER — drops corpus entries not plausibly e-commerce
+# ═══════════════════════════════════════════════════════════════
+
+DOMAIN_STOPWORDS = set("""
+the a an and or but of in on at for to from by with as is are was were be been being
+this that these those it its they them their there here where when what who how why
+i you he she we me my your his her our us do does did done doing have has had having
+not no yes so very just only also more most many much some any all each every both few
+""".split())
+
+# Words to drop outright — archaic, domain-irrelevant, or potentially unsafe
+# (kept conservative; e-commerce search rarely contains these).
+DOMAIN_BLOCKLIST = {
+    # archaic / naturalist vocabulary common in Birkbeck
+    "tuatera", "herbaceously", "antediluvian", "amanuensis", "petrichor",
+    "obsequious", "sesquipedalian", "pulchritudinous", "ennui",
+    # anatomical / medical-only rare words
+    "vicissitude", "lugubrious", "perspicacious", "recalcitrant",
+    # proper nouns that aren't e-com brands
+    "aberdeen", "albania", "yorkshire",
+}
+
+# Allowed-character regex for domain-plausible tokens
+_DOMAIN_ALLOWED = re.compile(r"^[a-z][a-z0-9'\-]{1,}$")
+
+
+def domain_plausible(word: str) -> bool:
+    """Return True if word is plausibly an e-commerce search token."""
+    w = word.strip().lower()
+    if not w:
+        return False
+    if w in DOMAIN_STOPWORDS or w in DOMAIN_BLOCKLIST:
+        return False
+    if not _DOMAIN_ALLOWED.match(w):
+        return False
+    if len(w) < 3 or len(w) > 18:
+        return False
+    # drop weird character runs
+    if re.search(r"[aeiou]{4,}", w) or re.search(r"[bcdfghjklmnpqrstvwxz]{5,}", w):
+        return False
+    return True
+
+
+# ═══════════════════════════════════════════════════════════════
 # TYPO GENERATORS — Realistic Human Error Simulation
 # ═══════════════════════════════════════════════════════════════
 
 def typo_keyboard(word: str) -> Optional[str]:
-    """Replace one char with QWERTY neighbor."""
     if len(word) < 2:
         return None
     i = random.randint(0, len(word) - 1)
@@ -302,7 +518,6 @@ def typo_keyboard(word: str) -> Optional[str]:
         neighbors = QWERTY[ch]
         replacement = random.choice(neighbors)
         if replacement.isdigit() and word.isalpha():
-            # Don't inject digits into pure-alpha words (looks unnatural)
             neighbors_alpha = [c for c in neighbors if c.isalpha()]
             if neighbors_alpha:
                 replacement = random.choice(neighbors_alpha)
@@ -313,16 +528,13 @@ def typo_keyboard(word: str) -> Optional[str]:
 
 
 def typo_delete(word: str) -> Optional[str]:
-    """Delete one character (prefer non-first, non-last)."""
     if len(word) < 4:
         return None
-    # Prefer deleting from middle (more realistic)
     i = random.randint(1, len(word) - 2)
     return word[:i] + word[i+1:]
 
 
 def typo_swap(word: str) -> Optional[str]:
-    """Swap two adjacent characters."""
     if len(word) < 3:
         return None
     i = random.randint(0, len(word) - 2)
@@ -330,7 +542,6 @@ def typo_swap(word: str) -> Optional[str]:
 
 
 def typo_insert(word: str) -> Optional[str]:
-    """Insert a random lowercase letter."""
     if len(word) < 2:
         return None
     i = random.randint(0, len(word))
@@ -339,7 +550,6 @@ def typo_insert(word: str) -> Optional[str]:
 
 
 def typo_double(word: str) -> Optional[str]:
-    """Double a character (common real typo: 'keyboard' -> 'keeyboard')."""
     if len(word) < 3:
         return None
     i = random.randint(0, len(word) - 1)
@@ -347,17 +557,9 @@ def typo_double(word: str) -> Optional[str]:
 
 
 def typo_phonetic(word: str) -> Optional[str]:
-    """
-    Apply phonetic confusion: replace letter/digraph with a phonetically
-    similar alternative. This simulates real human errors that come from
-    how words *sound*, not keyboard proximity.
-    """
     if len(word) < 3:
         return None
-
     wl = word.lower()
-
-    # Try digraph replacements first (higher priority)
     digraphs = ['ph', 'th', 'ck', 'ee', 'ea', 'ou', 'oo', 'ie', 'ei']
     random.shuffle(digraphs)
     for dg in digraphs:
@@ -365,24 +567,17 @@ def typo_phonetic(word: str) -> Optional[str]:
             replacement = random.choice(PHONETIC_CONFUSIONS[dg])
             idx = wl.find(dg)
             return word[:idx] + replacement + word[idx + len(dg):]
-
-    # Single char phonetic confusion
     indices = list(range(len(wl)))
     random.shuffle(indices)
     for i in indices:
         ch = wl[i]
         if ch in PHONETIC_CONFUSIONS:
             replacement = random.choice(PHONETIC_CONFUSIONS[ch])
-            if len(replacement) == 1:
-                return word[:i] + replacement + word[i+1:]
-            else:
-                # Multi-char replacement (e.g., 'f' -> 'ph')
-                return word[:i] + replacement + word[i+1:]
+            return word[:i] + replacement + word[i+1:]
     return None
 
 
 def typo_omit_repeated(word: str) -> Optional[str]:
-    """Remove one char from a repeated pair: 'bluetooth' -> 'bluetoth'."""
     if len(word) < 4:
         return None
     for i in range(len(word) - 1):
@@ -392,32 +587,27 @@ def typo_omit_repeated(word: str) -> Optional[str]:
 
 
 def typo_space_error(query: str) -> Optional[str]:
-    """
-    Introduce space errors: merge two words or split one.
-    'air pods' -> 'airpods' or 'airpods' -> 'air pods'
-    """
     words = query.split()
     if len(words) < 2:
         return None
-
-    r = random.random()
-    if r < 0.5 and len(words) >= 2:
-        # Merge two adjacent words
-        i = random.randint(0, len(words) - 2)
-        merged = words[i] + words[i+1]
-        return " ".join(words[:i] + [merged] + words[i+2:])
+    mode = random.random()
+    if mode < 0.5:
+        # merge two adjacent words
+        idx = random.randint(0, len(words) - 2)
+        words[idx] = words[idx] + words[idx + 1]
+        del words[idx + 1]
     else:
-        # Split a word (only if word is long enough)
+        # split a long word
         long_words = [(i, w) for i, w in enumerate(words) if len(w) >= 6]
         if not long_words:
             return None
-        i, w = random.choice(long_words)
-        split_pos = random.randint(2, len(w) - 2)
-        return " ".join(words[:i] + [w[:split_pos], w[split_pos:]] + words[i+1:])
+        idx, w = random.choice(long_words)
+        cut = random.randint(2, len(w) - 2)
+        words[idx] = w[:cut] + " " + w[cut:]
+    return " ".join(words)
 
 
 def generate_single_typo(word: str) -> Optional[str]:
-    """Generate one realistic typo for a word using weighted random selection."""
     methods = [
         (typo_keyboard, 25),
         (typo_delete, 15),
@@ -430,8 +620,6 @@ def generate_single_typo(word: str) -> Optional[str]:
     fns, weights = zip(*methods)
     order = list(range(len(fns)))
     random.shuffle(order)
-
-    # Try weighted random, then fallback to any
     chosen = random.choices(order, weights=[weights[i] for i in order], k=len(order))
     for idx in chosen:
         result = fns[idx](word)
@@ -441,7 +629,6 @@ def generate_single_typo(word: str) -> Optional[str]:
 
 
 def generate_compound_typo(word: str) -> Optional[str]:
-    """Apply 2 typo operations to simulate heavily misspelled words."""
     if len(word) < 4:
         return None
     first = generate_single_typo(word)
@@ -449,24 +636,18 @@ def generate_compound_typo(word: str) -> Optional[str]:
         return None
     second = generate_single_typo(first)
     if not second or second == first:
-        return first  # at least return single typo
+        return first
     return second
 
 
 def make_query_typo(query: str, n_errors: int = 1) -> Optional[str]:
-    """
-    Introduce typos into a multi-word query.
-    n_errors: how many words to corrupt (1, 2, or 3)
-    """
     words = query.split()
     eligible = [(i, w) for i, w in enumerate(words)
                 if len(w) >= 3 and w.isalpha()]
     if not eligible:
         return None
-
     n_corrupt = min(n_errors, len(eligible))
     targets = random.sample(eligible, n_corrupt)
-
     for idx, w in targets:
         r = random.random()
         if r < 0.25:
@@ -475,7 +656,6 @@ def make_query_typo(query: str, n_errors: int = 1) -> Optional[str]:
             typo = generate_single_typo(w)
         if typo:
             words[idx] = typo
-
     result = " ".join(words)
     return result if result != query else None
 
@@ -485,69 +665,94 @@ def make_query_typo(query: str, n_errors: int = 1) -> Optional[str]:
 # ═══════════════════════════════════════════════════════════════
 
 def load_text_file(path: Path) -> List[str]:
-    """Load a text file, skip comments and blanks."""
-    terms = []
     if not path.exists():
-        print(f"  [WARN] {path.name} not found")
-        return terms
-    with open(path, encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith("#") or line.startswith("="):
-                continue
-            terms.append(line.lower())
-    return terms
+        return []
+    with open(path, "r", encoding="utf-8") as f:
+        lines = [ln.strip().lower() for ln in f if ln.strip()]
+    return [ln for ln in lines if ln and not ln.startswith("#")]
 
 
 def load_typo_mappings(path: Path) -> List[Tuple[str, str]]:
-    """Load typo,correct pairs."""
-    mappings = []
     if not path.exists():
-        return mappings
-    with open(path, encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith("#") or line.startswith("="):
+        return []
+    pairs = []
+    with open(path, "r", encoding="utf-8") as f:
+        for ln in f:
+            ln = ln.strip()
+            if not ln or ln.startswith("#"):
                 continue
-            parts = line.split(",", 1)
-            if len(parts) == 2:
-                typo, correct = parts[0].strip().lower(), parts[1].strip().lower()
-                if typo and correct and typo != correct:
-                    mappings.append((typo, correct))
-    return mappings
+            if "," in ln:
+                parts = ln.split(",", 1)
+                if len(parts) == 2:
+                    pairs.append((parts[0].strip().lower(), parts[1].strip().lower()))
+    return pairs
 
 
 def load_csv_pairs(path: Path) -> List[Tuple[str, str]]:
-    """Load noisy,clean pairs from CSV."""
-    pairs = []
     if not path.exists():
-        return pairs
-    with open(path, encoding="utf-8") as f:
-        header = True
-        for line in f:
-            if header:
-                header = False
-                if "noisy" in line.lower() or "clean" in line.lower():
-                    continue
-            line = line.strip().strip('"')
-            parts = line.split('","')
-            if len(parts) == 2:
-                noisy = parts[0].strip('"').lower()
-                clean = parts[1].strip('"').lower()
-                if noisy and clean:
-                    pairs.append((noisy, clean))
+        return []
+    pairs = []
+    try:
+        import csv
+        with open(path, "r", encoding="utf-8") as f:
+            reader = csv.reader(f)
+            header = next(reader, None)
+            for row in reader:
+                if len(row) >= 2:
+                    a, b = row[0].strip().lower(), row[1].strip().lower()
+                    if a and b:
+                        pairs.append((a, b))
+    except Exception:
+        pass
+    return pairs
+
+
+def load_external_pairs(path: Path) -> List[Tuple[str, str]]:
+    """
+    Load external typo corpora in a variety of formats:
+      - "misspelling,correct"
+      - "misspelling correct"
+      - "misspelling->correct"
+      - Birkbeck style (multiple typos per correct word; '$correct' marker)
+    Returns list of (typo, correct) pairs.
+    """
+    if not path.exists():
+        return []
+    pairs: List[Tuple[str, str]] = []
+    current_correct: Optional[str] = None
+    with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        for ln in f:
+            ln = ln.strip()
+            if not ln or ln.startswith("#"):
+                continue
+            if ln.startswith("$"):
+                current_correct = ln[1:].strip().lower()
+                continue
+            for sep in ("->", "=>", "\t", "|", ",", ":"):
+                if sep in ln:
+                    parts = ln.split(sep, 1)
+                    if len(parts) == 2:
+                        a, b = parts[0].strip().lower(), parts[1].strip().lower()
+                        if a and b and a != b:
+                            pairs.append((a, b))
+                    break
             else:
-                parts = line.split(",", 1)
-                if len(parts) == 2:
-                    noisy = parts[0].strip().strip('"').lower()
-                    clean = parts[1].strip().strip('"').lower()
-                    if noisy and clean:
-                        pairs.append((noisy, clean))
+                # whitespace-separated or just a misspelling under a $marker
+                if current_correct is not None:
+                    typo = ln.lower()
+                    if typo and typo != current_correct:
+                        pairs.append((typo, current_correct))
+                else:
+                    parts = ln.split()
+                    if len(parts) == 2:
+                        a, b = parts[0].lower(), parts[1].lower()
+                        if a and b and a != b:
+                            pairs.append((a, b))
     return pairs
 
 
 # ═══════════════════════════════════════════════════════════════
-# EXAMPLE GENERATORS
+# EXAMPLE BUILDER + HELPERS
 # ═══════════════════════════════════════════════════════════════
 
 def make_example(input_query: str, target_query: str, category: str) -> dict:
@@ -558,153 +763,151 @@ def make_example(input_query: str, target_query: str, category: str) -> dict:
     }
 
 
+def _format_template(template: str, **kwargs) -> Optional[str]:
+    try:
+        return template.format(**kwargs).strip()
+    except (KeyError, IndexError):
+        return None
+
+
+# ═══════════════════════════════════════════════════════════════
+# GENERATORS — identical names / outputs to v3.0 where possible
+# ═══════════════════════════════════════════════════════════════
+
 def gen_curated_typo_examples(
     typo_mappings: List[Tuple[str, str]],
     seen: Set[Tuple[str, str]],
 ) -> List[dict]:
-    """
-    Use curated typo->correct mappings in realistic query contexts.
-    Each mapping generates: standalone + multiple in-context queries.
-    """
-    examples = []
-    correct_to_typos = defaultdict(list)
+    """Turn static typo→correct mappings into in-context training pairs."""
+    examples: List[dict] = []
+    brands = list(BRAND_CATALOG.keys())
     for typo, correct in typo_mappings:
-        correct_to_typos[correct].append(typo)
+        # standalone word
+        pair = (typo, correct)
+        if pair not in seen:
+            examples.append(make_example(typo, correct, "vocab_typo"))
+            seen.add(pair)
+        # in context (brand + typo) if correct is a product term
+        for brand in random.sample(brands, k=min(2, len(brands))):
+            products = BRAND_CATALOG[brand]
+            if correct in products:
+                q_correct = f"{brand} {correct}"
+                q_typo = f"{brand} {typo}"
+                pp = (q_typo, q_correct)
+                if pp not in seen:
+                    examples.append(make_example(q_typo, q_correct, "ecom_query_typo"))
+                    seen.add(pp)
+    return examples
 
-    for correct, typos in correct_to_typos.items():
-        for typo in typos:
-            # Standalone
-            pair = (typo, correct)
-            if pair not in seen:
-                examples.append(make_example(typo, correct, "curated_standalone"))
-                seen.add(pair)
 
-            # In brand context
-            if correct in BRAND_CATALOG:
-                products = BRAND_CATALOG[correct]
-                for product in random.sample(products, min(4, len(products))):
-                    for template in random.sample(QUERY_TEMPLATES, min(3, len(QUERY_TEMPLATES))):
-                        mod = random.choice(MODIFIERS)
-                        mod2 = random.choice(MODIFIERS)
-                        try:
-                            cq = template.format(brand=correct, product=product, mod=mod, mod2=mod2)
-                            tq = cq.replace(correct, typo, 1)
-                        except (KeyError, IndexError):
-                            continue
-                        if tq != cq:
-                            pair = (tq, cq)
-                            if pair not in seen:
-                                examples.append(make_example(tq, cq, "curated_in_context"))
-                                seen.add(pair)
-
+def gen_existing_data_examples(
+    typo_mappings: List[Tuple[str, str]],
+    csv_pairs: List[Tuple[str, str]],
+    seen: Set[Tuple[str, str]],
+) -> List[dict]:
+    """Pull in the already-collected typo_dataset.csv pairs."""
+    examples: List[dict] = []
+    for typo, correct in csv_pairs:
+        if not typo or not correct or typo == correct:
+            continue
+        if len(typo.split()) > 15 or len(correct.split()) > 15:
+            continue
+        pair = (typo, correct)
+        if pair in seen:
+            continue
+        examples.append(make_example(typo, correct, "ecom_query_typo"))
+        seen.add(pair)
     return examples
 
 
 def gen_brand_product_typos(
     seen: Set[Tuple[str, str]],
-    count: int = 80000,
+    count: int = 120000,
 ) -> List[dict]:
-    """
-    Generate realistic e-commerce queries with typos.
-    Covers all categories in BRAND_CATALOG.
-    """
-    examples = []
+    """Typos in brand+product queries across every catalog category."""
+    examples: List[dict] = []
     brands = list(BRAND_CATALOG.keys())
-
-    for _ in range(count * 4):  # oversample then trim
+    attempts = 0
+    max_attempts = count * 4
+    while len(examples) < count and attempts < max_attempts:
+        attempts += 1
         brand = random.choice(brands)
-        products = BRAND_CATALOG[brand]
-        product = random.choice(products)
+        product = random.choice(BRAND_CATALOG[brand])
         template = random.choice(QUERY_TEMPLATES)
         mod = random.choice(MODIFIERS)
         mod2 = random.choice(MODIFIERS)
-
-        try:
-            correct_query = template.format(
-                brand=brand, product=product, mod=mod, mod2=mod2
-            )
-        except (KeyError, IndexError):
+        query = _format_template(template, brand=brand, product=product, mod=mod, mod2=mod2)
+        if not query:
             continue
-
-        # Decide typo strategy
-        r = random.random()
-        if r < 0.35:
-            # Typo on brand name
-            brand_typo = generate_single_typo(brand)
-            if not brand_typo or brand_typo == brand:
-                continue
-            typo_query = correct_query.replace(brand, brand_typo, 1)
-        elif r < 0.55:
-            # Typo on product term
-            product_words = product.split()
-            target_word = max(product_words, key=len)  # corrupt longest word
-            if len(target_word) < 3:
-                continue
-            word_typo = generate_single_typo(target_word)
-            if not word_typo or word_typo == target_word:
-                continue
-            typo_query = correct_query.replace(target_word, word_typo, 1)
-        elif r < 0.75:
-            # 1 random word typo in the full query
-            typo_query = make_query_typo(correct_query, n_errors=1)
-            if not typo_query:
-                continue
-        elif r < 0.90:
-            # 2 word typos (compound query errors)
-            typo_query = make_query_typo(correct_query, n_errors=2)
-            if not typo_query:
-                continue
-        else:
-            # Compound typo on brand (severely misspelled)
-            brand_typo = generate_compound_typo(brand)
-            if not brand_typo or brand_typo == brand:
-                continue
-            typo_query = correct_query.replace(brand, brand_typo, 1)
-
-        if typo_query == correct_query:
+        n_errors = random.choices([1, 2, 3], weights=[65, 28, 7])[0]
+        typo_query = make_query_typo(query, n_errors=n_errors)
+        if not typo_query or typo_query == query:
             continue
-
-        pair = (typo_query, correct_query)
-        if pair not in seen:
-            examples.append(make_example(typo_query, correct_query, "ecom_query_typo"))
-            seen.add(pair)
-
-        if len(examples) >= count:
-            break
-
+        pair = (typo_query, query)
+        if pair in seen:
+            continue
+        examples.append(make_example(typo_query, query, "ecom_query_typo"))
+        seen.add(pair)
     return examples
 
 
 def gen_generic_product_typos(
     seen: Set[Tuple[str, str]],
-    count: int = 30000,
+    count: int = 40000,
 ) -> List[dict]:
-    """Generate typos for generic (non-branded) product queries."""
-    examples = []
-
-    for _ in range(count * 4):
+    examples: List[dict] = []
+    attempts = 0
+    while len(examples) < count and attempts < count * 4:
+        attempts += 1
         template = random.choice(GENERIC_TEMPLATES)
-        product = random.choice(PRODUCT_TERMS)
-        product2 = random.choice(PRODUCT_TERMS)
+        p1 = random.choice(PRODUCT_TERMS)
+        p2 = random.choice(PRODUCT_TERMS)
         mod = random.choice(MODIFIERS)
-
-        try:
-            correct_query = template.format(product=product, product2=product2, mod=mod)
-        except (KeyError, IndexError):
+        query = _format_template(template, product=p1, product2=p2, mod=mod)
+        if not query:
             continue
-
-        typo_query = make_query_typo(correct_query, n_errors=random.choices([1, 2], weights=[3, 1])[0])
-        if not typo_query or typo_query == correct_query:
+        typo_query = make_query_typo(query, n_errors=random.choice([1, 2]))
+        if not typo_query or typo_query == query:
             continue
+        pair = (typo_query, query)
+        if pair in seen:
+            continue
+        examples.append(make_example(typo_query, query, "generic_product_typo"))
+        seen.add(pair)
+    return examples
 
-        pair = (typo_query, correct_query)
-        if pair not in seen:
-            examples.append(make_example(typo_query, correct_query, "generic_product_typo"))
-            seen.add(pair)
 
-        if len(examples) >= count:
-            break
-
+def gen_phonetic_typo_examples(
+    seen: Set[Tuple[str, str]],
+    count: int = 35000,
+) -> List[dict]:
+    """Specifically exercise phonetic confusion patterns."""
+    examples: List[dict] = []
+    brands = list(BRAND_CATALOG.keys())
+    attempts = 0
+    while len(examples) < count and attempts < count * 4:
+        attempts += 1
+        brand = random.choice(brands)
+        product = random.choice(BRAND_CATALOG[brand])
+        # only use phonetic corruption, on brand or product word(s)
+        q = f"{brand} {product}"
+        words = q.split()
+        # prefer to corrupt the longest eligible word
+        candidates = sorted([(i, w) for i, w in enumerate(words) if len(w) >= 4 and w.isalpha()],
+                            key=lambda t: -len(t[1]))
+        if not candidates:
+            continue
+        idx, w = candidates[0]
+        typo = typo_phonetic(w)
+        if not typo or typo == w:
+            continue
+        words[idx] = typo
+        typo_query = " ".join(words)
+        pair = (typo_query, q)
+        if pair in seen:
+            continue
+        examples.append(make_example(typo_query, q, "phonetic_typo"))
+        seen.add(pair)
     return examples
 
 
@@ -712,105 +915,50 @@ def gen_space_error_examples(
     seen: Set[Tuple[str, str]],
     count: int = 15000,
 ) -> List[dict]:
-    """Generate space-related errors: merged words, split words."""
-    examples = []
-
-    # Known merge/split pairs in e-commerce
-    KNOWN_SPACE_PAIRS = [
-        ("air pods", "airpods"), ("air pod", "airpod"),
-        ("play station", "playstation"), ("game pad", "gamepad"),
-        ("head phones", "headphones"), ("head set", "headset"),
-        ("ear buds", "earbuds"), ("ear phones", "earphones"),
-        ("lap top", "laptop"), ("note book", "notebook"),
-        ("key board", "keyboard"), ("mouse pad", "mousepad"),
-        ("back pack", "backpack"), ("hand bag", "handbag"),
-        ("sun glasses", "sunglasses"), ("sun screen", "sunscreen"),
-        ("tooth brush", "toothbrush"), ("tooth paste", "toothpaste"),
-        ("smart watch", "smartwatch"), ("smart phone", "smartphone"),
-        ("bed room", "bedroom"), ("bath room", "bathroom"),
-        ("book shelf", "bookshelf"), ("door bell", "doorbell"),
-        ("blue tooth", "bluetooth"), ("wi fi", "wifi"),
-        ("micro phone", "microphone"), ("web cam", "webcam"),
-        ("flash drive", "flashdrive"), ("hard drive", "harddrive"),
-        ("foot wear", "footwear"), ("swim wear", "swimwear"),
-        ("under wear", "underwear"), ("work out", "workout"),
-        ("over ear", "overear"), ("in ear", "inear"),
-    ]
-
-    # Both directions: split->correct and correct->split
-    for split_form, merged_form in KNOWN_SPACE_PAIRS:
-        # split is typo, merged is correct
-        pair = (split_form, merged_form)
-        if pair not in seen:
-            examples.append(make_example(split_form, merged_form, "space_split_error"))
-            seen.add(pair)
-
-        # merged is typo, split is correct (for words that should be separate)
-        # Only for cases where the correct form IS the split form
-        # e.g., "air force" should stay "air force", not become "airforce"
-
-    # Generate random space errors from brand queries
+    """Merge two adjacent words or split one word."""
+    examples: List[dict] = []
     brands = list(BRAND_CATALOG.keys())
-    for _ in range(count * 3):
+    attempts = 0
+    while len(examples) < count and attempts < count * 4:
+        attempts += 1
         brand = random.choice(brands)
         product = random.choice(BRAND_CATALOG[brand])
-        correct_query = f"{brand} {product}"
-
-        typo_query = typo_space_error(correct_query)
-        if not typo_query or typo_query == correct_query:
+        q = f"{brand} {product}"
+        broken = typo_space_error(q)
+        if not broken or broken == q:
             continue
-
-        pair = (typo_query, correct_query)
-        if pair not in seen:
-            examples.append(make_example(typo_query, correct_query, "space_error"))
-            seen.add(pair)
-
-        if len(examples) >= count:
-            break
-
+        pair = (broken, q)
+        if pair in seen:
+            continue
+        cat = "space_error"
+        # subcategorize split-by-context
+        if len(broken.split()) > len(q.split()):
+            cat = "space_split_context"
+        examples.append(make_example(broken, q, cat))
+        seen.add(pair)
     return examples
 
 
-def gen_phonetic_typo_examples(
+def gen_vocab_typo_examples(
+    vocab: List[str],
     seen: Set[Tuple[str, str]],
     count: int = 25000,
 ) -> List[dict]:
-    """
-    Generate purely phonetic typo examples.
-    These are the ones v2.1 completely missed.
-    """
-    examples = []
-    brands = list(BRAND_CATALOG.keys())
-
-    for _ in range(count * 4):
-        brand = random.choice(brands)
-        product = random.choice(BRAND_CATALOG[brand])
-        mod = random.choice(MODIFIERS)
-        correct_query = f"{brand} {product} {mod}"
-
-        # Apply phonetic typo to brand
-        words = correct_query.split()
-        eligible = [(i, w) for i, w in enumerate(words)
-                    if len(w) >= 4 and w.isalpha()]
-        if not eligible:
-            continue
-
-        idx, target = random.choice(eligible)
-        phonetic = typo_phonetic(target)
-        if not phonetic or phonetic == target:
-            continue
-
-        words[idx] = phonetic
-        typo_query = " ".join(words)
-
-        pair = (typo_query, correct_query)
-        if pair not in seen:
-            examples.append(make_example(typo_query, correct_query, "phonetic_typo"))
-            seen.add(pair)
-
+    """Standalone word-level typos from accumulated vocabulary."""
+    examples: List[dict] = []
+    valid = [w for w in vocab if w.isalpha() and 4 <= len(w) <= 15]
+    random.shuffle(valid)
+    for w in valid:
         if len(examples) >= count:
             break
-
+        typo = generate_single_typo(w)
+        if not typo or typo == w:
+            continue
+        pair = (typo, w)
+        if pair in seen:
+            continue
+        examples.append(make_example(typo, w, "vocab_typo"))
+        seen.add(pair)
     return examples
 
 
@@ -819,50 +967,47 @@ def gen_identity_examples(
     count: int = 50000,
 ) -> List[dict]:
     """
-    Generate identity pairs (correct -> correct) to prevent overcorrection.
-    Target: ~20-25% of total dataset.
-
-    Key: include tricky cases that LOOK like typos but aren't:
-    - brand names (razer, xerox, asus)
-    - abbreviations (gpu, ssd, fps)
-    - model numbers (rtx 4090, rx 7900)
-    - proper nouns with unusual spelling
+    Identity pairs — prevent over-correction. v3.1 adds 5-10x repetitions of
+    tricky brand/tech entries so those are represented much more strongly.
     """
-    examples = []
+    examples: List[dict] = []
     brands = list(BRAND_CATALOG.keys())
 
-    # 1. Brand names as-is (these must NOT be changed)
+    # 1. Brand names as-is. Repeat each several times with minor template variants.
     for brand in brands:
-        pair = (brand, brand)
-        if pair not in seen:
-            examples.append(make_example(brand, brand, "identity_brand"))
-            seen.add(pair)
+        variants = [brand, f"{brand} official", f"buy {brand}", f"{brand} store", f"{brand} website"]
+        for v in variants:
+            pair = (v, v)
+            if pair not in seen:
+                examples.append(make_example(v, v, "identity_brand"))
+                seen.add(pair)
 
-    # 2. Tricky brand names that look like misspellings
+    # 2. Tricky brand names that look like misspellings (boosted)
     TRICKY_BRANDS = [
         "razer", "xerox", "asus", "acer", "oppo", "vivo", "poco",
         "roku", "sonos", "bose", "nzxt", "evga", "zotac", "adata",
         "skullcandy", "sennheiser", "breville", "cuisinart", "miele",
         "birkenstock", "lululemon", "patagonia", "timberland",
+        "logitech", "corsair", "hyperx", "steelseries", "kingston",
     ]
     for brand in TRICKY_BRANDS:
-        pair = (brand, brand)
-        if pair not in seen:
-            examples.append(make_example(brand, brand, "identity_tricky"))
-            seen.add(pair)
+        for template in [brand, f"{brand} official", f"buy {brand}", f"{brand} store",
+                         f"{brand} products", f"new {brand}"]:
+            pair = (template, template)
+            if pair not in seen:
+                examples.append(make_example(template, template, "identity_tricky"))
+                seen.add(pair)
 
     # 3. Full queries (brand + product) identity
     for _ in range(count):
         brand = random.choice(brands)
         product = random.choice(BRAND_CATALOG[brand])
-        template = random.choice(QUERY_TEMPLATES[:8])  # simpler templates
+        template = random.choice(QUERY_TEMPLATES[:8])
         mod = random.choice(MODIFIERS)
         mod2 = random.choice(MODIFIERS)
-        try:
-            query = template.format(brand=brand, product=product, mod=mod, mod2=mod2)
-        except (KeyError, IndexError):
+        query = _format_template(template, brand=brand, product=product, mod=mod, mod2=mod2)
+        if not query:
             continue
-
         pair = (query, query)
         if pair not in seen:
             examples.append(make_example(query, query, "identity_query"))
@@ -873,13 +1018,12 @@ def gen_identity_examples(
         product = random.choice(PRODUCT_TERMS)
         mod = random.choice(MODIFIERS)
         query = f"{product} {mod}"
-
         pair = (query, query)
         if pair not in seen:
             examples.append(make_example(query, query, "identity_generic"))
             seen.add(pair)
 
-    # 5. Technical abbreviations / model numbers identity
+    # 5. Tech terms / model numbers (boosted 5x with template variants)
     TECH_TERMS = [
         "gpu", "cpu", "ssd", "hdd", "ram", "rgb", "led", "lcd", "oled",
         "qled", "usb", "hdmi", "wifi", "nfc", "5g", "lte", "fps", "uhd",
@@ -890,304 +1034,764 @@ def gen_identity_examples(
         "iphone 15 pro max", "galaxy s24 ultra", "pixel 8 pro",
     ]
     for term in TECH_TERMS:
-        pair = (term, term)
-        if pair not in seen:
-            examples.append(make_example(term, term, "identity_tech"))
-            seen.add(pair)
-
-    return examples
-
-
-def gen_existing_data_examples(
-    typo_mappings: List[Tuple[str, str]],
-    csv_pairs: List[Tuple[str, str]],
-    seen: Set[Tuple[str, str]],
-) -> List[dict]:
-    """Incorporate existing curated data (typo_dataset.csv, etc.)."""
-    examples = []
-
-    for noisy, clean in csv_pairs:
-        if noisy == clean:
-            continue
-        pair = (noisy, clean)
-        if pair not in seen:
-            examples.append(make_example(noisy, clean, "existing_csv"))
-            seen.add(pair)
-
-    return examples
-
-
-def gen_vocab_typo_examples(
-    vocab_terms: List[str],
-    seen: Set[Tuple[str, str]],
-    count: int = 20000,
-) -> List[dict]:
-    """Generate typos for standalone vocabulary terms."""
-    examples = []
-    terms = [t for t in vocab_terms if len(t) >= 4 and t.isalpha()]
-    if not terms:
-        return examples
-
-    for _ in range(count * 3):
-        term = random.choice(terms)
-        r = random.random()
-        if r < 0.3:
-            typo = typo_phonetic(term)
-        elif r < 0.6:
-            typo = generate_single_typo(term)
-        else:
-            typo = generate_compound_typo(term) if len(term) >= 5 else generate_single_typo(term)
-
-        if typo and typo != term:
-            pair = (typo, term)
+        for suffix in ["", " review", " price", " vs", " best", " 2024", " 2025"]:
+            t = (term + suffix).strip()
+            pair = (t, t)
             if pair not in seen:
-                examples.append(make_example(typo, term, "vocab_typo"))
+                examples.append(make_example(t, t, "identity_tech"))
                 seen.add(pair)
 
-        if len(examples) >= count:
-            break
+    return examples
+
+
+# ─── v3.1 NEW GENERATORS ───────────────────────────────────────
+
+def gen_aug_typo_examples(
+    seen: Set[Tuple[str, str]],
+    per_category: int = 55000,
+) -> List[dict]:
+    """
+    Separately labelled augmentation pairs for each typo method, so we can
+    measure per-method accuracy and keep even coverage.
+    """
+    fn_map = [
+        ("aug_keyboard",    typo_keyboard,       70000),
+        ("aug_double",      typo_double,         65000),
+        ("aug_swap",        typo_swap,           58000),
+        ("aug_phonetic",    typo_phonetic,       51000),
+        ("aug_delete",      typo_delete,         49000),
+        ("aug_insert",      typo_insert,         42000),
+        ("aug_omit_repeat", typo_omit_repeated,  6000),
+    ]
+    examples: List[dict] = []
+    brands = list(BRAND_CATALOG.keys())
+
+    for cat_name, fn, target_n in fn_map:
+        added = 0
+        attempts = 0
+        while added < target_n and attempts < target_n * 4:
+            attempts += 1
+            brand = random.choice(brands)
+            product = random.choice(BRAND_CATALOG[brand])
+            query = f"{brand} {product}"
+            words = query.split()
+            candidates = [i for i, w in enumerate(words) if len(w) >= 3 and w.isalpha()]
+            if not candidates:
+                continue
+            idx = random.choice(candidates)
+            typoed = fn(words[idx])
+            if not typoed or typoed == words[idx]:
+                continue
+            words2 = words.copy()
+            words2[idx] = typoed
+            broken = " ".join(words2)
+            pair = (broken, query)
+            if pair in seen:
+                continue
+            examples.append(make_example(broken, query, cat_name))
+            seen.add(pair)
+            added += 1
+    # Compound: apply 2 different methods on two different words
+    target_compound = 16000
+    added = 0
+    attempts = 0
+    while added < target_compound and attempts < target_compound * 4:
+        attempts += 1
+        brand = random.choice(brands)
+        product = random.choice(BRAND_CATALOG[brand])
+        query = f"{brand} {product}"
+        words = query.split()
+        candidates = [i for i, w in enumerate(words) if len(w) >= 4 and w.isalpha()]
+        if len(candidates) < 2:
+            continue
+        i1, i2 = random.sample(candidates, 2)
+        t1 = generate_single_typo(words[i1])
+        t2 = generate_single_typo(words[i2])
+        if not t1 or not t2:
+            continue
+        new = words.copy()
+        new[i1] = t1
+        new[i2] = t2
+        broken = " ".join(new)
+        if broken == query:
+            continue
+        pair = (broken, query)
+        if pair in seen:
+            continue
+        examples.append(make_example(broken, query, "aug_compound"))
+        seen.add(pair)
+        added += 1
+    return examples
+
+
+def gen_price_examples(
+    seen: Set[Tuple[str, str]],
+    count: int = 40000,
+) -> List[dict]:
+    """
+    Teach price formats: '$99', '$1,299.99', 'under $500', '299 USD',
+    'between $100 and $200', 'for 29.99'. Both identity and typo'd variants.
+    """
+    examples: List[dict] = []
+    brands = list(BRAND_CATALOG.keys())
+    attempts = 0
+    while len(examples) < count and attempts < count * 5:
+        attempts += 1
+        template = random.choice(PRICE_TEMPLATES_CLEAN)
+        brand = random.choice(brands)
+        product = random.choice(BRAND_CATALOG[brand] + PRODUCT_TERMS)
+        p = random.randint(10, 2000)
+        p2 = p + random.randint(50, 2000)
+        cents = f"{random.randint(0,99):02d}"
+        p_big = f"{random.randint(1,9)},{random.randint(0,999):03d}"
+        price_code = f"{random.choice(CURRENCY_CODES)} {p}"
+        if random.random() < 0.3:
+            price_code = f"{p} {random.choice(CURRENCY_CODES)}"
+        clean = _format_template(
+            template, brand=brand, product=product,
+            p=p, p2=p2, cents=cents, p_big=p_big, price_code=price_code,
+        )
+        if not clean:
+            continue
+
+        # identity example (teach the correct format)
+        pair_id = (clean, clean)
+        if pair_id not in seen:
+            examples.append(make_example(clean, clean, "price_identity"))
+            seen.add(pair_id)
+
+        # typo'd variant: mangle currency spelling or digits lightly
+        mangled_options = []
+        if "$" in clean:
+            mangled_options.append(clean.replace("$", "$ ", 1))
+            mangled_options.append(clean.replace("$", "dolar ", 1))
+            mangled_options.append(clean.replace("$", "dolars ", 1))
+        for code in CURRENCY_CODES:
+            if code in clean:
+                lc = code.lower()
+                mangled_options.append(clean.replace(code, lc))
+                mangled_options.append(clean.replace(code, lc[:-1]))  # 'us' for 'usd'
+                mangled_options.append(clean.replace(code, "uds"))  # swap
+        if " ." in clean or "." in clean:
+            mangled_options.append(clean.replace(".", " ."))
+        if "," in clean:
+            mangled_options.append(clean.replace(",", "."))
+        if not mangled_options:
+            continue
+        broken = random.choice(mangled_options)
+        if broken == clean or len(broken) > 80:
+            continue
+        pair_t = (broken, clean)
+        if pair_t in seen:
+            continue
+        examples.append(make_example(broken, clean, "price_typo"))
+        seen.add(pair_t)
+    return examples
+
+
+def gen_measurement_unit_examples(
+    seen: Set[Tuple[str, str]],
+    count: int = 40000,
+) -> List[dict]:
+    """
+    Teach measurement unit formats for e-commerce specs.
+    Produces both identity (correct) and typo'd variants.
+    """
+    examples: List[dict] = []
+    brands = list(BRAND_CATALOG.keys())
+    unit_families = [
+        ("storage",   STORAGE_UNITS,   lambda: random.choice([16, 32, 64, 128, 256, 512, 1024, 2048])),
+        ("freq",      FREQUENCY_UNITS, lambda: random.choice([60, 75, 90, 120, 144, 165, 240, 360])),
+        ("power",     POWER_UNITS,     lambda: random.choice([5, 12, 24, 45, 65, 85, 100, 120, 1500, 2000, 3000, 5000])),
+        ("length",    LENGTH_UNITS,    lambda: random.choice([5, 10, 13, 14, 15, 16, 17, 24, 27, 32])),
+        ("weight",    WEIGHT_UNITS,    lambda: random.choice([100, 250, 500, 1, 2, 5, 10])),
+        ("camera",    CAMERA_UNITS,    lambda: random.choice([12, 48, 50, 60, 108, 200])),
+    ]
+    modifiers = ["gaming", "office", "ultra", "pro", "max", "plus"]
+
+    attempts = 0
+    while len(examples) < count and attempts < count * 6:
+        attempts += 1
+        family_name, unit_list, n_fn = random.choice(unit_families)
+        unit = random.choice(unit_list)
+        n = n_fn()
+        template = random.choice(UNIT_TEMPLATES_CLEAN)
+        brand = random.choice(brands)
+        product = random.choice(BRAND_CATALOG[brand] + PRODUCT_TERMS)
+        res = random.choice(RESOLUTIONS)
+        mod = random.choice(modifiers)
+
+        unit_canonical = unit.upper() if unit not in ('"', 'inch', 'fps', 'dpi') else unit
+        unit_canonical = {"MAH": "mAh", "KW": "kW", "KG": "kg", "LB": "lb", "LBS": "lbs",
+                          "OZ": "oz", "MP": "MP", "FPS": "fps", "DPI": "dpi",
+                          "MM": "mm", "CM": "cm", "M": "m", "FT": "ft",
+                          "HZ": "Hz", "MHZ": "MHz", "GHZ": "GHz",
+                          "W": "W", "V": "V", "WH": "Wh",
+                          "MB": "MB", "GB": "GB", "TB": "TB",
+                          "G": "g", "INCH": "inch"}.get(unit_canonical.upper(), unit_canonical)
+
+        res_canonical = res.upper() if res[-1] in "kK" else res
+
+        clean = _format_template(
+            template, brand=brand, product=product,
+            n=n, unit=unit_canonical, res=res_canonical, mod=mod,
+        )
+        if not clean:
+            continue
+
+        pair_id = (clean, clean)
+        if pair_id not in seen:
+            examples.append(make_example(clean, clean, "unit_identity"))
+            seen.add(pair_id)
+
+        # typo variants: lowercase the unit, add/remove space, swap digits
+        mangled_options = [
+            clean.replace(unit_canonical, unit.lower()),
+            clean.replace(f" {unit_canonical}", unit_canonical.lower()),
+            clean.replace(f"{n} {unit_canonical}", f"{n}{unit.lower()}"),
+            clean.replace(res_canonical, res.lower()),
+        ]
+        if res_canonical in clean and res_canonical.endswith("K"):
+            mangled_options.append(clean.replace(res_canonical, f"{res_canonical[:-1]} k"))
+            mangled_options.append(clean.replace(res_canonical, f"{res_canonical[:-1]}K"))
+        mangled_options = [m for m in mangled_options if m and m != clean]
+        if not mangled_options:
+            continue
+        broken = random.choice(mangled_options)
+        pair_t = (broken, clean)
+        if pair_t in seen:
+            continue
+        examples.append(make_example(broken, clean, "unit_typo"))
+        seen.add(pair_t)
 
     return examples
 
 
+def gen_brand_category_mismatch_examples(
+    seen: Set[Tuple[str, str]],
+    count: int = 15000,
+) -> List[dict]:
+    """
+    Teach the model to fix brand-model mismatches via context.
+    e.g. "nvidia tuf gaming chair" -> "asus tuf gaming chair"
+    (nvidia is GPUs; TUF is an ASUS gaming sub-line).
+    """
+    examples: List[dict] = []
+    # For each confusion triple, generate many product contexts
+    attempts = 0
+    while len(examples) < count and attempts < count * 8:
+        attempts += 1
+        wrong_brand, right_brand, model_line = random.choice(CROSS_BRAND_MODEL_CONFUSIONS)
+        # Pick a product that plausibly goes with the model_line
+        right_products = BRAND_CATALOG.get(right_brand, []) + PRODUCT_TERMS
+        product = random.choice(right_products)
+
+        # Build wrong variant: "wrong_brand model_line product"
+        # Build right variant: "right_brand model_line product"
+        wrong = f"{wrong_brand} {model_line} {product}".strip()
+        right = f"{right_brand} {model_line} {product}".strip()
+
+        if wrong == right or len(wrong) > 80:
+            continue
+        pair = (wrong, right)
+        if pair in seen:
+            continue
+        examples.append(make_example(wrong, right, "brand_category_mismatch"))
+        seen.add(pair)
+
+        # Also: identity of the right version (reinforce correct form)
+        id_pair = (right, right)
+        if id_pair not in seen:
+            examples.append(make_example(right, right, "brand_category_identity"))
+            seen.add(id_pair)
+
+    return examples
+
+
+# Everyday English words (1000+ common misspellings' source words)
+EVERYDAY_WORDS = [
+    "receive", "definitely", "occurred", "separate", "necessary", "occasionally",
+    "accommodate", "acquire", "believe", "calendar", "cemetery", "changeable",
+    "collectible", "committed", "conscientious", "conscience", "consensus",
+    "daiquiri", "discipline", "drunkenness", "embarrass", "equipment",
+    "exceed", "existence", "experience", "foreign", "friend", "government",
+    "grateful", "guarantee", "harass", "height", "hierarchy", "humorous",
+    "immediately", "independent", "indispensable", "inoculate", "intelligence",
+    "jewelry", "judgment", "knowledge", "leisure", "library", "license",
+    "lightning", "maintenance", "maneuver", "millennium", "miniature",
+    "miscellaneous", "mischievous", "misspell", "neighbor", "noticeable",
+    "occurrence", "paid", "pastime", "perseverance", "personnel", "playwright",
+    "possession", "precede", "principal", "privilege", "professor", "pronunciation",
+    "publicly", "questionnaire", "receipt", "recommend", "reference", "referred",
+    "relevant", "restaurant", "rhyme", "rhythm", "schedule", "science",
+    "secretary", "sergeant", "sincerely", "sophomore", "sovereign", "succeed",
+    "supersede", "suppress", "tendency", "threshold", "tomorrow", "transferred",
+    "truly", "twelfth", "tyranny", "unanimous", "until", "useful", "vacuum",
+    "vehicle", "visible", "weather", "whether", "which", "writing", "written",
+    "yield", "address", "amateur", "argument", "athletic", "beautiful",
+    "beginning", "business", "category", "commitment", "committee", "competent",
+    "conscious", "deceive", "desperate", "disastrous", "eighth", "eligible",
+    "embarrassment", "environment", "especially", "exaggerate", "excellent",
+    "explanation", "familiar", "fascinate", "February", "finally", "fluorescent",
+    "forty", "frequent", "gauge", "genius", "guidance", "happily", "height",
+    "humorous", "idiosyncrasy", "immediate", "innocuous", "irrelevant",
+    "liaison", "marriage", "medicine", "memento", "minuscule", "necessary",
+    "ninety", "noticeable", "ninth", "opinion", "opportunity", "ordinary",
+    "parallel", "particular", "peculiar", "persistent", "perspective",
+    "pleasant", "possess", "potato", "practice", "preceding", "preference",
+    "preferred", "prejudice", "prevalent", "procedure", "proceed", "profession",
+    "prominent", "pursue", "quantity", "quarrel", "quiet", "realize",
+    "really", "recognize", "reminisce", "repetition", "reservoir", "ridiculous",
+    "safety", "salary", "scheme", "separate", "siege", "similar", "simile",
+    "simultaneous", "soliloquy", "souvenir", "specific", "strategy", "strength",
+    "subtle", "successful", "summary", "surprise", "susceptible", "technique",
+    "temperature", "temporarily", "theater", "theory", "threshold", "thorough",
+    "thought", "through", "together", "tomorrow", "traffic", "tragedy",
+    "typical", "usage", "usual", "vacuum", "variety", "various", "vegetable",
+    "vehicle", "villain", "visible", "voluntary", "warranty", "weather",
+    "weird", "welfare", "wholly", "width", "willful", "wilful", "wisdom",
+    "wonderful", "workplace", "yesterday",
+]
+
+
+def gen_everyday_english_typos(
+    seen: Set[Tuple[str, str]],
+    count: int = 35000,
+) -> List[dict]:
+    """
+    Teach typo correction of common English words (not brand/product names).
+    Each word passes through the domain_plausible filter.
+    """
+    examples: List[dict] = []
+    words = [w for w in EVERYDAY_WORDS if domain_plausible(w)]
+    attempts = 0
+    while len(examples) < count and attempts < count * 8:
+        attempts += 1
+        word = random.choice(words)
+        typo_fn = random.choice([
+            typo_keyboard, typo_double, typo_swap,
+            typo_phonetic, typo_delete, typo_insert, typo_omit_repeated,
+        ])
+        typoed = typo_fn(word)
+        if not typoed or typoed == word or len(typoed) < 2:
+            continue
+        # Sometimes embed in a natural context phrase
+        if random.random() < 0.4:
+            template = random.choice([
+                "{word} review", "best {word}", "{word} for sale",
+                "cheap {word}", "{word} online", "buy {word}",
+                "{word} near me", "top {word}", "new {word}",
+            ])
+            broken = template.replace("{word}", typoed)
+            correct = template.replace("{word}", word)
+        else:
+            broken = typoed
+            correct = word
+        pair = (broken, correct)
+        if pair in seen:
+            continue
+        examples.append(make_example(broken, correct, "everyday_english"))
+        seen.add(pair)
+    return examples
+
+
+def gen_external_word_pairs(
+    seen: Set[Tuple[str, str]],
+    external_pairs: List[Tuple[str, str]],
+    count: int = 30000,
+) -> List[dict]:
+    """
+    Use external misspelling corpora (Birkbeck / codespell / torinriley).
+    Only keep pairs where the target word passes the domain filter.
+    """
+    examples: List[dict] = []
+    if not external_pairs:
+        return examples
+    random.shuffle(external_pairs)
+    for wrong, right in external_pairs:
+        if len(examples) >= count:
+            break
+        wrong = wrong.strip().lower()
+        right = right.strip().lower()
+        if not wrong or not right or wrong == right:
+            continue
+        if not domain_plausible(right):
+            continue
+        if levenshtein(wrong, right) > max(3, len(right) // 3):
+            continue
+        pair = (wrong, right)
+        if pair in seen:
+            continue
+        examples.append(make_example(wrong, right, "external_word"))
+        seen.add(pair)
+    return examples
+
+
+def gen_external_context_typos(
+    seen: Set[Tuple[str, str]],
+    external_pairs: List[Tuple[str, str]],
+    count: int = 25000,
+) -> List[dict]:
+    """Embed external corpus typos in e-commerce search contexts."""
+    examples: List[dict] = []
+    if not external_pairs:
+        return examples
+    plausible_pairs = [(w, r) for w, r in external_pairs
+                       if domain_plausible(r.strip().lower())
+                       and levenshtein(w.strip().lower(), r.strip().lower()) <= max(3, len(r) // 3)]
+    if not plausible_pairs:
+        return examples
+    templates = [
+        "{x} review", "best {x}", "buy {x}", "{x} online",
+        "cheap {x}", "top {x}", "{x} near me",
+    ]
+    attempts = 0
+    while len(examples) < count and attempts < count * 6:
+        attempts += 1
+        wrong, right = random.choice(plausible_pairs)
+        template = random.choice(templates)
+        broken = template.replace("{x}", wrong.strip().lower())
+        correct = template.replace("{x}", right.strip().lower())
+        if broken == correct:
+            continue
+        pair = (broken, correct)
+        if pair in seen:
+            continue
+        examples.append(make_example(broken, correct, "external_context"))
+        seen.add(pair)
+    return examples
+
+
+def gen_identity_external(
+    seen: Set[Tuple[str, str]],
+    external_pairs: List[Tuple[str, str]],
+    count: int = 15000,
+) -> List[dict]:
+    """
+    Preserve correctly-spelled words that LOOK like typos.
+    Uses only the 'right' side of external pairs filtered by domain_plausible.
+    """
+    examples: List[dict] = []
+    if not external_pairs:
+        return examples
+    corrects = list({r.strip().lower() for _, r in external_pairs if domain_plausible(r.strip().lower())})
+    random.shuffle(corrects)
+    templates = [
+        "{x}", "{x} review", "best {x}", "buy {x}",
+        "{x} online", "top {x}",
+    ]
+    attempts = 0
+    while len(examples) < count and attempts < count * 6:
+        attempts += 1
+        word = random.choice(corrects)
+        tpl = random.choice(templates)
+        s = tpl.replace("{x}", word)
+        pair = (s, s)
+        if pair in seen:
+            continue
+        examples.append(make_example(s, s, "identity_external"))
+        seen.add(pair)
+    return examples
+
+
 # ═══════════════════════════════════════════════════════════════
-# QUALITY FILTERS
+# v3.1 QUALITY FILTER (true Levenshtein, replaces positional diff)
 # ═══════════════════════════════════════════════════════════════
 
-def quality_filter(examples: List[dict]) -> List[dict]:
-    """Remove low-quality or degenerate examples."""
-    filtered = []
+def quality_filter(examples: List[dict]) -> Tuple[List[dict], Dict[str, int]]:
+    """
+    Drop pairs that look corrupted:
+      - empty / whitespace-only
+      - identical except where category says "identity" (those are OK)
+      - non-ASCII characters (we want English only)
+      - edit distance too large (d / max(len) > 0.5)
+      - lengths wildly different
+      - duplicate (input, target) pair
+    """
+    seen_pairs: Set[Tuple[str, str]] = set()
+    keep: List[dict] = []
+    stats = {
+        "total_in": len(examples),
+        "dropped_empty": 0,
+        "dropped_nonascii": 0,
+        "dropped_edit_distance": 0,
+        "dropped_length_ratio": 0,
+        "dropped_duplicate": 0,
+        "dropped_conflict": 0,
+    }
+    target_for_input: Dict[str, str] = {}
     for ex in examples:
-        inp = ex["input_text"].replace("correct: ", "", 1)
+        inp = ex["input_text"]
         tgt = ex["target_text"]
-
-        # Skip empty
+        cat = ex.get("category", "")
         if not inp.strip() or not tgt.strip():
+            stats["dropped_empty"] += 1
             continue
-
-        # Skip if input is too long (>15 words — unrealistic queries)
-        if len(inp.split()) > 15:
+        try:
+            inp.encode("ascii")
+            tgt.encode("ascii")
+        except UnicodeEncodeError:
+            stats["dropped_nonascii"] += 1
             continue
-
-        # Skip if target is too long
-        if len(tgt.split()) > 15:
+        # identity categories allowed to have inp == tgt
+        is_identity = "identity" in cat
+        if inp == tgt and not is_identity:
+            stats["dropped_empty"] += 1
             continue
-
-        # Skip if input and target only differ by case
-        if inp.lower() == tgt.lower() and inp != tgt:
-            continue
-
-        # Skip if edit distance is too high (>50% of word length — probably garbage)
-        if inp != tgt:
-            shorter = min(len(inp), len(tgt))
-            if shorter > 0:
-                # Simple char-level difference check
-                diff = sum(1 for a, b in zip(inp, tgt) if a != b) + abs(len(inp) - len(tgt))
-                if diff > shorter * 0.6:
+        if not is_identity:
+            d = levenshtein(inp, tgt)
+            longer = max(len(inp), len(tgt))
+            if longer > 0 and d / longer > 0.5:
+                stats["dropped_edit_distance"] += 1
+                continue
+            if len(inp) > 3 and len(tgt) > 3:
+                ratio = min(len(inp), len(tgt)) / max(len(inp), len(tgt))
+                if ratio < 0.4:
+                    stats["dropped_length_ratio"] += 1
                     continue
-
-        filtered.append(ex)
-
-    return filtered
+        key = (inp, tgt)
+        if key in seen_pairs:
+            stats["dropped_duplicate"] += 1
+            continue
+        # detect conflicting targets for same input (keep first)
+        if inp in target_for_input and target_for_input[inp] != tgt:
+            stats["dropped_conflict"] += 1
+            continue
+        target_for_input[inp] = tgt
+        seen_pairs.add(key)
+        keep.append(ex)
+    stats["total_out"] = len(keep)
+    return keep, stats
 
 
 # ═══════════════════════════════════════════════════════════════
-# MAIN
+# MAIN ENTRY POINT
 # ═══════════════════════════════════════════════════════════════
+
+def _discover_external_corpora() -> List[Path]:
+    """Scan known dirs for external typo corpora."""
+    scan_dirs = [DATA_DIR, DATA_DIR / "external", V3_ROOT / "data" / "external",
+                 SCRIPT_DIR / "external"]
+    found = []
+    for d in scan_dirs:
+        if not d.exists():
+            continue
+        for ext in ("*.csv", "*.tsv", "*.arrow", "*.txt", "*.jsonl"):
+            for p in d.glob(ext):
+                # skip our own training outputs
+                nm = p.name.lower()
+                if any(x in nm for x in ("train_v3", "eval_v3", "training_stats",
+                                          "training_data_v3", "eval_data_v3")):
+                    continue
+                found.append(p)
+    return found
+
 
 def main():
-    parser = argparse.ArgumentParser(description="Build T5-Large v3 training data")
-    parser.add_argument("--target", type=int, default=400000,
-                        help="Target total examples (default: 400000)")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--target", type=int, default=950000,
+                        help="target total dataset size (before filter)")
     parser.add_argument("--identity-ratio", type=float, default=0.22,
-                        help="Target identity pair ratio (default: 0.22)")
-    parser.add_argument("--eval-ratio", type=float, default=0.05,
-                        help="Eval split ratio (default: 0.05)")
-    parser.add_argument("--seed", type=int, default=42)
+                        help="fraction of dataset that should be identity pairs")
+    parser.add_argument("--eval-size", type=int, default=25000,
+                        help="size of eval split")
+    parser.add_argument("--out-dir", type=str, default=str(OUT_DIR),
+                        help="output directory")
     args = parser.parse_args()
 
-    random.seed(args.seed)
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
 
     print("=" * 70)
-    print("  T5-Large v3 — Training Data Builder")
-    print("  Target: {:,} examples | Identity: {:.0%} | Eval: {:.0%}".format(
-        args.target, args.identity_ratio, args.eval_ratio))
+    print("BYT5-LARGE v3.1 TRAINING DATA BUILDER")
     print("=" * 70)
-
-    # ── Load existing data ──
-    print("\n[1/9] Loading existing data files...")
-    typo_mappings = load_typo_mappings(DATA_DIR / "typo_mappings.txt")
-    brand_products = load_text_file(DATA_DIR / "brand_products.txt")
-    electronics_vocab = load_text_file(DATA_DIR / "electronics_vocab.txt")
-    domain_vocab = load_text_file(DATA_DIR / "domain_vocab.txt")
-    ecom_corpus = load_text_file(DATA_DIR / "ecommerce_corpus.txt")
-    csv_pairs = load_csv_pairs(DATA_DIR / "typo_dataset.csv")
-
-    all_vocab = list(set(brand_products + electronics_vocab + domain_vocab + ecom_corpus))
-    print(f"  Typo mappings:    {len(typo_mappings):>6,} pairs")
-    print(f"  Brand products:   {len(brand_products):>6,} terms")
-    print(f"  Electronics:      {len(electronics_vocab):>6,} terms")
-    print(f"  Domain vocab:     {len(domain_vocab):>6,} terms")
-    print(f"  E-com corpus:     {len(ecom_corpus):>6,} terms")
-    print(f"  CSV pairs:        {len(csv_pairs):>6,} pairs")
-    print(f"  Total vocab:      {len(all_vocab):>6,} unique terms")
-    print(f"  Brand catalog:    {len(BRAND_CATALOG):>6,} brands")
+    print(f"Target size:      {args.target:,}")
+    print(f"Identity ratio:   {args.identity_ratio}")
+    print(f"Eval size:        {args.eval_size:,}")
+    print(f"Output dir:       {out_dir}")
+    print("=" * 70)
 
     seen: Set[Tuple[str, str]] = set()
     all_examples: List[dict] = []
 
-    # ── Curated typo mappings ──
-    print("\n[2/9] Curated typo mappings in context...")
-    curated = gen_curated_typo_examples(typo_mappings, seen)
-    all_examples.extend(curated)
-    print(f"  → {len(curated):,} examples")
+    # Load inputs
+    print("\n── Loading source corpora from", DATA_DIR)
+    typo_mappings = load_typo_mappings(DATA_DIR / "typo_mappings.txt")
+    csv_pairs     = load_csv_pairs(DATA_DIR / "typo_dataset.csv")
+    vocab_list: List[str] = []
+    for vocab_file in ("expanded_common_words.txt", "curated_common_words.txt",
+                        "common_words.txt", "domain_vocab.txt",
+                        "electronics_vocab.txt", "ecommerce_corpus.txt"):
+        p = DATA_DIR / vocab_file
+        if p.exists():
+            vocab_list.extend(load_text_file(p))
+    # Deduplicate, keep short/plausible
+    vocab_list = list({v.strip().lower() for v in vocab_list
+                       if v and v.strip() and 3 <= len(v.strip()) <= 18})
+    print(f"   typo_mappings:  {len(typo_mappings):,}")
+    print(f"   csv_pairs:      {len(csv_pairs):,}")
+    print(f"   vocab_list:     {len(vocab_list):,}")
 
-    # ── Existing CSV pairs ──
-    print("\n[3/9] Existing CSV data...")
-    csv_ex = gen_existing_data_examples(typo_mappings, csv_pairs, seen)
-    all_examples.extend(csv_ex)
-    print(f"  → {len(csv_ex):,} examples")
+    # ── 1. Curated typos
+    print("\n[1/14] gen_curated_typo_examples ...")
+    ex = gen_curated_typo_examples(typo_mappings, seen)
+    print(f"       + {len(ex):,}")
+    all_examples.extend(ex)
 
-    # ── Brand/product query typos ──
-    print("\n[4/9] Brand+product query typos (all categories)...")
-    brand_typos = gen_brand_product_typos(seen, count=120000)
-    all_examples.extend(brand_typos)
-    print(f"  → {len(brand_typos):,} examples")
+    # ── 2. Existing training data (if any)
+    print("[2/14] gen_existing_data_examples ...")
+    ex = gen_existing_data_examples(typo_mappings, csv_pairs, seen)
+    print(f"       + {len(ex):,}")
+    all_examples.extend(ex)
 
-    # ── Generic product typos ──
-    print("\n[5/9] Generic product query typos...")
-    generic = gen_generic_product_typos(seen, count=40000)
-    all_examples.extend(generic)
-    print(f"  → {len(generic):,} examples")
+    # ── 3. Brand/product typos
+    print("[3/14] gen_brand_product_typos ...")
+    ex = gen_brand_product_typos(seen, count=120000)
+    print(f"       + {len(ex):,}")
+    all_examples.extend(ex)
 
-    # ── Phonetic typos ──
-    print("\n[6/9] Phonetic confusion typos...")
-    phonetic = gen_phonetic_typo_examples(seen, count=35000)
-    all_examples.extend(phonetic)
-    print(f"  → {len(phonetic):,} examples")
+    # ── 4. Generic product typos
+    print("[4/14] gen_generic_product_typos ...")
+    ex = gen_generic_product_typos(seen, count=60000)
+    print(f"       + {len(ex):,}")
+    all_examples.extend(ex)
 
-    # ── Space errors ──
-    print("\n[7/9] Space merge/split errors...")
-    space = gen_space_error_examples(seen, count=15000)
-    all_examples.extend(space)
-    print(f"  → {len(space):,} examples")
+    # ── 5. Phonetic
+    print("[5/14] gen_phonetic_typo_examples ...")
+    ex = gen_phonetic_typo_examples(seen, count=40000)
+    print(f"       + {len(ex):,}")
+    all_examples.extend(ex)
 
-    # ── Vocabulary typos ──
-    print("\n[8/9] Standalone vocabulary typos...")
-    vocab = gen_vocab_typo_examples(all_vocab, seen, count=25000)
-    all_examples.extend(vocab)
-    print(f"  → {len(vocab):,} examples")
+    # ── 6. Space errors
+    print("[6/14] gen_space_error_examples ...")
+    ex = gen_space_error_examples(seen, count=25000)
+    print(f"       + {len(ex):,}")
+    all_examples.extend(ex)
 
-    # ── Identity pairs ──
-    target_identity = int(args.target * args.identity_ratio)
-    print(f"\n[9/9] Identity pairs (target: ~{target_identity:,})...")
-    identity = gen_identity_examples(seen, count=target_identity)
-    all_examples.extend(identity)
-    print(f"  → {len(identity):,} examples")
+    # ── 7. Vocab typos
+    print("[7/14] gen_vocab_typo_examples ...")
+    ex = gen_vocab_typo_examples(vocab_list, seen, count=25000)
+    print(f"       + {len(ex):,}")
+    all_examples.extend(ex)
 
-    # ── Quality filter ──
-    print(f"\n  Pre-filter:  {len(all_examples):,}")
-    all_examples = quality_filter(all_examples)
-    print(f"  Post-filter: {len(all_examples):,}")
+    # ── 8. Identity
+    identity_target = int(args.target * args.identity_ratio)
+    print(f"[8/14] gen_identity_examples (target {identity_target:,}) ...")
+    ex = gen_identity_examples(seen, count=identity_target)
+    print(f"       + {len(ex):,}")
+    all_examples.extend(ex)
 
-    # ── Balance: trim to target ──
+    # ── 9. Augmented (keyboard/double/swap/phonetic/delete/insert/compound/omit_repeat)
+    print("[9/14] gen_aug_typo_examples ...")
+    ex = gen_aug_typo_examples(seen)
+    print(f"       + {len(ex):,}")
+    all_examples.extend(ex)
+
+    # ── 10. Price
+    print("[10/14] gen_price_examples ...")
+    ex = gen_price_examples(seen, count=40000)
+    print(f"        + {len(ex):,}")
+    all_examples.extend(ex)
+
+    # ── 11. Units
+    print("[11/14] gen_measurement_unit_examples ...")
+    ex = gen_measurement_unit_examples(seen, count=40000)
+    print(f"        + {len(ex):,}")
+    all_examples.extend(ex)
+
+    # ── 12. Brand-category mismatch
+    print("[12/14] gen_brand_category_mismatch_examples ...")
+    ex = gen_brand_category_mismatch_examples(seen, count=15000)
+    print(f"        + {len(ex):,}")
+    all_examples.extend(ex)
+
+    # ── 13. Everyday English
+    print("[13/14] gen_everyday_english_typos ...")
+    ex = gen_everyday_english_typos(seen, count=35000)
+    print(f"        + {len(ex):,}")
+    all_examples.extend(ex)
+
+    # ── 14. External corpora (auto-discover)
+    print("[14/14] External corpora (auto-discover) ...")
+    corpora_paths = _discover_external_corpora()
+    all_ext: List[Tuple[str, str]] = []
+    for p in corpora_paths:
+        pairs = load_external_pairs(p)
+        print(f"        loaded {len(pairs):,} pairs from {p.name}")
+        all_ext.extend(pairs)
+    if all_ext:
+        ex1 = gen_external_word_pairs(seen, all_ext, count=30000)
+        ex2 = gen_external_context_typos(seen, all_ext, count=25000)
+        ex3 = gen_identity_external(seen, all_ext, count=15000)
+        print(f"        + {len(ex1):,} external_word")
+        print(f"        + {len(ex2):,} external_context")
+        print(f"        + {len(ex3):,} identity_external")
+        all_examples.extend(ex1)
+        all_examples.extend(ex2)
+        all_examples.extend(ex3)
+    else:
+        print("        (no external corpora found — skipping)")
+
+    print(f"\n─── Raw total: {len(all_examples):,} examples ───")
+
+    # Quality filter
+    print("Running quality filter ...")
+    all_examples, qstats = quality_filter(all_examples)
+    print(f"  total_in         : {qstats['total_in']:,}")
+    print(f"  dropped_empty    : {qstats['dropped_empty']:,}")
+    print(f"  dropped_nonascii : {qstats['dropped_nonascii']:,}")
+    print(f"  dropped_edit_dist: {qstats['dropped_edit_distance']:,}")
+    print(f"  dropped_len_ratio: {qstats['dropped_length_ratio']:,}")
+    print(f"  dropped_duplicate: {qstats['dropped_duplicate']:,}")
+    print(f"  dropped_conflict : {qstats['dropped_conflict']:,}")
+    print(f"  kept             : {qstats['total_out']:,}")
+
+    # Shuffle + split
     random.shuffle(all_examples)
+    eval_split = all_examples[:args.eval_size]
+    train_split = all_examples[args.eval_size:]
+    # Verify no overlap
+    eval_keys = {(e["input_text"], e["target_text"]) for e in eval_split}
+    train_split = [e for e in train_split if (e["input_text"], e["target_text"]) not in eval_keys]
 
-    # Calculate current identity ratio
-    id_count = sum(1 for ex in all_examples
-                   if ex["input_text"].replace("correct: ", "", 1) == ex["target_text"])
-    corr_count = len(all_examples) - id_count
-    current_ratio = id_count / len(all_examples) if all_examples else 0
+    # Category counts
+    from collections import Counter
+    cat_train = Counter(e["category"] for e in train_split)
+    cat_eval = Counter(e["category"] for e in eval_split)
 
-    print(f"\n  Current: {len(all_examples):,} total, "
-          f"{id_count:,} identity ({current_ratio:.1%}), "
-          f"{corr_count:,} corrections")
+    # Write
+    train_file = out_dir / "train_v3.jsonl"
+    eval_file = out_dir / "eval_v3.jsonl"
+    stats_file = out_dir / "training_stats_v3.json"
 
-    # Trim identity pairs if ratio is too high
-    if current_ratio > args.identity_ratio + 0.03:
-        target_id = int(corr_count * args.identity_ratio / (1 - args.identity_ratio))
-        excess = id_count - target_id
-        if excess > 0:
-            id_indices = [i for i, ex in enumerate(all_examples)
-                         if ex["input_text"].replace("correct: ", "", 1) == ex["target_text"]]
-            remove = set(random.sample(id_indices, min(excess, len(id_indices))))
-            all_examples = [ex for i, ex in enumerate(all_examples) if i not in remove]
-            print(f"  Trimmed {len(remove):,} identity pairs")
-
-    # Trim total if over target
-    if len(all_examples) > args.target:
-        all_examples = all_examples[:args.target]
-        print(f"  Trimmed to target: {args.target:,}")
-
-    # ── Split ──
-    random.shuffle(all_examples)
-    eval_size = int(len(all_examples) * args.eval_ratio)
-    eval_data = all_examples[:eval_size]
-    train_data = all_examples[eval_size:]
-
-    # ── Final stats ──
-    total = len(train_data)
-    id_final = sum(1 for ex in train_data
-                   if ex["input_text"].replace("correct: ", "", 1) == ex["target_text"])
-    corr_final = total - id_final
-    cats = Counter(ex["category"] for ex in train_data)
-
-    print(f"\n{'=' * 70}")
-    print(f"  FINAL DATASET")
-    print(f"{'=' * 70}")
-    print(f"  Train: {total:,}")
-    print(f"    Identity:   {id_final:,} ({100 * id_final / total:.1f}%)")
-    print(f"    Correction: {corr_final:,} ({100 * corr_final / total:.1f}%)")
-    print(f"  Eval:  {len(eval_data):,}")
-    print(f"\n  Categories:")
-    for cat, cnt in cats.most_common():
-        pct = 100 * cnt / total
-        bar = "█" * int(pct / 2)
-        print(f"    {cat:<25s} {cnt:>7,} ({pct:5.1f}%) {bar}")
-
-    # ── Sample examples ──
-    print(f"\n  --- Sample corrections ---")
-    corrections = [ex for ex in train_data
-                   if ex["input_text"].replace("correct: ", "", 1) != ex["target_text"]]
-    for ex in random.sample(corrections, min(30, len(corrections))):
-        q = ex["input_text"].replace("correct: ", "")
-        t = ex["target_text"]
-        print(f"    [{ex['category']:<25s}] '{q}' → '{t}'")
-
-    # ── Save ──
-    out_train = OUT_DIR / "train_v3.jsonl"
-    out_eval = OUT_DIR / "eval_v3.jsonl"
-
-    with open(out_train, "w", encoding="utf-8") as f:
-        for ex in train_data:
+    print(f"\nWriting {len(train_split):,} -> {train_file.name}")
+    with open(train_file, "w", encoding="utf-8") as f:
+        for ex in train_split:
             f.write(json.dumps(ex, ensure_ascii=False) + "\n")
 
-    with open(out_eval, "w", encoding="utf-8") as f:
-        for ex in eval_data:
+    print(f"Writing {len(eval_split):,} -> {eval_file.name}")
+    with open(eval_file, "w", encoding="utf-8") as f:
+        for ex in eval_split:
             f.write(json.dumps(ex, ensure_ascii=False) + "\n")
 
-    # ── Stats file ──
     stats = {
-        "total_train": total,
-        "total_eval": len(eval_data),
-        "identity_count": id_final,
-        "identity_ratio": round(id_final / total, 4),
-        "correction_count": corr_final,
-        "categories": {k: v for k, v in cats.most_common()},
-        "brand_count": len(BRAND_CATALOG),
-        "product_terms_count": len(PRODUCT_TERMS),
-        "typo_mappings_count": len(typo_mappings),
+        "version": "v3.1",
+        "train_size": len(train_split),
+        "eval_size": len(eval_split),
+        "train_categories": dict(cat_train.most_common()),
+        "eval_categories": dict(cat_eval.most_common()),
+        "quality_filter": qstats,
+        "overlap_check": 0,
     }
-    with open(OUT_DIR / "training_stats_v3.json", "w") as f:
+    with open(stats_file, "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2)
 
-    print(f"\n  Saved:")
-    print(f"    {out_train}")
-    print(f"    {out_eval}")
-    print(f"    {OUT_DIR / 'training_stats_v3.json'}")
-    print(f"\n  Upload entire 'BYT5-T5 Large v3' folder to Google Drive:")
-    print(f"    Drive > Grad/Correction/fine_tune/BYT5-T5 Large v3/")
+    print(f"Writing stats -> {stats_file.name}")
+    print("\n=== TOP 15 CATEGORIES (train) ===")
+    for name, c in cat_train.most_common(15):
+        print(f"  {name:32s} {c:>8,}")
+
+    print("\nDone.")
 
 
 if __name__ == "__main__":
