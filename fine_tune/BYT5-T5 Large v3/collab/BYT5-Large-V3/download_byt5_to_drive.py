@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 """
-ByT5-Large Model Downloader -- Google Colab
-============================================
-Downloads google/byt5-large (~4.7 GB) to Google Drive.
-Run this ONCE before training. The training notebook loads from cache.
+ByT5-Large Model Downloader -- Google Colab (v3.3)
+===================================================
+Caches google/byt5-large (~4.7 GB) into your Google Drive so the training
+notebook can load it offline every session.
 
-If it fails mid-download, just re-run -- it resumes where it left off.
+Run this ONCE before the first training run. Safe to re-run: it skips files
+that are already present and valid, and resumes big files on failure.
+
+Target (on Drive):
+  /MyDrive/Grad/Correction/fine_tune/BYT5-T5 Large v3/model_cache/byt5-large/
+
+After this notebook completes, open byt5_large_finetune_v3.ipynb.
 """
 
 # =====================================================================
