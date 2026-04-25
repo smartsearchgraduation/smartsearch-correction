@@ -1,0 +1,1036 @@
+# Comprehensive E-Commerce Vocabulary
+# Covers all major product categories for FastText training
+# Format: one term per line (multi-word terms are valid)
+
+# ===========================================
+# FASHION & APPAREL — Brands
+# ===========================================
+nike
+adidas
+puma
+reebok
+new balance
+converse
+vans
+skechers
+under armour
+gucci
+prada
+louis vuitton
+chanel
+dior
+versace
+armani
+burberry
+balenciaga
+valentino
+givenchy
+fendi
+hermes
+bottega veneta
+moncler
+zara
+h&m
+uniqlo
+shein
+asos
+forever 21
+gap
+old navy
+mango
+pull&bear
+bershka
+massimo dutti
+tommy hilfiger
+calvin klein
+ralph lauren
+lacoste
+hugo boss
+
+# FASHION & APPAREL — Products
+sneakers
+trainers
+running shoes
+boots
+sandals
+loafers
+heels
+pumps
+flats
+hoodie
+sweatshirt
+joggers
+leggings
+jeans
+trousers
+chinos
+shorts
+blazer
+cardigan
+sweater
+pullover
+jacket
+coat
+parka
+windbreaker
+vest
+denim
+t-shirt
+polo shirt
+dress shirt
+blouse
+skirt
+dress
+gown
+jumpsuit
+romper
+lingerie
+underwear
+socks
+belt
+scarf
+hat
+cap
+beanie
+gloves
+sunglasses
+watch
+bracelet
+necklace
+earrings
+ring
+handbag
+backpack
+wallet
+clutch
+tote
+
+# ===========================================
+# BEAUTY & PERSONAL CARE — Brands
+# ===========================================
+loreal
+maybelline
+mac
+clinique
+estee lauder
+nyx
+revlon
+covergirl
+olay
+neutrogena
+cetaphil
+cerave
+the ordinary
+garnier
+nivea
+dove
+pantene
+tresemme
+head shoulders
+herbal essences
+bath body works
+victoria secret
+sephora
+lancome
+shiseido
+sk-ii
+kiehls
+la roche posay
+vichy
+bioderma
+
+# BEAUTY & PERSONAL CARE — Products
+moisturizer
+moisturiser
+serum
+foundation
+concealer
+mascara
+lipstick
+lip gloss
+lip balm
+eyeshadow
+eyeliner
+bronzer
+blush
+highlighter
+primer
+setting spray
+makeup remover
+cleanser
+toner
+exfoliator
+sunscreen
+sunblock
+shampoo
+conditioner
+hair mask
+hair oil
+hair spray
+hair gel
+body lotion
+body wash
+deodorant
+perfume
+cologne
+fragrance
+nail polish
+face mask
+eye cream
+retinol
+hyaluronic acid
+vitamin c serum
+
+# ===========================================
+# HOME & KITCHEN — Brands
+# ===========================================
+ikea
+kitchenaid
+dyson
+roomba
+irobot
+vitamix
+instant pot
+cuisinart
+ninja
+breville
+smeg
+le creuset
+lodge
+staub
+zwilling
+tramontina
+calphalon
+all clad
+oxo
+rubbermaid
+simplehuman
+bed bath beyond
+wayfair
+pottery barn
+west elm
+crate barrel
+restoration hardware
+williams sonoma
+
+# HOME & KITCHEN — Products
+blender
+toaster
+microwave
+oven
+stove
+refrigerator
+fridge
+freezer
+dishwasher
+vacuum
+vacuum cleaner
+air fryer
+pressure cooker
+slow cooker
+rice cooker
+coffee maker
+espresso machine
+food processor
+stand mixer
+hand mixer
+juicer
+kettle
+toaster oven
+air purifier
+humidifier
+dehumidifier
+fan
+heater
+iron
+ironing board
+sewing machine
+washing machine
+dryer
+mattress
+pillow
+bedsheet
+duvet
+comforter
+blanket
+towel
+curtain
+rug
+carpet
+shelf
+bookshelf
+desk
+chair
+table
+sofa
+couch
+armchair
+ottoman
+cabinet
+drawer
+wardrobe
+lamp
+chandelier
+candle
+
+# ===========================================
+# GROCERY & FOOD — Brands
+# ===========================================
+nestle
+coca cola
+pepsi
+kraft
+heinz
+kelloggs
+general mills
+mondelez
+danone
+yoplait
+haagen dazs
+lindt
+godiva
+ferrero
+mars
+snickers
+m&ms
+hershey
+cadbury
+oreo
+doritos
+lays
+pringles
+quaker
+barilla
+san pellegrino
+perrier
+evian
+fiji water
+starbucks
+nespresso
+
+# GROCERY & FOOD — Products
+organic
+gluten free
+vegan
+vegetarian
+protein
+supplement
+vitamin
+mineral
+superfood
+granola
+cereal
+oatmeal
+pasta
+rice
+bread
+flour
+sugar
+honey
+olive oil
+coconut oil
+butter
+cheese
+yogurt
+milk
+cream
+juice
+soda
+water
+tea
+coffee
+chocolate
+candy
+snack
+chips
+crackers
+cookies
+biscuits
+popcorn
+nuts
+dried fruit
+canned
+frozen
+fresh
+
+# ===========================================
+# SPORTS & OUTDOORS — Brands
+# ===========================================
+decathlon
+wilson
+spalding
+yonex
+head
+babolat
+callaway
+titleist
+ping
+taylormade
+coleman
+the north face
+columbia
+patagonia
+osprey
+salomon
+merrell
+garmin
+fitbit
+peloton
+bowflex
+nautilus
+
+# SPORTS & OUTDOORS — Products
+treadmill
+elliptical
+exercise bike
+stationary bike
+rowing machine
+dumbbell
+barbell
+kettlebell
+weight bench
+pull up bar
+resistance band
+yoga mat
+foam roller
+jump rope
+punching bag
+boxing gloves
+basketball
+football
+soccer ball
+tennis racket
+badminton racket
+golf club
+golf ball
+baseball bat
+cricket bat
+skateboard
+surfboard
+snowboard
+ski
+hiking boots
+tent
+sleeping bag
+camping stove
+cooler
+fishing rod
+bicycle
+helmet
+knee pad
+elbow pad
+
+# ===========================================
+# BABY & KIDS — Brands
+# ===========================================
+pampers
+huggies
+gerber
+fisher price
+graco
+chicco
+baby bjorn
+uppababy
+bugaboo
+stokke
+nuna
+ergobaby
+medela
+philips avent
+dr browns
+tommee tippee
+lego
+mattel
+hasbro
+barbie
+hot wheels
+playmobil
+melissa doug
+vtech
+leapfrog
+
+# BABY & KIDS — Products
+stroller
+car seat
+crib
+bassinet
+high chair
+baby monitor
+bottle
+pacifier
+diaper
+wipes
+baby formula
+baby food
+teether
+baby carrier
+playpen
+baby gate
+changing table
+nursery
+baby clothes
+onesie
+bib
+swaddle
+blanket
+rattle
+mobile
+
+# ===========================================
+# AUTOMOTIVE — Brands
+# ===========================================
+bosch
+michelin
+goodyear
+bridgestone
+dunlop
+pirelli
+continental
+hankook
+yokohama
+firestone
+shell
+mobil
+castrol
+valvoline
+motul
+pennzoil
+3m
+armor all
+meguiars
+chemical guys
+thule
+yakima
+weathertech
+
+# AUTOMOTIVE — Products
+brake pad
+brake disc
+oil filter
+air filter
+cabin filter
+spark plug
+battery
+alternator
+starter motor
+radiator
+thermostat
+water pump
+fuel pump
+fuel injector
+timing belt
+serpentine belt
+shock absorber
+strut
+ball joint
+tie rod
+wheel bearing
+cv joint
+exhaust
+muffler
+catalytic converter
+headlight
+taillight
+wiper blade
+floor mat
+seat cover
+dash cam
+car charger
+jump starter
+tire inflator
+car wash
+car wax
+car polish
+
+# ===========================================
+# PET SUPPLIES — Brands
+# ===========================================
+royal canin
+purina
+pedigree
+whiskas
+blue buffalo
+hills science diet
+iams
+eukanuba
+orijen
+acana
+wellness
+taste of the wild
+kong
+nylabone
+furminator
+seresto
+frontline
+advantage
+
+# PET SUPPLIES — Products
+dog food
+cat food
+puppy food
+kitten food
+pet treats
+dog treats
+cat treats
+dog toy
+cat toy
+leash
+collar
+harness
+dog bed
+cat bed
+litter box
+cat litter
+scratching post
+aquarium
+fish tank
+fish food
+bird cage
+bird food
+hamster cage
+pet carrier
+pet crate
+dog crate
+flea collar
+tick treatment
+pet shampoo
+grooming brush
+
+# ===========================================
+# BOOKS & MEDIA
+# ===========================================
+kindle
+audible
+paperback
+hardcover
+ebook
+audiobook
+bestseller
+fiction
+nonfiction
+novel
+memoir
+biography
+autobiography
+self help
+textbook
+workbook
+journal
+planner
+diary
+notebook
+coloring book
+comic book
+manga
+graphic novel
+magazine
+newspaper
+
+# ===========================================
+# OFFICE & STATIONERY — Brands
+# ===========================================
+staples
+moleskine
+pilot
+sharpie
+post-it
+3m
+hp
+canon
+epson
+brother
+xerox
+lenovo
+dell
+logitech
+microsoft
+
+# OFFICE & STATIONERY — Products
+printer
+scanner
+copier
+toner
+ink cartridge
+paper
+envelope
+folder
+binder
+stapler
+staples
+paper clip
+rubber band
+tape
+glue
+scissors
+calculator
+whiteboard
+marker
+highlighter
+pen
+pencil
+eraser
+ruler
+label maker
+filing cabinet
+desk organizer
+mouse pad
+wrist rest
+monitor stand
+standing desk
+office chair
+ergonomic chair
+webcam
+headset
+microphone
+
+# ===========================================
+# GARDEN & OUTDOOR — Brands
+# ===========================================
+husqvarna
+stihl
+gardena
+fiskars
+black decker
+dewalt
+makita
+milwaukee
+ryobi
+craftsman
+john deere
+toro
+honda
+weber
+traeger
+big green egg
+solo stove
+ring
+nest
+arlo
+
+# GARDEN & OUTDOOR — Products
+lawn mower
+trimmer
+chainsaw
+leaf blower
+hedge trimmer
+pressure washer
+garden hose
+sprinkler
+watering can
+shovel
+rake
+hoe
+trowel
+pruner
+wheelbarrow
+compost bin
+raised bed
+planter
+pot
+soil
+mulch
+fertilizer
+seeds
+bulbs
+plant
+flower
+tree
+shrub
+grass seed
+weed killer
+insecticide
+fungicide
+bird feeder
+bird bath
+outdoor furniture
+patio set
+umbrella
+hammock
+fire pit
+grill
+barbecue
+smoker
+outdoor lighting
+solar light
+security camera
+motion sensor
+
+# ===========================================
+# COMMON E-COMMERCE TERMS
+# ===========================================
+shipping
+delivery
+express delivery
+free shipping
+same day delivery
+next day delivery
+standard shipping
+tracking
+return
+refund
+exchange
+warranty
+guarantee
+discount
+coupon
+promo code
+sale
+clearance
+deal
+offer
+bundle
+package
+subscription
+membership
+prime
+gift card
+gift wrap
+wishlist
+cart
+checkout
+payment
+credit card
+debit card
+paypal
+apple pay
+google pay
+buy now pay later
+installment
+invoice
+receipt
+order
+preorder
+backorder
+in stock
+out of stock
+limited edition
+bestseller
+new arrival
+trending
+popular
+recommended
+top rated
+verified purchase
+review
+rating
+star rating
+customer review
+product description
+specifications
+dimensions
+weight
+color
+colour
+size
+material
+brand
+model
+sku
+upc
+barcode
+
+# ===========================================
+# COLORS
+# ===========================================
+black
+white
+red
+blue
+green
+yellow
+orange
+pink
+purple
+violet
+brown
+grey
+gray
+beige
+cream
+ivory
+gold
+silver
+bronze
+copper
+rose gold
+navy
+teal
+turquoise
+maroon
+burgundy
+coral
+salmon
+lavender
+mint
+olive
+khaki
+tan
+charcoal
+midnight blue
+sky blue
+royal blue
+baby blue
+forest green
+lime green
+emerald
+ruby
+sapphire
+pearl
+champagne
+multicolor
+
+# ===========================================
+# SIZES
+# ===========================================
+small
+medium
+large
+extra large
+extra small
+one size
+petite
+plus size
+regular
+tall
+short
+wide
+narrow
+king size
+queen size
+twin size
+full size
+mini
+compact
+oversized
+slim fit
+regular fit
+loose fit
+standard
+custom
+
+# ===========================================
+# MATERIALS
+# ===========================================
+cotton
+polyester
+nylon
+spandex
+elastane
+lycra
+rayon
+viscose
+linen
+silk
+wool
+cashmere
+merino
+fleece
+denim
+leather
+faux leather
+suede
+velvet
+satin
+chiffon
+organza
+tulle
+lace
+mesh
+canvas
+twill
+corduroy
+flannel
+jersey
+terry cloth
+bamboo
+hemp
+organic cotton
+recycled polyester
+stainless steel
+aluminum
+aluminium
+titanium
+carbon fiber
+plastic
+rubber
+silicone
+glass
+ceramic
+porcelain
+wood
+oak
+walnut
+pine
+bamboo
+marble
+granite
+quartz
+acrylic
+polycarbonate
+
+# ===========================================
+# COMMON ADJECTIVES (E-COMMERCE)
+# ===========================================
+new
+used
+refurbished
+certified
+original
+genuine
+authentic
+official
+licensed
+premium
+luxury
+professional
+commercial
+industrial
+residential
+portable
+wireless
+cordless
+rechargeable
+waterproof
+water resistant
+dustproof
+shockproof
+scratch resistant
+anti glare
+matte
+glossy
+transparent
+opaque
+adjustable
+foldable
+collapsible
+expandable
+modular
+stackable
+reversible
+convertible
+detachable
+removable
+washable
+reusable
+disposable
+biodegradable
+eco friendly
+sustainable
+handmade
+handcrafted
+artisan
+vintage
+retro
+modern
+contemporary
+classic
+traditional
+minimalist
+ergonomic
+lightweight
+heavy duty
+durable
+sturdy
+compact
+slim
+ultra thin

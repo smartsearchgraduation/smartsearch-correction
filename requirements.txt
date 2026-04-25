@@ -6,7 +6,22 @@ pydantic
 # ML Models
 torch
 transformers
+accelerate
+huggingface_hub
 sentencepiece
+
+# FastText + FAISS fallback (Stage 2 pipeline)
+fasttext-wheel       # pip-friendly build of fasttext (no C++ compiler required on Windows)
+faiss-cpu            # FAISS vector index (CPU build; swap for faiss-gpu on GPU servers)
+numpy
 
 # Evaluation
 textdistance
+
+# Brand masking pipeline (Phase 1)
+pyahocorasick>=2.0.0   # Aho-Corasick exact multi-pattern matching
+symspellpy>=6.7.7      # SymSpell fuzzy matching for typo'd brand names
+english-words>=2.0.0   # English wordlist for false-positive guard
+
+# Testing
+pytest>=7.0
