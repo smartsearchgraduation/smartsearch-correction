@@ -1,0 +1,522 @@
+{
+  "BYT5-Large-V3": {
+    "n": 487,
+    "errors": 0,
+    "overall_accuracy": 0.5770020533880903,
+    "by_difficulty": {
+      "L1": {
+        "correct": 81,
+        "total": 89,
+        "acc": 0.9101123595505618
+      },
+      "L2": {
+        "correct": 77,
+        "total": 100,
+        "acc": 0.77
+      },
+      "L3": {
+        "correct": 70,
+        "total": 105,
+        "acc": 0.6666666666666666
+      },
+      "L4": {
+        "correct": 41,
+        "total": 93,
+        "acc": 0.44086021505376344
+      },
+      "L5": {
+        "correct": 12,
+        "total": 100,
+        "acc": 0.12
+      }
+    },
+    "by_length": {
+      "long": {
+        "correct": 87,
+        "total": 202,
+        "acc": 0.4306930693069307
+      },
+      "medium": {
+        "correct": 110,
+        "total": 160,
+        "acc": 0.6875
+      },
+      "short": {
+        "correct": 84,
+        "total": 125,
+        "acc": 0.672
+      }
+    },
+    "by_category": {
+      "adversarial_compound": {
+        "correct": 1,
+        "total": 50,
+        "acc": 0.02
+      },
+      "brand_corrupt_with_typo": {
+        "correct": 13,
+        "total": 25,
+        "acc": 0.52
+      },
+      "clean": {
+        "correct": 81,
+        "total": 89,
+        "acc": 0.9101123595505618
+      },
+      "dense_compound_typo": {
+        "correct": 14,
+        "total": 43,
+        "acc": 0.32558139534883723
+      },
+      "dense_phonetic": {
+        "correct": 14,
+        "total": 25,
+        "acc": 0.56
+      },
+      "double_edit_or_transpose": {
+        "correct": 70,
+        "total": 105,
+        "acc": 0.6666666666666666
+      },
+      "extreme_brand_typo": {
+        "correct": 9,
+        "total": 30,
+        "acc": 0.3
+      },
+      "extreme_compression": {
+        "correct": 2,
+        "total": 20,
+        "acc": 0.1
+      },
+      "single_edit_typo": {
+        "correct": 77,
+        "total": 100,
+        "acc": 0.77
+      }
+    },
+    "fp_rate_on_clean_L1": 0.0898876404494382,
+    "fp_count_on_clean_L1": 8,
+    "fp_total_clean_L1": 89,
+    "hit_rate_on_typos_L2_L5": 0.5025125628140703,
+    "latency_ms_p50": 465.78,
+    "latency_ms_p90": 996.4639999999999,
+    "latency_ms_p99": 1123.483,
+    "latency_ms_mean": 569.5022587268993
+  },
+  "T5-Large-V2.1": {
+    "n": 487,
+    "errors": 0,
+    "overall_accuracy": 0.44969199178644764,
+    "by_difficulty": {
+      "L1": {
+        "correct": 89,
+        "total": 89,
+        "acc": 1.0
+      },
+      "L2": {
+        "correct": 66,
+        "total": 100,
+        "acc": 0.66
+      },
+      "L3": {
+        "correct": 42,
+        "total": 105,
+        "acc": 0.4
+      },
+      "L4": {
+        "correct": 16,
+        "total": 93,
+        "acc": 0.17204301075268819
+      },
+      "L5": {
+        "correct": 6,
+        "total": 100,
+        "acc": 0.06
+      }
+    },
+    "by_length": {
+      "long": {
+        "correct": 60,
+        "total": 202,
+        "acc": 0.297029702970297
+      },
+      "medium": {
+        "correct": 92,
+        "total": 160,
+        "acc": 0.575
+      },
+      "short": {
+        "correct": 67,
+        "total": 125,
+        "acc": 0.536
+      }
+    },
+    "by_category": {
+      "adversarial_compound": {
+        "correct": 0,
+        "total": 50,
+        "acc": 0.0
+      },
+      "brand_corrupt_with_typo": {
+        "correct": 12,
+        "total": 25,
+        "acc": 0.48
+      },
+      "clean": {
+        "correct": 89,
+        "total": 89,
+        "acc": 1.0
+      },
+      "dense_compound_typo": {
+        "correct": 0,
+        "total": 43,
+        "acc": 0.0
+      },
+      "dense_phonetic": {
+        "correct": 4,
+        "total": 25,
+        "acc": 0.16
+      },
+      "double_edit_or_transpose": {
+        "correct": 42,
+        "total": 105,
+        "acc": 0.4
+      },
+      "extreme_brand_typo": {
+        "correct": 5,
+        "total": 30,
+        "acc": 0.16666666666666666
+      },
+      "extreme_compression": {
+        "correct": 1,
+        "total": 20,
+        "acc": 0.05
+      },
+      "single_edit_typo": {
+        "correct": 66,
+        "total": 100,
+        "acc": 0.66
+      }
+    },
+    "fp_rate_on_clean_L1": 0.0,
+    "fp_count_on_clean_L1": 0,
+    "fp_total_clean_L1": 89,
+    "hit_rate_on_typos_L2_L5": 0.32663316582914576,
+    "latency_ms_p50": 234.46,
+    "latency_ms_p90": 438.6719999999999,
+    "latency_ms_p99": 547.3495999999999,
+    "latency_ms_mean": 247.9065092402464
+  },
+  "byt5-base": {
+    "n": 487,
+    "errors": 0,
+    "overall_accuracy": 0.17453798767967146,
+    "by_difficulty": {
+      "L1": {
+        "correct": 23,
+        "total": 89,
+        "acc": 0.25842696629213485
+      },
+      "L2": {
+        "correct": 24,
+        "total": 100,
+        "acc": 0.24
+      },
+      "L3": {
+        "correct": 21,
+        "total": 105,
+        "acc": 0.2
+      },
+      "L4": {
+        "correct": 12,
+        "total": 93,
+        "acc": 0.12903225806451613
+      },
+      "L5": {
+        "correct": 5,
+        "total": 100,
+        "acc": 0.05
+      }
+    },
+    "by_length": {
+      "long": {
+        "correct": 1,
+        "total": 202,
+        "acc": 0.0049504950495049506
+      },
+      "medium": {
+        "correct": 21,
+        "total": 160,
+        "acc": 0.13125
+      },
+      "short": {
+        "correct": 63,
+        "total": 125,
+        "acc": 0.504
+      }
+    },
+    "by_category": {
+      "adversarial_compound": {
+        "correct": 0,
+        "total": 50,
+        "acc": 0.0
+      },
+      "brand_corrupt_with_typo": {
+        "correct": 5,
+        "total": 25,
+        "acc": 0.2
+      },
+      "clean": {
+        "correct": 23,
+        "total": 89,
+        "acc": 0.25842696629213485
+      },
+      "dense_compound_typo": {
+        "correct": 0,
+        "total": 43,
+        "acc": 0.0
+      },
+      "dense_phonetic": {
+        "correct": 7,
+        "total": 25,
+        "acc": 0.28
+      },
+      "double_edit_or_transpose": {
+        "correct": 21,
+        "total": 105,
+        "acc": 0.2
+      },
+      "extreme_brand_typo": {
+        "correct": 1,
+        "total": 30,
+        "acc": 0.03333333333333333
+      },
+      "extreme_compression": {
+        "correct": 4,
+        "total": 20,
+        "acc": 0.2
+      },
+      "single_edit_typo": {
+        "correct": 24,
+        "total": 100,
+        "acc": 0.24
+      }
+    },
+    "fp_rate_on_clean_L1": 0.7415730337078652,
+    "fp_count_on_clean_L1": 66,
+    "fp_total_clean_L1": 89,
+    "hit_rate_on_typos_L2_L5": 0.15577889447236182,
+    "latency_ms_p50": 268.09,
+    "latency_ms_p90": 556.204,
+    "latency_ms_p99": 933.1829999999976,
+    "latency_ms_mean": 318.6286036960986
+  },
+  "byt5-small": {
+    "n": 487,
+    "errors": 0,
+    "overall_accuracy": 0.10472279260780287,
+    "by_difficulty": {
+      "L1": {
+        "correct": 5,
+        "total": 89,
+        "acc": 0.056179775280898875
+      },
+      "L2": {
+        "correct": 19,
+        "total": 100,
+        "acc": 0.19
+      },
+      "L3": {
+        "correct": 18,
+        "total": 105,
+        "acc": 0.17142857142857143
+      },
+      "L4": {
+        "correct": 7,
+        "total": 93,
+        "acc": 0.07526881720430108
+      },
+      "L5": {
+        "correct": 2,
+        "total": 100,
+        "acc": 0.02
+      }
+    },
+    "by_length": {
+      "long": {
+        "correct": 1,
+        "total": 202,
+        "acc": 0.0049504950495049506
+      },
+      "medium": {
+        "correct": 5,
+        "total": 160,
+        "acc": 0.03125
+      },
+      "short": {
+        "correct": 45,
+        "total": 125,
+        "acc": 0.36
+      }
+    },
+    "by_category": {
+      "adversarial_compound": {
+        "correct": 0,
+        "total": 50,
+        "acc": 0.0
+      },
+      "brand_corrupt_with_typo": {
+        "correct": 1,
+        "total": 25,
+        "acc": 0.04
+      },
+      "clean": {
+        "correct": 5,
+        "total": 89,
+        "acc": 0.056179775280898875
+      },
+      "dense_compound_typo": {
+        "correct": 0,
+        "total": 43,
+        "acc": 0.0
+      },
+      "dense_phonetic": {
+        "correct": 6,
+        "total": 25,
+        "acc": 0.24
+      },
+      "double_edit_or_transpose": {
+        "correct": 18,
+        "total": 105,
+        "acc": 0.17142857142857143
+      },
+      "extreme_brand_typo": {
+        "correct": 1,
+        "total": 30,
+        "acc": 0.03333333333333333
+      },
+      "extreme_compression": {
+        "correct": 1,
+        "total": 20,
+        "acc": 0.05
+      },
+      "single_edit_typo": {
+        "correct": 19,
+        "total": 100,
+        "acc": 0.19
+      }
+    },
+    "fp_rate_on_clean_L1": 0.9438202247191011,
+    "fp_count_on_clean_L1": 84,
+    "fp_total_clean_L1": 89,
+    "hit_rate_on_typos_L2_L5": 0.11557788944723618,
+    "latency_ms_p50": 189.93,
+    "latency_ms_p90": 296.364,
+    "latency_ms_p99": 361.73539999999974,
+    "latency_ms_mean": 186.81166324435318
+  },
+  "qwen-3.5-2b": {
+    "n": 487,
+    "errors": 0,
+    "overall_accuracy": 0.3141683778234086,
+    "by_difficulty": {
+      "L1": {
+        "correct": 56,
+        "total": 89,
+        "acc": 0.6292134831460674
+      },
+      "L2": {
+        "correct": 44,
+        "total": 100,
+        "acc": 0.44
+      },
+      "L3": {
+        "correct": 28,
+        "total": 105,
+        "acc": 0.26666666666666666
+      },
+      "L4": {
+        "correct": 15,
+        "total": 93,
+        "acc": 0.16129032258064516
+      },
+      "L5": {
+        "correct": 10,
+        "total": 100,
+        "acc": 0.1
+      }
+    },
+    "by_length": {
+      "long": {
+        "correct": 28,
+        "total": 202,
+        "acc": 0.13861386138613863
+      },
+      "medium": {
+        "correct": 54,
+        "total": 160,
+        "acc": 0.3375
+      },
+      "short": {
+        "correct": 71,
+        "total": 125,
+        "acc": 0.568
+      }
+    },
+    "by_category": {
+      "adversarial_compound": {
+        "correct": 4,
+        "total": 50,
+        "acc": 0.08
+      },
+      "brand_corrupt_with_typo": {
+        "correct": 8,
+        "total": 25,
+        "acc": 0.32
+      },
+      "clean": {
+        "correct": 56,
+        "total": 89,
+        "acc": 0.6292134831460674
+      },
+      "dense_compound_typo": {
+        "correct": 0,
+        "total": 43,
+        "acc": 0.0
+      },
+      "dense_phonetic": {
+        "correct": 7,
+        "total": 25,
+        "acc": 0.28
+      },
+      "double_edit_or_transpose": {
+        "correct": 28,
+        "total": 105,
+        "acc": 0.26666666666666666
+      },
+      "extreme_brand_typo": {
+        "correct": 3,
+        "total": 30,
+        "acc": 0.1
+      },
+      "extreme_compression": {
+        "correct": 3,
+        "total": 20,
+        "acc": 0.15
+      },
+      "single_edit_typo": {
+        "correct": 44,
+        "total": 100,
+        "acc": 0.44
+      }
+    },
+    "fp_rate_on_clean_L1": 0.3707865168539326,
+    "fp_count_on_clean_L1": 33,
+    "fp_total_clean_L1": 89,
+    "hit_rate_on_typos_L2_L5": 0.24371859296482412,
+    "latency_ms_p50": 540.16,
+    "latency_ms_p90": 877.2199999999999,
+    "latency_ms_p99": 1082.1122,
+    "latency_ms_mean": 560.4742505133471
+  }
+}

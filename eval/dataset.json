@@ -1,0 +1,4385 @@
+[
+  {
+    "id": "L1-SHO-000",
+    "query": "iphone",
+    "expected": "iphone",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-001",
+    "query": "samsung",
+    "expected": "samsung",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-002",
+    "query": "logitech mouse",
+    "expected": "logitech mouse",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-003",
+    "query": "razer keyboard",
+    "expected": "razer keyboard",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-004",
+    "query": "bose headphones",
+    "expected": "bose headphones",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-005",
+    "query": "sony speaker",
+    "expected": "sony speaker",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-006",
+    "query": "dell laptop",
+    "expected": "dell laptop",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-007",
+    "query": "asus monitor",
+    "expected": "asus monitor",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-008",
+    "query": "hp printer",
+    "expected": "hp printer",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-009",
+    "query": "lenovo thinkpad",
+    "expected": "lenovo thinkpad",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-010",
+    "query": "macbook",
+    "expected": "macbook",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-011",
+    "query": "airpods",
+    "expected": "airpods",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-012",
+    "query": "kindle",
+    "expected": "kindle",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-013",
+    "query": "ps5 controller",
+    "expected": "ps5 controller",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-014",
+    "query": "xbox controller",
+    "expected": "xbox controller",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-015",
+    "query": "nvidia gpu",
+    "expected": "nvidia gpu",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-016",
+    "query": "amd cpu",
+    "expected": "amd cpu",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-017",
+    "query": "intel cpu",
+    "expected": "intel cpu",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-018",
+    "query": "msi monitor",
+    "expected": "msi monitor",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-019",
+    "query": "corsair ram",
+    "expected": "corsair ram",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-020",
+    "query": "ssd 1tb",
+    "expected": "ssd 1tb",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-021",
+    "query": "hdd 2tb",
+    "expected": "hdd 2tb",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-022",
+    "query": "wifi router",
+    "expected": "wifi router",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-023",
+    "query": "smart tv",
+    "expected": "smart tv",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-SHO-024",
+    "query": "wireless charger",
+    "expected": "wireless charger",
+    "length": "short",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-000",
+    "query": "apple iphone 15 pro max",
+    "expected": "apple iphone 15 pro max",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-001",
+    "query": "samsung galaxy s24 ultra",
+    "expected": "samsung galaxy s24 ultra",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-002",
+    "query": "logitech mx master 3s mouse",
+    "expected": "logitech mx master 3s mouse",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-003",
+    "query": "razer deathadder v3 pro",
+    "expected": "razer deathadder v3 pro",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-004",
+    "query": "bose quietcomfort ultra headphones",
+    "expected": "bose quietcomfort ultra headphones",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-005",
+    "query": "sony wh-1000xm5 wireless",
+    "expected": "sony wh-1000xm5 wireless",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-006",
+    "query": "dell xps 15 oled laptop",
+    "expected": "dell xps 15 oled laptop",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-007",
+    "query": "asus rog strix monitor",
+    "expected": "asus rog strix monitor",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-008",
+    "query": "hp laserjet pro printer",
+    "expected": "hp laserjet pro printer",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-009",
+    "query": "lenovo thinkpad x1 carbon",
+    "expected": "lenovo thinkpad x1 carbon",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-010",
+    "query": "macbook pro m3 max",
+    "expected": "macbook pro m3 max",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-011",
+    "query": "airpods pro 2 with usb-c",
+    "expected": "airpods pro 2 with usb-c",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-012",
+    "query": "kindle paperwhite signature edition",
+    "expected": "kindle paperwhite signature edition",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-013",
+    "query": "playstation 5 dualsense controller",
+    "expected": "playstation 5 dualsense controller",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-014",
+    "query": "xbox series x wireless controller",
+    "expected": "xbox series x wireless controller",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-015",
+    "query": "nvidia rtx 4090 founders edition",
+    "expected": "nvidia rtx 4090 founders edition",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-016",
+    "query": "amd ryzen 9 7950x cpu",
+    "expected": "amd ryzen 9 7950x cpu",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-017",
+    "query": "intel core i9 14900k",
+    "expected": "intel core i9 14900k",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-018",
+    "query": "msi mag 274qrf monitor",
+    "expected": "msi mag 274qrf monitor",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-019",
+    "query": "corsair vengeance 32gb ddr5",
+    "expected": "corsair vengeance 32gb ddr5",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-020",
+    "query": "samsung 980 pro 1tb ssd",
+    "expected": "samsung 980 pro 1tb ssd",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-021",
+    "query": "wd black 2tb hdd",
+    "expected": "wd black 2tb hdd",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-022",
+    "query": "asus rt-ax88u wifi router",
+    "expected": "asus rt-ax88u wifi router",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-023",
+    "query": "lg c3 65 inch oled tv",
+    "expected": "lg c3 65 inch oled tv",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-024",
+    "query": "anker magsafe wireless charger",
+    "expected": "anker magsafe wireless charger",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-025",
+    "query": "logitech g pro x superlight",
+    "expected": "logitech g pro x superlight",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-026",
+    "query": "razer huntsman v3 pro tkl",
+    "expected": "razer huntsman v3 pro tkl",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-027",
+    "query": "sennheiser hd 660s2 headphones",
+    "expected": "sennheiser hd 660s2 headphones",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-028",
+    "query": "shure sm7b microphone",
+    "expected": "shure sm7b microphone",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-MED-029",
+    "query": "elgato stream deck mk2",
+    "expected": "elgato stream deck mk2",
+    "length": "medium",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-000",
+    "query": "apple macbook pro 16 inch m3 max 64gb 2tb space black",
+    "expected": "apple macbook pro 16 inch m3 max 64gb 2tb space black",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-001",
+    "query": "samsung galaxy s24 ultra 512gb titanium black unlocked",
+    "expected": "samsung galaxy s24 ultra 512gb titanium black unlocked",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-002",
+    "query": "asus rog strix scar 18 g834 gaming laptop rtx 4090",
+    "expected": "asus rog strix scar 18 g834 gaming laptop rtx 4090",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-003",
+    "query": "razer blade 18 2024 intel core i9 rtx 4080 240hz qhd",
+    "expected": "razer blade 18 2024 intel core i9 rtx 4080 240hz qhd",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-004",
+    "query": "lg ultragear 27 inch 4k oled gaming monitor 240hz",
+    "expected": "lg ultragear 27 inch 4k oled gaming monitor 240hz",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-005",
+    "query": "logitech mx master 3s for mac performance wireless mouse",
+    "expected": "logitech mx master 3s for mac performance wireless mouse",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-006",
+    "query": "sony wh 1000xm5 wireless noise canceling headphones black",
+    "expected": "sony wh 1000xm5 wireless noise canceling headphones black",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-007",
+    "query": "bose quietcomfort ultra wireless noise cancelling earbuds",
+    "expected": "bose quietcomfort ultra wireless noise cancelling earbuds",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-008",
+    "query": "corsair hs80 max wireless gaming headset rgb dolby atmos",
+    "expected": "corsair hs80 max wireless gaming headset rgb dolby atmos",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-009",
+    "query": "nvidia geforce rtx 4090 24gb gddr6x graphics card founders",
+    "expected": "nvidia geforce rtx 4090 24gb gddr6x graphics card founders",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-010",
+    "query": "amd ryzen 9 7950x3d 16 core 32 thread desktop processor",
+    "expected": "amd ryzen 9 7950x3d 16 core 32 thread desktop processor",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-011",
+    "query": "intel core i9 14900k unlocked desktop processor 24 cores",
+    "expected": "intel core i9 14900k unlocked desktop processor 24 cores",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-012",
+    "query": "samsung 990 pro 2tb pcie 4.0 nvme m 2 internal ssd",
+    "expected": "samsung 990 pro 2tb pcie 4.0 nvme m 2 internal ssd",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-013",
+    "query": "western digital black sn850x 1tb nvme internal gaming ssd",
+    "expected": "western digital black sn850x 1tb nvme internal gaming ssd",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-014",
+    "query": "asus rog strix x670e creator wifi atx motherboard ddr5",
+    "expected": "asus rog strix x670e creator wifi atx motherboard ddr5",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-015",
+    "query": "lg c3 65 inch oled evo 4k smart tv with self lit pixels",
+    "expected": "lg c3 65 inch oled evo 4k smart tv with self lit pixels",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-016",
+    "query": "sony bravia xr 75 inch class a95l qd oled 4k hdr smart tv",
+    "expected": "sony bravia xr 75 inch class a95l qd oled 4k hdr smart tv",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-017",
+    "query": "anker 737 power bank 24000mah 140w usb c portable charger",
+    "expected": "anker 737 power bank 24000mah 140w usb c portable charger",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-018",
+    "query": "ugreen nexode 100w usb c gan charger 4 port fast charging",
+    "expected": "ugreen nexode 100w usb c gan charger 4 port fast charging",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-019",
+    "query": "satechi usb c hub multiport adapter pro for macbook pro",
+    "expected": "satechi usb c hub multiport adapter pro for macbook pro",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-020",
+    "query": "razer basilisk v3 pro wireless ergonomic gaming mouse 30k dpi",
+    "expected": "razer basilisk v3 pro wireless ergonomic gaming mouse 30k dpi",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-021",
+    "query": "logitech g pro x superlight 2 wireless gaming mouse hero 2",
+    "expected": "logitech g pro x superlight 2 wireless gaming mouse hero 2",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-022",
+    "query": "corsair k70 rgb pro mechanical gaming keyboard cherry mx red",
+    "expected": "corsair k70 rgb pro mechanical gaming keyboard cherry mx red",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-023",
+    "query": "sennheiser hd 800 s reference open back headphones audiophile",
+    "expected": "sennheiser hd 800 s reference open back headphones audiophile",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-024",
+    "query": "shure mv7 plus podcast dynamic microphone usb xlr",
+    "expected": "shure mv7 plus podcast dynamic microphone usb xlr",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-025",
+    "query": "elgato cam link 4k external video capture card hdmi",
+    "expected": "elgato cam link 4k external video capture card hdmi",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-026",
+    "query": "rode procaster broadcast quality dynamic microphone xlr",
+    "expected": "rode procaster broadcast quality dynamic microphone xlr",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-027",
+    "query": "blue yeti x professional condenser usb microphone for streaming",
+    "expected": "blue yeti x professional condenser usb microphone for streaming",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-028",
+    "query": "audio technica at2020 cardioid condenser studio xlr microphone",
+    "expected": "audio technica at2020 cardioid condenser studio xlr microphone",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-029",
+    "query": "fifine ampligame a8 usb gaming microphone rgb cardioid",
+    "expected": "fifine ampligame a8 usb gaming microphone rgb cardioid",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-030",
+    "query": "samsung odyssey neo g9 57 inch dual 4k 240hz curved monitor",
+    "expected": "samsung odyssey neo g9 57 inch dual 4k 240hz curved monitor",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-031",
+    "query": "asus rog swift pg27aqdm 26.5 inch 1440p oled 240hz monitor",
+    "expected": "asus rog swift pg27aqdm 26.5 inch 1440p oled 240hz monitor",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-032",
+    "query": "lg 27gp950 b ultragear 27 inch 4k nano ips 144hz gaming monitor",
+    "expected": "lg 27gp950 b ultragear 27 inch 4k nano ips 144hz gaming monitor",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L1-LNG-033",
+    "query": "alienware aw3423dwf 34 inch curved qd oled 165hz ultrawide",
+    "expected": "alienware aw3423dwf 34 inch curved qd oled 165hz ultrawide",
+    "length": "long",
+    "difficulty": "L1",
+    "category": "clean",
+    "notes": "must NOT change"
+  },
+  {
+    "id": "L2-SHO-000",
+    "query": "iphne",
+    "expected": "iphone",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-001",
+    "query": "ipone",
+    "expected": "iphone",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-002",
+    "query": "samung",
+    "expected": "samsung",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-003",
+    "query": "sumsung",
+    "expected": "samsung",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-004",
+    "query": "laptp",
+    "expected": "laptop",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-005",
+    "query": "laptopp",
+    "expected": "laptop",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-006",
+    "query": "moniter",
+    "expected": "monitor",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-007",
+    "query": "kyboard",
+    "expected": "keyboard",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-008",
+    "query": "kerboard",
+    "expected": "keyboard",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-009",
+    "query": "mose",
+    "expected": "mouse",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-010",
+    "query": "hedphones",
+    "expected": "headphones",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-011",
+    "query": "headfones",
+    "expected": "headphones",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-012",
+    "query": "speker",
+    "expected": "speaker",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-013",
+    "query": "camra",
+    "expected": "camera",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-014",
+    "query": "camera ",
+    "expected": "camera",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-015",
+    "query": "printr",
+    "expected": "printer",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-016",
+    "query": "rooter",
+    "expected": "router",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-017",
+    "query": "tablt",
+    "expected": "tablet",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-018",
+    "query": "smarphone",
+    "expected": "smartphone",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-019",
+    "query": "chrger",
+    "expected": "charger",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-020",
+    "query": "cabel",
+    "expected": "cable",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-021",
+    "query": "bluetoth",
+    "expected": "bluetooth",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-022",
+    "query": "wifii",
+    "expected": "wifi",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-023",
+    "query": "airpod",
+    "expected": "airpods",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-024",
+    "query": "kindel",
+    "expected": "kindle",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-025",
+    "query": "powebank",
+    "expected": "powerbank",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-026",
+    "query": "microphne",
+    "expected": "microphone",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-027",
+    "query": "webcm",
+    "expected": "webcam",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-028",
+    "query": "controler",
+    "expected": "controller",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-SHO-029",
+    "query": "contoller",
+    "expected": "controller",
+    "length": "short",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1"
+  },
+  {
+    "id": "L2-MED-000",
+    "query": "aple iphone 15",
+    "expected": "apple iphone 15",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-001",
+    "query": "samsng galaxy s24",
+    "expected": "samsung galaxy s24",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-002",
+    "query": "logitec mx master",
+    "expected": "logitech mx master",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-003",
+    "query": "razerr deathadder v3",
+    "expected": "razer deathadder v3",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-004",
+    "query": "bose quitcomfort ultra",
+    "expected": "bose quietcomfort ultra",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-005",
+    "query": "sony wireless hedphones",
+    "expected": "sony wireless headphones",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-006",
+    "query": "dell xps 15 laptp",
+    "expected": "dell xps 15 laptop",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-007",
+    "query": "asus rog moniter",
+    "expected": "asus rog monitor",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-008",
+    "query": "hp laserjet printr",
+    "expected": "hp laserjet printer",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-009",
+    "query": "lenovo thinkpadd x1",
+    "expected": "lenovo thinkpad x1",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-010",
+    "query": "macbookk pro m3",
+    "expected": "macbook pro m3",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-011",
+    "query": "airpods pro 2 usbc",
+    "expected": "airpods pro 2 usb-c",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-012",
+    "query": "kindle papperwhite",
+    "expected": "kindle paperwhite",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-013",
+    "query": "playstation 5 controler",
+    "expected": "playstation 5 controller",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-014",
+    "query": "xbox seriess x",
+    "expected": "xbox series x",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-015",
+    "query": "nvidia rtx 4090 founders",
+    "expected": "nvidia rtx 4090 founders",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-016",
+    "query": "amd ryzn 9 7950x",
+    "expected": "amd ryzen 9 7950x",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-017",
+    "query": "intel core i9 14900k",
+    "expected": "intel core i9 14900k",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-018",
+    "query": "msi mag 274qrf moniter",
+    "expected": "msi mag 274qrf monitor",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-019",
+    "query": "corsair vengeance 32gb ddr5",
+    "expected": "corsair vengeance 32gb ddr5",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-020",
+    "query": "samsung 980 pro 1tb sdd",
+    "expected": "samsung 980 pro 1tb ssd",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-021",
+    "query": "wd black 2tb harddrive",
+    "expected": "wd black 2tb harddrive",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-022",
+    "query": "asus rt-ax88u wifii router",
+    "expected": "asus rt-ax88u wifi router",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-023",
+    "query": "lg c3 65 inch oledd tv",
+    "expected": "lg c3 65 inch oled tv",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-024",
+    "query": "anker magsafe wirless charger",
+    "expected": "anker magsafe wireless charger",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-025",
+    "query": "logitech g pro superlite",
+    "expected": "logitech g pro superlight",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-026",
+    "query": "razer huntsman v3 pro tkll",
+    "expected": "razer huntsman v3 pro tkl",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-027",
+    "query": "sennheiser hd 660 hedphones",
+    "expected": "sennheiser hd 660 headphones",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-028",
+    "query": "shure sm7b microphne",
+    "expected": "shure sm7b microphone",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-029",
+    "query": "elgato stream dec mk2",
+    "expected": "elgato stream deck mk2",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-030",
+    "query": "aples watch series 9",
+    "expected": "apple watch series 9",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-031",
+    "query": "samsung galaxy bud pro 2",
+    "expected": "samsung galaxy buds pro 2",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-032",
+    "query": "steelseries arctis nova prro",
+    "expected": "steelseries arctis nova pro",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-033",
+    "query": "hyperx cloud aplha s",
+    "expected": "hyperx cloud alpha s",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-MED-034",
+    "query": "anker soundcore liberti 4",
+    "expected": "anker soundcore liberty 4",
+    "length": "medium",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-000",
+    "query": "apple macbook pro 16 inch m3 max 64gb 2tb space blak",
+    "expected": "apple macbook pro 16 inch m3 max 64gb 2tb space black",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-001",
+    "query": "samsung galaxy s24 ultra 512gb titanium black unloked",
+    "expected": "samsung galaxy s24 ultra 512gb titanium black unlocked",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-002",
+    "query": "asus rog strix scar 18 gaming laptp rtx 4090",
+    "expected": "asus rog strix scar 18 gaming laptop rtx 4090",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-003",
+    "query": "razer blade 18 2024 intel core i9 rtx 4080 240hz qhdd",
+    "expected": "razer blade 18 2024 intel core i9 rtx 4080 240hz qhd",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-004",
+    "query": "lg ultragear 27 inch 4k oled gamming monitor 240hz",
+    "expected": "lg ultragear 27 inch 4k oled gaming monitor 240hz",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-005",
+    "query": "logitech mx master 3s for mac perfomance wireless mouse",
+    "expected": "logitech mx master 3s for mac performance wireless mouse",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-006",
+    "query": "sony wh 1000xm5 wireless noise cancling headphones black",
+    "expected": "sony wh 1000xm5 wireless noise canceling headphones black",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-007",
+    "query": "bose quietcomfort ultra wireless noise cancelling earbuds",
+    "expected": "bose quietcomfort ultra wireless noise cancelling earbuds",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-008",
+    "query": "corsair hs80 max wireless gaming headsett rgb dolby atmos",
+    "expected": "corsair hs80 max wireless gaming headset rgb dolby atmos",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-009",
+    "query": "nvidia geforce rtx 4090 24gb gddr6x graphic card founders",
+    "expected": "nvidia geforce rtx 4090 24gb gddr6x graphics card founders",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-010",
+    "query": "amd ryzen 9 7950x3d 16 core 32 thread desktop procesor",
+    "expected": "amd ryzen 9 7950x3d 16 core 32 thread desktop processor",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-011",
+    "query": "intel core i9 14900k unlocked desktop processor 24 corres",
+    "expected": "intel core i9 14900k unlocked desktop processor 24 cores",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-012",
+    "query": "samsung 990 pro 2tb pcie 4.0 nvme m 2 internal sdd",
+    "expected": "samsung 990 pro 2tb pcie 4.0 nvme m 2 internal ssd",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-013",
+    "query": "western digital black sn850x 1tb nvme internal gaming sdd",
+    "expected": "western digital black sn850x 1tb nvme internal gaming ssd",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-014",
+    "query": "asus rog strix x670e creator wifii atx motherboard ddr5",
+    "expected": "asus rog strix x670e creator wifi atx motherboard ddr5",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-015",
+    "query": "lg c3 65 inch oled evo 4k smart tv with self lit pixells",
+    "expected": "lg c3 65 inch oled evo 4k smart tv with self lit pixels",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-016",
+    "query": "sony bravia xr 75 inch class a95l qd oled 4k hdr smart tvv",
+    "expected": "sony bravia xr 75 inch class a95l qd oled 4k hdr smart tv",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-017",
+    "query": "anker 737 power bank 24000mah 140w usb c portable charer",
+    "expected": "anker 737 power bank 24000mah 140w usb c portable charger",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-018",
+    "query": "ugreen nexode 100w usb c gan chargr 4 port fast charging",
+    "expected": "ugreen nexode 100w usb c gan charger 4 port fast charging",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-019",
+    "query": "satechi usb c hub multport adapter pro for macbook pro",
+    "expected": "satechi usb c hub multiport adapter pro for macbook pro",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-020",
+    "query": "razer basilisk v3 pro wireless ergonmic gaming mouse 30k dpi",
+    "expected": "razer basilisk v3 pro wireless ergonomic gaming mouse 30k dpi",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-021",
+    "query": "logitech g pro x superlight 2 wirless gaming mouse hero 2",
+    "expected": "logitech g pro x superlight 2 wireless gaming mouse hero 2",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-022",
+    "query": "corsair k70 rgb pro mechanikal gaming keyboard cherry mx red",
+    "expected": "corsair k70 rgb pro mechanical gaming keyboard cherry mx red",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-023",
+    "query": "sennheiser hd 800 s reference open back headphons audiophile",
+    "expected": "sennheiser hd 800 s reference open back headphones audiophile",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-024",
+    "query": "shure mv7 plus podcast dynamic microphne usb xlr",
+    "expected": "shure mv7 plus podcast dynamic microphone usb xlr",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-025",
+    "query": "elgato cam link 4k externall video capture card hdmi",
+    "expected": "elgato cam link 4k external video capture card hdmi",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-026",
+    "query": "rode procaster broadcast qualty dynamic microphone xlr",
+    "expected": "rode procaster broadcast quality dynamic microphone xlr",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-027",
+    "query": "blue yeti x profesional condenser usb microphone for streaming",
+    "expected": "blue yeti x professional condenser usb microphone for streaming",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-028",
+    "query": "audio technica at2020 cardiod condenser studio xlr microphone",
+    "expected": "audio technica at2020 cardioid condenser studio xlr microphone",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-029",
+    "query": "fifine ampligame a8 usb gaming microphne rgb cardioid",
+    "expected": "fifine ampligame a8 usb gaming microphone rgb cardioid",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-030",
+    "query": "samsung odyssey neo g9 57 inch dual 4k 240hz curvd monitor",
+    "expected": "samsung odyssey neo g9 57 inch dual 4k 240hz curved monitor",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-031",
+    "query": "asus rog swift pg27aqdm 26.5 inch 1440p oled 240hzz monitor",
+    "expected": "asus rog swift pg27aqdm 26.5 inch 1440p oled 240hz monitor",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-032",
+    "query": "lg 27gp950 b ultragear 27 inch 4k nano ips 144hz gamming monitor",
+    "expected": "lg 27gp950 b ultragear 27 inch 4k nano ips 144hz gaming monitor",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-033",
+    "query": "alienware aw3423dwf 34 inch curvd qd oled 165hz ultrawide",
+    "expected": "alienware aw3423dwf 34 inch curved qd oled 165hz ultrawide",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L2-LNG-034",
+    "query": "apple ipad pro 12.9 inch m4 wifi cellular 1tb space gry",
+    "expected": "apple ipad pro 12.9 inch m4 wifi cellular 1tb space gray",
+    "length": "long",
+    "difficulty": "L2",
+    "category": "single_edit_typo",
+    "notes": "ED-1 in one token"
+  },
+  {
+    "id": "L3-SHO-000",
+    "query": "hedphone",
+    "expected": "headphone",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-001",
+    "query": "micrphne",
+    "expected": "microphone",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-002",
+    "query": "wirelees",
+    "expected": "wireless",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-003",
+    "query": "blutooth",
+    "expected": "bluetooth",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-004",
+    "query": "recievr",
+    "expected": "receiver",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-005",
+    "query": "acessory",
+    "expected": "accessory",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-006",
+    "query": "nottebook",
+    "expected": "notebook",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-007",
+    "query": "wireles mouse",
+    "expected": "wireless mouse",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-008",
+    "query": "smart watche",
+    "expected": "smart watch",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-009",
+    "query": "gamming pc",
+    "expected": "gaming pc",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-010",
+    "query": "hdmii cable",
+    "expected": "hdmi cable",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-011",
+    "query": "usbb cable",
+    "expected": "usb cable",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-012",
+    "query": "wirless earbud",
+    "expected": "wireless earbud",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-013",
+    "query": "blutoot speaker",
+    "expected": "bluetooth speaker",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-014",
+    "query": "noisee canceling",
+    "expected": "noise canceling",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-015",
+    "query": "ergonomik mouse",
+    "expected": "ergonomic mouse",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-016",
+    "query": "mecanical kybd",
+    "expected": "mechanical keyboard",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-017",
+    "query": "ultrawide moniter",
+    "expected": "ultrawide monitor",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-018",
+    "query": "4k televison",
+    "expected": "4k television",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-019",
+    "query": "solid stat drive",
+    "expected": "solid state drive",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-020",
+    "query": "graphic crd",
+    "expected": "graphics card",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-021",
+    "query": "portable charer",
+    "expected": "portable charger",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-022",
+    "query": "gamng laptp",
+    "expected": "gaming laptop",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-023",
+    "query": "smart tvv",
+    "expected": "smart tv",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-SHO-024",
+    "query": "powr bank",
+    "expected": "power bank",
+    "length": "short",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-000",
+    "query": "aple ipone 15 pro",
+    "expected": "apple iphone 15 pro",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-001",
+    "query": "samsng galxy s24 ultra",
+    "expected": "samsung galaxy s24 ultra",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-002",
+    "query": "logitec mx mater 3s",
+    "expected": "logitech mx master 3s",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-003",
+    "query": "razerr deathadderr v3 pro",
+    "expected": "razer deathadder v3 pro",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-004",
+    "query": "bose quitcomfor ultra",
+    "expected": "bose quietcomfort ultra",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-005",
+    "query": "sony wh1000xm5 wirless",
+    "expected": "sony wh-1000xm5 wireless",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-006",
+    "query": "dell xps 15 oledd laptp",
+    "expected": "dell xps 15 oled laptop",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-007",
+    "query": "asus rog strix moniter",
+    "expected": "asus rog strix monitor",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-008",
+    "query": "hp laserjett pro printr",
+    "expected": "hp laserjet pro printer",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-009",
+    "query": "lenovo thinkpadd x1 carbn",
+    "expected": "lenovo thinkpad x1 carbon",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-010",
+    "query": "macboook pro m3 max",
+    "expected": "macbook pro m3 max",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-011",
+    "query": "airpod pro 2 usb-c",
+    "expected": "airpods pro 2 usb-c",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-012",
+    "query": "kindel paperwhitee signature",
+    "expected": "kindle paperwhite signature",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-013",
+    "query": "playstation 5 dualsense controler",
+    "expected": "playstation 5 dualsense controller",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-014",
+    "query": "xbox sereies x wireles controller",
+    "expected": "xbox series x wireless controller",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-015",
+    "query": "nvidia rtx 4090 founders editon",
+    "expected": "nvidia rtx 4090 founders edition",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-016",
+    "query": "amd ryzn 9 7950x cpu",
+    "expected": "amd ryzen 9 7950x cpu",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-017",
+    "query": "intel core i9 14900k unlokced",
+    "expected": "intel core i9 14900k unlocked",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-018",
+    "query": "msi mag 274qrf gamming monitor",
+    "expected": "msi mag 274qrf gaming monitor",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-019",
+    "query": "corsiar vengance 32gb ddr5",
+    "expected": "corsair vengeance 32gb ddr5",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-020",
+    "query": "samsng 980 pro 1tb sdd",
+    "expected": "samsung 980 pro 1tb ssd",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-021",
+    "query": "wd blackk 2tb hardrive",
+    "expected": "wd black 2tb hard drive",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-022",
+    "query": "asus rt-ax88u wifii rooter",
+    "expected": "asus rt-ax88u wifi router",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-023",
+    "query": "lg c3 65 inch oledd televison",
+    "expected": "lg c3 65 inch oled television",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-024",
+    "query": "ankr magsafe wirless charer",
+    "expected": "anker magsafe wireless charger",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-025",
+    "query": "logitech g pro superlite mose",
+    "expected": "logitech g pro superlight mouse",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-026",
+    "query": "razer huntsmen v3 prr tkll",
+    "expected": "razer huntsman v3 pro tkl",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-027",
+    "query": "senhiser hd 660s2 hedphones",
+    "expected": "sennheiser hd 660s2 headphones",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-028",
+    "query": "shre sm7b microfone",
+    "expected": "shure sm7b microphone",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-029",
+    "query": "elgto stream dec mk2",
+    "expected": "elgato stream deck mk2",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-030",
+    "query": "aple watche series 9",
+    "expected": "apple watch series 9",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-031",
+    "query": "samsng galxy buds pro 2",
+    "expected": "samsung galaxy buds pro 2",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-032",
+    "query": "steelseries arcis nva pro",
+    "expected": "steelseries arctis nova pro",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-033",
+    "query": "hyperx clud alpa s",
+    "expected": "hyperx cloud alpha s",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-034",
+    "query": "ankr soundcre liberty 4",
+    "expected": "anker soundcore liberty 4",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-035",
+    "query": "logitec g502 hero gamming mose",
+    "expected": "logitech g502 hero gaming mouse",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-036",
+    "query": "razerr basilisk v3 pro mose",
+    "expected": "razer basilisk v3 pro mouse",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-037",
+    "query": "corsiar k95 rgb platnum xt",
+    "expected": "corsair k95 rgb platinum xt",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-038",
+    "query": "razer blackwidoow v4 pro",
+    "expected": "razer blackwidow v4 pro",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-MED-039",
+    "query": "steel seris apex pro tkl",
+    "expected": "steelseries apex pro tkl",
+    "length": "medium",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-000",
+    "query": "aple macbok pro 16 inch m3 max 64gb 2tb space blak",
+    "expected": "apple macbook pro 16 inch m3 max 64gb 2tb space black",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-001",
+    "query": "samsng galxy s24 ultra 512gb titanim black unloked",
+    "expected": "samsung galaxy s24 ultra 512gb titanium black unlocked",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-002",
+    "query": "asus rog stix scar 18 g834 gamming laptp rtx 4090",
+    "expected": "asus rog strix scar 18 g834 gaming laptop rtx 4090",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-003",
+    "query": "razerr blad 18 2024 intel core i9 rtx 4080 240hz qhdd",
+    "expected": "razer blade 18 2024 intel core i9 rtx 4080 240hz qhd",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-004",
+    "query": "lg ultragar 27 inch 4k oledd gamming moniter 240hz",
+    "expected": "lg ultragear 27 inch 4k oled gaming monitor 240hz",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-005",
+    "query": "logitec mx mater 3s for mac perfomance wirless mose",
+    "expected": "logitech mx master 3s for mac performance wireless mouse",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-006",
+    "query": "sony wh 1000xm5 wirless noise cancling hedphones black",
+    "expected": "sony wh 1000xm5 wireless noise canceling headphones black",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-007",
+    "query": "bose quitcomfort ultra wirless noise cancelling earbud",
+    "expected": "bose quietcomfort ultra wireless noise cancelling earbuds",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-008",
+    "query": "corsiar hs80 max wirless gamming headsett rgb dolby atmos",
+    "expected": "corsair hs80 max wireless gaming headset rgb dolby atmos",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-009",
+    "query": "nvidia gefoce rtx 4090 24gb gddr6x graphic crd founders",
+    "expected": "nvidia geforce rtx 4090 24gb gddr6x graphics card founders",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-010",
+    "query": "amd ryzn 9 7950x3d 16 core 32 thread desktp procesor",
+    "expected": "amd ryzen 9 7950x3d 16 core 32 thread desktop processor",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-011",
+    "query": "intel cor i9 14900k unloked desktop procesor 24 corres",
+    "expected": "intel core i9 14900k unlocked desktop processor 24 cores",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-012",
+    "query": "samsng 990 pro 2tb pcie 4.0 nvme m 2 internl sdd",
+    "expected": "samsung 990 pro 2tb pcie 4.0 nvme m 2 internal ssd",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-013",
+    "query": "westrn digtal black sn850x 1tb nvme internl gaming sdd",
+    "expected": "western digital black sn850x 1tb nvme internal gaming ssd",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-014",
+    "query": "asus rog stix x670e creator wifii atx motherbord ddr5",
+    "expected": "asus rog strix x670e creator wifi atx motherboard ddr5",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-015",
+    "query": "lg c3 65 inch oledd evo 4k smart tvv with self lit pixells",
+    "expected": "lg c3 65 inch oled evo 4k smart tv with self lit pixels",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-016",
+    "query": "sony braviar xr 75 inch a95l qd oledd 4k hdr smart tvv",
+    "expected": "sony bravia xr 75 inch a95l qd oled 4k hdr smart tv",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-017",
+    "query": "ankr 737 powr bank 24000mah 140w usb c portble charer",
+    "expected": "anker 737 power bank 24000mah 140w usb c portable charger",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-018",
+    "query": "ugren nexode 100w usb c gan chargr 4 port fast charing",
+    "expected": "ugreen nexode 100w usb c gan charger 4 port fast charging",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-019",
+    "query": "sateci usb c hub multport adaptr pro for macboook pro",
+    "expected": "satechi usb c hub multiport adapter pro for macbook pro",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-020",
+    "query": "razerr basilik v3 pro wirless ergonmic gamming mose 30k dpi",
+    "expected": "razer basilisk v3 pro wireless ergonomic gaming mouse 30k dpi",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-021",
+    "query": "logitec g pro x superlight 2 wirless gamming mose hero 2",
+    "expected": "logitech g pro x superlight 2 wireless gaming mouse hero 2",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-022",
+    "query": "corsiar k70 rgb pro mecanikal gamming kybord cherry mx red",
+    "expected": "corsair k70 rgb pro mechanical gaming keyboard cherry mx red",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-023",
+    "query": "senhiser hd 800 s referenc open back hedphones audiphile",
+    "expected": "sennheiser hd 800 s reference open back headphones audiophile",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-024",
+    "query": "shre mv7 pls podcast dynamic microfone usb xlr",
+    "expected": "shure mv7 plus podcast dynamic microphone usb xlr",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-025",
+    "query": "elgto cam link 4k externl vidoe capture crd hdmi",
+    "expected": "elgato cam link 4k external video capture card hdmi",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-026",
+    "query": "rde procastor broadcast quailty dynamic microfone xlr",
+    "expected": "rode procaster broadcast quality dynamic microphone xlr",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-027",
+    "query": "blu yeti x profesional condensr usb microfone for streming",
+    "expected": "blue yeti x professional condenser usb microphone for streaming",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-028",
+    "query": "audio technia at2020 cardiod condensr studio xlr microfone",
+    "expected": "audio technica at2020 cardioid condenser studio xlr microphone",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-029",
+    "query": "fifne ampligame a8 usb gamming microfone rgb cardiod",
+    "expected": "fifine ampligame a8 usb gaming microphone rgb cardioid",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-030",
+    "query": "samsng odyssy neo g9 57 inch dul 4k 240hz curvd moniter",
+    "expected": "samsung odyssey neo g9 57 inch dual 4k 240hz curved monitor",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-031",
+    "query": "asus rog swft pg27aqdm 26.5 inch 1440p oledd 240hz moniter",
+    "expected": "asus rog swift pg27aqdm 26.5 inch 1440p oled 240hz monitor",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-032",
+    "query": "lg 27gp950 b ultragar 27 inch 4k nano ips 144hz gamming moniter",
+    "expected": "lg 27gp950 b ultragear 27 inch 4k nano ips 144hz gaming monitor",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-033",
+    "query": "alienwar aw3423dwf 34 inch curvd qd oledd 165hz ultawide",
+    "expected": "alienware aw3423dwf 34 inch curved qd oled 165hz ultrawide",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-034",
+    "query": "aple ipad pro 12.9 inch m4 wifii celluar 1tb space gry",
+    "expected": "apple ipad pro 12.9 inch m4 wifi cellular 1tb space gray",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-035",
+    "query": "microsft surface pro 9 inel core i7 16gb 256gb plat",
+    "expected": "microsoft surface pro 9 intel core i7 16gb 256gb platinum",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-036",
+    "query": "googel pixel 8 pro 256gb obsidian unloked smartfone",
+    "expected": "google pixel 8 pro 256gb obsidian unlocked smartphone",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-037",
+    "query": "oneplus 12 5g 16gb 512gb fluid emerld unloked",
+    "expected": "oneplus 12 5g 16gb 512gb fluid emerald unlocked",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-038",
+    "query": "xiaomi 14 ultra 16gb 1tb leica camera flagship",
+    "expected": "xiaomi 14 ultra 16gb 1tb leica camera flagship",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L3-LNG-039",
+    "query": "nothing phone 2a plus 12gb 256gb glyph interfac",
+    "expected": "nothing phone 2a plus 12gb 256gb glyph interface",
+    "length": "long",
+    "difficulty": "L3",
+    "category": "double_edit_or_transpose",
+    "notes": ""
+  },
+  {
+    "id": "L4-SHO-000",
+    "query": "smartfone",
+    "expected": "smartphone",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-001",
+    "query": "airepods",
+    "expected": "airpods",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-002",
+    "query": "hedphons",
+    "expected": "headphones",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-003",
+    "query": "microfone",
+    "expected": "microphone",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-004",
+    "query": "wirelss",
+    "expected": "wireless",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-005",
+    "query": "bluthooth",
+    "expected": "bluetooth",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-006",
+    "query": "noiscanceling",
+    "expected": "noise canceling",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-007",
+    "query": "powrbnk",
+    "expected": "power bank",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-008",
+    "query": "gpu rtx 4090ti",
+    "expected": "gpu rtx 4090 ti",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-009",
+    "query": "ddr5 32gigs",
+    "expected": "ddr5 32gb",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-010",
+    "query": "ssd 2terabyte",
+    "expected": "ssd 2tb",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-011",
+    "query": "monitor 144 hertz",
+    "expected": "monitor 144hz",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-012",
+    "query": "4k tellevizon",
+    "expected": "4k television",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-013",
+    "query": "ergmonomic mose",
+    "expected": "ergonomic mouse",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-014",
+    "query": "mecan keybd",
+    "expected": "mechanical keyboard",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-015",
+    "query": "solidstat drv",
+    "expected": "solid state drive",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-016",
+    "query": "graficscard",
+    "expected": "graphics card",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-017",
+    "query": "smartwch",
+    "expected": "smart watch",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-018",
+    "query": "gameing pc",
+    "expected": "gaming pc",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-019",
+    "query": "hdmiicable",
+    "expected": "hdmi cable",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-020",
+    "query": "usbcable",
+    "expected": "usb cable",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-021",
+    "query": "wirlsearbud",
+    "expected": "wireless earbud",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-022",
+    "query": "blutoothspeker",
+    "expected": "bluetooth speaker",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-023",
+    "query": "noiscanceling hp",
+    "expected": "noise canceling headphone",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-SHO-024",
+    "query": "vrheadset",
+    "expected": "vr headset",
+    "length": "short",
+    "difficulty": "L4",
+    "category": "dense_phonetic",
+    "notes": "ED-2+ or phonetic"
+  },
+  {
+    "id": "L4-MED-000",
+    "query": "logitch g502 mose",
+    "expected": "logitech g502 mouse",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-001",
+    "query": "razzer basilisk mose",
+    "expected": "razer basilisk mouse",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-002",
+    "query": "bsose quietcomfrt headfones",
+    "expected": "bose quietcomfort headphones",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-003",
+    "query": "seinhiser hd650 hedphones",
+    "expected": "sennheiser hd650 headphones",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-004",
+    "query": "samsng galaxy s24 ultraa fone",
+    "expected": "samsung galaxy s24 ultra phone",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-005",
+    "query": "aplle iphone 15 pro maxx",
+    "expected": "apple iphone 15 pro max",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-006",
+    "query": "nvideea rtx 4090 ti card",
+    "expected": "nvidia rtx 4090 ti card",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-007",
+    "query": "amdd ryzen 9 7950x procesor",
+    "expected": "amd ryzen 9 7950x processor",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-008",
+    "query": "intell core i9 14900k cpuu",
+    "expected": "intel core i9 14900k cpu",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-009",
+    "query": "dle xps 15 laptp 16gb ram",
+    "expected": "dell xps 15 laptop 16gb ram",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-010",
+    "query": "hpp envy 17 inch laptp",
+    "expected": "hp envy 17 inch laptop",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-011",
+    "query": "lenova thinkpad x1 carbn gen 11",
+    "expected": "lenovo thinkpad x1 carbon gen 11",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-012",
+    "query": "asuss rog strix moniter 27in",
+    "expected": "asus rog strix monitor 27in",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-013",
+    "query": "acerr predator helios 16 laptp",
+    "expected": "acer predator helios 16 laptop",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-014",
+    "query": "msii mag 274qrf gamming moniter",
+    "expected": "msi mag 274qrf gaming monitor",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-015",
+    "query": "corsiar k70 rgb mecan keybd",
+    "expected": "corsair k70 rgb mechanical keyboard",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-016",
+    "query": "logitech mxx master 3 mose",
+    "expected": "logitech mx master 3 mouse",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-017",
+    "query": "razerr huntsman elite kybd",
+    "expected": "razer huntsman elite keyboard",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-018",
+    "query": "steelseris apex pro tkll kybd",
+    "expected": "steelseries apex pro tkl keyboard",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-019",
+    "query": "hyperxx cloud 2 hedset",
+    "expected": "hyperx cloud 2 headset",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-020",
+    "query": "anke r 737 powr bank 24kmah",
+    "expected": "anker 737 power bank 24000mah",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-021",
+    "query": "ugren nexod 100w gan chargr",
+    "expected": "ugreen nexode 100w gan charger",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-022",
+    "query": "sateci usbc hub for mcbook",
+    "expected": "satechi usb-c hub for macbook",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-023",
+    "query": "ekgato stream dec mk 2",
+    "expected": "elgato stream deck mk 2",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-MED-024",
+    "query": "rde procastor microfone",
+    "expected": "rode procaster microphone",
+    "length": "medium",
+    "difficulty": "L4",
+    "category": "brand_corrupt_with_typo",
+    "notes": "brand has typo, must restore correctly"
+  },
+  {
+    "id": "L4-LNG-000",
+    "query": "aple macbok prr 16 inch m3 mxx 64gb 2tb spac blak alumnium",
+    "expected": "apple macbook pro 16 inch m3 max 64gb 2tb space black aluminum",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-001",
+    "query": "samsng galxy s24 ultraa 512gb titaniumm blk unloked dual sim",
+    "expected": "samsung galaxy s24 ultra 512gb titanium black unlocked dual sim",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-002",
+    "query": "asus rog strx scar 18 g834 gamming laptp rtx 4090 24gb ddr5",
+    "expected": "asus rog strix scar 18 g834 gaming laptop rtx 4090 24gb ddr5",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-003",
+    "query": "razerr blad 18 2024 intl core i9 rtx 4080 240hz qhdd 32gb",
+    "expected": "razer blade 18 2024 intel core i9 rtx 4080 240hz qhd 32gb",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-004",
+    "query": "lg ulragar 27 inch 4k oledd gamming moniter 240hz hdmi 21",
+    "expected": "lg ultragear 27 inch 4k oled gaming monitor 240hz hdmi 2.1",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-005",
+    "query": "logitec mx mater 3s mac perfmance wirless mose ergonmic",
+    "expected": "logitech mx master 3s mac performance wireless mouse ergonomic",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-006",
+    "query": "sony wh1000xm5 wirless nois cancling hedphones blk leather",
+    "expected": "sony wh-1000xm5 wireless noise canceling headphones black leather",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-007",
+    "query": "bsose quitcomfort ultraa wirless nois cancling earbud blk",
+    "expected": "bose quietcomfort ultra wireless noise canceling earbuds black",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-008",
+    "query": "corsiar hs80 mxx wirless gamming hedset rgb dolby atmos",
+    "expected": "corsair hs80 max wireless gaming headset rgb dolby atmos",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-009",
+    "query": "nvideea gefoce rtx 4090 24gb gdr6x graficscard fonders editon",
+    "expected": "nvidia geforce rtx 4090 24gb gddr6x graphics card founders edition",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-010",
+    "query": "amdd ryzn 9 7950x3d 16 core 32 thrd dektop procesor",
+    "expected": "amd ryzen 9 7950x3d 16 core 32 thread desktop processor",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-011",
+    "query": "intl cor i9 14900k unloked desktp procesor 24 corres 32 thread",
+    "expected": "intel core i9 14900k unlocked desktop processor 24 cores 32 threads",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-012",
+    "query": "samsng 990 pro 2tb pcie 4 nvme m 2 internl sdd gamming",
+    "expected": "samsung 990 pro 2tb pcie 4 nvme m 2 internal ssd gaming",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-013",
+    "query": "westrn digtl blackk sn850x 1tb nvme internl gamming sdd",
+    "expected": "western digital black sn850x 1tb nvme internal gaming ssd",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-014",
+    "query": "asuss rog strx x670e creatr wifii atx motherbord ddr5",
+    "expected": "asus rog strix x670e creator wifi atx motherboard ddr5",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-015",
+    "query": "lg c3 65 inch oledd evoo 4k smar tvv self lit pixells dolby",
+    "expected": "lg c3 65 inch oled evo 4k smart tv self lit pixels dolby",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-016",
+    "query": "sony braviar xr 75 inch a95l qd oledd 4k hdr smar tvv 120hz",
+    "expected": "sony bravia xr 75 inch a95l qd oled 4k hdr smart tv 120hz",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-017",
+    "query": "ankr 737 powr bnk 24kmah 140w usbc portbl chargr blk",
+    "expected": "anker 737 power bank 24000mah 140w usb-c portable charger black",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-018",
+    "query": "ugren nexod 100w usbc gan chargr 4 port fast charing",
+    "expected": "ugreen nexode 100w usb-c gan charger 4 port fast charging",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-019",
+    "query": "sateci usbc hub multport adaptr prr macbok pro 14 inch",
+    "expected": "satechi usb-c hub multiport adapter pro macbook pro 14 inch",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-020",
+    "query": "razerr basilik v3 pro wirless ergnomic gamming mose 30000dpi",
+    "expected": "razer basilisk v3 pro wireless ergonomic gaming mouse 30000dpi",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-021",
+    "query": "logitec g pro x superlite 2 wirless gamming mose hero 2 sensr",
+    "expected": "logitech g pro x superlight 2 wireless gaming mouse hero 2 sensor",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-022",
+    "query": "corsiar k70 rgb prr mecan gamming kybord cherry mx red switc",
+    "expected": "corsair k70 rgb pro mechanical gaming keyboard cherry mx red switch",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-023",
+    "query": "senhiser hd 800 s referenc open bak hedphones audiphile",
+    "expected": "sennheiser hd 800 s reference open back headphones audiophile",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-024",
+    "query": "shre mv7 pls podcst dynmic microfone usb xlr broadcast",
+    "expected": "shure mv7 plus podcast dynamic microphone usb xlr broadcast",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-025",
+    "query": "elgto cam linkk 4k externl vidoe capture crd hdmi",
+    "expected": "elgato cam link 4k external video capture card hdmi",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-026",
+    "query": "rde procastor broadcst qualty dynmic microfone xlr",
+    "expected": "rode procaster broadcast quality dynamic microphone xlr",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-027",
+    "query": "blu yeti x profesional condensr usb microfone for streming",
+    "expected": "blue yeti x professional condenser usb microphone for streaming",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-028",
+    "query": "audi technia at2020 cardiod condensr studi xlr microfone",
+    "expected": "audio technica at2020 cardioid condenser studio xlr microphone",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-029",
+    "query": "fifne ampligme a8 usb gamming microfone rgb cardiod",
+    "expected": "fifine ampligame a8 usb gaming microphone rgb cardioid",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-030",
+    "query": "samsng odyssy neo g9 57 inch dul 4k 240hz curvd moniter rgb",
+    "expected": "samsung odyssey neo g9 57 inch dual 4k 240hz curved monitor rgb",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-031",
+    "query": "asuss rog swft pg27aqdm 26.5 inch 1440p oledd 240hz moniter",
+    "expected": "asus rog swift pg27aqdm 26.5 inch 1440p oled 240hz monitor",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-032",
+    "query": "lg 27gp950 b ultragar 27 inch 4k nano ips 144hz gamming moniter",
+    "expected": "lg 27gp950 b ultragear 27 inch 4k nano ips 144hz gaming monitor",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-033",
+    "query": "alienwar aw3423dwf 34 inch curvd qd oledd 165hz ultawide gamming",
+    "expected": "alienware aw3423dwf 34 inch curved qd oled 165hz ultrawide gaming",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-034",
+    "query": "aple ipd prr 12.9 inch m4 wifii celluar 1tb spac gry brand new",
+    "expected": "apple ipad pro 12.9 inch m4 wifi cellular 1tb space gray brand new",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-035",
+    "query": "microsf surfac pro 9 inel core i7 16gb 256gb platinm",
+    "expected": "microsoft surface pro 9 intel core i7 16gb 256gb platinum",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-036",
+    "query": "googel pixl 8 pro 256gb obsdian unloked smartfone",
+    "expected": "google pixel 8 pro 256gb obsidian unlocked smartphone",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-037",
+    "query": "oneplus 12 5g 16gb 512gb fluid emerld unloked smartfone",
+    "expected": "oneplus 12 5g 16gb 512gb fluid emerald unlocked smartphone",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-038",
+    "query": "xaomi 14 ultraa 16gb 1tb leica camra flagship smarphone",
+    "expected": "xiaomi 14 ultra 16gb 1tb leica camera flagship smartphone",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-039",
+    "query": "nothng phone 2a plus 12gb 256gb glyph interfac smarphone",
+    "expected": "nothing phone 2a plus 12gb 256gb glyph interface smartphone",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-040",
+    "query": "dson v15 detec absolute cordless vacum cleanr",
+    "expected": "dyson v15 detect absolute cordless vacuum cleaner",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-041",
+    "query": "brevill barissta express espresso machne stainles steel",
+    "expected": "breville barista express espresso machine stainless steel",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L4-LNG-042",
+    "query": "nintndo switch oledd model with white joy con consle",
+    "expected": "nintendo switch oled model with white joy con console",
+    "length": "long",
+    "difficulty": "L4",
+    "category": "dense_compound_typo",
+    "notes": "multi-token dense errors"
+  },
+  {
+    "id": "L5-SHO-000",
+    "query": "hedphns",
+    "expected": "headphones",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-001",
+    "query": "micrfn",
+    "expected": "microphone",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-002",
+    "query": "wirels",
+    "expected": "wireless",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-003",
+    "query": "bltoth",
+    "expected": "bluetooth",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-004",
+    "query": "nseclngn",
+    "expected": "noise canceling",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-005",
+    "query": "pwrbnk",
+    "expected": "power bank",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-006",
+    "query": "ergnmcmus",
+    "expected": "ergonomic mouse",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-007",
+    "query": "mecnclkybd",
+    "expected": "mechanical keyboard",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-008",
+    "query": "ssdtb",
+    "expected": "ssd 1tb",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-009",
+    "query": "smrtwch",
+    "expected": "smart watch",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-010",
+    "query": "gmnpc",
+    "expected": "gaming pc",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-011",
+    "query": "hdmcbl",
+    "expected": "hdmi cable",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-012",
+    "query": "usbcbl",
+    "expected": "usb cable",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-013",
+    "query": "blsspkr",
+    "expected": "bluetooth speaker",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-014",
+    "query": "vrhdst",
+    "expected": "vr headset",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-015",
+    "query": "4ktv",
+    "expected": "4k tv",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-016",
+    "query": "monitr 144hz",
+    "expected": "monitor 144hz",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-017",
+    "query": "kybd mecan",
+    "expected": "mechanical keyboard",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-018",
+    "query": "rtx4090tii",
+    "expected": "rtx 4090 ti",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-SHO-019",
+    "query": "ddr532gigs",
+    "expected": "ddr5 32gb",
+    "length": "short",
+    "difficulty": "L5",
+    "category": "extreme_compression",
+    "notes": "vowels dropped, joined tokens"
+  },
+  {
+    "id": "L5-MED-000",
+    "query": "aplee macbok prr m3",
+    "expected": "apple macbook pro m3",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-001",
+    "query": "samsng galxy s24 ultraa fne",
+    "expected": "samsung galaxy s24 ultra phone",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-002",
+    "query": "logitch g502 mose gamming",
+    "expected": "logitech g502 mouse gaming",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-003",
+    "query": "rzr basilisk mose wirless",
+    "expected": "razer basilisk mouse wireless",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-004",
+    "query": "bsose quietcomft hedfones",
+    "expected": "bose quietcomfort headphones",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-005",
+    "query": "senhiser hd 660s2 hedfns",
+    "expected": "sennheiser hd 660s2 headphones",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-006",
+    "query": "nvideea rtx 4090 ti grafcrd",
+    "expected": "nvidia rtx 4090 ti graphics card",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-007",
+    "query": "amdd ryzn 9 7950x dektpcpu",
+    "expected": "amd ryzen 9 7950x desktop cpu",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-008",
+    "query": "intell cor i9 14900k unloked",
+    "expected": "intel core i9 14900k unlocked",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-009",
+    "query": "dle xps 15 oledd laptp 16gb",
+    "expected": "dell xps 15 oled laptop 16gb",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-010",
+    "query": "hpp envy 17in laptp 32gb",
+    "expected": "hp envy 17in laptop 32gb",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-011",
+    "query": "lenova thinkpad x1 carbn gen11",
+    "expected": "lenovo thinkpad x1 carbon gen11",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-012",
+    "query": "asuss rog strx moniter 27in 4k",
+    "expected": "asus rog strix monitor 27in 4k",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-013",
+    "query": "acerr predtor helios 16 laptp",
+    "expected": "acer predator helios 16 laptop",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-014",
+    "query": "msii mag 274qrf gamming moniter",
+    "expected": "msi mag 274qrf gaming monitor",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-015",
+    "query": "corsiar k70 rgb prr mecan kybd",
+    "expected": "corsair k70 rgb pro mechanical keyboard",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-016",
+    "query": "logitch mxx mater 3 mose wirless",
+    "expected": "logitech mx master 3 mouse wireless",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-017",
+    "query": "rzrr huntsmn elite kybd rgb",
+    "expected": "razer huntsman elite keyboard rgb",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-018",
+    "query": "steelseris apex prr tkl kybd",
+    "expected": "steelseries apex pro tkl keyboard",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-019",
+    "query": "hyperxxcloud 2 hedset gamming",
+    "expected": "hyperx cloud 2 headset gaming",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-020",
+    "query": "ankr 737 powr bnk 24kmah pd",
+    "expected": "anker 737 power bank 24000mah pd",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-021",
+    "query": "ugren nexod 100w gan chargr 4port",
+    "expected": "ugreen nexode 100w gan charger 4port",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-022",
+    "query": "sateci usbchub for mcbook prr",
+    "expected": "satechi usb-c hub for macbook pro",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-023",
+    "query": "ekgato strem dec mk 2 prr",
+    "expected": "elgato stream deck mk 2 pro",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-024",
+    "query": "rde procstr microfone usbxlr",
+    "expected": "rode procaster microphone usb xlr",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-025",
+    "query": "googel pixl 8 prr 256gb",
+    "expected": "google pixel 8 pro 256gb",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-026",
+    "query": "oneplus12 5g 16gb 512gb",
+    "expected": "oneplus 12 5g 16gb 512gb",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-027",
+    "query": "xaomi 14 ultraa leica cam",
+    "expected": "xiaomi 14 ultra leica camera",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-028",
+    "query": "nothng phn 2a pls glyph",
+    "expected": "nothing phone 2a plus glyph",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-MED-029",
+    "query": "dson v15 detec cordlss vacum",
+    "expected": "dyson v15 detect cordless vacuum",
+    "length": "medium",
+    "difficulty": "L5",
+    "category": "extreme_brand_typo",
+    "notes": "brand+product extreme typos"
+  },
+  {
+    "id": "L5-LNG-000",
+    "query": "aplemcbk prr 16in m3 mxx 64gb 2tb spc blk alminm 1yr",
+    "expected": "apple macbook pro 16 inch m3 max 64gb 2tb space black aluminum 1 year",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-001",
+    "query": "samsngglxy s24ultraa 512gb titnum blk unlckd dualsim",
+    "expected": "samsung galaxy s24 ultra 512gb titanium black unlocked dual sim",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-002",
+    "query": "asus rog strxscar18 g834 gamng laptp rtx4090 24gb ddr5 ssd2tb",
+    "expected": "asus rog strix scar 18 g834 gaming laptop rtx 4090 24gb ddr5 ssd 2tb",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-003",
+    "query": "rzrrblade18 2024 intl i9 rtx4080 240hz qhdd 32gbram",
+    "expected": "razer blade 18 2024 intel i9 rtx 4080 240hz qhd 32gb ram",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-004",
+    "query": "lg ulragear 27in 4k oledd gamng moniter 240hz hdmi21 disply",
+    "expected": "lg ultragear 27 inch 4k oled gaming monitor 240hz hdmi 2.1 displayport",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-005",
+    "query": "logitch mxmaster3s for mac perfmance wirless mose ergnmic",
+    "expected": "logitech mx master 3s for mac performance wireless mouse ergonomic",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-006",
+    "query": "sonywh1000xm5 wirless nois cancling hedphns blk leather plush",
+    "expected": "sony wh-1000xm5 wireless noise canceling headphones black leather plush",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-007",
+    "query": "bsose quitcomft ultraa wirless nois cancling earbud blk caser",
+    "expected": "bose quietcomfort ultra wireless noise canceling earbuds black case",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-008",
+    "query": "corsiarhs80mxx wirless gamng hedset rgb dolbyatmos 50hr btr",
+    "expected": "corsair hs80 max wireless gaming headset rgb dolby atmos 50hr battery",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-009",
+    "query": "nvideeagefoce rtx4090 24gb gdr6x graficscrd fondrs editon limtd",
+    "expected": "nvidia geforce rtx 4090 24gb gddr6x graphics card founders edition limited",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-010",
+    "query": "amdd ryzn9 7950x3d 16cor 32thrd dektpcpu am5 socket",
+    "expected": "amd ryzen 9 7950x3d 16 core 32 thread desktop cpu am5 socket",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-011",
+    "query": "intl cor i9 14900k unloked dektpcpu 24cor 32thrd lga1700",
+    "expected": "intel core i9 14900k unlocked desktop cpu 24 core 32 thread lga1700",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-012",
+    "query": "samsng990pro 2tb pcie4 nvme m2 internl sdd gamng pst5 compatbl",
+    "expected": "samsung 990 pro 2tb pcie 4 nvme m.2 internal ssd gaming ps5 compatible",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-013",
+    "query": "westrndigtl blk sn850x 1tb nvme internl gamng sdd heatsink",
+    "expected": "western digital black sn850x 1tb nvme internal gaming ssd heatsink",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-014",
+    "query": "asussrog strx x670e creatr wifii atx motherbord ddr5 ddr5",
+    "expected": "asus rog strix x670e creator wifi atx motherboard ddr5",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-015",
+    "query": "lgc3 65inch oledd evoo 4k smar tvv selfltpixl dolby atmos",
+    "expected": "lg c3 65 inch oled evo 4k smart tv self lit pixels dolby atmos",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-016",
+    "query": "sony braviar xr 75in a95l qd oledd 4khdr smar tvv 120hz",
+    "expected": "sony bravia xr 75 inch a95l qd oled 4k hdr smart tv 120hz",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-017",
+    "query": "ankr 737 powrbnk 24kmah 140w usbc portbl chargr blk slim",
+    "expected": "anker 737 power bank 24000mah 140w usb-c portable charger black slim",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-018",
+    "query": "ugren nexod 100w usbc gan chargr 4port fast charing macsuprt",
+    "expected": "ugreen nexode 100w usb-c gan charger 4 port fast charging mac support",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-019",
+    "query": "sateci usbchub multport adaptr prr macbok prr 14 inch",
+    "expected": "satechi usb-c hub multiport adapter pro macbook pro 14 inch",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-020",
+    "query": "rzrr basilik v3 prr wirless ergnomic gamng mose 30kdpi sensr",
+    "expected": "razer basilisk v3 pro wireless ergonomic gaming mouse 30000dpi sensor",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-021",
+    "query": "logitch gprx superlite2 wirless gamng mose hero2 sensr 60hr btr",
+    "expected": "logitech g pro x superlight 2 wireless gaming mouse hero 2 sensor 60hr battery",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-022",
+    "query": "corsiar k70 rgb prr mecan gamng kybord cherrymx red switc opto",
+    "expected": "corsair k70 rgb pro mechanical gaming keyboard cherry mx red switch opto",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-023",
+    "query": "senhiser hd800s referenc open bak hedphones audiphile 300ohm",
+    "expected": "sennheiser hd 800 s reference open back headphones audiophile 300ohm",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-024",
+    "query": "shre mv7pls podcst dynmic microfone usbxlr broadcast hybrd",
+    "expected": "shure mv7 plus podcast dynamic microphone usb xlr broadcast hybrid",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-025",
+    "query": "elgto camlinkk 4k externl vidoe capture crd hdmi 1080p60",
+    "expected": "elgato cam link 4k external video capture card hdmi 1080p 60",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-026",
+    "query": "rde procstr broadcst qualty dynmic microfone xlr 50ohm",
+    "expected": "rode procaster broadcast quality dynamic microphone xlr 50 ohm",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-027",
+    "query": "blu yetiX profesional condensr usb microfone streming 4patrn",
+    "expected": "blue yeti x professional condenser usb microphone streaming 4 pattern",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-028",
+    "query": "audiotechnia at2020 cardiod condensr studi xlr microfone podcst",
+    "expected": "audio technica at2020 cardioid condenser studio xlr microphone podcast",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-029",
+    "query": "fifne ampligme a8 usbgamng microfone rgb cardiod scissrarm",
+    "expected": "fifine ampligame a8 usb gaming microphone rgb cardioid scissor arm",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-030",
+    "query": "samsng odyssy neo g9 57in dul4k 240hz curvd moniter rgb 1000nit",
+    "expected": "samsung odyssey neo g9 57 inch dual 4k 240hz curved monitor rgb 1000 nit",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-031",
+    "query": "asuss rog swft pg27aqdm 26.5in 1440p oledd 240hz moniter glsy",
+    "expected": "asus rog swift pg27aqdm 26.5 inch 1440p oled 240hz monitor glossy",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-032",
+    "query": "lg27gp950b ultragar 27in 4k nanoips 144hz gamng moniter usbc",
+    "expected": "lg 27gp950b ultragear 27 inch 4k nano ips 144hz gaming monitor usb-c",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-033",
+    "query": "alienwar aw3423dwf 34in curvd qd oledd 165hz ultawide gamng dp21",
+    "expected": "alienware aw3423dwf 34 inch curved qd oled 165hz ultrawide gaming dp 2.1",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-034",
+    "query": "apleipd prr 12.9in m4 wifii celluar 1tb spc gry brndnew sealed",
+    "expected": "apple ipad pro 12.9 inch m4 wifi cellular 1tb space gray brand new sealed",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-035",
+    "query": "microsf surfac prr 9 inel cor i7 16gb 256gb platinm wifi",
+    "expected": "microsoft surface pro 9 intel core i7 16gb 256gb platinum wifi",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-036",
+    "query": "googel pixl8 prr 256gb obsdian unloked smartfone factry",
+    "expected": "google pixel 8 pro 256gb obsidian unlocked smartphone factory",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-037",
+    "query": "oneplus12 5g 16gb 512gb fluid emerld unloked smartfone naa",
+    "expected": "oneplus 12 5g 16gb 512gb fluid emerald unlocked smartphone na",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-038",
+    "query": "xaomi14 ultraa 16gb 1tb leica camra flagship smarphone glblrom",
+    "expected": "xiaomi 14 ultra 16gb 1tb leica camera flagship smartphone global rom",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-039",
+    "query": "nothng phn 2aplus 12gb 256gb glyph interfac smarphone andr14",
+    "expected": "nothing phone 2a plus 12gb 256gb glyph interface smartphone android 14",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-040",
+    "query": "dson v15 detec absolute cordlss vacum cleanr lasr dust dtct",
+    "expected": "dyson v15 detect absolute cordless vacuum cleaner laser dust detect",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-041",
+    "query": "brevill barissta exprss espreso machne stainles steel 15bar",
+    "expected": "breville barista express espresso machine stainless steel 15 bar",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-042",
+    "query": "nintndo swich oledd modl whte joy cn consle 64gb",
+    "expected": "nintendo switch oled model white joy con console 64gb",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-043",
+    "query": "playstation5 sla edtn dsk slot blry consle 1tb",
+    "expected": "playstation 5 slim edition disk slot blu ray console 1tb",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-044",
+    "query": "xboxsereies x 1tb consle wirless controler 4k 120hz",
+    "expected": "xbox series x 1tb console wireless controller 4k 120hz",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-045",
+    "query": "dlinkk dir x5460 wifi6e routr ax5400 gigabit",
+    "expected": "dlink dir x5460 wifi 6e router ax5400 gigabit",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-046",
+    "query": "netgear orbi rbk863s wifi6e mesh routr tri band",
+    "expected": "netgear orbi rbk863s wifi 6e mesh router tri band",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-047",
+    "query": "ubiquiti unfi dream machne pro routr enterprise",
+    "expected": "ubiquiti unifi dream machine pro router enterprise",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-048",
+    "query": "synology ds923 plus 4 bay nas storg ryzn embeded",
+    "expected": "synology ds923 plus 4 bay nas storage ryzen embedded",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  },
+  {
+    "id": "L5-LNG-049",
+    "query": "qnap ts464 4 bay desktp nas intl celron quadcr",
+    "expected": "qnap ts464 4 bay desktop nas intel celeron quad core",
+    "length": "long",
+    "difficulty": "L5",
+    "category": "adversarial_compound",
+    "notes": "extreme dense compound queries"
+  }
+]
