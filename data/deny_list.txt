@@ -1,0 +1,58 @@
+# Deny list for the brand masking pipeline.
+# Brands listed here will NOT be masked, even if they exist in brands_v2.jsonl.
+# Use this for brands whose canonical name collides too frequently with
+# common English usage to risk masking.
+
+# Brands that are very common English words (high collision risk)
+apple
+shell
+tide
+dove
+gap
+crest
+target
+windows
+amazon
+mars
+ge
+fila
+ace
+arc
+
+# Verbs that are also brands (high collision risk)
+apply
+charge
+
+# Single-letter or generic short names
+on running
+ace hardware
+
+# These are pure English words / generic terms used as product line names
+swift
+blade
+mini
+plus
+ultra
+edge
+flow
+spin
+nitro
+hero
+elite
+core
+vector
+victus
+spectre
+omen
+fury
+legend
+classic
+
+# Generic product-line words that frequently collide
+max
+air
+pro
+note
+note 9
+note 10
+note 20

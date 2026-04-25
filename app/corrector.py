@@ -1,19 +1,5 @@
 """
-TypoCorrector – E-commerce Search Query Spell Correction Orchestrator
-
-Single-model architecture using ByT5 (byte-level typo correction).
-Model is lazy-loaded on first use to keep startup fast.
-
-Usage:
-    from app.corrector import TypoCorrector
-
-    corrector = TypoCorrector()
-
-    # Simple – just the corrected string
-    text = corrector.correct_query("iphnoe 15 pro")   # → "iphone 15 pro"
-
-    # Full – with metadata
-    result = corrector.correct("iphnoe 15 pro")
+TypoCorrector - E-commerce Search Query Spell Correction Orchestrator with brand masking.
 """
 
 import logging
@@ -24,19 +10,17 @@ from .models.byt5 import ByT5Corrector
 from .models.base import BaseCorrector
 from .models.qwen import QwenCorrector
 from .models.t5_large import T5LargeCorrector
+from .masking import MaskingPipeline
 
 logger = logging.getLogger(__name__)
 
-# Model registry: name -> (path_suffix, description)
 _MODEL_REGISTRY = {
-    # ByT5 variants
     "byt5-base":      ("models/byt5-typo-best",                          "ByT5-base fine-tuned"),
     "byt5-small":     ("models/byt5-typo-final",                         "ByT5-small fine-tuned"),
     "byt5-large":     ("models/byt5-large/best",                         "ByT5-large fine-tuned"),
-    # T5-Large variants
+    "BYT5-Large-V3":  ("models/byt5-large-v3",                           "ByT5-Large v3 fine-tuned"),
     "T5-Large-V2":    ("models/t5-large-typo/v2/t5_correction_v2-1",     "T5-Large v2.1 fine-tuned"),
     "T5-Large-V2.1":  ("models/t5-large-typo/v2/t5_correction_v2-1",     "T5-Large v2.1 + FastText/FAISS pipeline"),
-    # LLM
     "qwen-3.5-2b":   ("models/qwen3.5-2b",                              "Qwen 3.5 2B (guarded typo-corrector)"),
 }
 
@@ -44,20 +28,23 @@ _DEFAULT_MODEL = "byt5-base"
 
 
 class TypoCorrector:
-    """
-    Central orchestrator for spell correction.
-
-    Supports multiple ByT5 variants (small / base) with lazy loading.
-    """
+    """Central orchestrator for spell correction with brand masking."""
 
     def __init__(self):
         import os
         self._base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         self._models: dict[str, BaseCorrector] = {}
+
+        try:
+            self._mask_pipeline = MaskingPipeline()
+            logger.info("Brand masking pipeline ready: %s", self._mask_pipeline.stats())
+        except Exception as e:
+            logger.warning("Brand masking pipeline disabled: %s", e)
+            self._mask_pipeline = None
+
         logger.info("TypoCorrector initialised (available models: %s)", list(_MODEL_REGISTRY.keys()))
 
-    def _get_model(self, model_name: str | None) -> BaseCorrector:
-        """Get or lazily create a model instance."""
+    def _get_model(self, model_name):
         name = model_name if model_name in _MODEL_REGISTRY else _DEFAULT_MODEL
         if name not in self._models:
             import os
@@ -70,15 +57,13 @@ class TypoCorrector:
                 else:
                     self._models[name] = QwenCorrector(model_name_or_path="Qwen/Qwen3.5-2B")
             elif name == "T5-Large-V2.1":
-                # Full pipeline: T5-Large + FastText/FAISS fallback
                 from .models.t5_pipeline import T5LargePipelineCorrector
                 path = os.path.join(self._base_dir, model_ref)
                 self._models[name] = T5LargePipelineCorrector(model_path=path)
             elif name == "T5-Large-V2":
-                # Standalone T5-Large v2.1 (no fallback)
                 path = os.path.join(self._base_dir, model_ref)
                 self._models[name] = T5LargeCorrector(model_path=path)
-            elif name.startswith("byt5"):
+            elif name.startswith("byt5") or name.startswith("BYT5"):
                 path = os.path.join(self._base_dir, model_ref)
                 self._models[name] = ByT5Corrector(model_path=path)
             else:
@@ -88,34 +73,41 @@ class TypoCorrector:
             self._models[name].name = name
         return self._models[name]
 
-    # ------------------------------------------------------------------
-    # Public API
-    # ------------------------------------------------------------------
-
-    def correct_query(self, query: str, model: Optional[str] = None) -> str:
-        """Return only the corrected string."""
+    def correct_query(self, query, model=None):
         if not query or not query.strip():
             return query
         result = self.correct(query, model=model)
         return result["corrected_query"]
 
-    def correct(self, query: str, model: Optional[str] = None) -> dict:
-        """
-        Full correction with metadata.
-
-        Args:
-            query: User's search query.
-            model: Model name ("byt5-base" or "byt5-small"). None = default.
-        """
+    def correct(self, query, model=None):
+        """Full correction. Brand masking wraps every model except T5-Large-V2.1."""
         m = self._get_model(model)
-        return m.correct(query)
+        resolved_name = m.name
 
-    def correct_batch(self, queries: list[str], model: Optional[str] = None) -> dict:
-        """Correct a batch and return aggregated stats."""
+        skip_masking = (
+            self._mask_pipeline is None
+            or not self._mask_pipeline.is_healthy()
+            or (resolved_name and "v2.1" in resolved_name.lower())
+        )
+
+        if skip_masking:
+            return m.correct(query)
+
+        masked_query, mask_map = self._mask_pipeline.mask(query)
+        result = m.correct(masked_query)
+        if mask_map:
+            corrected_masked = result.get("corrected_query", masked_query)
+            result["corrected_query"] = self._mask_pipeline.unmask(corrected_masked, mask_map)
+            result["changed"] = (
+                result["corrected_query"].lower().strip() != query.lower().strip()
+            )
+            result["original_query"] = query
+        return result
+
+    def correct_batch(self, queries, model=None):
         start = time.perf_counter()
         results = [self.correct(q, model=model) for q in queries]
         total_ms = (time.perf_counter() - start) * 1000
-
         return {
             "results": results,
             "batch_stats": {
@@ -125,8 +117,7 @@ class TypoCorrector:
             },
         }
 
-    def list_models(self) -> list[dict]:
-        """Describe available models (for /models endpoint)."""
+    def list_models(self):
         models = []
         for name, (_, desc) in _MODEL_REGISTRY.items():
             if name.startswith("qwen"):
@@ -137,9 +128,6 @@ class TypoCorrector:
                 model_type = "pipeline"
             elif name == "T5-Large-V2":
                 arch = "T5-large v2.1 (encoder-decoder, token-level)"
-                model_type = "seq2seq"
-            elif name.startswith("byt5"):
-                arch = "ByT5 (encoder-decoder, byte-level)"
                 model_type = "seq2seq"
             else:
                 arch = "ByT5 (encoder-decoder, byte-level)"
@@ -155,6 +143,5 @@ class TypoCorrector:
             })
         return models
 
-    def get_default_model(self) -> str:
-        """Return the default model name."""
+    def get_default_model(self):
         return _DEFAULT_MODEL

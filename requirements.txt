@@ -17,3 +17,11 @@ numpy
 
 # Evaluation
 textdistance
+
+# Brand masking pipeline (Phase 1)
+pyahocorasick>=2.0.0   # Aho-Corasick exact multi-pattern matching
+symspellpy>=6.7.7      # SymSpell fuzzy matching for typo'd brand names
+english-words>=2.0.0   # English wordlist for false-positive guard
+
+# Testing
+pytest>=7.0
