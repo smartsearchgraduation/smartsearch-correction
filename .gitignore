@@ -44,6 +44,17 @@ fine_tune/data/*.jsonl
 fine_tune/data/*.json
 !fine_tune/data/.gitkeep
 
+# Large training datasets (>100MB, exceed GitHub limit)
+fine_tune/BYT5-T5 Large v3/data_v3_7/train_v3_7.jsonl
+fine_tune/BYT5-T5 Large v3/data/train_v3.jsonl
+fine_tune/BYT5-T5 Large v3/_archive/old_datasets/train_v3.jsonl.pre_v34
+fine_tune/BYT5-T5 Large v3/_archive/old_datasets/train_v3.jsonl.pre_clean
+fine_tune/BYT5-T5 Large v3/data_v3_7/*.jsonl
+fine_tune/BYT5-T5 Large v3/data/*.jsonl
+fine_tune/BYT5-T5 Large v3/_archive/old_datasets/*.jsonl
+fine_tune/BYT5-T5 Large v3/_archive/old_datasets/*.pre_*
+fine_tune/BYT5-T5 Large v3/_archive/old_datasets/*.bak
+
 # Benchmark results (temporary)
 fine_tune/benchmark_results_*.json
 benchmark_results_*.json

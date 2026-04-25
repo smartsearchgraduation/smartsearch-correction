@@ -24,7 +24,7 @@ _MODEL_REGISTRY = {
     "qwen-3.5-2b":   ("models/qwen3.5-2b",                              "Qwen 3.5 2B (guarded typo-corrector)"),
 }
 
-_DEFAULT_MODEL = "byt5-base"
+_DEFAULT_MODEL = "BYT5-Large-V3"
 
 
 class TypoCorrector:
