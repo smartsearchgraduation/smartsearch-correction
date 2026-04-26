@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(wc -l /c/Users/kaant/Desktop/Grad/Correction/data/*.txt)"
-    ]
-  }
-}
