@@ -1,0 +1,19 @@
+{
+  "case_id": "PERF-CR-001",
+  "model": "BYT5-Large-V3",
+  "n_measured": 22,
+  "n_warmup": 3,
+  "note": "M6 numeric thresholds are deferred; this row records baseline only. Sample size reduced from 500 to 25 for CI runtime; structural assertions still cover model_used and response shape.",
+  "reported_latency_ms": {
+    "max": 342.85,
+    "mean": 270.5668181818182,
+    "min": 168.23,
+    "p50": 253.77,
+    "p95": 342.44
+  },
+  "spec_n": 500,
+  "wallclock_ms": {
+    "p50": 256.814199994551,
+    "p95": 345.44189998996444
+  }
+}

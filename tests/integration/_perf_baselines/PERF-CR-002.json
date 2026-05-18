@@ -1,0 +1,18 @@
+{
+  "case_id": "PERF-CR-002",
+  "correction_sources_seen": [
+    "t5"
+  ],
+  "model": "T5-Large-V2.1",
+  "n_measured": 22,
+  "n_warmup": 3,
+  "note": "M6 numeric thresholds deferred. Sample reduced from 500 to 25 for CI runtime.",
+  "reported_latency_ms": {
+    "max": 166.71,
+    "mean": 98.42500000000001,
+    "min": 49.6,
+    "p50": 89.99,
+    "p95": 162.57
+  },
+  "spec_n": 500
+}

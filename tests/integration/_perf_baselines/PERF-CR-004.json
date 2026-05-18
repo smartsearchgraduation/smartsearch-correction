@@ -1,0 +1,18 @@
+{
+  "case_id": "PERF-CR-004",
+  "elapsed_s": 37.10756129998481,
+  "failures": 0,
+  "latency_ms": {
+    "p50": 1260.3063999849837,
+    "p95": 1641.5873999940231,
+    "p99": 2031.5106999769341
+  },
+  "n_threads": 4,
+  "note": "Concurrent load testing is out of global scope; this row exists because 5.4.3 explicitly lists Throughput. The in-process ThreadPoolExecutor surrogate is not a substitute for a real Locust run.",
+  "per_thread": 30,
+  "rps_observed": 3.233842262764089,
+  "spec_n": "8 users x 60s (Locust)",
+  "success_rate": 1.0,
+  "successes": 120,
+  "total_requests": 120
+}

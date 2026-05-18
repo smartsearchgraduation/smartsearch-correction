@@ -1,0 +1,708 @@
+================================================================================
+  CORRECTION MODULU - POWERSHELL TEST KOMUTLARI
+  Repo kok dizini : C:\Users\kaant\Desktop\Grad
+  Correction kok  : C:\Users\kaant\Desktop\Grad\Correction
+================================================================================
+
+--------------------------------------------------------------------------------
+ 0. ON HAZIRLIK (her oturumda bir kez)
+--------------------------------------------------------------------------------
+
+cd C:\Users\kaant\Desktop\Grad
+.\.venv\Scripts\Activate.ps1
+cd C:\Users\kaant\Desktop\Grad\Correction
+
+# Eksik bagimliliklar varsa (ilk kurulumda):
+python -m pip install pytest pytest-cov fastapi "httpx<0.28" pyahocorasick symspellpy textdistance locust prometheus_client
+
+
+================================================================================
+ 1. HEPSINI BIRDEN CALISTIRMA KOMUTLARI
+================================================================================
+
+# --- Tum unit testler (integration ve performance haric) ---
+python -m pytest tests --ignore=tests/integration -v
+
+# --- Tum unit testler + coverage (terminale her satir) ---
+python -m pytest tests --ignore=tests/integration -v --cov=app --cov-report=term-missing
+
+# --- Tum unit testler + HTML coverage raporu (htmlcov/index.html) ---
+python -m pytest tests --ignore=tests/integration --cov=app --cov-report=html
+
+# --- Tum integration testler (CI-COR-* + CI-API-*) ---
+python -m pytest tests/test_corrector_integration.py tests/test_api.py -v
+
+# --- Tum performance testler (PERF-CR-001..007) - GPU sart ---
+python -m pytest tests/integration/test_performance.py -v
+
+# --- HER SEY: unit + integration + performance ---
+python -m pytest tests -v
+
+# --- Pytest sessiz mod (sadece ozet) ---
+python -m pytest tests --ignore=tests/integration -q
+
+# --- Ilk hata icin durma + traceback acik ---
+python -m pytest tests --ignore=tests/integration -x --tb=long
+
+
+================================================================================
+ 2. DOSYA BAZINDA CALISTIRMA (kategori yaklasimi)
+================================================================================
+
+# Metrics (CU-MET-01..09)
+python -m pytest tests/test_metrics.py -v
+
+# Domain vocabulary (CU-VOC-01..04)
+python -m pytest tests/test_domain_vocab.py -v
+
+# Brand dataset (CU-DAT-01..04)
+python -m pytest tests/test_dataset.py -v
+
+# BaseCorrector (CU-BAS-01..03)
+python -m pytest tests/test_base.py -v
+
+# ByT5Corrector (CU-BY5-01..04)
+python -m pytest tests/test_byt5.py -v
+
+# T5LargeCorrector (CU-T5L-01..05)
+python -m pytest tests/test_t5_large.py -v
+
+# QwenCorrector (CU-QWN-01..09)
+python -m pytest tests/test_qwen.py -v
+
+# Orchestrator - TypoCorrector (CU-COR-01..06)
+python -m pytest tests/test_corrector_unit.py -v
+
+# FastAPI endpoints (CU-API-01..08)
+python -m pytest tests/test_api.py -v
+
+# Brand-masking: tokenizer (CU-MSK-01..08)
+python -m pytest tests/test_tokenizer.py -v
+
+# Brand-masking: mask format (CU-MSK-09..18)
+python -m pytest tests/test_mask_format.py -v
+
+# Brand-masking: english filter (CU-MSK-19..22)
+python -m pytest tests/test_english_filter.py -v
+
+# Brand-masking: exact matcher (CU-MSK-23..31)
+python -m pytest tests/test_exact_matcher.py -v
+
+# Brand-masking: fuzzy matcher (CU-MSK-32..40)
+python -m pytest tests/test_fuzzy_matcher.py -v
+
+# Brand-masking: pipeline (CU-MSK-41..56)
+python -m pytest tests/test_pipeline.py -v
+
+# Brand-masking pipeline (tum masking testleri)
+python -m pytest tests/test_tokenizer.py tests/test_mask_format.py tests/test_english_filter.py tests/test_exact_matcher.py tests/test_fuzzy_matcher.py tests/test_pipeline.py tests/test_dataset.py -v
+
+# Model classes (CU-BAS + CU-BY5 + CU-T5L + CU-QWN)
+python -m pytest tests/test_base.py tests/test_byt5.py tests/test_t5_large.py tests/test_qwen.py -v
+
+# Brand masking integration (CI-COR-01..04)
+python -m pytest tests/test_corrector_integration.py -v
+
+
+================================================================================
+ 3. TEK TEK UNIT TEST KOMUTLARI (ID -> fonksiyon -> komut)
+================================================================================
+
+--------------------------------------------------------------------------------
+ 3.1  CU-MET-* : Metrics  (dosya: tests/test_metrics.py)
+--------------------------------------------------------------------------------
+
+# CU-MET-01: sentence_accuracy returns 1.0 for fully matching lists
+python -m pytest tests/test_metrics.py::test_sentence_accuracy_perfect -v
+
+# CU-MET-02: sentence_accuracy partial/zero/empty
+python -m pytest tests/test_metrics.py::test_sentence_accuracy_partial_zero_empty -v
+
+# CU-MET-03: avg_levenshtein edit distances
+python -m pytest tests/test_metrics.py::test_avg_levenshtein -v
+
+# CU-MET-04: token_level_accuracy
+python -m pytest tests/test_metrics.py::test_token_level_accuracy -v
+
+# CU-MET-05: avg_jaccard_similarity
+python -m pytest tests/test_metrics.py::test_avg_jaccard -v
+
+# CU-MET-06..09: length mismatch ValueError'lari (parametrized - 4 alt test)
+# Hepsi birden:
+python -m pytest "tests/test_metrics.py::test_length_mismatch_raises" -v
+
+# CU-MET-06: sentence_accuracy length mismatch
+python -m pytest "tests/test_metrics.py::test_length_mismatch_raises[sentence_accuracy]" -v
+
+# CU-MET-07: avg_levenshtein length mismatch
+python -m pytest "tests/test_metrics.py::test_length_mismatch_raises[avg_levenshtein]" -v
+
+# CU-MET-08: token_level_accuracy length mismatch
+python -m pytest "tests/test_metrics.py::test_length_mismatch_raises[token_level_accuracy]" -v
+
+# CU-MET-09: avg_jaccard_similarity length mismatch
+python -m pytest "tests/test_metrics.py::test_length_mismatch_raises[avg_jaccard_similarity]" -v
+
+
+--------------------------------------------------------------------------------
+ 3.2  CU-VOC-* : Domain Vocabulary  (dosya: tests/test_domain_vocab.py)
+--------------------------------------------------------------------------------
+
+# CU-VOC-01: vocab loads, lowercases, deduplicates
+python -m pytest tests/test_domain_vocab.py::test_valid_load_lowercased -v
+
+# CU-VOC-02: missing file returns empty
+python -m pytest tests/test_domain_vocab.py::test_missing_file_returns_empty -v
+
+# CU-VOC-03: blank lines + duplicates skipped
+python -m pytest tests/test_domain_vocab.py::test_blank_lines_and_duplicates -v
+
+# CU-VOC-04: UnicodeDecodeError returns empty set
+python -m pytest tests/test_domain_vocab.py::test_unicode_decode_error_returns_empty -v
+
+
+--------------------------------------------------------------------------------
+ 3.3  CU-DAT-* : Brand JSONL / Deny-list  (dosya: tests/test_dataset.py)
+--------------------------------------------------------------------------------
+
+# CU-DAT-01: load_brands valid JSONL
+python -m pytest tests/test_dataset.py::test_load_brands_valid -v
+
+# CU-DAT-02: load_brands missing file returns []
+python -m pytest tests/test_dataset.py::test_load_brands_missing_file_returns_empty -v
+
+# CU-DAT-03: load_brands skips malformed/KeyError lines
+python -m pytest tests/test_dataset.py::test_load_brands_skips_malformed -v
+
+# CU-DAT-04: load_deny_list skips comments + blanks, lowercases
+python -m pytest tests/test_dataset.py::test_load_deny_list_skips_comments_and_blanks -v
+
+
+--------------------------------------------------------------------------------
+ 3.4  CU-BAS-* : BaseCorrector  (dosya: tests/test_base.py)
+--------------------------------------------------------------------------------
+
+# CU-BAS-01: _make_result unchanged when only case differs
+python -m pytest tests/test_base.py::test_make_result_unchanged_when_only_case_differs -v
+
+# CU-BAS-02: _make_result latency rounding (2 decimal)
+python -m pytest tests/test_base.py::test_make_result_changed_and_latency_rounding -v
+
+# CU-BAS-03: BaseCorrector() raises TypeError
+python -m pytest tests/test_base.py::test_abstract_class_cannot_be_instantiated -v
+
+
+--------------------------------------------------------------------------------
+ 3.5  CU-BY5-* : ByT5Corrector  (dosya: tests/test_byt5.py)
+--------------------------------------------------------------------------------
+
+# CU-BY5-01: empty query passthrough
+python -m pytest tests/test_byt5.py::test_empty_query_passthrough -v
+
+# CU-BY5-02: whitespace-only query passthrough
+python -m pytest tests/test_byt5.py::test_whitespace_only_query_passthrough -v
+
+# CU-BY5-03: "correct: " prefix added to tokenizer input
+python -m pytest tests/test_byt5.py::test_correct_prefix_is_used -v
+
+# CU-BY5-04: inference exception returns original query
+python -m pytest tests/test_byt5.py::test_inference_error_returns_original_query -v
+
+
+--------------------------------------------------------------------------------
+ 3.6  CU-T5L-* : T5LargeCorrector  (dosya: tests/test_t5_large.py)
+--------------------------------------------------------------------------------
+
+# CU-T5L-01: default num_beams == 1
+python -m pytest tests/test_t5_large.py::test_default_num_beams_is_one -v
+
+# CU-T5L-02: empty query passthrough
+python -m pytest tests/test_t5_large.py::test_empty_query_passthrough -v
+
+# CU-T5L-03: _load_lora_adapter called when adapter_config.json present
+python -m pytest tests/test_t5_large.py::test_lora_loaded_when_adapter_config_present -v
+
+# CU-T5L-04: LoRA skipped when adapter_config.json absent
+python -m pytest tests/test_t5_large.py::test_lora_skipped_without_adapter -v
+
+# CU-T5L-05: quantize=True passes load_in_8bit=True
+python -m pytest tests/test_t5_large.py::test_quantize_branch_passes_load_in_8bit -v
+
+
+--------------------------------------------------------------------------------
+ 3.7  CU-QWN-* : QwenCorrector  (dosya: tests/test_qwen.py)
+--------------------------------------------------------------------------------
+
+# CU-QWN-01: _extract_numbers
+python -m pytest tests/test_qwen.py::test_extract_numbers -v
+
+# CU-QWN-02: _normalize collapses whitespace
+python -m pytest tests/test_qwen.py::test_normalize -v
+
+# CU-QWN-03: guardrail accepts a clean correction
+python -m pytest tests/test_qwen.py::test_guardrail_accepts_clean_correction -v
+
+# CU-QWN-04..05: token-ratio guardrail (parametrized - iki alt test)
+# Hepsi birden:
+python -m pytest "tests/test_qwen.py::test_guardrail_rejects_token_ratio" -v
+
+# CU-QWN-04: explosion (ratio > 1.4)
+python -m pytest "tests/test_qwen.py::test_guardrail_rejects_token_ratio[iphone-iphone 15 pro max ultra deluxe edition]" -v
+
+# CU-QWN-05: collapse (ratio < 0.6)
+python -m pytest "tests/test_qwen.py::test_guardrail_rejects_token_ratio[iphone 15 pro 256 gb edition-iphone]" -v
+
+# CU-QWN-06: guardrail rejects number change
+python -m pytest tests/test_qwen.py::test_guardrail_rejects_number_change -v
+
+# CU-QWN-07: guardrail empty/whitespace output -> original
+python -m pytest tests/test_qwen.py::test_guardrail_empty_output_returns_original -v
+
+# CU-QWN-08: _build_prompt uses apply_chat_template when available
+python -m pytest tests/test_qwen.py::test_build_prompt_uses_chat_template_when_available -v
+
+# CU-QWN-09: _build_prompt fallback (no chat template)
+python -m pytest tests/test_qwen.py::test_build_prompt_falls_back_to_plain_text -v
+
+
+--------------------------------------------------------------------------------
+ 3.8  CU-COR-* : TypoCorrector orchestrator  (dosya: tests/test_corrector_unit.py)
+--------------------------------------------------------------------------------
+
+# CU-COR-01: default model is BYT5-Large-V3
+python -m pytest tests/test_corrector_unit.py::test_default_model_is_byt5_large_v3 -v
+
+# CU-COR-02: empty/whitespace passthrough without model load
+python -m pytest tests/test_corrector_unit.py::test_correct_query_empty_passthrough -v
+
+# CU-COR-03: list_models structure (7 entries, exactly one default)
+python -m pytest tests/test_corrector_unit.py::test_list_models_structure -v
+
+# CU-COR-04: correct_batch batch statistics
+python -m pytest tests/test_corrector_unit.py::test_correct_batch_stats -v
+
+# CU-COR-05: correct_batch([]) zero-stat batch
+python -m pytest tests/test_corrector_unit.py::test_correct_batch_empty_list -v
+
+# CU-COR-06: unknown model name falls back to default
+python -m pytest tests/test_corrector_unit.py::test_unknown_model_falls_back_to_default -v
+
+
+--------------------------------------------------------------------------------
+ 3.9  CU-API-* : FastAPI endpoints  (dosya: tests/test_api.py)
+--------------------------------------------------------------------------------
+
+# CU-API-01: GET / returns service descriptor
+python -m pytest tests/test_api.py::test_root -v
+
+# CU-API-02: GET /health returns healthy
+python -m pytest tests/test_api.py::test_health -v
+
+# CU-API-03: POST /correct happy path
+python -m pytest tests/test_api.py::test_correct_happy_path -v
+
+# CU-API-04: POST /correct routes model parameter
+python -m pytest tests/test_api.py::test_correct_with_model_param_routes -v
+
+# CU-API-05: missing query field returns 422
+python -m pytest tests/test_api.py::test_correct_missing_query_returns_422 -v
+
+# CU-API-06: wrong-type query field returns 422
+python -m pytest tests/test_api.py::test_correct_wrong_type_returns_422 -v
+
+# CU-API-07: inference exception returns 500
+python -m pytest tests/test_api.py::test_correct_inference_exception_returns_500 -v
+
+# CU-API-08: GET /models returns descriptors
+python -m pytest tests/test_api.py::test_models_endpoint -v
+
+
+--------------------------------------------------------------------------------
+ 3.10  CU-MSK-* : Tokenizer  (dosya: tests/test_tokenizer.py, CU-MSK-01..08)
+--------------------------------------------------------------------------------
+
+# CU-MSK-01: whitespace-split tokenization preserves offsets
+python -m pytest tests/test_tokenizer.py::test_simple_tokenize -v
+
+# CU-MSK-02: repeated whitespace skipped
+python -m pytest tests/test_tokenizer.py::test_extra_whitespace -v
+
+# CU-MSK-03: empty / whitespace-only input -> []
+python -m pytest tests/test_tokenizer.py::test_empty -v
+
+# CU-MSK-04: punctuation stays attached
+python -m pytest tests/test_tokenizer.py::test_punctuation_attached -v
+
+# CU-MSK-05: strip_punct_edges - clean alpha
+python -m pytest tests/test_tokenizer.py::test_strip_edges_simple -v
+
+# CU-MSK-06: strip_punct_edges - trailing comma
+python -m pytest tests/test_tokenizer.py::test_strip_edges_trailing_comma -v
+
+# CU-MSK-07: strip_punct_edges - leading and trailing punct
+python -m pytest tests/test_tokenizer.py::test_strip_edges_both_sides -v
+
+# CU-MSK-08: strip_punct_edges - all punctuation
+python -m pytest tests/test_tokenizer.py::test_strip_edges_only_punct -v
+
+
+--------------------------------------------------------------------------------
+ 3.11  CU-MSK-* : Mask format  (dosya: tests/test_mask_format.py, CU-MSK-09..18)
+--------------------------------------------------------------------------------
+
+# CU-MSK-09: make_mask canonical token form
+python -m pytest tests/test_mask_format.py::test_make_mask -v
+
+# CU-MSK-10: find_masks_strict single mask
+python -m pytest tests/test_mask_format.py::test_find_strict_single -v
+
+# CU-MSK-11: find_masks_strict multiple masks in order
+python -m pytest tests/test_mask_format.py::test_find_strict_multiple -v
+
+# CU-MSK-12: find_masks_strict no match -> []
+python -m pytest tests/test_mask_format.py::test_find_strict_none -v
+
+# CU-MSK-13: lenient lowercase m
+python -m pytest tests/test_mask_format.py::test_lenient_lowercase_m -v
+
+# CU-MSK-14: lenient inner whitespace
+python -m pytest tests/test_mask_format.py::test_lenient_inner_whitespace -v
+
+# CU-MSK-15: lenient O -> 0 coercion
+python -m pytest tests/test_mask_format.py::test_lenient_o_for_zero -v
+
+# CU-MSK-16: lenient single brackets
+python -m pytest tests/test_mask_format.py::test_lenient_single_brackets -v
+
+# CU-MSK-17: shape-fallback matches corrupted mask
+python -m pytest tests/test_mask_format.py::test_shape_fallback_finds_corruption -v
+
+# CU-MSK-18: strict pattern compile + fullmatch
+python -m pytest tests/test_mask_format.py::test_strict_pattern_compile -v
+
+
+--------------------------------------------------------------------------------
+ 3.12  CU-MSK-* : English filter  (dosya: tests/test_english_filter.py, CU-MSK-19..22)
+--------------------------------------------------------------------------------
+
+# CU-MSK-19: real-word lookup True/False
+python -m pytest tests/test_english_filter.py::test_basic_lookup -v
+
+# CU-MSK-20: lookup case insensitive
+python -m pytest tests/test_english_filter.py::test_case_insensitive -v
+
+# CU-MSK-21: __contains__ operator
+python -m pytest tests/test_english_filter.py::test_contains_operator -v
+
+# CU-MSK-22: missing wordlist -> empty filter
+python -m pytest tests/test_english_filter.py::test_empty_path_returns_empty -v
+
+
+--------------------------------------------------------------------------------
+ 3.13  CU-MSK-* : Exact matcher (Aho-Corasick)  (dosya: tests/test_exact_matcher.py, CU-MSK-23..31)
+--------------------------------------------------------------------------------
+
+# CU-MSK-23: single brand exact match
+python -m pytest tests/test_exact_matcher.py::test_simple_exact_match -v
+
+# CU-MSK-24: longest match wins
+python -m pytest tests/test_exact_matcher.py::test_longest_match_wins -v
+
+# CU-MSK-25: word boundary left
+python -m pytest tests/test_exact_matcher.py::test_word_boundary_left -v
+
+# CU-MSK-26: word boundary right
+python -m pytest tests/test_exact_matcher.py::test_word_boundary_right -v
+
+# CU-MSK-27: punctuation as word boundary
+python -m pytest tests/test_exact_matcher.py::test_word_boundary_with_punct -v
+
+# CU-MSK-28: deny-list blocks a brand
+python -m pytest tests/test_exact_matcher.py::test_deny_list_blocks_match -v
+
+# CU-MSK-29: matched-text case preserved, canonical returned
+python -m pytest tests/test_exact_matcher.py::test_case_preserved_in_match -v
+
+# CU-MSK-30: multiple distinct matches in one string
+python -m pytest tests/test_exact_matcher.py::test_multiple_matches_in_string -v
+
+# CU-MSK-31: pattern_count >= 1
+python -m pytest tests/test_exact_matcher.py::test_pattern_count -v
+
+
+--------------------------------------------------------------------------------
+ 3.14  CU-MSK-* : Fuzzy matcher (SymSpell)  (dosya: tests/test_fuzzy_matcher.py, CU-MSK-32..40)
+--------------------------------------------------------------------------------
+
+# CU-MSK-32: typo caught (Levenshtein 1)
+python -m pytest tests/test_fuzzy_matcher.py::test_typo_caught -v
+
+# CU-MSK-33: english-word input is blocked
+python -m pytest tests/test_fuzzy_matcher.py::test_english_word_input_blocked -v
+
+# CU-MSK-34: canonical-in-english-list still in fuzzy dict
+python -m pytest tests/test_fuzzy_matcher.py::test_canonical_in_english_still_in_dict -v
+
+# CU-MSK-35: tokens shorter than min_match_length skipped
+python -m pytest tests/test_fuzzy_matcher.py::test_short_token_skipped -v
+
+# CU-MSK-36: exact match returns None (no fuzzy needed)
+python -m pytest tests/test_fuzzy_matcher.py::test_exact_match_returns_none -v
+
+# CU-MSK-37: per-entry min_match_length enforced
+python -m pytest tests/test_fuzzy_matcher.py::test_min_match_length_per_entry -v
+
+# CU-MSK-38: deny-list blocks fuzzy lookup
+python -m pytest tests/test_fuzzy_matcher.py::test_deny_list_blocks_input -v
+
+# CU-MSK-39: numeric-only tokens skipped
+python -m pytest tests/test_fuzzy_matcher.py::test_numeric_token_skipped -v
+
+# CU-MSK-40: dictionary_size reflects eligible entries
+python -m pytest tests/test_fuzzy_matcher.py::test_dictionary_size -v
+
+
+--------------------------------------------------------------------------------
+ 3.15  CU-MSK-* : Pipeline (mask + unmask)  (dosya: tests/test_pipeline.py, CU-MSK-41..56)
+--------------------------------------------------------------------------------
+
+# CU-MSK-41: exact-match brand is masked
+python -m pytest tests/test_pipeline.py::test_exact_mask -v
+
+# CU-MSK-42: typo'd brand is masked via fuzzy stage
+python -m pytest tests/test_pipeline.py::test_typo_masked_via_fuzzy -v
+
+# CU-MSK-43: english word input not masked
+python -m pytest tests/test_pipeline.py::test_english_word_input_not_masked -v
+
+# CU-MSK-44: multi-word brand matched as one mask
+python -m pytest tests/test_pipeline.py::test_multiword_brand_matched_as_one -v
+
+# CU-MSK-45: plain text without brand passes through
+python -m pytest tests/test_pipeline.py::test_no_brand_passthrough -v
+
+# CU-MSK-46: empty input handled gracefully
+python -m pytest tests/test_pipeline.py::test_empty_input -v
+
+# CU-MSK-47: brand whose canonical is in English wordlist still works
+python -m pytest tests/test_pipeline.py::test_canonical_in_english_word_list_still_works -v
+
+# CU-MSK-48: strict-tier unmask roundtrip
+python -m pytest tests/test_pipeline.py::test_unmask_strict_roundtrip -v
+
+# CU-MSK-49: lenient-tier inner whitespace
+python -m pytest tests/test_pipeline.py::test_unmask_lenient_inner_whitespace -v
+
+# CU-MSK-50: lenient-tier lowercase <<m0>>
+python -m pytest tests/test_pipeline.py::test_unmask_lenient_lowercase -v
+
+# CU-MSK-51: lenient-tier <<MO>> (O for 0)
+python -m pytest tests/test_pipeline.py::test_unmask_lenient_o_for_zero -v
+
+# CU-MSK-52: multi-mask strict roundtrip with two brands
+python -m pytest tests/test_pipeline.py::test_unmask_no_corruption_returns_clean -v
+
+# CU-MSK-53: empty mask map returns text unchanged
+python -m pytest tests/test_pipeline.py::test_unmask_empty_map -v
+
+# CU-MSK-54: pipeline reports healthy when initialised cleanly
+python -m pytest tests/test_pipeline.py::test_pipeline_health -v
+
+# CU-MSK-55: pipeline stats() reports counts
+python -m pytest tests/test_pipeline.py::test_pipeline_stats -v
+
+# CU-MSK-56: mask-then-corrupt-then-unmask preserves brand
+python -m pytest tests/test_pipeline.py::test_mask_unmask_with_typo -v
+
+
+================================================================================
+ 4. TEK TEK INTEGRATION TEST KOMUTLARI
+================================================================================
+
+--------------------------------------------------------------------------------
+ 4.1  CI-COR-* : Brand-masking integration  (dosya: tests/test_corrector_integration.py)
+--------------------------------------------------------------------------------
+
+# CI-COR-01: brand-masking protects typo'd brand through any model
+python -m pytest tests/test_corrector_integration.py::test_corrector_brand_protection_via_mask -v
+
+# CI-COR-02: T5-Large-V2.1 path skips masking
+python -m pytest tests/test_corrector_integration.py::test_v2_1_pipeline_path_skipped -v
+
+# CI-COR-03: plain text without brand passes through unchanged
+python -m pytest tests/test_corrector_integration.py::test_corrector_passthrough_no_brand -v
+
+# CI-COR-04: BYT5-Large-V3 actually receives masked input
+python -m pytest tests/test_corrector_integration.py::test_byt5_large_v3_uses_masking -v
+
+
+--------------------------------------------------------------------------------
+ 4.2  CI-API-* : End-to-end FastAPI integration
+       NOT: Bunlar repoda ayri "integration" dosyasinda DEGIL.
+       correction.md'deki CI-API-01..04 fiilen tests/test_api.py icindeki
+       CU-API-03 / 04 / 07 / 08 testlerinin ayni komutudur (TestClient ile
+       orchestrator-end-to-end aksi calistirilir). Asagidaki komutlar
+       hem CU hem CI numarali ID'leri karsilar.
+--------------------------------------------------------------------------------
+
+# CI-API-01 (== CU-API-03): /correct happy path
+python -m pytest tests/test_api.py::test_correct_happy_path -v
+
+# CI-API-02 (== CU-API-04): /correct routes model param
+python -m pytest tests/test_api.py::test_correct_with_model_param_routes -v
+
+# CI-API-03 (== CU-API-07): orchestrator exception -> HTTP 500
+python -m pytest tests/test_api.py::test_correct_inference_exception_returns_500 -v
+
+# CI-API-04 (== CU-API-08): /models reflects list_models()
+python -m pytest tests/test_api.py::test_models_endpoint -v
+
+
+================================================================================
+ 5. PERFORMANCE TESTLERI  (dosya: tests/integration/test_performance.py)
+   NOT: Bu testler gercek CUDA + model agirligi gerektirir. tests/integration/
+   conftest.py torch stub'larini drop eder; GPU yoksa testler skip olur.
+================================================================================
+
+# Hepsi birden
+python -m pytest tests/integration/test_performance.py -v
+
+# PERF-CR-001: ByT5-Large-V3 single-query latency
+python -m pytest "tests/integration/test_performance.py::test_PERF_CR_001_byt5_single_query_latency" -v
+
+# PERF-CR-002: T5-Large-V2.1 single-query latency
+python -m pytest "tests/integration/test_performance.py::test_PERF_CR_002_t5_single_query_latency" -v
+
+# PERF-CR-003: cold-start time (uvicorn subprocess + /health poll)
+python -m pytest "tests/integration/test_performance.py::test_PERF_CR_003_cold_start_time" -v
+
+# PERF-CR-004: throughput - concurrent (4 threads x 30 = 120 istek)
+python -m pytest "tests/integration/test_performance.py::test_PERF_CR_004_throughput_concurrent" -v
+
+# PERF-CR-005: GPU memory headroom (< 14 GiB)
+python -m pytest "tests/integration/test_performance.py::test_PERF_CR_005_gpu_memory_headroom" -v
+
+# PERF-CR-006: algoritmik dogruluk (eval_t5.jsonl, 100 ornek)
+python -m pytest "tests/integration/test_performance.py::test_PERF_CR_006_algorithmic_accuracy" -v
+
+# PERF-CR-007: benchmark_universal.py
+python -m pytest "tests/integration/test_performance.py::test_PERF_CR_007_benchmark_universal" -v
+
+
+================================================================================
+ 6. LOCUST + PROMETHEUS PERFORMANCE TESTLERI
+   (correction_performance_testing.md icindeki LOC-CR-01, LOC-CR-02, PROM-CR-01)
+================================================================================
+
+ADIM 1) ONCE BIR PowerShell PENCERESINDE Correction API'yi BASLAT:
+--------------------------------------------------------------------
+
+cd C:\Users\kaant\Desktop\Grad\Correction
+.\run_api.bat
+# veya manuel:
+# python -m uvicorn api:app --host 127.0.0.1 --port 5001
+
+ADIM 2) SAGLIK KONTROLU (yeni pencere):
+--------------------------------------------------------------------
+
+Invoke-WebRequest http://127.0.0.1:5001/health
+
+
+LOC-CR-01: Correction Locust BASELINE (1 user, 60s)
+--------------------------------------------------------------------
+
+cd C:\Users\kaant\Desktop\Grad
+$env:LOCUST_PROM_PORT = "9302"
+.\.venv\Scripts\python.exe -m locust -f .\Correction\perf\locustfile.py --headless `
+    -u 1 -r 1 -t 60s `
+    --host http://127.0.0.1:5001 `
+    --csv test_reports\locust_correction_baseline `
+    --html test_reports\locust_correction_baseline.html
+
+
+LOC-CR-02: Correction Locust CONCURRENT (4 user, 60s)
+--------------------------------------------------------------------
+
+$env:LOCUST_PROM_PORT = "9302"
+.\.venv\Scripts\python.exe -m locust -f .\Correction\perf\locustfile.py --headless `
+    -u 4 -r 4 -t 60s `
+    --host http://127.0.0.1:5001 `
+    --csv test_reports\locust_correction_concurrent `
+    --html test_reports\locust_correction_concurrent.html
+
+
+PROM-CR-01: Prometheus snapshot (Locust calisirken, 3. PowerShell'de)
+--------------------------------------------------------------------
+
+# Locust HALA CALISIRKEN bunu calistir:
+(Invoke-WebRequest -Uri 'http://127.0.0.1:9302/metrics' -TimeoutSec 5 -UseBasicParsing).Content `
+    | Out-File -FilePath C:\Users\kaant\Desktop\Grad\test_reports\prometheus_correction_promcheck.txt -Encoding utf8
+
+
+HER SEYI TEK TIKLA (boot + pytest perf + locust + prometheus + docx):
+--------------------------------------------------------------------
+
+cd C:\Users\kaant\Desktop\Grad
+.\run_all_perf.bat
+# Cikti: test_reports\CNG492-TestResults-PERF.docx
+
+
+================================================================================
+ 7. FAYDALI EKSTRA KOMUTLAR
+================================================================================
+
+# Sadece SKIP edilen testleri gor
+python -m pytest tests -v -rs
+
+# Sadece FAIL edenleri detayli gor
+python -m pytest tests -v --tb=short --no-header
+
+# En yavas 10 testi listele
+python -m pytest tests --ignore=tests/integration -v --durations=10
+
+# Bir testi N kez paralel calistir (pip install pytest-xdist)
+python -m pytest tests --ignore=tests/integration -n auto
+
+# Cikti dosyaya yaz (raporlama icin)
+python -m pytest tests --ignore=tests/integration -v > test_run.log 2>&1
+
+# Belirli bir kelime (substring) iceren testleri filtrele
+python -m pytest tests --ignore=tests/integration -v -k "mask"
+python -m pytest tests --ignore=tests/integration -v -k "guardrail or prompt"
+python -m pytest tests --ignore=tests/integration -v -k "not slow"
+
+# Bir testin tum print/log ciktilarini gor
+python -m pytest tests/test_metrics.py::test_avg_levenshtein -v -s
+
+# Pytest --collect-only : hangi testler kosacak, gostersin (calistirmaz)
+python -m pytest tests --ignore=tests/integration --collect-only -q
+
+
+================================================================================
+ 8. ID -> DOSYA -> FONKSIYON HIZLI ESLESTIRME TABLOSU
+================================================================================
+
+CU-MET-01..09  -> tests/test_metrics.py
+CU-VOC-01..04  -> tests/test_domain_vocab.py
+CU-DAT-01..04  -> tests/test_dataset.py
+CU-BAS-01..03  -> tests/test_base.py
+CU-BY5-01..04  -> tests/test_byt5.py
+CU-T5L-01..05  -> tests/test_t5_large.py
+CU-QWN-01..09  -> tests/test_qwen.py
+CU-COR-01..06  -> tests/test_corrector_unit.py
+CU-API-01..08  -> tests/test_api.py
+CU-MSK-01..08  -> tests/test_tokenizer.py
+CU-MSK-09..18  -> tests/test_mask_format.py
+CU-MSK-19..22  -> tests/test_english_filter.py
+CU-MSK-23..31  -> tests/test_exact_matcher.py
+CU-MSK-32..40  -> tests/test_fuzzy_matcher.py
+CU-MSK-41..56  -> tests/test_pipeline.py
+CI-COR-01..04  -> tests/test_corrector_integration.py
+CI-API-01..04  -> tests/test_api.py  (CU-API-03/04/07/08 ile ortak fonksiyonlar)
+PERF-CR-001..007 -> tests/integration/test_performance.py
+LOC-CR-01/02   -> Correction/perf/locustfile.py  (Locust)
+PROM-CR-01     -> Locust calisirken /metrics endpoint scrape
+
+================================================================================
+                            DOSYA SONU
+================================================================================

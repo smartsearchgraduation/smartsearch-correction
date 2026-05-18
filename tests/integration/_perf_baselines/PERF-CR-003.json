@@ -1,0 +1,8 @@
+{
+  "case_id": "PERF-CR-003",
+  "cold_start_seconds": 3.5410541000019293,
+  "first_correct_model_used": "BYT5-Large-V3",
+  "first_correct_status": 200,
+  "note": "Cold-start baseline only; M6 sets the numeric ceiling. 120s polling timeout is the env-skip threshold.",
+  "port": 64030
+}

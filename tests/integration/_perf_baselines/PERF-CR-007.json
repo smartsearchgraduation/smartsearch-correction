@@ -1,0 +1,16 @@
+{
+  "iterations": 5,
+  "results": [
+    {
+      "mean_ms": 314.736,
+      "model": "BYT5-Large-V3",
+      "p50_ms": 315.5809000018053,
+      "p95_ms": 349.336300016148,
+      "samples": 5,
+      "throughput_rps": 3.177,
+      "vram_peak_mb": 2446.96,
+      "warmup_discarded": 1
+    }
+  ],
+  "schema": "correction_baseline.v1"
+}

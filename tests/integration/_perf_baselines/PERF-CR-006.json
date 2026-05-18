@@ -1,0 +1,11 @@
+{
+  "avg_levenshtein": 0.47,
+  "case_id": "PERF-CR-006",
+  "eval_path": "C:\\Users\\kaant\\Desktop\\Grad\\Correction\\fine_tune\\data\\eval_t5.jsonl",
+  "failed_calls": 0,
+  "note": "Sample reduced from 10000 to first 100 lines of eval_t5.jsonl. Hard threshold is just > 0; M6 sets the real accuracy floor.",
+  "samples_evaluated": 100,
+  "sentence_accuracy": 0.71,
+  "spec_n": 10000,
+  "token_level_accuracy": 0.8733333333333333
+}

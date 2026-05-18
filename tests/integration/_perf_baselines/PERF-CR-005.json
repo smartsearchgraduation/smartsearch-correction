@@ -1,0 +1,12 @@
+{
+  "case_id": "PERF-CR-005",
+  "headroom_budget_gib": 14.0,
+  "max_allocated_gib": 5.164243221282959,
+  "n_calls": 30,
+  "note": "Sample reduced from 1000 to 30 for CI runtime. Hard ceiling of 14 GiB is the spec headroom budget for the 16 GiB RTX 5070 Ti and IS asserted.",
+  "oom_observed": false,
+  "peak_allocated_gib": 5.153129577636719,
+  "peak_reserved_gib": 5.35546875,
+  "physical_vram_gib": 16.0,
+  "spec_n": 1000
+}
